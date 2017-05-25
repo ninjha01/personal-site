@@ -1,7 +1,8 @@
 <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
 <link rel="stylesheet" Type="text/css" href="http://people.virginia.edu/~nj7kv/style.css">
+<html>
 
-Welcome! <img src="Profile Pic Round.png" alt="Profile Pic Round" style="width:100px;height:100px" align="right">
+Welcome ![Profile Pic Round](Profile%20Pic%20Round.png)
 =======================================================
 
 I am a Master of Computer Science candidate at the University of
