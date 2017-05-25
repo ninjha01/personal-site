@@ -3,16 +3,25 @@
 ## Defines the converter
 CONVERT		= pandoc
 
-## Defines the flags passed to the converter
-CONVFLAGS	= -s -o
+## Defines the converter flags
+FLAGS		= --smart --standalone
 
-# The source MD files
-MDFILES		= home.md
+## The source MD files
+MDFILES		= $(wildcard *.md)
 
-HTMLFILES 	= home.html
+## The produced HTML files
+HTMLFILES 	= $(MDFILES: .md = .html)
 
-main:	$(MDFILES)
-	$(CONVERT) $(CONVFLAGS) $(HTMLFILES) $(MDFILES)
+## Pattern-matching rules
 
-clean:
+%.html : %.md
+	$(CONVERT) $(FLAGS) -o $@ $<
+
+## Targets and Dependencies
+
+.PHONY 	:	all clean
+
+all 	: 	$(HTMLFILES)
+
+clean	:
 	rm -f $(HTMLFILES)
