@@ -2,8 +2,10 @@
 <link rel="stylesheet" Type="text/css" href="http://people.virginia.edu/~nj7kv/style.css">
 <html>
 
-Aloha! Welcome ![Profile Pic Round](Profile%20Pic%20Round.png)
+Welcome ![Profile Pic Round](Profile%20Pic%20Round.png)
 =======================================================
+
+Hello!
 
 I am a Master of Computer Science candidate at the University of
 Virginia.
