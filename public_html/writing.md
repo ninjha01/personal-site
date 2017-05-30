@@ -5,10 +5,9 @@
 Writing
 =======
 
-<div class=section>
-
 An article about self-modifying code and gene editing - [Strange
 Loops](http://www.vabioethics.com/content/2016/11/3/strange-loops-remade-in-our-own-image Strange Loops)
 
+An article about Artificial Intelligence - [The Control Problem][Control Problem]
 
-</div>
+[Control Problem]: control_problem.html
