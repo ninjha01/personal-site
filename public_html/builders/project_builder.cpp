@@ -44,7 +44,7 @@ int main(int argc, char* argv[]) {
 	getline(in_file, line);
 	//Add entry to projects
 	entry << "<article>\n<span class=\"icon fa-" << icon << "\"></span>" << endl;
-	entry << "<div class=\"content\">\n<h3>" << title << "</h3>" << endl;
+	entry << "<div class=\"content\">\n<h3><a href=\"" << url << "\">" << title << "</a></h3>" << endl;
 	entry << "<p>" << desc << "</p>" << endl;
 	entry << "</div>\n</article>" << endl;
 	projects << entry.str();
