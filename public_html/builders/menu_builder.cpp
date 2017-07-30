@@ -14,6 +14,9 @@ int main(int argc, char* argv[]) {
     ostringstream menu;
 
     //Build Sidebar
+    menu << "</section>" << endl;
+    menu << "</div>" << endl;
+    menu << "</div>" << endl;
     menu << "<!-- Sidebar -->" << endl;
     menu << "<div id=\"sidebar\">" << endl;
     menu << "<div class=\"inner\">" << endl;
