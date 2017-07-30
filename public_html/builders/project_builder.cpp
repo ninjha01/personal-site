@@ -50,11 +50,7 @@ int main(int argc, char* argv[]) {
 	projects << entry.str();
       }
       
-      projects << "</div>" << endl;
-      projects << "</section>" << endl;
-      projects << "</div>" << endl;
-      projects << "</div>" << endl;
-      
+      projects << "</div>" << endl;      
       cout << projects.str() << endl;
     }
   }
