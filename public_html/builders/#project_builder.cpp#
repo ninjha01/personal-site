@@ -40,9 +40,7 @@ int main(int argc, char* argv[]) {
 	getline(in_file, icon);
 	getline(in_file, desc);
 
-	//Burn Delimeter
-	getline(in_file, line);
-	
+
 	//Add entry to projects
 	entry << "<article>\n<span class=\"icon fa-" << icon << "\"></span>" << endl;
 	entry << "<div class=\"content\">\n<h3><a href=\"" << url << "\">" << title << "</a></h3>" << endl;
@@ -51,8 +49,7 @@ int main(int argc, char* argv[]) {
 	projects << entry.str();
       }
       
-      projects << "</div>" << endl;
-
+      projects << "</div>" << endl;      
       cout << projects.str() << endl;
     }
   }

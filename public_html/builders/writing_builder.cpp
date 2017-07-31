@@ -7,7 +7,7 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
   
-  if( argc != 2 ) {
+  if( argc < 2 ) {
     cout << argv[0] << "Incorrect usage" << endl;
   } else {
 
@@ -19,39 +19,40 @@ int main(int argc, char* argv[]) {
     } else {
 
       string line;
-      ostringstream projects;
+      ostringstream writings;
       
       
-      projects << "<!-- Section -->" << endl; 
-      projects << "<section>" << endl; 
-      projects << "<header class=\"major\">" << endl; 
-      projects << "<h2>Projects</h2>" << endl; 
-      projects << "</header>" << endl; 
-      projects << "<div class=\"features\">" << endl; 
-     
+      writings << "<!-- Section -->" << endl; 
+      writings << "<section>" << endl; 
+      writings << "<header class=\"major\">" << endl; 
+      writings << "<h2>Writing</h2>" << endl; 
+      writings << "</header>" << endl; 
+      writings << "<div class=\"features\">" << endl; 
+
+      //Build Writing
 
       while (!in_file.eof()) {
 	
 	//Parse Data and create entry
 	ostringstream entry;
-	string title, url, icon, desc; 
+	string title, filename, desc, line; 
 	getline(in_file, title);
-	getline(in_file, url);
-	getline(in_file, icon);
+	getline(in_file, filename);
 	getline(in_file, desc);
 
 	//Burn delimiter
 	getline(in_file, line);
-	//Add entry to projects
-	entry << "<article>\n<span class=\"icon fa-" << icon << "\"></span>" << endl;
-	entry << "<div class=\"content\">\n<h3><a href=\"" << url << "\">" << title << "</a></h3>" << endl;
+
+	//Add entry to writings
+	entry << "<article>\n<span class=\"icon fa-pencil\"></span>" << endl;
+	entry << "<div class=\"content\">\n<h3><a href=\"" << filename << "\">" << title << "</a></h3>" << endl;
 	entry << "<p>" << desc << "</p>" << endl;
 	entry << "</div>\n</article>" << endl;
-	projects << entry.str();
+	writings << entry.str();
       }
       
-      projects << "</div>" << endl;      
-      cout << projects.str() << endl;
+      writings << "</div>" << endl;      
+      cout << writings.str() << endl;
     }
   }
   return 0;
