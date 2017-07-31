@@ -1,6 +1,6 @@
 #!/bin/bash
 #TODO: Automate adding essays to writing submenu
-#$ESSAYS=strange_loops.html control_problem.html;
+#$ESSAYS=Strange_Loops.html Control_Problem.html;
 
 #Build External Pages
 for file in $(ls ./public_html/content/essays/*.md);
@@ -11,7 +11,7 @@ do
     pandoc --ascii -f markdown -t html "${file}" >> "${file%md}html";
     ##Build the Menu
     cd ./myweb/html/;
-    ../../public_html/builders/menu_builder.out strange_loops.html control_problem.html >> "../../${file%md}html";
+    ../../public_html/builders/menu_builder.out Strange_Loops.html Control_Problem.html >> "../../${file%md}html";
     cd ../../;
     #Build the bottom
     cat ./public_html/boilerplate/bottom_generic.html >> "${file%md}html";
@@ -26,9 +26,13 @@ touch ./myweb/html/index.html;
 cat ./public_html/boilerplate/top_home.html > ./myweb/html/index.html
 ##Build Projects
 ./public_html/builders/project_builder.out ./public_html/content/projects.md >> ./myweb/html/index.html
+##Build Writing
+cd ./myweb/html/;
+../../public_html/builders/writing_builder.out Strange_Loops.html Control_Problem.html >> ../../myweb/html/index.html
+cd ../../;
 ##Build the Menu
 cd ./myweb/html/;
-../../public_html/builders/menu_builder.out strange_loops.html control_problem.html >> ../../myweb/html/index.html;
+../../public_html/builders/menu_builder.out Strange_Loops.html Control_Problem.html >> ../../myweb/html/index.html;
 cd ../../;
 ##Build the Bottom
 cat ./public_html/boilerplate/bottom_home.html >> ./myweb/html/index.html;
