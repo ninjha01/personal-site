@@ -5,7 +5,7 @@ Developed an app that provides up to date information about purified allergens. 
 ---
 Google Calendar CLI
 https://gitlab.com/ninjha01/Project-Saturn
-calendar-check-o
+terminal
 Created CLI that interacts with Google APIs to replicate the calendar functionality of the now-defunct Google CL application. Once the user is authenticated, it allows them to both view and add items to their agenda and to-do list.
 ---
 Virginia Journal of Bioethics
