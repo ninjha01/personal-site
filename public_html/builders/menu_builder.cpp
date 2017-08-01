@@ -11,10 +11,10 @@ int main(int argc, char* argv[]) {
     cout << argv[0] << "Incorrect usage" << endl;
   } else {
     
-    string in_name(argv[1]);
-    ifstream in_file(in_name);
+    string in_writing(argv[1]);
+    ifstream writing_file(in_writing);
     
-    if(!in_file.is_open()) {
+    if(!writing_file.is_open()) {
       cout << "Failed to open: " << argv[1] << endl;
     } else {
 
@@ -41,17 +41,17 @@ int main(int argc, char* argv[]) {
       menu << "<span class=\"opener\">Writing</span>" << endl;
       menu << "<ul>" << endl;
 
-      while (!in_file.eof()) {
+      while (!writing_file.eof()) {
 	
 	//Parse Data and create entry
 	ostringstream entry;
 	string title, filename, desc, line; 
-	getline(in_file, title);
-	getline(in_file, filename);
-	getline(in_file, desc);
+	getline(writing_file, title);
+	getline(writing_file, filename);
+	getline(writing_file, desc);
 
 	//Burn delimiter
-	getline(in_file, line);
+	getline(writing_file, line);
 
     
 	//Generate list item
@@ -61,14 +61,50 @@ int main(int argc, char* argv[]) {
       }
       menu << "</ul>" << endl;
     
-      //TODO: Build Projects
-        
-      menu << "</li>" << endl;
-      menu << "</ul>" << endl;
-      menu << "</nav>" << endl;
+      //Build Projects
+      string in_projects(argv[2]);
+      ifstream projects_file(in_projects);
+    
+      if(!projects_file.is_open()) {
+	cout << "Failed to open: " << argv[1] << endl;
+      } else {
 
-      cout << menu.str() << endl;
+	menu << "<span class=\"opener\">Projects</span>" << endl;
+	menu << "<ul>" << endl;
+	
+	while (!projects_file.eof()) {
+	
+	  //Parse Data and create entry
+	  ostringstream entry;
+
+	  string title, url, icon, desc; 
+	  getline(projects_file, title);
+	  getline(projects_file, url);
+	  getline(projects_file, icon);
+	  getline(projects_file, desc);
+
+	  //Burn delimiter
+	  getline(projects_file, desc);
+
+    
+	  //Generate list item
+	  entry << "<li><a href=\"" << url << "\">" << title << "</a></li>" << endl;
+	  //Add to stream
+	  menu << entry.str();
+	}
+       
+	menu << "</ul>" << endl;
+      
+      
+	menu << "</li>" << endl;
+	menu << "</ul>" << endl;
+	menu << "</nav>" << endl;
+      
+
+	cout << menu.str() << endl;
+      }
     }
   }
   return 0;
 }
+
