@@ -11,7 +11,7 @@ Created CLI that interacts with Google APIs to replicate the calendar functional
 Virginia Journal of Bioethics
 http://www.vabioethics.com/
 balance-scale
-Maintained online presence of the Journal. Directed design and edited content of all published pieces. Created new submissions system that signi cantly decreased time required to publish articles. Automated large percentage of Social Media related tasks.
+Maintained online presence of the Journal. Directed design and edited content of all published pieces. Created new submissions system that significantly decreased time required to publish articles. Automated large percentage of Social Media related tasks.
 ---
 Looper
 https://github.com/epigen/looper
