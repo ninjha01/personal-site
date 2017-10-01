@@ -94,13 +94,11 @@ int main(int argc, char* argv[]) {
 	}
        
 	menu << "</ul>" << endl;
-      
-      
+            
 	menu << "</li>" << endl;
 	menu << "</ul>" << endl;
 	menu << "</nav>" << endl;
       
-
 	cout << menu.str() << endl;
       }
     }
