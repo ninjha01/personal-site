@@ -2267,6 +2267,7 @@ hr.major {
     text-align: right;
 }
 
+
 /* Section/Article */
 
 section.special, article.special {
@@ -3786,6 +3787,7 @@ button:disabled,
 
 }
 
+
 /* Header */
 
 #header {
@@ -4062,4 +4064,21 @@ button:disabled,
     border-top: 0;
     margin-top: 0;
     padding-top: 0;
+}
+
+/* Essay */
+essay p {
+    font-family: "Droid", serif;
+    font-size: 16pt;
+    padding-left: 200px;
+    padding-right: 200px;
+    color: black;
+}
+
+essay h3 {
+
+    text-align: center;
+    font-size: 26pt;
+    margin: 20px 10px 20px 10px;
+    
 }
