@@ -18,6 +18,8 @@ Making your advice non-LCD necessarily means making it more specific. It has to 
 
 ### Grad School ###
 
+- Make a website
+
 ### Working vs Research ###
 
 ### Picking a Major ###
