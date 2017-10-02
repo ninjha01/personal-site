@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
 	//Add entry to writings
 	entry << "<article>\n<span class=\"icon fa-pencil\"></span>" << endl;
 	entry << "<div class=\"content\">\n<h3><a href=\"" << filename << ".html\">" << title << "</a></h3>" << endl;
-	entry << "<q>" << desc << "</q>" << endl;
+	entry << "<p>" << desc << "</p>" << endl;
 	entry << "</div>\n</article>" << endl;
 	writings << entry.str();
       }

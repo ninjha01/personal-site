@@ -34,7 +34,6 @@ int main(int argc, char* argv[]) {
 	
 	//Parse Data and create entry
 	ostringstream entry;
-
 	string title, url, icon, desc; 
 	getline(in_file, title);
 	getline(in_file, url);
@@ -43,11 +42,11 @@ int main(int argc, char* argv[]) {
 
 	//Burn Delimeter
 	getline(in_file, line);
-
+	
 	//Add entry to projects
 	entry << "<article>\n<span class=\"icon fa-" << icon << "\"></span>" << endl;
 	entry << "<div class=\"content\">\n<h3><a href=\"" << url << "\">" << title << "</a></h3>" << endl;
-	entry << "<q>" << desc << "</q>" << endl;
+	entry << "<p>" << desc << "</p>" << endl;
 	entry << "</div>\n</article>" << endl;
 	projects << entry.str();
       }
