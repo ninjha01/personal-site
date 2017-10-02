@@ -1,5 +1,10 @@
 #!/bin/bash
 
+##Make the builders
+cd ./public_html/builders/;
+make;
+cd ../../;
+
 #Build External Pages
 for file in $(ls ./public_html/content/essays/*.md);
 do
