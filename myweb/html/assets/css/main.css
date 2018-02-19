@@ -4070,8 +4070,8 @@ button:disabled,
 essay p {
     font-family: "Droid", serif;
     font-size: 16pt;
-    padding-left: 200px;
-    padding-right: 200px;
+    /*padding-left: 200px;
+    padding-right: 200px;*/
     color: black;
 }
 
