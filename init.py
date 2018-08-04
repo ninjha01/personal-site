@@ -54,7 +54,7 @@ def build_menu(e_details, p_details, menu_template):
 
 def build_essays(e_details, menu_html, template):
     #Insert Content
-    essay_dir = "content/essays/"
+    essay_dir = "essays/"
     for essay in e_details:
         basename = essay['$FILENAME$']
         filename = essay_dir + basename + '.md'
