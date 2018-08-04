@@ -1,0 +1,31 @@
+Personal:
+  $FIRST$: Nishant
+  $LAST$: Jha
+  $TITLE$: MS in CS Candidate at the University of Virginia
+  $BIO$: I am a computer scientist with a solid background in the Physical, Social, and Life Sciences. I enjoy writing about the potential impact of revolutionary technology on society as well as working at the intersection of biological research and computer science.
+  $LINKEDIN$: https://www.linkedin.com/in/ninjha01
+  $EMAIL$: ninjha01@gmail.com
+Essays:
+  - $TITLE$: Strange Loops
+    $FILENAME$: strange_loops
+    $BLURB$: What if the code that your computer runs on could be modified by the software itself?
+  - $TITLE$: The Control Problem
+    $FILENAME$: control_problem
+    $BLURB$: The student has become the teacher, or perhaps more accurately, the calculator has become the mathematician.
+Projects:
+  - $TITLE$: Allergen Guru
+    $URL$: https://inbio.com/app
+    $ICON$: stethoscope
+    $BLURB$: Allergen Guru is an Android and iOS containing structural information on allergens listed on the WHO/IUIS Allergen nomenclature database, along with 3D structures and unique search features, which will make Guru an essential tool for allergen researchers.
+  - $TITLE$: Virginia Journal of Bioethics
+    $URL$: http://www.vabioethics.com/
+    $ICON$: balance-scale
+    $BLURB$: Maintained online presence of the Journal. Directed design and edited content of all published pieces. Created new submissions system that significantly decreased time required to publish articles. Automated large percentage of Social Media related tasks.
+  - $TITLE$: Project Fission
+    $URL$: https://github.com/ninjha01/fission
+    $ICON$: files-o
+    $BLURB$: Project Fission is a website generator! Simply edit two text files and Fission will create a full-fledged website. It generates easy-to-edit html files so you have full control over your newly minted website.
+  - $TITLE$: Google Calendar CLI
+    $URL$: https://gitlab.com/ninjha01/Project-Saturn
+    $ICON$: terminal
+    $BLURB$: Created CLI that interacts with Google APIs to replicate the calendar functionality of the now-defunct Google CL application. Once the user is authenticated, it allows them to both view and add items to their agenda and to-do list.
