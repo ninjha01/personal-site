@@ -28,6 +28,7 @@ def main():
     
     build_essays(essay_details, menu_html, generic_template)
     build_home(essay_details, project_details, menu_html, home_template)
+    print("Website Built!")
 
 def build_menu(e_details, p_details, menu_template):
     essay_template = '<li><a href="$FILENAME$".html>$TITLE$</a></li>'
@@ -97,7 +98,6 @@ def build_home(e_details, p_details, menu_html, home_template):
         p_entries.append(entry)
     p_entries = '\n'.join(p_entries)
     payload = payload.replace("$PROJECTS$", p_entries)
-    print(payload)
     with open('index.html', "w") as page:
         page.write(payload)
                     
@@ -107,7 +107,6 @@ def load_files(filenames):
         with open(filename, "r") as file:
             loaded_files.append(file.read())
     return loaded_files
-
 
 if __name__=="__main__":
     main()
