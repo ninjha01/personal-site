@@ -1,6 +1,5 @@
 import os
 import pypandoc
-import pdb
 import yaml
 
 def main():
