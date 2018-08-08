@@ -3,8 +3,6 @@ import pypandoc
 import pdb
 import yaml
 
-tags = ["{FIRST}", "{LAST}", "{EMAIL}", "{LINKEDIN}", "{TITLE}", "{BIO}"]
-
 def main():
     ## Load and parse config file
     with open('config.yml', 'r') as config_file:
