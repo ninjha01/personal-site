@@ -1,10 +1,15 @@
-## The End of a Golden Age
+## When It All Goes Dark
 
-_"I wish there was a way to know you're in the good old days before you've actually left them."_  
+If you've used a desktop or laptop computer, odds are that it was powered by a chip produced by the company Intel. If so, it was part of a chain that stretches back to the very first chip Intel produced in the 1970s. But just like you wouldn't confuse a modern human with a *homo erectus*, the modern computer can be distinguished from its ancestors quite easily. 
 
-Unlike most people, I don't read the news. Also unlike most people, I don't use social media like Twitter, Instagram, or Facebook. But even *I* have noticed that the world, if not already burning to the ground, has at the very least been playing around with the idea. It feels like the end of an era. I've just graduated college, LeBron's left the Cavaliers, and surprise! -  all of our computers are about to stagnate. All three of these phenomena concern a failure to live up to forecasted potential, but two of them involve disappointing my father, so I'm going to talk about the computer thing.
+![](https://upload.wikimedia.org/wikipedia/commons/7/7a/IMac_G3_Tangerine.png)
+*The iMac G3 developed its vivid colors as a defense mechanism - warning predatory boardmembers of the dangers in attacking it, or its  master]
 
-If you've used a desktop or laptop computer, odds are that it was powered by a computer chip produced by the company Intel. If so, it was part of a chain that stretches back to the very first chip Intel produced in the 1970s. But just like you wouldn't confuse a modern human with a *homo erectus*, the modern computer chip can be distinguished from it's ancestors quite easily.  Computers have gotten faster and more powerful at an astonishing rate - to the point where many people replace their smartphone every two years, if not quicker. This has yielded great advancements in [chess](https://www.wsj.com/articles/the-real-kings-of-chess-are-computers-1420827071), [surgery](https://www.technologyreview.com/s/601378/nimble-fingered-robot-outperforms-the-best-human-surgeons/), and [flying](https://en.wikipedia.org/wiki/Autopilot). Oh and [bachelorette forecasting](https://www.linkedin.com/pulse/deep-learning-predicts-abcs-bachelorettebachelor-deeplearning-/). 
+![](https://upload.wikimedia.org/wikipedia/commons/6/61/IMac_Retina_5K.png)
+
+
+
+Computers have gotten faster and more powerful at an astonishing rate - to the point where many people replace their smartphone every two years, if not quicker. This has yielded great advancements in [chess](https://www.wsj.com/articles/the-real-kings-of-chess-are-computers-1420827071), [surgery](https://www.technologyreview.com/s/601378/nimble-fingered-robot-outperforms-the-best-human-surgeons/), and [flying](https://en.wikipedia.org/wiki/Autopilot). Oh and [bachelorette forecasting](https://www.linkedin.com/pulse/deep-learning-predicts-abcs-bachelorettebachelor-deeplearning-/). 
 
 One of the greatest winds in computing's proverbial sail has been Moore's Law. It predicts that the density of computer chip doubles every year or so. Computer chips forged under the optimistic gaze of Moore's Law have been better and more reliable than those that were forged the year before. Good computers became cheap and cheap computers became good. My iPad ([Pro 2017](https://browser.geekbench.com/ios_devices/46)), is in many ways actually more powerful than my Macbook Pro ([Retina Late 2013](https://browser.geekbench.com/macs/345)). But the era of cheap improvements is over.
 
