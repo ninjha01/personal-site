@@ -28,7 +28,7 @@ def main():
     print("Website Built!")
 
 def build_menu(e_details, p_details, menu_template):
-    essay_template = '<li><a href="$FILENAME$".html>$TITLE$</a></li>'
+    essay_template = '<li><a href="$FILENAME$.html">$TITLE$</a></li>'
     project_template = '<li><a href="$URL$">$TITLE$</a></li>'    
     # Process Essays
     e_entries = []
@@ -68,12 +68,12 @@ def build_home(e_details, p_details, menu_html, home_template):
 
     essay_template = ( '<article>\n<span class="icon fa-pencil"></span>'
                        '<div class="content">'
-                       '<h3><a href=$FILENAME$>$TITLE$</a></h3>'
+                       '<h3><a href="$FILENAME$.html">$TITLE$</a></h3>'
                        '<p>$BLURB$</p></div>\n</article>' )
     
     project_template = ( '<article>\n<span class="icon fa-$ICON$"></span>'
                          '<div class="content">'
-                         '<h3><a href=$URL$>$TITLE$</a></h3>'
+                         '<h3><a href="$URL$">$TITLE$</a></h3>'
                          '<p>$BLURB$</p></div>\n</article>' )
     
     # Process Essays
