@@ -22,9 +22,13 @@ def main():
     tag = "$MENU$"
     generic_template = generic_template.replace(tag, menu_html)
     home_template = home_template.replace(tag, menu_html)
-    
-    build_essays(essay_details, menu_html, generic_template)
+
+    #Building Home Page
+    print("Building Homepage")
     build_home(essay_details, project_details, menu_html, home_template)
+    print("Building Essays...")
+    build_essays(essay_details, menu_html, generic_template)
+        
     print("Website Built!")
 
 def build_menu(e_details, p_details, menu_template):
@@ -56,11 +60,17 @@ def build_essays(e_details, menu_html, template):
     for essay in e_details:
         basename = essay['$FILENAME$']
         filename = essay_dir + basename + '.md'
-        print(filename)
+        title = essay['$TITLE$']
+        print("> " + title)
         with open(filename, "r") as f:
+            payload = template
+            #Title Page
+            title_tag = "$TITLE$"
+            payload = payload.replace(title_tag, title)
+            #Write Content
             content = pypandoc.convert_text(f.read(), 'html', format='md')
-            tag = "$CONTENT$"
-            payload = template.replace(tag, content)
+            content_tag = "$CONTENT$"
+            payload = payload.replace(content_tag, content)
             with open(basename + '.html', "w") as page:
                 page.write(payload)
 
