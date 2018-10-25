@@ -1,4 +1,4 @@
-## Man Rants at Popular Book
+## Crazy Rich Asians | Book Review
 
 While reading the number one \#BeachRead of 2018, one thought lodged itself in the back of my brain: Kevin Kwan's Crazy Rich Asians is the Instagram of books. This may seem an odd thought; one is a strategically ink-smudged tree carcass and the other an online photo-sharing service. But the connection between CRA and Instagram came to my mind almost immediately. They were both addicting, and they both made me feel kind of... sad?
 
