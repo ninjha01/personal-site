@@ -12,11 +12,11 @@ This may seem like a bit of a let down, but think about how important, and actua
 
 But why fire up Emacs over Microsoft Office, or GSuite? For one, and this is a personal opinion, Office is just ugly. 
 
-<pic here>
+[pic here]
 
 GSuite is less so, but it still clutters up the interface more than I'd like. 
 
-<pic here>
+[pic here]
 
 For two, Emacs' focus is on the editing of the text itself, not the presentation. Office and GSuite use a What-You-See-Is-What-You-Get or WYSIWYG interface, where you can mold the text to look the way you want within the editor itself. WYSIWYG is a very user-friendly interface and has become dominant for a lot of reasons. So dominant that many people haven't had any experience with non-WYSIWYG at all! For the programmer, or the novelist, or the journalist, or the scriptwriter, or anyone who works with text for a living, there is a lot of benefit to be gained by letting go of WYSIWYG.
 
