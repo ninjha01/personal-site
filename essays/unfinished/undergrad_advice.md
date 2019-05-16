@@ -4,7 +4,7 @@ Giving advice is hard. When someone comes to me with a hard question that they'v
 
 This post is my attempt to avoid these two pitfalls. There's nothing wrong with expressing sympathy or looking for simple answers first, but my goal is to highlight some difficult decisions/questions that have to be made in undergrad and give satisfying, non-LCD responses.
 
-Making your advice non-LCD necessarily means making it more specific. It has to be *targeted*. And my target is someone somewhat like myself when I started college. If you're reading this post, I'll go ahead and assume you're at least somewhat similar to me. Seeing as you're reading this on my website, I think that's a safe assumption.
+Making your advice non-LCD necessarily means making it more specific. It has to be *targeted*. I'll go ahead and assume you're at least somewhat similar to high-school era me. If you're ambitious but a bit lazy, want to go into a STEM field, and are attending a research university, this guide might help you.
 
 ### Housing Decisions ###
 
