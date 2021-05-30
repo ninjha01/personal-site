@@ -81,7 +81,7 @@ def build_home(e_details, p_details, menu_html, home_template):
                        '<h3><a href="$FILENAME$.html">$TITLE$</a></h3>'
                        '<p>$BLURB$</p></div>\n</article>' )
     
-    project_template = ( '<article>\n<span class="icon fa-$ICON$"></span>'
+    project_template = ( '<article>\n<span class="icon $ICON$"></span>'
                          '<div class="content">'
                          '<h3><a href="$URL$">$TITLE$</a></h3>'
                          '<p>$BLURB$</p></div>\n</article>' )
