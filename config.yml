@@ -22,7 +22,7 @@ Projects:
     $BLURB$: Maintained online presence of the Journal. Directed design and edited content of all published pieces. Created new submissions system that significantly decreased time required to publish articles. Automated large percentage of Social Media related tasks.
   - $TITLE$: Fel d 1 Viz
     $URL$: https://nishantjha.org/feld1viz/
-    $ICON$: fas fa-cat
+    $ICON$: fa-flask
     $BLURB$: Project Fission is a website generator! Simply edit 1 text file and Fission will create a full-fledged website. It generates easy-to-edit html files so you have full control over your newly minted website.
   - $TITLE$: Allergen Guru
     $URL$: https://inbio.com/app
@@ -30,5 +30,5 @@ Projects:
     $BLURB$: Allergen Guru is an Android and iOS containing structural information on allergens listed on the WHO/IUIS Allergen nomenclature database, along with 3D structures and unique search features, which will make Guru an essential tool for allergen researchers.
   - $TITLE$: Vape Survey
     $URL$: https://www.vapesurvey.org/
-    $ICON$: fas fa-poll
+    $ICON$: fa-bar-chart
     $BLURB$: Created CLI that interacts with Google APIs to replicate the calendar functionality of the now-defunct Google CL application. Once the user is authenticated, it allows them to both view and add items to their agenda and to-do list.
