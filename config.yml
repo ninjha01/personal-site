@@ -21,9 +21,9 @@ Projects:
     $ICON$: fa-book
     $BLURB$: Created a Pediatric Cancer Cell Line <a href="https://depmap.org/peddep/">visualization</a> to showcase potential targets for Pediatric Precision Medicine.
   - $TITLE$: Fel d 1 Viz [2021]
-    $URL$: https://www.nishantjha.org/feld1viz/
+    $URL$: https://www.feld1viz.com
     $ICON$: fa-flask
-    $BLURB$: This visualiation showcases data produced in research aimed at creating a hypoallergenic cat. The major cat allergen Fel d 1 was analyzed in Domestic and Exotic cats and were found to be good candidates for CRISPR deletion.
+    $BLURB$: This visualiation showcases data produced in research aimed at creating a hypoallergenic cat. The major cat allergen Fel d 1 was analyzed in Domestic and Exotic cats and were found to be good candidates for CRISPR deletion. Published in <a href="https://www.liebertpub.com/doi/10.1089/crispr.2021.0101">the CRISPR Journal.</a>
   - $TITLE$: Allergen Guru [2017]
     $URL$: https://inbio.com/app
     $ICON$: fa-tablet
