@@ -9,7 +9,7 @@ Projects:
   - $TITLE$: SeqViz - DNA Sequence Viewer  [2022]
     $URL$: https://github.com/Lattice-Automation/seqviz/
     $ICON$: fa-github
-    $BLURB$: I maintain SeqViz, the customizable DNA sequence viewer. This open source Javascript library is popular in industry and academia (including <a href="https://www.ginkgobioworks.com/">Ginkgo Bioworks</a> and <a href="https://www.cidarlab.org/">Boston University</a>.
+    $BLURB$: I maintain SeqViz, the customizable DNA sequence viewer. This open source Javascript library is popular in industry and academia (including <a href="https://www.ginkgobioworks.com/">Ginkgo Bioworks</a> and <a href="https://www.cidarlab.org/">Boston University</a>).
   - $TITLE$: Nature Genetics Pediatric Cancer Viz [2021]
     $URL$: https://www.nature.com/articles/s41588-021-00819-w
     $ICON$: fa-book
@@ -17,11 +17,11 @@ Projects:
   - $TITLE$: Fel d 1 Viz [2021]
     $URL$: https://www.feld1viz.com
     $ICON$: fa-flask
-    $BLURB$: This visualiation showcases data produced in research aimed at creating a hypoallergenic cat. The major cat allergen Fel d 1 was analyzed in Domestic and Exotic cats and were found to be good candidates for CRISPR deletion. Published in <a href="https://www.liebertpub.com/doi/10.1089/crispr.2021.0101">the CRISPR Journal.</a>
+    $BLURB$: This visualization showcases data produced in research aimed at creating a hypoallergenic cat. The major cat allergen Fel d 1 was analyzed in Domestic and Exotic cats and were found to be good candidates for CRISPR deletion. Published in <a href="https://www.liebertpub.com/doi/10.1089/crispr.2021.0101">the CRISPR Journal.</a>
   - $TITLE$: Vape Survey [2021]
     $URL$: https://www.vapesurvey.org/
     $ICON$: fa-bar-chart
-    $BLURB$: This webapp was developed for the <a href="https://soc.jhu.edu/">Johns Hopkins Sociology Dept</a> as part of an investigation into the impact network effects on vaping. It securely and confidentially collects survey responses, anonymously distributes randomized rewards for completing the survey, and displays the results in a network graph <a href="http://www.vapesurvey.org/viz">visualiation</a>.
+    $BLURB$: This webapp was developed for the <a href="https://soc.jhu.edu/">Johns Hopkins Sociology Dept</a> as part of an investigation into the impact network effects on vaping. It securely and confidentially collects survey responses, anonymously distributes randomized rewards for completing the survey, and displays the results in a network graph <a href="http://www.vapesurvey.org/viz">visualization</a>.
 Essays:
   - $TITLE$: Strange Loops [2017]
     $FILENAME$: strange_loops
