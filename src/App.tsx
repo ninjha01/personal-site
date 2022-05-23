@@ -1,5 +1,6 @@
 import { importMDX } from "mdx.macro";
 import React, { lazy, Suspense } from "react";
+import { Home } from "./pages/Home";
 
 const Content = lazy(() => importMDX("../essays/control_problem.md"));
 
@@ -7,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Suspense fallback={<div>Loading...</div>}>
-        <Content />
+        <Home />
       </Suspense>
     </div>
   );
