@@ -27,6 +27,7 @@ export const Projects = (props: { projects: ProjectType[] }) => {
     <>
       {projects.map((proj) => (
         <ProjectItem
+          key={`Project: ${JSON.stringify(proj)}`}
           icon={proj.icon}
           url={proj.url}
           title={proj.title}

@@ -7,7 +7,7 @@ export const WritingItem = (props: {
   blurb: string;
 }) => {
   return (
-    <article>
+    <article key={JSON.stringify(props)}>
       <span className="icon fa-pencil"></span>
       <div className="content">
         <h3>
@@ -24,6 +24,7 @@ export const Writings = (props: { essays: EssayType[] }) => {
     <>
       {props.essays.map((essay) => (
         <WritingItem
+          key={`Essay: ${JSON.stringify(essay)}`}
           title={essay.title}
           filename={essay.filename}
           blurb={essay.blurb}

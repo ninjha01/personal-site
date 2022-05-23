@@ -37,7 +37,11 @@ export const Menu = (props: {
           <span className="opener">Writing</span>
           <ul>
             {essays.map((e) => (
-              <WritingMenuItem filename={e.filename} title={e.title} />
+              <WritingMenuItem
+                key={`writing item: ${JSON.stringify(e)}`}
+                filename={e.filename}
+                title={e.title}
+              />
             ))}
           </ul>
         </li>
@@ -45,7 +49,11 @@ export const Menu = (props: {
           <span className="opener">Projects</span>
           <ul>
             {projects.map((proj) => (
-              <ProjectMenuItem url={proj.url} title={proj.title} />
+              <ProjectMenuItem
+                key={`project item: ${JSON.stringify(proj)}`}
+                url={proj.url}
+                title={proj.title}
+              />
             ))}
           </ul>
         </li>
