@@ -1,10 +1,7 @@
 import React from "react";
+import { EssayType, ProjectType } from "../commonTypes";
 
-interface EssayInfo {
-  filename: string;
-  title: string;
-}
-const WritingMenuItem = (props: EssayInfo) => {
+const WritingMenuItem = (props: { filename: string; title: string }) => {
   const { title, filename } = props;
   return (
     <li key={JSON.stringify(props)}>
@@ -12,11 +9,8 @@ const WritingMenuItem = (props: EssayInfo) => {
     </li>
   );
 };
-interface ProjectInfo {
-  url: string;
-  title: string;
-}
-const ProjectMenuItem = (props: ProjectInfo) => {
+
+const ProjectMenuItem = (props: { url: string; title: string }) => {
   const { title, url } = props;
   return (
     <li key={JSON.stringify(props)}>
@@ -26,8 +20,8 @@ const ProjectMenuItem = (props: ProjectInfo) => {
 };
 
 export const Menu = (props: {
-  essays: EssayInfo[];
-  projects: ProjectInfo[];
+  essays: EssayType[];
+  projects: ProjectType[];
 }) => {
   const { essays, projects } = props;
   return (

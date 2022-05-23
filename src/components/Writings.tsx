@@ -22,3 +22,10 @@ export const Writings = () => {
     </nav>
   );
 };
+
+/* essay_template = (
+ *     '<article>\n<span class="icon fa-pencil"></span>'
+ *     '<div class="content">'
+ *     '<h3><a href="$FILENAME$.html">$TITLE$</a></h3>'
+ *     "<p>$BLURB$</p></div>\n</article>"
+ * ) */

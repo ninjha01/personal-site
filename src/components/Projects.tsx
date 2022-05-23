@@ -22,3 +22,11 @@ export const Projects = () => {
     </nav>
   );
 };
+
+/* project_template = (
+'<article>\n<span class="icon $ICON$"></span>'
+*     '<div class="content">'
+'<h3><a href="$URL$">$TITLE$</a></h3>'
+"<p>$BLURB$</p></div>\n</article>"
+* )
+*/
