@@ -1,32 +1,38 @@
 import React from "react";
+import { ProjectType } from "../commonTypes";
 
-export const Projects = () => {
+const ProjectItem = (props: {
+  icon: string;
+  url: string;
+  title: string;
+  blurb: string;
+}) => {
+  const { icon, url, title, blurb } = props;
   return (
-    <nav id="menu">
-      <header className="major">
-        <h2>Menu</h2>
-      </header>
-      <ul>
-        <li>
-          <a href="index.html">Homepage</a>
-        </li>
-        <li>
-          <span className="opener">Writing</span>
-          <ul>$WRITING$</ul>
-        </li>
-        <li>
-          <span className="opener">Projects</span>
-          <ul>$PROJECTS$</ul>
-        </li>
-      </ul>
-    </nav>
+    <article>
+      <span className={`icon ${icon}`}></span>
+      <div className="content">
+        <h3>
+          <a href={url}>{title}</a>
+        </h3>
+        <p dangerouslySetInnerHTML={{ __html: blurb }}></p>
+      </div>
+    </article>
   );
 };
 
-/* project_template = (
-'<article>\n<span class="icon $ICON$"></span>'
-*     '<div class="content">'
-'<h3><a href="$URL$">$TITLE$</a></h3>'
-"<p>$BLURB$</p></div>\n</article>"
-* )
-*/
+export const Projects = (props: { projects: ProjectType[] }) => {
+  const { projects } = props;
+  return (
+    <>
+      {projects.map((proj) => (
+        <ProjectItem
+          icon={proj.icon}
+          url={proj.url}
+          title={proj.title}
+          blurb={proj.blurb}
+        />
+      ))}
+    </>
+  );
+};

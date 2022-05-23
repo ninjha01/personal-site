@@ -1,31 +1,34 @@
 import React from "react";
+import { EssayType } from "../commonTypes";
 
-export const Writings = () => {
+export const WritingItem = (props: {
+  title: string;
+  filename: string;
+  blurb: string;
+}) => {
   return (
-    <nav id="menu">
-      <header className="major">
-        <h2>Menu</h2>
-      </header>
-      <ul>
-        <li>
-          <a href="index.html">Homepage</a>
-        </li>
-        <li>
-          <span className="opener">Writing</span>
-          <ul>$WRITING$</ul>
-        </li>
-        <li>
-          <span className="opener">Projects</span>
-          <ul>$PROJECTS$</ul>
-        </li>
-      </ul>
-    </nav>
+    <article>
+      <span className="icon fa-pencil"></span>
+      <div className="content">
+        <h3>
+          <a href={`${props.filename}.html`}>{props.title}</a>
+        </h3>
+        <p>{props.blurb}</p>
+      </div>
+    </article>
   );
 };
 
-/* essay_template = (
- *     '<article>\n<span class="icon fa-pencil"></span>'
- *     '<div class="content">'
- *     '<h3><a href="$FILENAME$.html">$TITLE$</a></h3>'
- *     "<p>$BLURB$</p></div>\n</article>"
- * ) */
+export const Writings = (props: { essays: EssayType[] }) => {
+  return (
+    <>
+      {props.essays.map((essay) => (
+        <WritingItem
+          title={essay.title}
+          filename={essay.filename}
+          blurb={essay.blurb}
+        />
+      ))}
+    </>
+  );
+};

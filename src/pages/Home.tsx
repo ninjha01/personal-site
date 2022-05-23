@@ -42,7 +42,7 @@ export const Home = () => {
               <h2>Projects</h2>
             </header>
             <div className="features">
-              <Projects />
+              <Projects projects={config.Projects} />
             </div>
           </section>
 
@@ -51,7 +51,7 @@ export const Home = () => {
               <h2>Writing</h2>
             </header>
             <div className="features">
-              <Writings />
+              <Writings essays={config.Essays} />
             </div>
           </section>
         </div>
