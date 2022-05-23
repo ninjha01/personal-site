@@ -1,5 +1,7 @@
 import React from "react";
-import "../assets/css/main.css";
+import { Menu } from "../components/Menu";
+import { Projects } from "../components/Projects";
+import { Writings } from "../components/Writings";
 import { config } from "../config";
 
 export const Home = () => {
@@ -21,8 +23,8 @@ export const Home = () => {
                 <h1>Hi, I’m {config.Personal.firstname}!</h1>
                 <p>$HEADLINE$</p>
               </header>
-              <p>$BIO$</p>
-              <a href="$LINKEDIN$">
+              <p>{config.Personal.bio}</p>
+              <a href={`${config.Personal.linkedin}`}>
                 <strong>My LinkedIn</strong>
               </a>
               <br />
@@ -39,20 +41,24 @@ export const Home = () => {
             <header className="major">
               <h2>Projects</h2>
             </header>
-            <div className="features">$PROJECTS$</div>
+            <div className="features">
+              <Projects />
+            </div>
           </section>
 
           <section>
             <header className="major">
               <h2>Writing</h2>
             </header>
-            <div className="features">$WRITINGS$</div>
+            <div className="features">
+              <Writings />
+            </div>
           </section>
         </div>
       </div>
       <div id="sidebar">
         <div className="inner">
-          $MENU$
+          <Menu />
           <section>
             <header className="major">
               <h2>Get in touch</h2>
@@ -63,13 +69,15 @@ export const Home = () => {
             </p>
             <ul className="contact">
               <li className="fa-envelope-o">
-                <a href="mailto:$EMAIL$">$EMAIL$</a>
+                <a href={`mailto:${config.Personal.email}`}>
+                  {config.Personal.email}
+                </a>
               </li>
             </ul>
           </section>
           <footer id="footer">
             <p className="copyright">
-              &copy; 2021 {config.Personal.firstname} | All rights reserved.
+              &copy; 2022 {config.Personal.firstname} | All rights reserved.
             </p>
           </footer>
         </div>
