@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { EssayType, ProjectType } from "../commonTypes";
 
 const WritingMenuItem = (props: { filename: string; title: string }) => {
@@ -24,6 +24,10 @@ export const Menu = (props: {
   projects: ProjectType[];
 }) => {
   const { essays, projects } = props;
+
+  const [writingOpen, setWritingOpen] = useState(false);
+  const [projectsOpen, setProjectsOpen] = useState(false);
+
   return (
     <nav id="menu">
       <header className="major">
@@ -34,7 +38,12 @@ export const Menu = (props: {
           <a href="index.html">Homepage</a>
         </li>
         <li>
-          <span className="opener">Writing</span>
+          <span
+            className={writingOpen ? "opener active" : "opener"}
+            onClick={() => setWritingOpen(!writingOpen)}
+          >
+            Writing
+          </span>
           <ul>
             {essays.map((e) => (
               <WritingMenuItem
@@ -46,7 +55,12 @@ export const Menu = (props: {
           </ul>
         </li>
         <li>
-          <span className="opener">Projects</span>
+          <span
+            className={projectsOpen ? "opener active" : "opener"}
+            onClick={() => setProjectsOpen(!projectsOpen)}
+          >
+            Projects
+          </span>
           <ul>
             {projects.map((proj) => (
               <ProjectMenuItem

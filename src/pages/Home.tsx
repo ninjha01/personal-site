@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Menu } from "../components/Menu";
 import { Projects } from "../components/Projects";
 import { Writings } from "../components/Writings";
 import { config } from "../config";
 
 export const Home = () => {
+  const [sidebarOpen, setSideBarOpen] = useState(false);
   return (
     <div id="wrapper">
       <div id="main">
@@ -56,7 +57,7 @@ export const Home = () => {
           </section>
         </div>
       </div>
-      <div id="sidebar">
+      <div id={"sidebar"} className={sidebarOpen ? "" : "inactive"}>
         <div className="inner">
           <Menu essays={config.Essays} projects={config.Projects} />
           <section>
@@ -80,6 +81,14 @@ export const Home = () => {
               &copy; 2022 {config.Personal.firstname} | All rights reserved.
             </p>
           </footer>
+          <a
+            href="#sidebar"
+            aria-hidden="true"
+            className={"toggle"}
+            onClick={() => setSideBarOpen(!sidebarOpen)}
+          >
+            Toggle
+          </a>
         </div>
       </div>
     </div>
