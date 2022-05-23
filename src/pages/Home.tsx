@@ -58,7 +58,7 @@ export const Home = () => {
       </div>
       <div id="sidebar">
         <div className="inner">
-          <Menu />
+          <Menu essays={config.Essays} projects={config.Projects} />
           <section>
             <header className="major">
               <h2>Get in touch</h2>
