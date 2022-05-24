@@ -9,13 +9,21 @@ export interface PersonalType {
 
 export interface EssayType {
   title: string;
-  filename: string;
-  blurb: string;
+  description: string;
+  img: string;
+  id: string;
 }
 
 export interface ProjectType {
   title: string;
   url: string;
-  icon: string;
-  blurb: string;
+  img: string;
+  description: string;
+}
+
+export interface ClientType {
+  name: string;
+  url: string;
+  description: string;
+  logo: string;
 }
