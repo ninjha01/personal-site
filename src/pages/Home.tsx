@@ -22,7 +22,9 @@ export const Home = () => {
             <div className="content">
               <header>
                 <h1>Hi, I’m {config.Personal.firstname}!</h1>
-                <p>$HEADLINE$</p>
+                <p
+                  dangerouslySetInnerHTML={{ __html: config.Personal.headline }}
+                ></p>
               </header>
               <p>{config.Personal.bio}</p>
               <a href={`${config.Personal.linkedin}`}>
