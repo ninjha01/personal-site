@@ -1,0 +1,18 @@
+* My Website
+** Quickstart
+
+#+BEGIN_SRC sh
+
+  npm i # install dependencies
+  npm run start # run dev server
+  npm run build # build production server
+
+#+END_SRC
+
+To deploy, simply merge code into master
+
+** Built with
+
+ - UI framework: create-react-app
+ - CSS framework: tailwindcss
+ - Deployed via: github actions
