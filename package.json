@@ -1,5 +1,6 @@
 {
   "name": "nishant-jha-personal-site",
+  "homepage": "https://nishantjha.org",
   "version": "0.1.0",
   "homepage": "https://www.nishantjha.org",
   "private": true,
@@ -24,11 +25,11 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject",
-    "predeploy": "yarn run build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
@@ -48,9 +49,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "react-app-rewired": "^2.2.1",
-    "@babel/runtime": "^7.15.4"
   }
 }
