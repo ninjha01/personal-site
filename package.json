@@ -1,6 +1,7 @@
 {
-  "name": "my-app",
+  "name": "nishant-jha-personal-site",
   "version": "0.1.0",
+  "homepage": "https://www.nishantjha.org",
   "private": true,
   "dependencies": {
     "@mdx-js/loader": "^2.1.1",
@@ -13,6 +14,7 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "autoprefixer": "^10.4.7",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.14",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -25,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": [
