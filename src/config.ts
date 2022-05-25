@@ -23,7 +23,8 @@ export const config: {
     {
       name: "Calico Labs",
       url: "https://cancerdatascience.org/",
-      description: "Hello World",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut varius lorem. Ut vestibulum tellus ac diam posuere malesuada. Nam nec molestie quam. Nullam ac congue tortor. Mauris volutpat odio vulputate consectetur vestibulum. ",
       logo: require("./assets/images/calico_logo.png"),
     },
     {
@@ -40,12 +41,12 @@ export const config: {
         "Built webapps for synthetic biology companies like Ginkgo Bioworks. Handled requirements gathering, architecture formulation, development, testing, and deployment as well as mentoring junior software engineers.",
       logo: require("./assets/images/lattice_logo.png"),
     },
-    {
-      name: "Qwarke",
-      url: "https://qwarke.com/ComingSoon.html",
-      description: "Hello World",
-      logo: require("./assets/images/qwarke_logo.png"),
-    },
+    // {
+    //   name: "Qwarke",
+    //   url: "https://qwarke.com/ComingSoon.html",
+    //   description: "Hello World",
+    //   logo: require("./assets/images/qwarke_logo.png"),
+    // },
   ],
   projects: [
     {

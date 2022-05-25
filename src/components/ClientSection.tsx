@@ -1,5 +1,6 @@
 import React from "react";
 import { ClientType } from "../commonTypes";
+import { repeatArray } from "../utils";
 
 export const ClientSection = (props: { clients: ClientType[] }) => {
   const { clients } = props;
@@ -27,11 +28,20 @@ const ClientCard = (props: { client: ClientType }) => {
     client: { name, url, description, logo },
   } = props;
 
+  const padding = () => {
+    const repeats = 600 - description.length;
+    return <>{repeatArray([<>&nbsp</>], repeats)}</>;
+  };
+
   return (
     <div className="flex flex-col w-full max-w-lg p-6 text-left shadow-2xl lg:mx-auto rounded-xl">
-      <p className="mx-auto text-base leading-relaxed text-gray-500">
-        {description}
+      <p className="mx-auto text-base leading-relaxed text-gray-500 whitespace-normal">
+        <>
+          {description}
+          {padding}
+        </>
       </p>
+
       <a
         className="mt-4 text-xs font-semibold tracking-wider text-blue-900 uppercase"
         href={url}
@@ -40,7 +50,7 @@ const ClientCard = (props: { client: ClientType }) => {
       </a>
       <img
         alt="client logo"
-        className="inline-block object-cover object-center w-20 h-20 mt-8 rounded-full border-dotted border-2 border-blue-900 p-1 align-bottom"
+        className="inline-block object-cover object-center w-20 h-20 mt-8 rounded-full border-dotted border-2 border-blue-900 p-1 inline-block align-baseline"
         src={logo}
       />
     </div>
