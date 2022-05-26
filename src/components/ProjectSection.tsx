@@ -6,7 +6,7 @@ export const ProjectSection = (props: { projects: ProjectType[] }) => {
   return (
     <section>
       <h1
-        id="projects_section"
+        id="projects"
         className="mb-8 pt-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 text-2xl border-t"
       >
         Projects

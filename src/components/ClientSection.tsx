@@ -6,7 +6,7 @@ export const ClientSection = (props: { clients: ClientType[] }) => {
   return (
     <section className="mb-16">
       <h1
-        id="clients_section"
+        id="clients"
         className="mb-4 pt-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 text-2xl border-t"
       >
         Clients

@@ -6,7 +6,7 @@ export const EssaySection = (props: { essays: EssayType[] }) => {
   return (
     <section>
       <h1
-        id="essays_section"
+        id="essays"
         className="mb-8 pt-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 text-2xl border-t"
       >
         Essays

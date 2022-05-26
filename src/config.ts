@@ -1,8 +1,8 @@
 import {
-	ClientType,
-	EssayType,
-	PersonalType,
-	ProjectType
+    ClientType,
+    EssayType,
+    PersonalType,
+    ProjectType
 } from "./commonTypes";
 
 export const config: {
@@ -23,7 +23,7 @@ export const config: {
 \
 &nbsp;
 
-My mission is to accelerate life science research by getting rid of that frustration.`,
+My mission is to accelerate life science research by building those tools with you.`,
     linkedin: "https://www.linkedin.com/in/ninjha01",
     github: "https://github.com/ninjha01/",
     email: "me@nishantjha.org",
