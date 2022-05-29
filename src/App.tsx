@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import ReactGA from "react-ga4";
 import { Home } from "./pages/Home";
 
@@ -10,9 +10,7 @@ function App() {
   }
   return (
     <div className="App">
-      <Suspense fallback={<div>Loading...</div>}>
-        <Home />
-      </Suspense>
+      <Home />
     </div>
   );
 }

@@ -5,3 +5,8 @@ export function repeatArray<T>(arr: T[], numRepeats: number): T[] {
   }
   return newArray;
 }
+
+
+export function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(' ')
+}
