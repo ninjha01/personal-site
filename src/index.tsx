@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
 import "./index.css";
+import { Blast } from "./pages/Blast";
 import reportWebVitals from "./reportWebVitals";
 
 const rootElement = document.getElementById("root") as HTMLElement;
@@ -11,7 +13,12 @@ if (rootElement.hasChildNodes()) {
 } else {
   ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="blast" element={<Blast />} />
+        </Routes>
+      </BrowserRouter>
     </React.StrictMode>,
     rootElement
   );

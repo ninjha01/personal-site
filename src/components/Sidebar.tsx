@@ -1,9 +1,11 @@
 import React, {
-    JSXElementConstructor,
-    ReactElement,
-    ReactFragment,
-    ReactPortal
+	JSXElementConstructor,
+	ReactElement,
+	ReactFragment,
+	ReactPortal
 } from "react";
+import { Link } from "react-router-dom";
+import { config } from "../config";
 import { Footer } from "./Footer";
 
 export const Sidebar = (props: {
@@ -27,7 +29,7 @@ export const Sidebar = (props: {
                     href="#top_of_page"
                     className="block p-2 text-xl font-medium tracking-tighter text-blue-100 transition duration-500 ease-in-out transform cursor-pointer hover:text-blue-100"
                   >
-                    nishantjha.org
+                    {config.url}
                   </a>
                 </button>
                 <button className="hidden rounded-lg focus:outline-none focus:shadow-outline">
@@ -53,8 +55,9 @@ export const Sidebar = (props: {
                 <nav className="flex-1 space-y-1 bg-blue-900">
                   <ul>
                     {[
-                      { title: "Clients", url: "#clients" },
+                      { title: "Clients", url: "/#clients" },
                       { title: "Projects", url: "#projects" },
+                      { title: "Blast", url: "/blast" },
                       /* { title: "Essays", url: "#essays" }, */
                     ].map((x) => (
                       <li>
@@ -86,11 +89,28 @@ export const Sidebar = (props: {
 };
 const SidebarItem = (props: { url: string; title: string }) => {
   const { url, title } = props;
+
+  const LinkElement = (props: { url: string; children: ReactElement[] }) => {
+    const { url, children } = props;
+    const className =
+      "inline-flex items-center w-full px-4 py-2 mt-1 mb-1 text-base text-blue-100 transition duration-500 ease-in-out transform rounded-lg bg-blue-900 hover:bg-gray-50 focus:bg-gray-50 active:bg-gray-50 focus:shadow-outline focus:text-blue-900 hover:text-blue-900 active:text-blue-900 border-x border-blue-50";
+    if (url.includes("#")) {
+      return (
+        <a href={url} className={className}>
+          {children}
+        </a>
+      );
+    } else {
+      return (
+        <Link to={url} className={className}>
+          {children}
+        </Link>
+      );
+    }
+  };
+
   return (
-    <a
-      href={url}
-      className="inline-flex items-center w-full px-4 py-2 mt-1 mb-1 text-base text-blue-100 transition duration-500 ease-in-out transform rounded-lg bg-blue-900 hover:bg-gray-50 focus:bg-gray-50 active:bg-gray-50 focus:shadow-outline focus:text-blue-900 hover:text-blue-900 active:text-blue-900 border-x border-blue-50"
-    >
+    <LinkElement url={url}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="w-4 h-4"
@@ -106,6 +126,6 @@ const SidebarItem = (props: { url: string; title: string }) => {
         ></path>
       </svg>
       <span className="ml-4"> {title}</span>
-    </a>
+    </LinkElement>
   );
 };

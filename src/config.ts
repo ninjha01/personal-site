@@ -1,16 +1,18 @@
 import {
-    ClientType,
-    EssayType,
-    PersonalType,
-    ProjectType
+	ClientType,
+	EssayType,
+	PersonalType,
+	ProjectType
 } from "./commonTypes";
 
 export const config: {
+  url: string;
   clients: ClientType[];
   personal: PersonalType;
   projects: ProjectType[];
   essays: EssayType[];
 } = {
+  url: "nishantjha.org",
   personal: {
     firstname: "Nishant",
     lastname: "Jha",
