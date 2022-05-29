@@ -13,10 +13,10 @@ if (rootElement.hasChildNodes()) {
 } else {
   ReactDOM.render(
     <React.StrictMode>
-      <BrowserRouter>
+      <BrowserRouter basename={`/${process.env.PUBLIC_URL}`}>
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="blast" element={<Blast />} />
+          <Route path="/blast" element={<Blast />} />
         </Routes>
       </BrowserRouter>
     </React.StrictMode>,

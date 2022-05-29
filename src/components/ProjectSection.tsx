@@ -16,7 +16,7 @@ export const ProjectSection = (props: { projects: ProjectType[] }) => {
         <div className="relative mx-auto max-w-7xl">
           <div className="grid max-w-lg gap-5 mx-auto lg:grid-cols-3 lg:max-w-none">
             {projects.map((project) => (
-              <ProjectCard project={project} />
+              <ProjectCard key={project.title} project={project} />
             ))}
           </div>
         </div>

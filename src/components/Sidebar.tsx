@@ -6,6 +6,7 @@ import React, {
 } from "react";
 import { Link } from "react-router-dom";
 import { config } from "../config";
+import { classNames } from "../utils";
 import { Footer } from "./Footer";
 
 export const Sidebar = (props: {
@@ -41,12 +42,12 @@ export const Sidebar = (props: {
                     <path
                       fillRule="evenodd"
                       d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     ></path>
                     <path
                       fillRule="evenodd"
                       d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     ></path>
                   </svg>
                 </button>
@@ -57,11 +58,15 @@ export const Sidebar = (props: {
                     {[
                       { title: "Clients", url: "/#clients" },
                       { title: "Projects", url: "#projects" },
-                      /* { title: "Blast", url: "/blast" }, */
+                      { title: "Blast", url: "/blast", hidden: true },
                       /* { title: "Essays", url: "#essays" }, */
                     ].map((x) => (
-                      <li>
-                        <SidebarItem url={x.url} title={x.title} />
+                      <li key={x.title}>
+                        <SidebarItem
+                          url={x.url}
+                          title={x.title}
+                          hidden={x.hidden}
+                        />
                       </li>
                     ))}
                   </ul>
@@ -87,22 +92,38 @@ export const Sidebar = (props: {
     </>
   );
 };
-const SidebarItem = (props: { url: string; title: string }) => {
-  const { url, title } = props;
+interface SidebarItemType {
+  url: string;
+  title: string;
+  hidden?: boolean;
+}
 
-  const LinkElement = (props: { url: string; children: ReactElement[] }) => {
-    const { url, children } = props;
+const SidebarItem = (props: SidebarItemType) => {
+  const { url, title, hidden } = props;
+
+  const LinkElement = (props: {
+    url: string;
+    hidden?: boolean;
+    children: ReactElement[];
+  }) => {
+    const { url, hidden, children } = props;
     const className =
       "inline-flex items-center w-full px-4 py-2 mt-1 mb-1 text-base text-blue-100 transition duration-500 ease-in-out transform rounded-lg bg-blue-900 hover:bg-gray-50 focus:bg-gray-50 active:bg-gray-50 focus:shadow-outline focus:text-blue-900 hover:text-blue-900 active:text-blue-900 border-x border-blue-50";
     if (url.includes("#")) {
       return (
-        <a href={url} className={className}>
+        <a
+          href={url}
+          className={classNames(className, hidden ? "display: none" : "")}
+        >
           {children}
         </a>
       );
     } else {
       return (
-        <Link to={url} className={className}>
+        <Link
+          to={url}
+          className={classNames(className, hidden ? "hidden" : "")}
+        >
           {children}
         </Link>
       );
@@ -110,7 +131,7 @@ const SidebarItem = (props: { url: string; title: string }) => {
   };
 
   return (
-    <LinkElement url={url}>
+    <LinkElement url={url} hidden={hidden}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="w-4 h-4"
@@ -119,9 +140,9 @@ const SidebarItem = (props: { url: string; title: string }) => {
         stroke="currentColor"
       >
         <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
           d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
         ></path>
       </svg>

@@ -14,7 +14,7 @@ export const ClientSection = (props: { clients: ClientType[] }) => {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 auto-rows-1">
         {clients.map((client) => (
-          <ClientCard client={client} />
+          <ClientCard key={client.name} client={client} />
         ))}
       </div>
     </section>
