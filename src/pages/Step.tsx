@@ -3,19 +3,18 @@ import React from "react";
 
 export interface StepType {
   name: string;
-  status: string;
   href: string;
-  id: string;
+  id: number;
 }
-export const Steps = (props: { steps: StepType[] }) => {
-  const { steps } = props;
+export const Steps = (props: { steps: StepType[]; stepID: number }) => {
+  const { steps, stepID } = props;
   return (
     <nav aria-label="Progress">
       <ol className="border border-gray-300 rounded-md divide-y divide-gray-300 md:flex md:divide-y-0">
         {steps.map((step, stepIdx) => (
           <li key={step.name} className="relative md:flex-1 md:flex">
-            {step.status === "complete" ? (
-              <a href={step.href} className="group flex items-center w-full">
+            {step.id < stepID ? (
+              <div className="group flex items-center w-full">
                 <span className="px-6 py-4 flex items-center text-sm font-medium">
                   <span className="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-blue-900 rounded-full group-hover:bg-blue-800">
                     <CheckIcon
@@ -27,10 +26,9 @@ export const Steps = (props: { steps: StepType[] }) => {
                     {step.name}
                   </span>
                 </span>
-              </a>
-            ) : step.status === "current" ? (
-              <a
-                href={step.href}
+              </div>
+            ) : step.id === stepID ? (
+              <div
                 className="px-6 py-4 flex items-center text-sm font-medium"
                 aria-current="step"
               >
@@ -40,9 +38,9 @@ export const Steps = (props: { steps: StepType[] }) => {
                 <span className="ml-4 text-sm font-medium text-blue-900">
                   {step.name}
                 </span>
-              </a>
+              </div>
             ) : (
-              <a href={step.href} className="group flex items-center">
+              <div className="group flex items-center">
                 <span className="px-6 py-4 flex items-center text-sm font-medium">
                   <span className="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-gray-300 rounded-full group-hover:border-gray-400">
                     <span className="text-gray-500 group-hover:text-gray-900">
@@ -53,7 +51,7 @@ export const Steps = (props: { steps: StepType[] }) => {
                     {step.name}
                   </span>
                 </span>
-              </a>
+              </div>
             )}
 
             {stepIdx !== steps.length - 1 ? (
