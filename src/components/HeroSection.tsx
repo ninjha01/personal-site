@@ -5,7 +5,7 @@ import { config } from "../config";
 
 export const HeroSection = () => {
   return (
-    <section id="top">
+    <section id="top_of_page">
       <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24">
         <div className="flex flex-wrap items-center mx-auto max-w-7xl">
           <div className="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
