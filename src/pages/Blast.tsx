@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import { BlastForm } from "../components/BlastForm";
+import { BlastResults } from "../components/BlastResults";
 import { Sidebar } from "../components/Sidebar";
-import { repeatArray } from "../utils";
-import { BlastForm } from "./BlastForm";
-import { BlastResults } from "./BlastResults";
-import { Steps } from "./Step";
+import { Steps } from "../components/Step";
+import { getRndInteger, repeatArray } from "../utils";
 
 export const sequenceTypes = ["DNA", "Protein", null] as const;
 export type SequenceType = typeof sequenceTypes[number];
@@ -48,13 +48,15 @@ export const Blast = () => {
 
   const [sequenceType, setSequenceType] = useState<SequenceType>(null);
   const [topology, setTopology] = useState<TopologyType>(null);
-  const [sequence, setSequence] = useState<string>("");
+  const [sequence, setSequence] = useState<string>(
+    "QIKDLLVSSSTDLDTTLVLVNAIYFKGMWKTAFNAEDTREM"
+  );
+  const [sequenceName, setSequenceName] = useState<string | null>(null);
 
   const results: BlastResponseDatum[] = repeatArray(
     [
       {
         id: "01",
-        range: [63934835, 63935239] as [number, number],
         score: 29,
         identities: 75,
         positives: 11,
@@ -75,27 +77,64 @@ export const Blast = () => {
       },
     ],
     5
-  ).map((x, i) => ({
-    ...x,
-    id: `${i}`,
-  }));
+  ).map((x, i) => {
+    let start = getRndInteger(0, sequence.length);
+    let end = getRndInteger(start, sequence.length);
+    /* if our result is too small, we pin to 30% of sequence.length and gen a random end idx  */
+    if (end - start <= 0.15 * sequence.length) {
+      start = 0.15 * sequence.length;
+      end = getRndInteger(start * 2, sequence.length);
+    }
+    return {
+      ...x,
+      range: [start, end],
+      id: `${i}`,
+    };
+  });
 
   const [blastResults, setBlastResult] = useState<BlastResponseDatum[] | null>(
     results
   );
 
-  const submitBlastReq = (data: BlastRequestData) => {
+  const submitBlastReq = (_: BlastRequestData) => {
     setStepID(3);
     setBlastResult(results);
   };
 
-  const divider = (
-    <div className="hidden sm:block" aria-hidden="true">
-      <div className="py-5 mt-8">
-        <div className="border-t border-gray-200" />
-      </div>
-    </div>
-  );
+  const content = () => {
+    switch (stepID) {
+      case 0:
+      case 1:
+      case 2:
+        return (
+          <BlastForm
+            stepID={stepID}
+            sequenceType={sequenceType}
+            setSequenceType={setSequenceType}
+            sequence={sequence}
+            topology={topology}
+            setTopology={setTopology}
+            setSequence={setSequence}
+            setStepID={setStepID}
+            submitBlastReq={submitBlastReq}
+            sequenceName={sequenceName}
+            setSequenceName={setSequenceName}
+          />
+        );
+      case 3:
+        return (
+          <>
+            {blastResults && (
+              <BlastResults
+                results={blastResults}
+                sequenceName={sequenceName || "Unknown Sequence"}
+                sequenceLength={sequence.length}
+              />
+            )}
+          </>
+        );
+    }
+  };
   return (
     <>
       <Sidebar>
@@ -109,23 +148,8 @@ export const Blast = () => {
             <Steps steps={stepOptions} stepID={stepID} />
           </div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mt-8">
-            <BlastForm
-              stepID={stepID}
-              sequenceType={sequenceType}
-              setSequenceType={setSequenceType}
-              sequence={sequence}
-              topology={topology}
-              setTopology={setTopology}
-              setSequence={setSequence}
-              setStepID={setStepID}
-              submitBlastReq={submitBlastReq}
-            />
+            {content()}
           </div>
-          {divider}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mt-8">
-            {blastResults && <BlastResults results={blastResults} />}
-          </div>
-          {divider}
         </div>
       </Sidebar>
     </>

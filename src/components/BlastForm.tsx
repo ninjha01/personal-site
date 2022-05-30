@@ -1,17 +1,19 @@
 import { RadioGroup } from "@headlessui/react";
 import React, { useEffect, useState } from "react";
-import { classNames } from "../utils";
 import {
 	BlastRequestData,
 	SequenceType,
 	sequenceTypes,
 	TopologyType,
 	topologyTypes
-} from "./Blast";
+} from "../pages/Blast";
+import { classNames } from "../utils";
 
 export const BlastForm = (props: {
-  sequence: string;
   stepID: number;
+  sequenceName: string | null;
+  setSequenceName: (name: string) => void;
+  sequence: string;
   setSequence: (seq: string) => void;
   sequenceType: SequenceType;
   topology: TopologyType;
@@ -21,6 +23,8 @@ export const BlastForm = (props: {
   submitBlastReq: (data: BlastRequestData) => void;
 }) => {
   const {
+    sequenceName,
+    setSequenceName,
     sequence,
     setSequence,
     setStepID,
@@ -71,9 +75,7 @@ export const BlastForm = (props: {
             <div className="shadow sm:rounded-md sm:overflow-hidden">
               <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
                 <>
-                  <h3 className="text-lg leading-6 font-medium text-gray-400">
-                    Example Sequence
-                  </h3>
+                  <NameInput name={sequenceName} setName={setSequenceName} />
 
                   <SequenceInput
                     sequence={sequence}
@@ -115,6 +117,35 @@ export const BlastForm = (props: {
     </div>
   );
 };
+
+const NameInput = (props: {
+  name: string | null;
+  setName: (seq: string) => void;
+}) => {
+  const { name, setName } = props;
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  };
+
+  return (
+    <div>
+      <label htmlFor="name" className="block text-sm font-medium text-gray-800">
+        Sequence Name
+      </label>
+      <div className="mt-1">
+        <input
+          id="name"
+          name="name"
+          className="shadow-sm focus:ring-blue-900 focus:border-blue-900 block w-full sm:text-sm border border-gray-300 rounded-md p-3"
+          placeholder="Enter a name for your search."
+          value={name || ""}
+          onChange={onChange}
+        />
+      </div>
+    </div>
+  );
+};
+
 const SequenceInput = (props: {
   sequence: string;
   setSequence: (seq: string) => void;
@@ -165,9 +196,11 @@ const SequenceTypeSelector = (props: {
       >
         Sequence Type
       </label>
-      <p className="mt-2 text-sm text-gray-900">
-        Brief description for your profile. URLs are hyperlinked.
+      <p className="mt-2 text-sm text-gray-500">
+        Are you searching with a DNA (nucleotide) or a Protein (amino acid)
+        sequence?
       </p>
+
       <RadioGroup
         id="sequenceType"
         name="sequenceType"
@@ -176,9 +209,6 @@ const SequenceTypeSelector = (props: {
         className="mt-2 disabled:opacity-50"
         disabled={disabled}
       >
-        <RadioGroup.Label className="sr-only">
-          Choose a sequence type
-        </RadioGroup.Label>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {sequenceTypes
             .filter((x) => !!x)
@@ -226,8 +256,8 @@ const TopologyTypeSelector = (props: {
       >
         Topology Type
       </label>
-      <p className="mt-2 text-sm text-gray-900">
-        Brief description for your profile. URLs are hyperlinked.
+      <p className="mt-2 text-sm text-gray-500">
+        Do you want to search against circular dna (plasmids) or linear dna?
       </p>
       <RadioGroup
         id="topology"
