@@ -128,22 +128,20 @@ export const Sidebar = (props: {
                   </nav>
                 </div>
                 <div className="flex-shrink-0 flex bg-gray-700 p-4">
-                  <a href="#" className="flex-shrink-0 group block">
-                    <div className="flex items-center">
-                      <div>
-                        <img
-                          className="inline-block h-10 w-10 rounded-full"
-                          src={require("../assets/images/profile.jpg")}
-                          alt=""
-                        />
-                      </div>
-                      <div className="ml-3">
-                        <p className="text-base font-medium text-blue-50">
-                          {config.personal.firstname} {config.personal.lastname}
-                        </p>
-                      </div>
+                  <div className="flex items-center">
+                    <div>
+                      <img
+                        className="inline-block h-10 w-10 rounded-full"
+                        src={require("../assets/images/profile.jpg")}
+                        alt=""
+                      />
                     </div>
-                  </a>
+                    <div className="ml-3">
+                      <p className="text-base font-medium text-blue-50">
+                        {config.personal.firstname} {config.personal.lastname}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
@@ -171,47 +169,29 @@ export const Sidebar = (props: {
             </div>
             <nav className="mt-5 flex-1 px-2 space-y-1">
               {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-blue-50"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-blue-50",
-                    "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-                  )}
-                >
-                  <item.icon
-                    className={classNames(
-                      item.current
-                        ? "text-gray-300"
-                        : "text-gray-400 group-hover:text-gray-300",
-                      "mr-3 flex-shrink-0 h-6 w-6"
-                    )}
-                    aria-hidden="true"
-                  />
-                  {item.name}
-                </a>
+                <SidebarItem
+                  url={item.href}
+                  title={item.name}
+                  icon={item.icon}
+                />
               ))}
             </nav>
           </div>
           <div className="flex-shrink-0 flex bg-gray-700 p-4">
-            <a href="#" className="flex-shrink-0 w-full group block">
-              <div className="flex items-center">
-                <div>
-                  <img
-                    className="inline-block h-9 w-9 rounded-full"
-                    src={require("../assets/images/profile.jpg")}
-                    alt=""
-                  />
-                </div>
-                <div className="ml-3">
-                  <p className="text-sm font-medium text-blue-50">
-                    {config.personal.firstname} {config.personal.lastname}
-                  </p>
-                </div>
+            <div className="flex items-center">
+              <div>
+                <img
+                  className="inline-block h-9 w-9 rounded-full"
+                  src={require("../assets/images/profile.jpg")}
+                  alt=""
+                />
               </div>
-            </a>
+              <div className="ml-3">
+                <p className="text-sm font-medium text-blue-50">
+                  {config.personal.firstname} {config.personal.lastname}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -240,6 +220,7 @@ export const Sidebar = (props: {
 interface SidebarItemType {
   url: string;
   title: string;
+  icon: (props: any) => ReactElement;
   hidden?: boolean;
 }
 
@@ -249,11 +230,12 @@ const SidebarItem = (props: SidebarItemType) => {
   const LinkElement = (props: {
     url: string;
     hidden?: boolean;
-    children: ReactElement[];
+    children: any;
   }) => {
     const { url, hidden, children } = props;
     const className =
-      "inline-flex items-center w-full px-4 py-2 mt-1 mb-1 text-base text-blue-100 transition duration-500 ease-in-out transform rounded-lg bg-blue-900 hover:bg-gray-50 focus:bg-gray-50 active:bg-gray-50 focus:shadow-outline focus:text-blue-900 hover:text-blue-900 active:text-blue-900 border-x border-blue-50";
+      "text-gray-300 hover:bg-gray-700 hover:text-blue-50 group flex items-center px-2 py-2 text-sm font-medium rounded-md";
+
     if (url.includes("#")) {
       return (
         <a
@@ -277,20 +259,12 @@ const SidebarItem = (props: SidebarItemType) => {
 
   return (
     <LinkElement url={url} hidden={hidden}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-4 h-4"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-        ></path>
-      </svg>
+      <props.icon
+        className={classNames(
+          "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 h-6 w-6"
+        )}
+        aria-hidden="true"
+      />
       <span className="ml-4"> {title}</span>
     </LinkElement>
   );
