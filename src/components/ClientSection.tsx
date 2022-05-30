@@ -37,7 +37,7 @@ const ClientCard = (props: { client: ClientType }) => {
   );
 
   return (
-    <div className="flex flex-col p-6 text-left shadow-2xl rounded-xl">
+    <div className="flex flex-col p-6 text-left shadow-2xl rounded-xl bg-white">
       {description}
       <div className="flex flex-row items-center gap-3 my-8">
         <img

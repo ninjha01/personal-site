@@ -44,19 +44,15 @@ export const Blast = () => {
     { name: "Blast!", href: "#", id: 2 },
     { name: "Analyze", href: "#", id: 3 },
   ];
-  const [stepID, setStepID] = useState<number>(3);
+  const [stepID, setStepID] = useState<number>(0);
 
   const [sequenceType, setSequenceType] = useState<SequenceType>(null);
   const [topology, setTopology] = useState<TopologyType>(null);
-  const [sequence, setSequence] = useState<string>(
-    "QIKDLLVSSSTDLDTTLVLVNAIYFKGMWKTAFNAEDTREM"
-  );
-  const [sequenceName, setSequenceName] = useState<string | null>(
-    "Example Sequence"
-  );
+  const [sequence, setSequence] = useState<string>("");
+  const [sequenceName, setSequenceName] = useState<string | null>(null);
 
   const [blastResults, setBlastResult] = useState<BlastResponseDatum[] | null>(
-    generateResults({ sequence })
+    null
   );
 
   const submitBlastReq = (data: BlastRequestData) => {

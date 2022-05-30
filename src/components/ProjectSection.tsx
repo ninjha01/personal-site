@@ -29,7 +29,7 @@ const ProjectCard = (props: { project: ProjectType }) => {
     project: { title, url, description, img },
   } = props;
   return (
-    <div className="flex flex-col overflow-hidden rounded-lg shadow-lg">
+    <div className="flex flex-col overflow-hidden rounded-lg shadow-lg bg-white">
       <div className="h-60">
         <img
           className="object-cover object-center w-full rounded-t-xl p-8"

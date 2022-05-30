@@ -56,10 +56,29 @@ export const Sidebar = (props: {
                 <nav className="flex-1 space-y-1 bg-blue-900">
                   <ul>
                     {[
-                      { title: "Clients", url: "/#clients" },
-                      { title: "Projects", url: "#projects" },
-                      { title: "Blast", url: "/blast", hidden: true },
+                      { title: "Clients", url: "/#clients", hidden: false },
+                      { title: "Projects", url: "#projects", hidden: false },
                       /* { title: "Essays", url: "#essays" }, */
+                    ].map((x) => (
+                      <li key={x.title}>
+                        <SidebarItem
+                          url={x.url}
+                          title={x.title}
+                          hidden={x.hidden}
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="px-4 pt-4 font-medium uppercase text-blue-50">
+                    UI Mockups
+                  </p>
+                  <ul>
+                    {[
+                      {
+                        title: "BLAST Alignment",
+                        url: "/blast",
+                        hidden: false,
+                      },
                     ].map((x) => (
                       <li key={x.title}>
                         <SidebarItem
@@ -76,7 +95,7 @@ export const Sidebar = (props: {
             </div>
           </div>
         </div>
-        <div className="flex flex-col flex-1 w-0 overflow-hidden">
+        <div className="flex flex-col flex-1 w-0 overflow-hidden bg-slate-100">
           <main className="relative flex-1 overflow-y-auto focus:outline-none">
             <div className="py-6">
               <div className="px-4 mx-auto max-w-7xl sm:px-6 md:px-8">

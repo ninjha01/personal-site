@@ -174,7 +174,10 @@ const SequenceInput = (props: {
           id="sequence"
           name="sequence"
           rows={3}
-          className="shadow-sm focus:ring-blue-900 focus:border-blue-900 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
+          className={classNames(
+            "shadow-sm focus:ring-blue-900 focus:border-blue-900 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md",
+            !sequence ? "animate-pulse border-blue-900" : ""
+          )}
           placeholder="Enter the sequence you wish to blast."
           value={sequence}
           onChange={onChange}
