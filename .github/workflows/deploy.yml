@@ -8,9 +8,12 @@ on:
       - master
 
 jobs:
-  build:
-    name: Build
+  deploy:
+    name: GAE Deploy
     runs-on: ubuntu-latest
+    permissions:
+      contents: "read"
+      id-token: "write"
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -22,26 +25,9 @@ jobs:
         run: npm ci
       - name: Build project
         run: npm run build
-      # - name: Run tests
-      #   run: npm run test
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v2
+      - id: "auth"
+        uses: "google-github-actions/auth@v0"
         with:
-          name: production-files
-          path: ./build
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: production-files
-          path: ./build
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          credentials_json: "${{ secrets.GCP_SA_KEY }}"
+      - id: "deploy"
+        uses: "google-github-actions/deploy-appengine@v0"
