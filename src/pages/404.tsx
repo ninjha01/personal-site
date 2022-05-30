@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export const FourOhFour = () => {
+  useEffect(() => {
+    document.title = "404";
+  }, []);
   return (
     <>
       <div className="min-h-full pt-16 pb-12 flex flex-col bg-white">
