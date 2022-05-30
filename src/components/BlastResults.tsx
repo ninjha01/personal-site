@@ -1,14 +1,18 @@
 import { Menu } from "@headlessui/react";
 import { DotsVerticalIcon, StarIcon } from "@heroicons/react/solid";
-import { BlastResponseDatum } from "../pages/Blast";
+import { BlastResponseDatum, SequenceType, TopologyType } from "../pages/Blast";
+import { classNames } from "../utils";
 import { GlobalAlignmentViz } from "./GlobalAlignmentViz";
 
 export const BlastResults = (props: {
   results: BlastResponseDatum[];
   sequenceName: string;
+  sequenceType: SequenceType;
+  topologyType: TopologyType;
   sequenceLength: number;
 }) => {
-  const { results, sequenceName, sequenceLength } = props;
+  const { results, sequenceName, sequenceLength, sequenceType, topologyType } =
+    props;
   return (
     <>
       <GlobalAlignmentViz
@@ -24,7 +28,11 @@ export const BlastResults = (props: {
 
       <div className="my-4 grid grid-cols-2 gap-4">
         {results.map((result) => (
-          <ResultCard result={result} />
+          <ResultCard
+            result={result}
+            sequenceType={sequenceType}
+            topologyType={topologyType}
+          />
         ))}
       </div>
     </>
@@ -43,12 +51,19 @@ const TextAlignmentViz = (props: {
   }
 
   return (
-    <div className="text-base text-gray-700 font-mono tracking-widest leading-0 flex flex-wrap pt-4">
+    <div className="text-sm text-gray-700 font-mono tracking-widest leading-0 flex flex-wrap pt-4">
       {query.split("").map((queryChar, idx) => {
         return (
           <div className="mb-8" key={idx}>
             <div>{queryChar}</div>
-            <div>{midline[idx]}</div>
+            <div
+              className={classNames(
+                "text-gray-400",
+                midline[idx] === "X" ? "text-red-700" : ""
+              )}
+            >
+              {midline[idx]}
+            </div>
             <div>{target[idx]}</div>
           </div>
         );
@@ -57,7 +72,11 @@ const TextAlignmentViz = (props: {
   );
 };
 
-function ResultCard(props: { result: BlastResponseDatum }) {
+function ResultCard(props: {
+  result: BlastResponseDatum;
+  sequenceType: SequenceType;
+  topologyType: TopologyType;
+}) {
   const {
     result: {
       title,
@@ -71,7 +90,18 @@ function ResultCard(props: { result: BlastResponseDatum }) {
       target,
       score,
     },
+    sequenceType,
   } = props;
+  const unit = (sequenceType: SequenceType) => {
+    switch (sequenceType) {
+      case "DNA":
+        return "bp";
+      case "Protein":
+        return "aa";
+      default:
+        throw new Error(`Unexpected Topology type: ${sequenceType}`);
+    }
+  };
   return (
     <article
       id={`card-${id}`}
@@ -101,7 +131,7 @@ function ResultCard(props: { result: BlastResponseDatum }) {
               <p className="hover:underline">{subtitle}</p>
             </div>
             <p className="text-sm text-gray-500">
-              From {range[0]} to {range[1]}
+              {range[1] - range[0]} {unit(sequenceType)} match
             </p>
           </div>
           <div className="flex-shrink-0 self-center flex">

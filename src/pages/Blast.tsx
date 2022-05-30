@@ -90,6 +90,8 @@ export const Blast = () => {
                 results={blastResults}
                 sequenceName={sequenceName || "Unknown Sequence"}
                 sequenceLength={sequence.length}
+                sequenceType={sequenceType}
+                topologyType={topology}
               />
             )}
           </>
@@ -142,11 +144,33 @@ const generateResults = (args: { sequence: string }) => {
     },
     {
       title: "Dictyoglomus turgidum DSM 6724",
-      subtitle: "Vomplete Sequence",
+      subtitle: "Complete Sequence",
       sequence_id: "NC_011661.1",
     },
   ]
-    .map((metadata, i) => {
+    .map(genSingleResultFromMetadata())
+    .sort((a, b) => (a.score > b.score ? -1 : 1));
+
+  function genSingleResultFromMetadata(): (
+    value: { title: string; subtitle: string; sequence_id: string },
+    index: number,
+    array: { title: string; subtitle: string; sequence_id: string }[]
+  ) => {
+    id: string;
+    score: number;
+    range: [number, number];
+    identities: number;
+    positives: number;
+    gaps: number;
+    frame: number;
+    sequence_id: string;
+    title: string;
+    subtitle: string;
+    query: string;
+    midline: string;
+    target: string;
+  } {
+    return (metadata, i) => {
       const { title, subtitle, sequence_id } = metadata;
       let start = getRndInteger(0, sequence.length);
       let end = getRndInteger(start, sequence.length);
@@ -156,27 +180,57 @@ const generateResults = (args: { sequence: string }) => {
         end = getRndInteger(start * 2, sequence.length);
       }
 
+      const trimmedQuery = sequence.slice(start, end);
+
+      const generateTargetString = (query: string) => {
+        const errorRate = getRndInteger(1, 80) / 100;
+        const newString = query.split("");
+        return newString
+          .map((x) => {
+            if (!!errorRate && Math.random() <= errorRate) {
+              const randIdx = getRndInteger(0, query.length);
+              return query[randIdx];
+            } else {
+              return x;
+            }
+          })
+          .join("");
+      };
+
+      const target = generateTargetString(trimmedQuery);
+
+      const generateMidline = (query: string, target: string) => {
+        return query
+          .split("")
+          .map((queryChar: string, i: number) => {
+            const targetChar = target[i];
+            if (targetChar === queryChar) {
+              return "|";
+            } else {
+              return "X";
+            }
+          })
+          .join("");
+      };
+      const midline = generateMidline(trimmedQuery, target);
+
+      const score = getRndInteger(0, 100);
+
       return {
         id: `${i}`,
-        score: getRndInteger(0, 100),
         range: [start, end] as [number, number],
         identities: getRndInteger(0, 100),
         positives: getRndInteger(0, 100),
         gaps: getRndInteger(0, 100),
         frame: getRndInteger(-3, 3),
-        sequence_id: sequence_id,
-        title: title,
-        subtitle: subtitle,
-        target:
-          "QLEKAITYEKLNEWTSADMMELYEVQLHLPKFKLEDSYDLKSTLSSMGMSDAFSQSKADFSGMSSARNLFLSNVFHKAFVEINEQGTEAAAGSGSEIDIRIRVPSIEFNANHPFLFFIRHNKTNTILFYGRLCSP",
-        query:
-          "QIKDLLVSSSTDLDTTLVLVNAIYFKGMWKTAFNAEDTREMPFHVTKQESKPVQMMCMNNSFNVATLPAEKMKILELPFASGDLSMLVLLPDEVSDLERIEKTINFEKLTEWTNPNTMEKRRVKVYLPQMKIEEK",
-        midline:
-          "++EK I +EKL EWT+ + ME   V+++LP+ K+E+ Y+L S L ++GM+D F  S A+ +G+SSA +L +S   H AF+E++E G E A  +G   DI+    S +F A+HPFLF I+HN TNTI+++GR  SP".replace(
-            /\s/g,
-            "|"
-          ),
+        query: trimmedQuery,
+        score,
+        sequence_id,
+        title,
+        subtitle,
+        midline,
+        target,
       };
-    })
-    .sort((a, b) => (a.score > b.score ? -1 : 1));
+    };
+  }
 };

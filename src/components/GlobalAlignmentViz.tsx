@@ -25,7 +25,7 @@ export const GlobalAlignmentViz = (props: {
   }));
 
   const bookend = (
-    <div className="w-full text-center text-align-center mx-auto text-sm text-white bg-blue-900 rounded-xl my-2">
+    <div className="w-full text-center text-align-center mx-auto text-xs text-white bg-blue-900 rounded-xl my-2 p-1">
       {sequenceName}
     </div>
   );

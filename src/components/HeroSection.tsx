@@ -12,7 +12,7 @@ export const HeroSection = () => {
             <div>
               <div className="relative w-full max-w-lg">
                 <div className="absolute top-0 rounded-full bg-emerald-900 left-0 w-72 h-72 mix-blend-multiply filter blur-xl opacity-70 "></div>
-                <div className="absolute top-10 rounded-full bg-rose-900 -right-4 w-72 h-72 mix-blend-multiply filter blur-xl opacity-70 "></div>
+                <div className="absolute top-20 rounded-full bg-rose-900 -right-4 w-72 h-72 mix-blend-multiply filter blur-xl opacity-70 "></div>
                 <div className="absolute rounded-full bg-fuchsia-800 -bottom-12 right-20 w-72 h-72 mix-blend-multiply filter blur-xl opacity-70 "></div>
 
                 <div className="relative">
