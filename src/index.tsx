@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
 import "./index.css";
+import { FourOhFour } from "./pages/404";
 import { Blast } from "./pages/Blast";
 import reportWebVitals from "./reportWebVitals";
 
@@ -17,6 +18,7 @@ if (rootElement.hasChildNodes()) {
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/blast" element={<Blast />} />
+          <Route path="*" element={<FourOhFour />} />
         </Routes>
       </BrowserRouter>
     </React.StrictMode>,
