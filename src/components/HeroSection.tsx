@@ -65,18 +65,22 @@ const EmailIcon = (
   </svg>
 );
 const GetInTouchButton = (
-  <div className="mt-3 rounded-lg ">
+  <div className="basis-0 mt-3 rounded-lg relative flex">
     <a
       href="mailto:contact@nishantjha.org"
       target="_blank"
       rel="noreferrer"
-      className="items-center  hover:no-underline block px-6 py-4 text-base font-medium text-white transition duration-500 ease-in-out transform bg-blue-900 rounded-xl shadow-md shadow-blue-900 hover:shadow-xl hover:shadow-blue-900 focus:outline focus:outline-blue-900  focus:ring-2 focus:ring-offset-2 focus:ring-blue-900"
+      className="items-center hover:no-underline block px-6 py-4 text-base font-medium text-white transition duration-500 ease-in-out transform bg-blue-900 rounded-xl shadow-md shadow-blue-900 hover:shadow-xl hover:shadow-blue-900 focus:outline focus:outline-blue-900 focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 lg:w-full"
     >
       <div className="flex gap-2">
         {EmailIcon}
         Contact
       </div>
     </a>
+    <span className="flex relative h-4 w-4 top-0 right-3 -mt-1 -mr-1">
+      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-700 opacity-75"></span>
+      <span className="relative inline-flex rounded-full h-4 w-4 bg-blue-800 border border-2 border-white"></span>
+    </span>
   </div>
 );
 
@@ -94,7 +98,7 @@ const LinkedInIcon = (
 );
 
 const LinkedInButton = (
-  <div className="basis-0 mt-3 rounded-lg content-center">
+  <div className="basis-0 mt-3 rounded-lg content-center flex">
     <a
       href={config.personal.linkedin}
       target="_blank"

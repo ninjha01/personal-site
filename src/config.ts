@@ -25,7 +25,7 @@ export const config: {
 \
 &nbsp;
 
-My mission is to accelerate life science research by building those tools with you.`,
+My mission is to accelerate life science research by building those tools with you. Get in touch!`,
     linkedin: "https://www.linkedin.com/in/ninjha01",
     github: "https://github.com/ninjha01/",
     email: "me@nishantjha.org",
