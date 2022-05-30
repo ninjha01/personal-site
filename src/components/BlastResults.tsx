@@ -26,7 +26,7 @@ export const BlastResults = (props: {
         </div>
       </div>
 
-      <div className="my-4 grid grid-cols-2 gap-4">
+      <div className="my-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
         {results.map((result) => (
           <ResultCard
             result={result}
@@ -127,7 +127,7 @@ function ResultCard(props: {
             </svg>
           </div>
           <div className="min-w-0 flex-1">
-            <div className="text-sm font-medium text-gray-900">
+            <div className="text-sm font-sm text-gray-900 truncate">
               <p className="hover:underline">{subtitle}</p>
             </div>
             <p className="text-sm text-gray-500">
@@ -146,7 +146,7 @@ function ResultCard(props: {
         </div>
         <h2
           id={"result-title-" + id}
-          className="mt-4 text-base font-medium text-gray-900"
+          className="mt-4 text-base font-sm text-gray-900"
         >
           {title}
         </h2>
@@ -175,13 +175,13 @@ function IconBar(props: { score: number; gaps: number; frame: number }) {
             className="inline-flex space-x-2 text-gray-400 hover:text-gray-500"
           >
             <StarIcon className="h-5 w-5" aria-hidden="true" />
-            <span className="font-medium text-gray-900">Score: {score}</span>
+            <span className="font-sm text-gray-900">Score: {score}</span>
           </button>
         </span>
         <span className="inline-flex items-center text-sm">
           <button
             type="button"
-            className="inline-flex space-x-2 text-gray-400 hover:text-gray-500"
+            className="inline-flex space-x-1 text-gray-400 hover:text-gray-500"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -196,7 +196,7 @@ function IconBar(props: { score: number; gaps: number; frame: number }) {
               />
             </svg>
 
-            <span className="font-medium text-gray-900">{gaps} gaps</span>
+            <span className="font-sm text-gray-900 -mx-4">{gaps} gaps</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -227,7 +227,7 @@ function IconBar(props: { score: number; gaps: number; frame: number }) {
               <path d="M0 0h24v24H0z" fill="none" />
               <path d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z" />
             </svg>
-            <span className="font-medium text-gray-900">Frame: {frame}</span>
+            <span className="font-sm text-gray-900">Frame: {frame}</span>
           </button>
         </span>
       </div>
