@@ -129,14 +129,20 @@ const NameInput = (props: {
 
   return (
     <div>
-      <label htmlFor="name" className="block text-sm font-medium text-gray-800">
+      <label
+        htmlFor="name"
+        className={classNames("block text-sm font-medium text-gray-800")}
+      >
         Sequence Name
       </label>
       <div className="mt-1">
         <input
           id="name"
           name="name"
-          className="shadow-sm focus:ring-blue-900 focus:border-blue-900 block w-full sm:text-sm border border-gray-300 rounded-md p-3"
+          className={classNames(
+            "shadow-sm focus:ring-blue-900 focus:border-blue-900 block w-full sm:text-sm border border-gray-300 rounded-md p-3",
+            !name ? "animate-pulse border-blue-900" : ""
+          )}
           placeholder="Enter a name for your search."
           value={name || ""}
           onChange={onChange}

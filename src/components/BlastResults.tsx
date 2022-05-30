@@ -24,12 +24,7 @@ export const BlastResults = (props: {
 
       <div className="my-4 grid grid-cols-2 gap-4">
         {results.map((result) => (
-          <div
-            key={result.id}
-            className="bg-white px-4 py-6 shadow-md sm:p-6 sm:rounded-lg"
-          >
-            <ResultCard result={result} />
-          </div>
+          <ResultCard result={result} />
         ))}
       </div>
     </>
@@ -78,7 +73,11 @@ function ResultCard(props: { result: BlastResponseDatum }) {
     },
   } = props;
   return (
-    <article aria-labelledby={"result-title-" + id}>
+    <article
+      id={`card-${id}`}
+      aria-labelledby={"result-title-" + id}
+      className="bg-white px-4 py-6 shadow-xl sm:p-6 sm:rounded-lg"
+    >
       <div>
         <div className="flex space-x-3">
           <div className="flex-shrink-0">
