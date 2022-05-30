@@ -46,10 +46,14 @@ export const Blast = () => {
   ];
   const [stepID, setStepID] = useState<number>(0);
 
-  const [sequenceType, setSequenceType] = useState<SequenceType>(null);
-  const [topology, setTopology] = useState<TopologyType>(null);
-  const [sequence, setSequence] = useState<string>("");
-  const [sequenceName, setSequenceName] = useState<string | null>(null);
+  const [sequenceType, setSequenceType] = useState<SequenceType>("Protein");
+  const [topology, setTopology] = useState<TopologyType>("Linear");
+  const [sequence, setSequence] = useState<string>(
+    "QIKDLLVSSSTDLDTTLVLVNAIYFKGMWKTAFNAEDTREMPFHVTKQESKPVQMMCMNNSFNVATLPAEKMKILELPFASGDLSMLVLLPDEVSDLERIEKTINFEKLTEWTNPNTMEKRRVKVYLPQMKIEEK"
+  );
+  const [sequenceName, setSequenceName] = useState<string | null>(
+    "Example Sequence"
+  );
 
   const [blastResults, setBlastResult] = useState<BlastResponseDatum[] | null>(
     null
@@ -57,7 +61,6 @@ export const Blast = () => {
 
   const submitBlastReq = (data: BlastRequestData) => {
     setStepID(3);
-
     const results = generateResults(data);
     setBlastResult(results);
   };

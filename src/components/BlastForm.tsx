@@ -93,9 +93,16 @@ export const BlastForm = (props: {
                   />
                 </>
               </div>
-              <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
+              <div
+                className={classNames(
+                  "px-4 py-3 bg-gray-50 text-right sm:px-6"
+                )}
+              >
                 <button
-                  className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 disabled:opacity-50"
+                  className={classNames(
+                    "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 disabled:opacity-50",
+                    validated ? "animate-bounce" : ""
+                  )}
                   disabled={!validated}
                   onClick={() => {
                     if (

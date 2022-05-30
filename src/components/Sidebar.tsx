@@ -170,6 +170,7 @@ export const Sidebar = (props: {
             <nav className="mt-5 flex-1 px-2 space-y-1">
               {navigation.map((item) => (
                 <SidebarItem
+                  key={item.name}
                   url={item.href}
                   title={item.name}
                   icon={item.icon}

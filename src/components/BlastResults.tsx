@@ -1,5 +1,5 @@
-import { Menu } from "@headlessui/react";
-import { DotsVerticalIcon, StarIcon } from "@heroicons/react/solid";
+import { StarIcon } from "@heroicons/react/solid";
+import { useEffect, useState } from "react";
 import { BlastResponseDatum, SequenceType, TopologyType } from "../pages/Blast";
 import { classNames } from "../utils";
 import { GlobalAlignmentViz } from "./GlobalAlignmentViz";
@@ -13,8 +13,18 @@ export const BlastResults = (props: {
 }) => {
   const { results, sequenceName, sequenceLength, sequenceType, topologyType } =
     props;
+  const [loading, setLoading] = useState(true);
+
+  useEffect(function stopLoading() {
+    setTimeout(() => setLoading(false), 800);
+  }, []);
   return (
-    <>
+    <div
+      className={classNames(
+        "transition-opacity duration-1000 ease-out",
+        loading ? "opacity-0" : "opacity-100"
+      )}
+    >
       <GlobalAlignmentViz
         results={results}
         sequenceName={sequenceName}
@@ -29,13 +39,14 @@ export const BlastResults = (props: {
       <div className="my-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
         {results.map((result) => (
           <ResultCard
+            key={result.id}
             result={result}
             sequenceType={sequenceType}
             topologyType={topologyType}
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
@@ -102,13 +113,20 @@ function ResultCard(props: {
         throw new Error(`Unexpected Topology type: ${sequenceType}`);
     }
   };
+  const divider = (
+    <div className="block " aria-hidden="true">
+      <div>
+        <div className="border-t border-gray-200" />
+      </div>
+    </div>
+  );
   return (
     <article
       id={`card-${id}`}
       aria-labelledby={"result-title-" + id}
-      className="bg-white px-4 py-6 shadow-xl sm:p-6 sm:rounded-lg"
+      className="bg-white px-4 py-6 shadow-xl sm:rounded-lg flex flex-col"
     >
-      <div>
+      <div className="mb-2">
         <div className="flex space-x-3">
           <div className="flex-shrink-0">
             <svg
@@ -128,37 +146,21 @@ function ResultCard(props: {
           </div>
           <div className="min-w-0 flex-1">
             <div className="text-sm font-sm text-gray-900 truncate">
-              <p className="hover:underline">{subtitle}</p>
+              <p className="hover:underline">{title}</p>
             </div>
             <p className="text-sm text-gray-500">
+              {subtitle}
+              {" | "}
               {range[1] - range[0]} {unit(sequenceType)} match
             </p>
           </div>
-          <div className="flex-shrink-0 self-center flex">
-            <Menu as="div" className="relative inline-block text-left">
-              <div>
-                <Menu.Button className="-m-2 p-2 rounded-full flex items-center text-gray-400 hover:text-gray-600">
-                  <DotsVerticalIcon className="h-5 w-5" aria-hidden="true" />
-                </Menu.Button>
-              </div>
-            </Menu>
-          </div>
         </div>
-        <h2
-          id={"result-title-" + id}
-          className="mt-4 text-base font-sm text-gray-900"
-        >
-          {title}
-        </h2>
       </div>
-      <div className="mt-2">
+      {divider}
+      <div className="mt-2 grow">
         <TextAlignmentViz query={query} midline={midline} target={target} />
       </div>
-      <div className="hidden sm:block" aria-hidden="true">
-        <div>
-          <div className="border-t border-gray-200" />
-        </div>
-      </div>
+      {divider}
       <IconBar score={score} gaps={gaps} frame={frame} />
     </article>
   );
@@ -167,15 +169,23 @@ function ResultCard(props: {
 function IconBar(props: { score: number; gaps: number; frame: number }) {
   const { score, gaps, frame } = props;
   return (
-    <div className="mt-6 flex justify-between space-x-8">
+    <div className="mt-6 flex justify-between space-x-8 flex-0">
       <div className="flex space-x-6">
         <span className="inline-flex items-center text-sm">
           <button
             type="button"
             className="inline-flex space-x-2 text-gray-400 hover:text-gray-500"
           >
-            <StarIcon className="h-5 w-5" aria-hidden="true" />
-            <span className="font-sm text-gray-900">Score: {score}</span>
+            <StarIcon
+              className={classNames(
+                "h-5 w-5",
+                score > 75 ? "text-yellow-600 animate-bounce delay-300" : ""
+              )}
+              aria-hidden="true"
+            />
+            <span className={classNames("font-sm text-gray-900 ")}>
+              Score: {score}
+            </span>
           </button>
         </span>
         <span className="inline-flex items-center text-sm">
