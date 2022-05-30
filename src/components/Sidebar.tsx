@@ -29,26 +29,13 @@ export const Sidebar = (props: {
 }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigation = [
-    {
-      name: "Clients",
-      href: "/#clients",
-      current: false,
-      icon: BriefcaseIcon,
-      hidden: false,
-    },
-    {
-      name: "Projects",
-      href: "/#projects",
-      current: false,
-      icon: CodeIcon,
-      hidden: false,
-    },
+    { name: "Clients", href: "/#clients", current: false, icon: BriefcaseIcon },
+    { name: "Projects", href: "/#projects", current: false, icon: CodeIcon },
     {
       name: "Blast UI",
       href: "/blast",
       current: false,
       icon: SearchCircleIcon,
-      hidden: true,
     },
   ];
   return (
@@ -184,16 +171,32 @@ export const Sidebar = (props: {
             </div>
             <nav className="mt-5 flex-1 px-2 space-y-1">
               {navigation.map((item) => (
-                <SidebarItem
-                  url={item.href}
-                  title={item.name}
-                  hidden={item.hidden}
-                />
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={classNames(
+                    item.current
+                      ? "bg-gray-900 text-blue-50"
+                      : "text-gray-300 hover:bg-gray-700 hover:text-blue-50",
+                    "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                  )}
+                >
+                  <item.icon
+                    className={classNames(
+                      item.current
+                        ? "text-gray-300"
+                        : "text-gray-400 group-hover:text-gray-300",
+                      "mr-3 flex-shrink-0 h-6 w-6"
+                    )}
+                    aria-hidden="true"
+                  />
+                  {item.name}
+                </a>
               ))}
             </nav>
           </div>
           <div className="flex-shrink-0 flex bg-gray-700 p-4">
-            <a href="/" className="flex-shrink-0 w-full group block">
+            <a href="#" className="flex-shrink-0 w-full group block">
               <div className="flex items-center">
                 <div>
                   <img
@@ -213,7 +216,7 @@ export const Sidebar = (props: {
         </div>
       </div>
       <div className="md:pl-64 flex flex-col flex-1">
-        <div className="sticky top-0 z-10 md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3 ">
+        <div className="sticky top-0 z-10 md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3 bg-gray-100">
           <button
             type="button"
             className="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
@@ -250,7 +253,7 @@ const SidebarItem = (props: SidebarItemType) => {
   }) => {
     const { url, hidden, children } = props;
     const className =
-      "text-gray-300 hover:bg-gray-700 hover:text-blue-50 group flex items-center px-2 py-2 text-md font-medium rounded-md";
+      "inline-flex items-center w-full px-4 py-2 mt-1 mb-1 text-base text-blue-100 transition duration-500 ease-in-out transform rounded-lg bg-blue-900 hover:bg-gray-50 focus:bg-gray-50 active:bg-gray-50 focus:shadow-outline focus:text-blue-900 hover:text-blue-900 active:text-blue-900 border-x border-blue-50";
     if (url.includes("#")) {
       return (
         <a
