@@ -15,7 +15,7 @@ if (production) {
 const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename={`/${process.env.PUBLIC_URL}`}>
+    <BrowserRouter basename={`${process.env.PUBLIC_URL}`}>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/blast" element={<Blast />} />
