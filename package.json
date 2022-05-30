@@ -32,11 +32,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "not_postbuild": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
-    "postbuild": "react-snap"
+    "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": [

@@ -27,7 +27,7 @@ export const Sidebar = (props: {
               <div className="flex flex-col items-center flex-shrink-0 px-4">
                 <button className="px-8 text-left focus:outline-none">
                   <a
-                    href="/#top_of_page"
+                    href="/#top"
                     className="block p-2 text-xl font-medium tracking-tighter text-blue-100 transition duration-500 ease-in-out transform cursor-pointer hover:text-blue-100"
                   >
                     {config.url}
