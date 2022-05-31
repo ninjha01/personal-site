@@ -166,6 +166,18 @@ export const Sidebar = (props: {
                       <p className="text-base font-medium text-blue-50">
                         {config.personal.firstname} {config.personal.lastname}
                       </p>
+<a
+                  target="_blank"
+                  rel="noreferrer"
+                  href={
+                    process.env.REACT_APP_GIT_SHA
+                      ? `https://github.com/ninjha01/personal-site/commit/${process.env.REACT_APP_GIT_SHA}`
+                      : "https://github.com/ninjha01/personal-site/"
+                  }
+                  className="text-xs font-medium text-indigo-200 group-hover:text-white"
+                >
+                  {process.env.REACT_APP_GIT_SHA || "local"}
+                </a>
                     </div>
                   </div>
                 </div>
