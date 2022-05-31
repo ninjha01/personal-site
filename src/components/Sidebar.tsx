@@ -127,7 +127,7 @@ export const Sidebar = (props: {
                         {item.name}
                       </a>
                     ))}
-                    <p className="pt-16 pb-2 ml-2 text-blue-100">UI Mockups</p>
+                    <p className="pt-16 pb-2 ml-2 text-blue-100">Demos</p>
                     {uiMockups.map((item) => (
                       <a
                         key={item.name}
@@ -214,7 +214,7 @@ export const Sidebar = (props: {
                   icon={item.icon}
                 />
               ))}
-              <p className="pt-16 pb-2 ml-2 text-blue-100">UI Mockups</p>
+              <p className="pt-16 pb-2 ml-2 text-blue-100">Demos</p>
               {uiMockups.map((item) => (
                 <SidebarItem
                   key={item.name}

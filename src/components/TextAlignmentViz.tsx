@@ -16,7 +16,7 @@ export const TextAlignmentViz = (props: {
       {query.split("").map((queryChar, idx) => {
         const [midlineChar, targetChar] = [midline[idx], target[idx]];
         return (
-          <div className="mb-8" key={idx}>
+          <div className="mb-8 select-none" key={idx}>
             <div
               className={classNames(
                 queryChar === " " ? "whitespace-pre-wrap" : ""
