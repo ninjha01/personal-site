@@ -1,0 +1,31 @@
+ repos:
+  # Python
+  - repo: https://github.com/psf/black
+    rev: "22.3.0"
+    hooks:
+      - id: black
+        stages: [commit]
+        language_version: "3.10"
+  - repo: https://github.com/pycqa/flake8
+    rev: "4.0.1"
+    hooks:
+      - id: flake8
+        stages: [commit]
+  - repo: https://github.com/necaris/pre-commit-pyright
+    rev: "1.1.53"
+    hooks:
+      - id: pyright
+        stages: [commit]
+  # Typescript
+  - repo: local
+    hooks:
+      - id: eslint
+        stages: [commit]
+        name: eslint
+        entry: bash -c "npm run lint"
+        language: node
+      - id: prettier
+        stages: [commit]
+        name: prettier
+        entry: bash -c "npm run format"
+        language: node

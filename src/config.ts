@@ -1,8 +1,8 @@
 import {
-	ClientType,
-	EssayType,
-	PersonalType,
-	ProjectType
+  ClientType,
+  EssayType,
+  PersonalType,
+  ProjectType,
 } from "./commonTypes";
 
 export const config: {
@@ -50,7 +50,7 @@ My mission is to accelerate life science research by building those tools with y
       name: "Lattice Automation",
       url: "https://latticeautomation.com/",
       description:
-      "Built performant, well designed software tools for scientists at the bench in collaboration with companies like Ginkgo Bioworks.",
+        "Built performant, well designed software tools for scientists at the bench in collaboration with companies like Ginkgo Bioworks.",
       subtitle: "Synthetic Biology Software Consultancy",
       logo: require("./assets/images/lattice_logo.png"),
     },
@@ -83,7 +83,6 @@ My mission is to accelerate life science research by building those tools with y
       description:
         "A visualization of research aimed at creating a hypoallergenic cat.",
     },
-
   ],
   essays: [
     {

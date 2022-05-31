@@ -1,1 +1,1 @@
-declare module 'mdx.macro';
+declare module "mdx.macro";

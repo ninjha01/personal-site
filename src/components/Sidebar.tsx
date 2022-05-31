@@ -1,18 +1,18 @@
 import { Dialog, Transition } from "@headlessui/react";
 import {
-	BriefcaseIcon,
-	CodeIcon,
-	MenuIcon,
-	SearchCircleIcon,
-	XIcon
+  BriefcaseIcon,
+  CodeIcon,
+  MenuIcon,
+  SearchCircleIcon,
+  XIcon,
 } from "@heroicons/react/outline";
 import React, {
-	Fragment,
-	JSXElementConstructor,
-	ReactElement,
-	ReactFragment,
-	ReactPortal,
-	useState
+  Fragment,
+  JSXElementConstructor,
+  ReactElement,
+  ReactFragment,
+  ReactPortal,
+  useState,
 } from "react";
 import { Link } from "react-router-dom";
 import { config } from "../config";

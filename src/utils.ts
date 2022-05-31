@@ -6,11 +6,10 @@ export function repeatArray<T>(arr: T[], numRepeats: number): T[] {
   return newArray;
 }
 
-
 export function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export function getRndInteger(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min) ) + min;
+  return Math.floor(Math.random() * (max - min)) + min;
 }

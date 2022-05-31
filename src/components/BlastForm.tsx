@@ -1,11 +1,11 @@
 import { RadioGroup } from "@headlessui/react";
 import React, { useEffect, useState } from "react";
 import {
-	BlastRequestData,
-	SequenceType,
-	sequenceTypes,
-	TopologyType,
-	topologyTypes
+  BlastRequestData,
+  SequenceType,
+  sequenceTypes,
+  TopologyType,
+  topologyTypes,
 } from "../pages/Blast";
 import { classNames } from "../utils";
 
