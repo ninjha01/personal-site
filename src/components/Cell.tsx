@@ -1,13 +1,14 @@
 import { Tab } from "@headlessui/react";
 import { ChevronDoubleRightIcon } from "@heroicons/react/solid";
 import React from "react";
-import { classNames } from "../utils";
 
-type CellType = "Plot" | "Code";
+export type CellType = "Plot" | "Code" | "Error";
+export type LanguageType = "Python" | "R";
 
 interface CodeCellDatum {
   id: number;
   type: "Code";
+  language: LanguageType;
   codeText: string;
   errorMsg: string | null;
   successOuput: string | null;
@@ -19,118 +20,89 @@ interface PlotCellDatum {
   data: any[];
   errorMsg: string | null;
 }
+interface ErrorCellDatum {
+  id: number;
+  type: "Error";
+  errorMsg: string;
+}
 
-type CellDatum = CodeCellDatum | PlotCellDatum;
+type CellDatum = CodeCellDatum | PlotCellDatum | ErrorCellDatum;
 
 export const getCells = (): CellDatum[] => {
   return [
     {
-      id: 1,
-      type: "Code",
+      type: "Code" as const,
+      language: "Python" as const,
+      codeText: "import pandas\n",
+      errorMsg: null,
+      successOuput: null,
+    },
+    {
+      type: "Code" as const,
+      language: "R" as const,
       codeText: "print(Hello)",
       errorMsg: null,
       successOuput: null,
     },
     {
-      id: 2,
-      type: "Code",
+      type: "Code" as const,
+      language: "R" as const,
       codeText: "print(Hello)",
       errorMsg: null,
       successOuput: null,
     },
     {
-      id: 3,
-      type: "Code",
-      codeText: "print(Hello)",
-      errorMsg: null,
-      successOuput: null,
+      type: "Error" as const,
+      errorMsg: "Ya done goofed",
     },
     {
-      id: 4,
-      type: "Plot",
+      type: "Plot" as const,
+      data: [1, 2, 3, 4, 5],
+      errorMsg: null,
+    },
+
+    {
+      type: "Plot" as const,
       data: [1, 2, 3, 4, 5],
       errorMsg: null,
     },
     {
-      id: 5,
-      type: "Code",
+      type: "Code" as const,
+      language: "Python" as const,
       codeText: "print(Hello)",
       errorMsg: null,
       successOuput: null,
     },
-  ];
+  ].map((x, i) => ({ ...x, id: i + 1 }));
 };
 
 export const CodeCell = (props: { item: CodeCellDatum }) => {
   const { item } = props;
   return (
-    <form id={`cell-${item.id}`} className="mb-8 bg-white px-4 py-5 shadow-xl sm:rounded-lg sm:px-6 relative">
+    <div id={`cell-${item.id}`} className="mb-8 bg-white px-4 py-5 shadow-xl sm:rounded-lg sm:px-6 relative">
       <Tab.Group>
         {({ selectedIndex }) => (
-          <>
-            <Tab.List className="flex items-center">
-              <Tab
-                className={({ selected }) =>
-                  classNames(
-                    selected
-                      ? "text-gray-900 bg-gray-100 hover:bg-gray-200"
-                      : "text-gray-500 hover:text-gray-900 bg-white hover:bg-gray-100",
-                    "px-3 py-1.5 border border-transparent text-sm font-medium rounded-md"
-                  )
-                }
-              >
-                Python
-              </Tab>
-              <Tab
-                className={({ selected }) =>
-                  classNames(
-                    selected
-                      ? "text-gray-900 bg-gray-100 hover:bg-gray-200"
-                      : "text-gray-500 hover:text-gray-900 bg-white hover:bg-gray-100",
-                    "ml-2 px-3 py-1.5 border border-transparent text-sm font-medium rounded-md"
-                  )
-                }
-              >
-                TypeScript
-              </Tab>
-
-              <div className="ml-auto flex items-center text-gray-500 text-sm bg-gray-100 hover:bg-gray-200 space-x-5 py-1 px-2 rounded-xl">
-                Cell #{item.id}
+          <div className="">
+            <div className="flex flex-row mb-4 -mt-2">
+              <div className="text-gray-500 p-1 hover:text-gray-900 bg-white hover:bg-gray-100 border border-transparent text-sm font-medium rounded-md">
+                {item.language}
               </div>
-            </Tab.List>
-            <Tab.Panels className="mt-2">
-              <Tab.Panel className="p-0.5 -m-0.5 rounded-lg">
-                <label htmlFor="comment" className="sr-only">
-                  Python Code
-                </label>
-                <div>
-                  <textarea
-                    rows={5}
-                    name="comment"
-                    id="comment"
-                    className="font-mono shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                    placeholder='print("Hello World")'
-                    defaultValue={""}
-                  />
-                </div>
-              </Tab.Panel>
-              <Tab.Panel className="p-0.5 -m-0.5 rounded-lg">
-                <label htmlFor="comment" className="sr-only">
-                  TypeScript Code
-                </label>
-                <div>
-                  <textarea
-                    rows={5}
-                    name="comment"
-                    id="comment"
-                    className="font-mono shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                    placeholder='console.log("Hello World")'
-                    defaultValue={""}
-                  />
-                </div>
-              </Tab.Panel>
-            </Tab.Panels>
-          </>
+              <span className="inline-flex flex-0 mr-0 -mt-1 self-end items-center px-2.5 py-1 px-2 mx-auto rounded-full text-xs font-medium bg-gray-200 text-gray-600">
+                Cell #{item.id}
+              </span>
+            </div>
+
+            <div>
+              <textarea
+                rows={5}
+                name="comment"
+                id="comment"
+                className="font-mono shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                placeholder="Enter text here."
+                defaultValue={item.codeText}
+              />
+            </div>
+          </div>
         )}
       </Tab.Group>
       <div className="mt-2 flex justify-end">
@@ -141,14 +113,24 @@ export const CodeCell = (props: { item: CodeCellDatum }) => {
           <ChevronDoubleRightIcon className="h-5 w-5" />
         </button>
       </div>
-    </form>
+    </div>
   );
 };
+
 export const PlotCell = (props: { item: PlotCellDatum }) => {
   const { item } = props;
   return (
     <form id={`cell-${item.id}`} className="mb-8 bg-white px-4 py-5 shadow-xl sm:rounded-lg sm:px-6 relative">
       Plot
+    </form>
+  );
+};
+
+export const ErrorCell = (props: { item: ErrorCellDatum }) => {
+  const { item } = props;
+  return (
+    <form id={`cell-${item.id}`} className="mb-8 bg-white px-4 py-5 shadow-xl sm:rounded-lg sm:px-6 relative">
+      <div className="text-red-500">Error</div>
     </form>
   );
 };

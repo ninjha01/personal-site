@@ -1,7 +1,7 @@
 import { CodeIcon, XIcon } from "@heroicons/react/outline";
 import { ChartPieIcon, CheckIcon, PencilAltIcon } from "@heroicons/react/solid";
 import React from "react";
-import { CodeCell, getCells, PlotCell } from "../components/Cell";
+import { CodeCell, ErrorCell, getCells, PlotCell } from "../components/Cell";
 import { Sidebar } from "../components/Sidebar";
 import { classNames } from "../utils";
 
@@ -26,9 +26,13 @@ function Notebook() {
             {cells.map((cell, i) => {
               switch (cell.type) {
                 case "Code":
-                  return <CodeCell item={cell} />;
+                  return <CodeCell key={cell.id} item={cell} />;
                 case "Plot":
-                  return <PlotCell item={cell} />;
+                  return <PlotCell key={cell.id} item={cell} />;
+                case "Error":
+                  return <ErrorCell key={cell.id} item={cell} />;
+                default:
+                  throw new Error(`Unknown cell type ${cell}`);
               }
             })}
           </div>
