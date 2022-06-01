@@ -42,7 +42,7 @@ const ClientCard = (props: { client: ClientType }) => {
       <a className="flex flex-row items-center gap-3 mt-8 mb-2" href={url}>
         <img
           alt="client logo"
-          className="inline-block object-cover object-center w-16 h-16 mt-3 p-1 rounded-full inline-block align-baseline outline-rounded outline-dashed outline-offset-2 outline-[1.2] outline-blue-900"
+          className="inline-block object-cover object-cover w-16 h-16 mt-3 p-1 rounded-full inline-block align-baseline outline-rounded outline-dashed outline-offset-2 outline-[1.2] outline-blue-900"
           src={logo}
         />
         <div className="flex flex-col justify-center space-between gap-2">

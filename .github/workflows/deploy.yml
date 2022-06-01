@@ -8,7 +8,7 @@ on:
       - master
 
 jobs:
-  frontend_lint_format:
+  frontend_compile:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,6 +18,8 @@ jobs:
         run: npm run format:check
       - name: Run ESLint
         run: npm run lint:check
+      - name: Build project
+        run: npm run build
 
   # backend_lint_format:
   #   runs-on: ubuntu-latest
@@ -66,7 +68,7 @@ jobs:
   deploy:
     name: GAE Deploy
     runs-on: ubuntu-latest
-    needs: [ frontend_lint_format ]
+    needs: [ frontend_compile ]
     permissions:
       contents: "read"
       id-token: "write"

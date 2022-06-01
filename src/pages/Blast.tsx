@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BlastForm } from "../components/BlastForm";
 import { BlastResults } from "../components/BlastResults";
 import { Sidebar } from "../components/Sidebar";
@@ -55,11 +55,11 @@ export const Blast = () => {
 
   const [blastResults, setBlastResult] = useState<BlastResponseDatum[] | null>(null);
 
-  const [showBanner, setShowBanner] = useState(true);
-
-  useEffect(function showBanner() {
-    setTimeout(() => setShowBanner(true), 2000);
-  }, []);
+  /* const [showBanner, setShowBanner] = useState(true);
+  
+  * useEffect(function showBanner() {
+  *   setTimeout(() => setShowBanner(true), 2000);
+  * }, []); */
 
   const submitBlastReq = (data: BlastRequestData) => {
     setStepID(3);
