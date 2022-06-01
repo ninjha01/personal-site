@@ -1,5 +1,13 @@
 import { Tab } from "@headlessui/react";
-import { AtSymbolIcon, CodeIcon, LinkIcon } from "@heroicons/react/solid";
+import {
+  AtSymbolIcon,
+  ChartPieIcon,
+  CheckIcon,
+  CodeIcon,
+  LinkIcon,
+  PencilAltIcon,
+  ThumbUpIcon,
+} from "@heroicons/react/solid";
 import React from "react";
 import { Sidebar } from "../components/Sidebar";
 import { classNames } from "../utils";
@@ -14,18 +22,142 @@ function Notebook() {
         <div className="mt-3 sm:mt-0 sm:ml-4">
           <button
             type="button"
-            className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-900 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
           >
             Run!
           </button>
         </div>
       </div>
-      {[1, 2, 3, 4, 5].map(() => (
-        <Cell />
-      ))}
+      <div className="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
+        <div className="space-y-6 lg:col-start-1 lg:col-span-2">
+          {[1, 2, 3, 4, 5].map(() => (
+            <Cell />
+          ))}
+        </div>
+        <div>
+          <HistoryFeed />
+        </div>
+      </div>
     </Sidebar>
   );
 }
+
+const HistoryFeed = () => {
+  const eventTypes = {
+    edited: { icon: PencilAltIcon, bgColorClass: "bg-gray-400" },
+    error: { icon: ThumbUpIcon, bgColorClass: "bg-red-500" },
+    success: { icon: CheckIcon, bgColorClass: "bg-green-500" },
+    plot: { icon: ChartPieIcon, bgColorClass: "bg-blue-500" },
+  };
+  const timeline = [
+    {
+      id: 1,
+      type: eventTypes.edited,
+      content: "Applied to",
+      target: "Front End Developer",
+      date: "Sep 20",
+      datetime: "2020-09-20",
+    },
+    {
+      id: 2,
+      type: eventTypes.error,
+      content: "Advanced to phone screening by",
+      target: "Bethany Blake",
+      date: "Sep 22",
+      datetime: "2020-09-22",
+    },
+    {
+      id: 3,
+      type: eventTypes.success,
+      content: "Completed phone screening with",
+      target: "Martha Gardner",
+      date: "Sep 28",
+      datetime: "2020-09-28",
+    },
+    {
+      id: 4,
+      type: eventTypes.plot,
+      content: "Advanced to interview by",
+      target: "Bethany Blake",
+      date: "Sep 30",
+      datetime: "2020-09-30",
+    },
+    {
+      id: 5,
+      type: eventTypes.success,
+      content: "Completed interview with",
+      target: "Katherine Snyder",
+      date: "Oct 4",
+      datetime: "2020-10-04",
+    },
+  ];
+  return (
+    <section
+      aria-labelledby="timeline-title"
+      className="lg:col-start-3 lg:col-span-1"
+    >
+      <div className="bg-white px-4 py-5 shadow sm:rounded-lg sm:px-6">
+        <h2 id="timeline-title" className="text-lg font-medium text-gray-900">
+          Timeline
+        </h2>
+
+        {/* Activity Feed */}
+        <div className="mt-6 flow-root">
+          <ul role="list" className="-mb-8">
+            {timeline.map((item, itemIdx) => (
+              <li key={item.id}>
+                <div className="relative pb-8">
+                  {itemIdx !== timeline.length - 1 ? (
+                    <span
+                      className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
+                      aria-hidden="true"
+                    />
+                  ) : null}
+                  <div className="relative flex space-x-3">
+                    <div>
+                      <span
+                        className={classNames(
+                          item.type.bgColorClass,
+                          "h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white"
+                        )}
+                      >
+                        <item.type.icon
+                          className="w-5 h-5 text-white"
+                          aria-hidden="true"
+                        />
+                      </span>
+                    </div>
+                    <div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+                      <div>
+                        <p className="text-sm text-gray-500">
+                          {item.content}{" "}
+                          <a href="#" className="font-medium text-gray-900">
+                            {item.target}
+                          </a>
+                        </p>
+                      </div>
+                      <div className="text-right text-sm whitespace-nowrap text-gray-500">
+                        <time dateTime={item.datetime}>{item.date}</time>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="mt-6 flex flex-col justify-stretch">
+          <button
+            type="button"
+            className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-900 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          >
+            Advance to offer
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const Cell = (props: {}) => {
   return (
@@ -102,7 +234,7 @@ const Cell = (props: {}) => {
                     rows={5}
                     name="comment"
                     id="comment"
-                    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                    className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md"
                     placeholder="Add your comment..."
                     defaultValue={""}
                   />
@@ -122,7 +254,7 @@ const Cell = (props: {}) => {
       <div className="mt-2 flex justify-end">
         <button
           type="submit"
-          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-900 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
         >
           Post
         </button>
