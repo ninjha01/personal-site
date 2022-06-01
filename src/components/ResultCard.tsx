@@ -63,6 +63,9 @@ export function ResultCard(props: {
               {range[1] - range[0]} {unit(sequenceType)} match
             </p>
           </div>
+          <span className="inline-flex flex-0 self-end items-center px-2.5 py-0.5 px-2 rounded-lg text-md font-medium bg-gray-200 opacity-90 text-gray-400">
+            Demo
+          </span>
         </div>
       </div>
       {divider}

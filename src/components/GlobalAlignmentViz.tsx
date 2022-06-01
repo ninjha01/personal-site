@@ -58,7 +58,12 @@ export const GlobalAlignmentViz = (props: {
     <section>
       <div className="bg-white shadow-2xl overflow-hidden sm:rounded-lg mt-16 mx-8">
         <div className="bg-white px-4 py-4 border-b border-gray-200 sm:px-6">
-          <h3 className="text-lg leading-6 font-medium text-gray-900">{sequenceName}</h3>
+          <h3 className="text-lg leading-6 font-medium text-gray-900 flex flex-row space-between">
+            <span className="flex-1">Alignment Viewer</span>
+            <span className="inline-flex flex-0 self-end items-center px-2.5 py-0.5 px-2 rounded-lg text-md font-medium bg-gray-200 opacity-90 text-gray-400">
+              Demo
+            </span>
+          </h3>
           <p className="mt-1 max-w-2xl text-sm text-gray-500">{results.length} Alignments</p>
         </div>
         <div className="px-4 py-5 sm:px-6 overflow-hidden">

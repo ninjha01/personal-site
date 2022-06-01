@@ -108,6 +108,7 @@ export const Blast = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mt-8">
             <Steps steps={stepOptions} stepID={stepID} />
           </div>
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mt-8">{content()}</div>
         </div>
       </Sidebar>
