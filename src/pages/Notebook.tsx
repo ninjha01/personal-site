@@ -11,7 +11,13 @@ function Notebook() {
     <Sidebar>
       <div className="bg-gray-50 px-4 py-5 shadow-xl sm:rounded-lg sm:px-6">
         <div className="border-b border-gray-200 sm:flex sm:items-center sm:justify-between mb-8 pb-4">
-          <h3 className="text-lg leading-6 font-medium text-gray-900">Code Notebook</h3>
+          <h3 className="text-lg leading-6 font-medium text-gray-900">
+            Code Notebook
+            <span className="inline-flex flex-0 ml-4 mr-0 -mt-1 self-end items-center px-2.5 py-1 px-2 mx-auto rounded-full text-xs font-medium bg-yellow-300 text-blue-900 animate-pulse">
+              Work in Progress
+            </span>
+          </h3>
+
           <div className="mt-3 sm:mt-0 sm:ml-4">
             <button
               type="button"

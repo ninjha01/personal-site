@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BlastForm } from "../components/BlastForm";
 import { BlastResults } from "../components/BlastResults";
 import { Sidebar } from "../components/Sidebar";
@@ -55,6 +55,12 @@ export const Blast = () => {
 
   const [blastResults, setBlastResult] = useState<BlastResponseDatum[] | null>(null);
 
+  const [showBanner, setShowBanner] = useState(true);
+
+  useEffect(function showBanner() {
+    setTimeout(() => setShowBanner(true), 2000);
+  }, []);
+
   const submitBlastReq = (data: BlastRequestData) => {
     setStepID(3);
     const results = generateResults(data);
@@ -101,10 +107,11 @@ export const Blast = () => {
   return (
     <>
       <Sidebar>
-        <div className="py-6">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-            <h1 className="text-3xl font-semibold text-gray-900">Blast Service</h1>
+        <div className="pt-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex flex-row items-center">
+            <h1 className="text-3xl flex-2 font-semibold text-gray-900">Blast Service</h1>
           </div>
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mt-8">
             <Steps steps={stepOptions} stepID={stepID} />
           </div>

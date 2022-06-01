@@ -51,20 +51,27 @@ export const getCells = (): CellDatum[] => {
       errorMsg: null,
       successOuput: null,
     },
+    /* {
+  *   type: "Error" as const,
+  *   errorMsg: "Ya done goofed",
+  * },
+  * {
+  *   type: "Plot" as const,
+  *   data: [1, 2, 3, 4, 5],
+  *   errorMsg: null,
+  * },
+  
+  * {
+  *   type: "Plot" as const,
+  *   data: [1, 2, 3, 4, 5],
+  *   errorMsg: null,
+  * }, */
     {
-      type: "Error" as const,
-      errorMsg: "Ya done goofed",
-    },
-    {
-      type: "Plot" as const,
-      data: [1, 2, 3, 4, 5],
+      type: "Code" as const,
+      language: "Python" as const,
+      codeText: "print(Hello)",
       errorMsg: null,
-    },
-
-    {
-      type: "Plot" as const,
-      data: [1, 2, 3, 4, 5],
-      errorMsg: null,
+      successOuput: null,
     },
     {
       type: "Code" as const,
