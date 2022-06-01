@@ -1,5 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import {
+  BookOpenIcon,
   BriefcaseIcon,
   CodeIcon,
   MenuIcon,
@@ -38,6 +39,13 @@ export const Sidebar = (props: {
       href: "/blast",
       current: false,
       icon: SearchCircleIcon,
+    },
+    {
+      name: "Lab Notebook",
+      href: "/notebook",
+      current: false,
+      icon: BookOpenIcon,
+      wip: true,
     },
   ];
   return (
@@ -129,27 +137,12 @@ export const Sidebar = (props: {
                     ))}
                     <p className="pt-16 pb-2 ml-2 text-blue-100">Demos</p>
                     {uiMockups.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-blue-50"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-blue-50",
-                          "group flex items-center px-2 py-2 text-base font-medium rounded-md"
-                        )}
-                      >
-                        <item.icon
-                          className={classNames(
-                            item.current
-                              ? "text-gray-300"
-                              : "text-gray-400 group-hover:text-gray-300",
-                            "mr-4 flex-shrink-0 h-6 w-6"
-                          )}
-                          aria-hidden="true"
-                        />
-                        {item.name}
-                      </a>
+                      <SidebarItem
+                        url={item.href}
+                        title={item.name}
+                        icon={item.icon}
+                        wip={item.wip}
+                      />
                     ))}
                   </nav>
                 </div>
@@ -221,6 +214,7 @@ export const Sidebar = (props: {
                   url={item.href}
                   title={item.name}
                   icon={item.icon}
+                  wip={item.wip}
                 />
               ))}
             </nav>
@@ -282,10 +276,11 @@ interface SidebarItemType {
   title: string;
   icon: (props: any) => ReactElement;
   hidden?: boolean;
+  wip?: boolean;
 }
 
 const SidebarItem = (props: SidebarItemType) => {
-  const { url, title, hidden } = props;
+  const { url, title, hidden, wip } = props;
 
   const LinkElement = (props: {
     url: string;
@@ -326,6 +321,30 @@ const SidebarItem = (props: SidebarItemType) => {
         aria-hidden="true"
       />
       <span className="ml-4"> {title}</span>
+      {wip && (
+        <>
+          <span className="inline-flex items-center px-2.5 py-0.5 px-2 mx-auto rounded-full text-xs font-medium bg-yellow-300 text-gray-800 animate-pulse">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              enable-background="new 0 0 24 24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="h-4 w-4"
+            >
+              <g>
+                <rect
+                  height="8.48"
+                  transform="matrix(0.7071 -0.7071 0.7071 0.7071 -6.8717 17.6255)"
+                  width="3"
+                  x="16.34"
+                  y="12.87"
+                />
+                <path d="M17.5,10c1.93,0,3.5-1.57,3.5-3.5c0-0.58-0.16-1.12-0.41-1.6l-2.7,2.7L16.4,6.11l2.7-2.7C18.62,3.16,18.08,3,17.5,3 C15.57,3,14,4.57,14,6.5c0,0.41,0.08,0.8,0.21,1.16l-1.85,1.85l-1.78-1.78l0.71-0.71L9.88,5.61L12,3.49 c-1.17-1.17-3.07-1.17-4.24,0L4.22,7.03l1.41,1.41H2.81L2.1,9.15l3.54,3.54l0.71-0.71V9.15l1.41,1.41l0.71-0.71l1.78,1.78 l-7.41,7.41l2.12,2.12L16.34,9.79C16.7,9.92,17.09,10,17.5,10z" />
+              </g>
+            </svg>
+          </span>
+        </>
+      )}
     </LinkElement>
   );
 };
