@@ -7,7 +7,7 @@ export const ProjectSection = (props: { projects: ProjectType[] }) => {
     <section>
       <h1
         id="projects"
-        className="mb-8 pt-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 text-2xl border-t"
+        className="pt-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 text-2xl border-t"
       >
         Projects
       </h1>
@@ -29,7 +29,7 @@ const ProjectCard = (props: { project: ProjectType }) => {
     project: { title, url, description, img },
   } = props;
   return (
-    <div className="flex flex-col overflow-hidden rounded-lg shadow-lg bg-white">
+    <div className="lg:-mt-8 flex flex-col overflow-hidden rounded-lg shadow-lg bg-white">
       <div className="h-60">
         <img className="object-cover object-center w-full rounded-t-xl p-8" src={img} alt="" />
       </div>

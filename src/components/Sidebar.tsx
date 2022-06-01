@@ -268,7 +268,7 @@ const SidebarItem = (props: SidebarItemType) => {
       <span className="ml-4 flex-1"> {title}</span>
       {wip && (
         <>
-          <span className="inline-flex items-center px-2.5 py-0.5 px-2 mx-auto rounded-full text-xs font-medium bg-yellow-300 text-gray-800 animate-pulse">
+          <span className="inline-flex items-center px-2.5 py-0.5 px-2 mx-auto rounded-full text-xs font-medium bg-yellow-300 opacity-90 text-gray-800 animate-pulse">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               enableBackground="new 0 0 24 24"
