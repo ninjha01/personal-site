@@ -13,7 +13,7 @@ export const ClientSection = (props: { clients: ClientType[] }) => {
       </h1>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 auto-rows-1">
-        {clients.map((client) => (
+        {clients.map(client => (
           <ClientCard key={client.name} client={client} />
         ))}
       </div>
@@ -46,10 +46,7 @@ const ClientCard = (props: { client: ClientType }) => {
           src={logo}
         />
         <div className="flex flex-col gap-2">
-          <a
-            className="h-8 text-sm font-semibold tracking-wider text-blue-900 uppercase"
-            href={url}
-          >
+          <a className="h-8 text-sm font-semibold tracking-wider text-blue-900 uppercase" href={url}>
             {name}
           </a>
           <a className="text-xs h-8 text-gray-500 tracking-wider" href={url}>

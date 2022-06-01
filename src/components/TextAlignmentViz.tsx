@@ -1,10 +1,6 @@
 import { classNames } from "../utils";
 
-export const TextAlignmentViz = (props: {
-  query: string;
-  midline: string;
-  target: string;
-}) => {
+export const TextAlignmentViz = (props: { query: string; midline: string; target: string }) => {
   const { query, midline, target } = props;
 
   if (!(query.length === midline.length && midline.length === target.length)) {
@@ -17,28 +13,9 @@ export const TextAlignmentViz = (props: {
         const [midlineChar, targetChar] = [midline[idx], target[idx]];
         return (
           <div className="mb-8 select-none" key={idx}>
-            <div
-              className={classNames(
-                queryChar === " " ? "whitespace-pre-wrap" : ""
-              )}
-            >
-              {queryChar}
-            </div>
-            <div
-              className={classNames(
-                "text-gray-400",
-                midlineChar === "X" ? "text-red-700" : ""
-              )}
-            >
-              {midlineChar}
-            </div>
-            <div
-              className={classNames(
-                targetChar === " " ? "whitespace-pre-wrap" : ""
-              )}
-            >
-              {targetChar}
-            </div>
+            <div className={classNames(queryChar === " " ? "whitespace-pre-wrap" : "")}>{queryChar}</div>
+            <div className={classNames("text-gray-400", midlineChar === "X" ? "text-red-700" : "")}>{midlineChar}</div>
+            <div className={classNames(targetChar === " " ? "whitespace-pre-wrap" : "")}>{targetChar}</div>
           </div>
         );
       })}

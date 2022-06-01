@@ -1,11 +1,7 @@
 import React from "react";
 import { EssayType } from "../commonTypes";
 
-export const WritingItem = (props: {
-  title: string;
-  id: string;
-  description: string;
-}) => {
+export const WritingItem = (props: { title: string; id: string; description: string }) => {
   return (
     <article key={JSON.stringify(props)}>
       <span className="icon fa-pencil"></span>
@@ -22,7 +18,7 @@ export const WritingItem = (props: {
 export const Writings = (props: { essays: EssayType[] }) => {
   return (
     <>
-      {props.essays.map((essay) => (
+      {props.essays.map(essay => (
         <WritingItem
           key={`Essay: ${JSON.stringify(essay)}`}
           title={essay.title}

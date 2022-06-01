@@ -16,9 +16,7 @@ function Notebook() {
   return (
     <Sidebar>
       <div className="pb-5 border-b border-gray-200 sm:flex sm:items-center sm:justify-between mb-16">
-        <h3 className="text-lg leading-6 font-medium text-gray-900">
-          Lab Notebook
-        </h3>
+        <h3 className="text-lg leading-6 font-medium text-gray-900">Lab Notebook</h3>
         <div className="mt-3 sm:mt-0 sm:ml-4">
           <button
             type="button"
@@ -30,8 +28,8 @@ function Notebook() {
       </div>
       <div className="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
         <div className="space-y-6 lg:col-start-1 lg:col-span-2">
-          {[1, 2, 3, 4, 5].map(() => (
-            <Cell />
+          {[1, 2, 3, 4, 5].map((_, i) => (
+            <Cell key={i} item={{ idx: i }} />
           ))}
         </div>
         <div>
@@ -92,26 +90,20 @@ const HistoryFeed = () => {
     },
   ];
   return (
-    <section
-      aria-labelledby="timeline-title"
-      className="lg:col-start-3 lg:col-span-1"
-    >
-      <div className="bg-white px-4 py-5 shadow sm:rounded-lg sm:px-6">
+    <section aria-labelledby="timeline-title" className="lg:col-start-3 lg:col-span-1">
+      <div className="bg-white px-4 py-5 shadow-xl sm:rounded-lg sm:px-6">
         <h2 id="timeline-title" className="text-lg font-medium text-gray-900">
           Timeline
         </h2>
 
         {/* Activity Feed */}
         <div className="mt-6 flow-root">
-          <ul role="list" className="-mb-8">
+          <ul className="-mb-8">
             {timeline.map((item, itemIdx) => (
               <li key={item.id}>
                 <div className="relative pb-8">
                   {itemIdx !== timeline.length - 1 ? (
-                    <span
-                      className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
-                      aria-hidden="true"
-                    />
+                    <span className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true" />
                   ) : null}
                   <div className="relative flex space-x-3">
                     <div>
@@ -121,19 +113,13 @@ const HistoryFeed = () => {
                           "h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white"
                         )}
                       >
-                        <item.type.icon
-                          className="w-5 h-5 text-white"
-                          aria-hidden="true"
-                        />
+                        <item.type.icon className="w-5 h-5 text-white" aria-hidden="true" />
                       </span>
                     </div>
                     <div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
                       <div>
                         <p className="text-sm text-gray-500">
-                          {item.content}{" "}
-                          <a href="#" className="font-medium text-gray-900">
-                            {item.target}
-                          </a>
+                          {item.content} {item.target}
                         </p>
                       </div>
                       <div className="text-right text-sm whitespace-nowrap text-gray-500">
@@ -159,9 +145,9 @@ const HistoryFeed = () => {
   );
 };
 
-const Cell = (props: {}) => {
+const Cell = (props: { item: { idx: number } }) => {
   return (
-    <form action="#" className="mb-8">
+    <form action="#" className="mb-8 bg-white px-4 py-5 shadow-xl sm:rounded-lg sm:px-6 relative z-10">
       <Tab.Group>
         {({ selectedIndex }) => (
           <>

@@ -34,10 +34,7 @@ export const HeroSection = () => {
             </h1>
 
             <div className="mb-8 text-base leading-relaxed mr-8 text-left text-gray-500">
-              <ReactMarkdown
-                children={config.personal.bio}
-                remarkPlugins={[remarkGfm]}
-              />
+              <ReactMarkdown children={config.personal.bio} remarkPlugins={[remarkGfm]} />
             </div>
             <div className="flex flex-col sm:flex-row gap-4 w-full mr-8">
               {GetInTouchButton}

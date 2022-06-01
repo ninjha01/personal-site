@@ -1,9 +1,4 @@
-import {
-  ClientType,
-  EssayType,
-  PersonalType,
-  ProjectType,
-} from "./commonTypes";
+import { ClientType, EssayType, PersonalType, ProjectType } from "./commonTypes";
 
 export const config: {
   url: string;
@@ -41,8 +36,7 @@ My mission is to accelerate life science research by building those tools with y
     {
       name: "Broad Institute",
       url: "https://cancerdatascience.org/",
-      description:
-        "Accelerated cancer research by building data analysis tools for the DepMap portal.",
+      description: "Accelerated cancer research by building data analysis tools for the DepMap portal.",
       subtitle: "of MIT and Harvard",
       logo: require("./assets/images/broad_logo.png"),
     },
@@ -80,8 +74,7 @@ My mission is to accelerate life science research by building those tools with y
       title: "Fel d 1 Viz",
       url: "https://www.feld1viz.com",
       img: require("./assets/images/feld1viz_logo.png"),
-      description:
-        "A visualization of research aimed at creating a hypoallergenic cat.",
+      description: "A visualization of research aimed at creating a hypoallergenic cat.",
     },
   ],
   essays: [
@@ -89,8 +82,7 @@ My mission is to accelerate life science research by building those tools with y
       title: "Strange Loops",
       id: "strange_loops",
       img: require("./assets/images/strange_loops_img.jpg"),
-      description:
-        "What if the code that your computer runs on could be modified by the software itself?",
+      description: "What if the code that your computer runs on could be modified by the software itself?",
     },
     {
       title: "The Control Problem",

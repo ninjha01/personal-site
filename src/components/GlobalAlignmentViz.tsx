@@ -16,7 +16,7 @@ export const GlobalAlignmentViz = (props: {
 }) => {
   const { results, sequenceName, sequenceLength } = props;
 
-  const alignmentItems: AlignmentItem[] = results.map((res) => ({
+  const alignmentItems: AlignmentItem[] = results.map(res => ({
     id: res.id,
     start: res.range[0],
     end: res.range[1],
@@ -58,17 +58,13 @@ export const GlobalAlignmentViz = (props: {
     <section>
       <div className="bg-white shadow-2xl overflow-hidden sm:rounded-lg mt-16 mx-8">
         <div className="bg-white px-4 py-4 border-b border-gray-200 sm:px-6">
-          <h3 className="text-lg leading-6 font-medium text-gray-900">
-            {sequenceName}
-          </h3>
-          <p className="mt-1 max-w-2xl text-sm text-gray-500">
-            {results.length} Alignments
-          </p>
+          <h3 className="text-lg leading-6 font-medium text-gray-900">{sequenceName}</h3>
+          <p className="mt-1 max-w-2xl text-sm text-gray-500">{results.length} Alignments</p>
         </div>
         <div className="px-4 py-5 sm:px-6 overflow-hidden">
           <>
             {bookend}
-            {alignmentItems.map((m) => middleAlignmentItem(m, sequenceLength))}
+            {alignmentItems.map(m => middleAlignmentItem(m, sequenceLength))}
             {bookend}
           </>
         </div>

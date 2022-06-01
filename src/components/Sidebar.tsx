@@ -1,20 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
-import {
-  BookOpenIcon,
-  BriefcaseIcon,
-  CodeIcon,
-  MenuIcon,
-  SearchCircleIcon,
-  XIcon,
-} from "@heroicons/react/outline";
-import React, {
-  Fragment,
-  JSXElementConstructor,
-  ReactElement,
-  ReactFragment,
-  ReactPortal,
-  useState,
-} from "react";
+import { BookOpenIcon, BriefcaseIcon, CodeIcon, MenuIcon, SearchCircleIcon, XIcon } from "@heroicons/react/outline";
+import React, { Fragment, JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useState } from "react";
 import { Link } from "react-router-dom";
 import { config } from "../config";
 import { classNames } from "../utils";
@@ -51,11 +37,7 @@ export const Sidebar = (props: {
   return (
     <div>
       <Transition.Root show={sidebarOpen} as={Fragment}>
-        <Dialog
-          as="div"
-          className="relative z-40 md:hidden"
-          onClose={setSidebarOpen}
-        >
+        <Dialog as="div" className="relative z-40 md:hidden" onClose={setSidebarOpen}>
           <Transition.Child
             as={Fragment}
             enter="transition-opacity ease-linear duration-300"
@@ -95,10 +77,7 @@ export const Sidebar = (props: {
                       onClick={() => setSidebarOpen(false)}
                     >
                       <span className="sr-only">Close sidebar</span>
-                      <XIcon
-                        className="h-6 w-6 text-blue-50"
-                        aria-hidden="true"
-                      />
+                      <XIcon className="h-6 w-6 text-blue-50" aria-hidden="true" />
                     </button>
                   </div>
                 </Transition.Child>
@@ -112,7 +91,7 @@ export const Sidebar = (props: {
                     </a>
                   </button>
                   <nav className="mt-5 px-2 space-y-1">
-                    {homeItems.map((item) => (
+                    {homeItems.map(item => (
                       <a
                         key={item.name}
                         href={item.href}
@@ -125,9 +104,7 @@ export const Sidebar = (props: {
                       >
                         <item.icon
                           className={classNames(
-                            item.current
-                              ? "text-gray-300"
-                              : "text-gray-400 group-hover:text-gray-300",
+                            item.current ? "text-gray-300" : "text-gray-400 group-hover:text-gray-300",
                             "mr-4 flex-shrink-0 h-6 w-6"
                           )}
                           aria-hidden="true"
@@ -136,13 +113,8 @@ export const Sidebar = (props: {
                       </a>
                     ))}
                     <p className="pt-16 pb-2 ml-2 text-blue-100">Demos</p>
-                    {uiMockups.map((item) => (
-                      <SidebarItem
-                        url={item.href}
-                        title={item.name}
-                        icon={item.icon}
-                        wip={item.wip}
-                      />
+                    {uiMockups.map(item => (
+                      <SidebarItem key={item.name} url={item.href} title={item.name} icon={item.icon} wip={item.wip} />
                     ))}
                   </nav>
                 </div>
@@ -176,9 +148,7 @@ export const Sidebar = (props: {
                 </div>
               </Dialog.Panel>
             </Transition.Child>
-            <div className="flex-shrink-0 w-14">
-              {/* Force sidebar to shrink to fit close icon */}
-            </div>
+            <div className="flex-shrink-0 w-14">{/* Force sidebar to shrink to fit close icon */}</div>
           </div>
         </Dialog>
       </Transition.Root>
@@ -199,23 +169,12 @@ export const Sidebar = (props: {
               </button>
             </div>
             <nav className="mt-5 flex-1 px-2 space-y-1">
-              {homeItems.map((item) => (
-                <SidebarItem
-                  key={item.name}
-                  url={item.href}
-                  title={item.name}
-                  icon={item.icon}
-                />
+              {homeItems.map(item => (
+                <SidebarItem key={item.name} url={item.href} title={item.name} icon={item.icon} />
               ))}
               <p className="pt-16 pb-2 ml-2 text-blue-100">Demos</p>
-              {uiMockups.map((item) => (
-                <SidebarItem
-                  key={item.name}
-                  url={item.href}
-                  title={item.name}
-                  icon={item.icon}
-                  wip={item.wip}
-                />
+              {uiMockups.map(item => (
+                <SidebarItem key={item.name} url={item.href} title={item.name} icon={item.icon} wip={item.wip} />
               ))}
             </nav>
           </div>
@@ -262,9 +221,7 @@ export const Sidebar = (props: {
         </div>
         <main className="flex-1">
           <div className="py-6">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-              {props.children}
-            </div>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">{props.children}</div>
           </div>
         </main>
       </div>
@@ -282,30 +239,20 @@ interface SidebarItemType {
 const SidebarItem = (props: SidebarItemType) => {
   const { url, title, hidden, wip } = props;
 
-  const LinkElement = (props: {
-    url: string;
-    hidden?: boolean;
-    children: any;
-  }) => {
+  const LinkElement = (props: { url: string; hidden?: boolean; children: any }) => {
     const { url, hidden, children } = props;
     const className =
       "text-gray-300 hover:bg-gray-700 hover:text-blue-50 group flex items-center px-2 py-2 text-sm font-medium rounded-md";
 
     if (url.includes("#")) {
       return (
-        <a
-          href={url}
-          className={classNames(className, hidden ? "display: none" : "")}
-        >
+        <a href={url} className={classNames(className, hidden ? "display: none" : "")}>
           {children}
         </a>
       );
     } else {
       return (
-        <Link
-          to={url}
-          className={classNames(className, hidden ? "hidden" : "")}
-        >
+        <Link to={url} className={classNames(className, hidden ? "hidden" : "")}>
           {children}
         </Link>
       );
@@ -315,9 +262,7 @@ const SidebarItem = (props: SidebarItemType) => {
   return (
     <LinkElement url={url} hidden={hidden}>
       <props.icon
-        className={classNames(
-          "text-gray-400 group-hover:text-gray-300 mr-3 flex flex-shrink-0 h-6 w-6"
-        )}
+        className={classNames("text-gray-400 group-hover:text-gray-300 mr-3 flex flex-shrink-0 h-6 w-6")}
         aria-hidden="true"
       />
       <span className="ml-4 flex-1"> {title}</span>
@@ -326,7 +271,7 @@ const SidebarItem = (props: SidebarItemType) => {
           <span className="inline-flex items-center px-2.5 py-0.5 px-2 mx-auto rounded-full text-xs font-medium bg-yellow-300 text-gray-800 animate-pulse">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              enable-background="new 0 0 24 24"
+              enableBackground="new 0 0 24 24"
               viewBox="0 0 24 24"
               fill="currentColor"
               className="h-4 w-4"

@@ -11,25 +11,15 @@ export const BlastResults = (props: {
   topologyType: TopologyType;
   sequenceLength: number;
 }) => {
-  const { results, sequenceName, sequenceLength, sequenceType, topologyType } =
-    props;
+  const { results, sequenceName, sequenceLength, sequenceType, topologyType } = props;
   const [loading, setLoading] = useState(true);
 
   useEffect(function stopLoading() {
     setTimeout(() => setLoading(false), 800);
   }, []);
   return (
-    <div
-      className={classNames(
-        "transition-opacity duration-1000 ease-out",
-        loading ? "opacity-0" : "opacity-100"
-      )}
-    >
-      <GlobalAlignmentViz
-        results={results}
-        sequenceName={sequenceName}
-        sequenceLength={sequenceLength}
-      />
+    <div className={classNames("transition-opacity duration-1000 ease-out", loading ? "opacity-0" : "opacity-100")}>
+      <GlobalAlignmentViz results={results} sequenceName={sequenceName} sequenceLength={sequenceLength} />
       <div className="hidden sm:block" aria-hidden="true">
         <div className="py-5 my-8">
           <div className="border-t border-gray-200" />
@@ -37,13 +27,8 @@ export const BlastResults = (props: {
       </div>
 
       <div className="my-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
-        {results.map((result) => (
-          <ResultCard
-            key={result.id}
-            result={result}
-            sequenceType={sequenceType}
-            topologyType={topologyType}
-          />
+        {results.map(result => (
+          <ResultCard key={result.id} result={result} sequenceType={sequenceType} topologyType={topologyType} />
         ))}
       </div>
     </div>

@@ -15,7 +15,7 @@ export const ProjectSection = (props: { projects: ProjectType[] }) => {
       <div className="relative px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
         <div className="relative mx-auto max-w-7xl">
           <div className="grid max-w-lg gap-5 mx-auto lg:grid-cols-3 lg:max-w-none">
-            {projects.map((project) => (
+            {projects.map(project => (
               <ProjectCard key={project.title} project={project} />
             ))}
           </div>
@@ -31,11 +31,7 @@ const ProjectCard = (props: { project: ProjectType }) => {
   return (
     <div className="flex flex-col overflow-hidden rounded-lg shadow-lg bg-white">
       <div className="h-60">
-        <img
-          className="object-cover object-center w-full rounded-t-xl p-8"
-          src={img}
-          alt=""
-        />
+        <img className="object-cover object-center w-full rounded-t-xl p-8" src={img} alt="" />
       </div>
       <div className="flex flex-col justify-between flex-1 p-6 bg-white">
         <div className="flex-1">

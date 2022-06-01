@@ -51,13 +51,9 @@ export const Blast = () => {
   const [sequence, setSequence] = useState<string>(
     "QIKDLLVSSSTDLDTTLVLVNAIYFKGMWKTAFNAEDTREMPFHVTKQESKPVQMMCMNNSFNVATLPAEKMKILELPFASGDLSMLVLLPDEVSDLERIEKTINFEKLTEWTNPNTMEKRRVKVYLPQMKIEEK"
   );
-  const [sequenceName, setSequenceName] = useState<string | null>(
-    "Example Sequence"
-  );
+  const [sequenceName, setSequenceName] = useState<string | null>("Example Sequence");
 
-  const [blastResults, setBlastResult] = useState<BlastResponseDatum[] | null>(
-    null
-  );
+  const [blastResults, setBlastResult] = useState<BlastResponseDatum[] | null>(null);
 
   const submitBlastReq = (data: BlastRequestData) => {
     setStepID(3);
@@ -106,16 +102,12 @@ export const Blast = () => {
       <Sidebar>
         <div className="py-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-            <h1 className="text-3xl font-semibold text-gray-900">
-              Blast Service
-            </h1>
+            <h1 className="text-3xl font-semibold text-gray-900">Blast Service</h1>
           </div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mt-8">
             <Steps steps={stepOptions} stepID={stepID} />
           </div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mt-8">
-            {content()}
-          </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mt-8">{content()}</div>
         </div>
       </Sidebar>
     </>
@@ -189,7 +181,7 @@ const generateResults = (args: { sequence: string }) => {
         const errorRate = getRndInteger(1, 80) / 100;
         const newString = query.split("");
         return newString
-          .map((x) => {
+          .map(x => {
             if (!!errorRate && Math.random() <= errorRate) {
               const randIdx = getRndInteger(0, query.length);
               return query[randIdx];

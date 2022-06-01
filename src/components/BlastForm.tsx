@@ -1,12 +1,6 @@
 import { RadioGroup } from "@headlessui/react";
 import React, { useEffect, useState } from "react";
-import {
-  BlastRequestData,
-  SequenceType,
-  sequenceTypes,
-  TopologyType,
-  topologyTypes,
-} from "../pages/Blast";
+import { BlastRequestData, SequenceType, sequenceTypes, TopologyType, topologyTypes } from "../pages/Blast";
 import { classNames } from "../utils";
 
 export const BlastForm = (props: {
@@ -60,13 +54,10 @@ export const BlastForm = (props: {
       <div className="md:grid md:grid-cols-3 md:gap-6">
         <div className="md:col-span-1">
           <div className="px-4 sm:px-0">
-            <h3 className="text-lg font-medium leading-6 text-gray-900">
-              Basic Local Alignment Search Tool
-            </h3>
+            <h3 className="text-lg font-medium leading-6 text-gray-900">Basic Local Alignment Search Tool</h3>
             <p className="mt-1 text-sm text-gray-900">
-              BLAST finds regions of similarity between biological sequences.
-              The program compares nucleotide or protein sequences to sequence
-              databases and calculates the statistical significance.
+              BLAST finds regions of similarity between biological sequences. The program compares nucleotide or protein
+              sequences to sequence databases and calculates the statistical significance.
             </p>
           </div>
         </div>
@@ -77,27 +68,16 @@ export const BlastForm = (props: {
                 <>
                   <NameInput name={sequenceName} setName={setSequenceName} />
 
-                  <SequenceInput
-                    sequence={sequence}
-                    setSequence={setSequence}
-                  />
+                  <SequenceInput sequence={sequence} setSequence={setSequence} />
                   <SequenceTypeSelector
                     setSequenceType={setSequenceType}
                     sequence={sequence}
                     sequenceType={sequenceType}
                   />
-                  <TopologyTypeSelector
-                    topology={topology}
-                    setTopology={setTopology}
-                    sequence={sequence}
-                  />
+                  <TopologyTypeSelector topology={topology} setTopology={setTopology} sequence={sequence} />
                 </>
               </div>
-              <div
-                className={classNames(
-                  "px-4 py-3 bg-gray-50 text-right sm:px-6"
-                )}
-              >
+              <div className={classNames("px-4 py-3 bg-gray-50 text-right sm:px-6")}>
                 <button
                   className={classNames(
                     "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 disabled:opacity-50",
@@ -105,11 +85,7 @@ export const BlastForm = (props: {
                   )}
                   disabled={!validated}
                   onClick={() => {
-                    if (
-                      (sequence.length > 0,
-                      sequenceType !== null,
-                      topology !== null)
-                    ) {
+                    if ((sequence.length > 0, sequenceType !== null, topology !== null)) {
                       submitBlastReq({ sequence, sequenceType, topology });
                     }
                   }}
@@ -125,10 +101,7 @@ export const BlastForm = (props: {
   );
 };
 
-const NameInput = (props: {
-  name: string | null;
-  setName: (seq: string) => void;
-}) => {
+const NameInput = (props: { name: string | null; setName: (seq: string) => void }) => {
   const { name, setName } = props;
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -136,10 +109,7 @@ const NameInput = (props: {
 
   return (
     <div>
-      <label
-        htmlFor="name"
-        className={classNames("block text-sm font-medium text-gray-800")}
-      >
+      <label htmlFor="name" className={classNames("block text-sm font-medium text-gray-800")}>
         Sequence Name
       </label>
       <div className="mt-1">
@@ -159,10 +129,7 @@ const NameInput = (props: {
   );
 };
 
-const SequenceInput = (props: {
-  sequence: string;
-  setSequence: (seq: string) => void;
-}) => {
+const SequenceInput = (props: { sequence: string; setSequence: (seq: string) => void }) => {
   const { sequence, setSequence } = props;
   const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setSequence(e.target.value);
@@ -170,10 +137,7 @@ const SequenceInput = (props: {
 
   return (
     <div>
-      <label
-        htmlFor="sequence"
-        className="block text-sm font-medium text-gray-800"
-      >
+      <label htmlFor="sequence" className="block text-sm font-medium text-gray-800">
         Sequence
       </label>
       <div className="mt-1">
@@ -206,15 +170,11 @@ const SequenceTypeSelector = (props: {
   };
   return (
     <div>
-      <label
-        htmlFor="sequence-type"
-        className="block text-sm font-medium text-gray-800"
-      >
+      <label htmlFor="sequence-type" className="block text-sm font-medium text-gray-800">
         Sequence Type
       </label>
       <p className="mt-2 text-sm text-gray-500">
-        Are you searching with a DNA (nucleotide) or a Protein (amino acid)
-        sequence?
+        Are you searching with a DNA (nucleotide) or a Protein (amino acid) sequence?
       </p>
 
       <RadioGroup
@@ -227,8 +187,8 @@ const SequenceTypeSelector = (props: {
       >
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {sequenceTypes
-            .filter((x) => !!x)
-            .map((option) => (
+            .filter(x => !!x)
+            .map(option => (
               <RadioGroup.Option
                 key={option}
                 value={option}
@@ -266,15 +226,10 @@ const TopologyTypeSelector = (props: {
   };
   return (
     <div>
-      <label
-        htmlFor="sequence-type"
-        className="block text-sm font-medium text-gray-800"
-      >
+      <label htmlFor="sequence-type" className="block text-sm font-medium text-gray-800">
         Topology Type
       </label>
-      <p className="mt-2 text-sm text-gray-500">
-        Do you want to search against circular dna (plasmids) or linear dna?
-      </p>
+      <p className="mt-2 text-sm text-gray-500">Do you want to search against circular dna (plasmids) or linear dna?</p>
       <RadioGroup
         id="topology"
         name="topology"
@@ -283,13 +238,11 @@ const TopologyTypeSelector = (props: {
         className="mt-2 disabled:opacity-50"
         disabled={disabled}
       >
-        <RadioGroup.Label className="sr-only">
-          Choose a sequence type
-        </RadioGroup.Label>
+        <RadioGroup.Label className="sr-only">Choose a sequence type</RadioGroup.Label>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {topologyTypes
-            .filter((x) => !!x)
-            .map((option) => (
+            .filter(x => !!x)
+            .map(option => (
               <RadioGroup.Option
                 key={option}
                 value={option}

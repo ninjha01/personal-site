@@ -9,18 +9,7 @@ export function ResultCard(props: {
   topologyType: TopologyType;
 }) {
   const {
-    result: {
-      title,
-      subtitle,
-      range,
-      gaps,
-      frame,
-      id,
-      query,
-      midline,
-      target,
-      score,
-    },
+    result: { title, subtitle, range, gaps, frame, id, query, midline, target, score },
     sequenceType,
   } = props;
   const unit = (sequenceType: SequenceType) => {
@@ -92,33 +81,17 @@ function IconBar(props: { score: number; gaps: number; frame: number }) {
     <div className="mt-6 flex justify-between space-x-8 flex-0">
       <div className="flex space-x-6">
         <span className="inline-flex items-center text-sm">
-          <button
-            type="button"
-            className="inline-flex space-x-2 text-gray-400 hover:text-gray-500"
-          >
+          <button type="button" className="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
             <StarIcon
-              className={classNames(
-                "h-5 w-5",
-                score > 75 ? "text-yellow-600 animate-bounce delay-300" : ""
-              )}
+              className={classNames("h-5 w-5", score > 75 ? "text-yellow-600 animate-bounce delay-300" : "")}
               aria-hidden="true"
             />
-            <span className={classNames("font-sm text-gray-900 ")}>
-              Score: {score}
-            </span>
+            <span className={classNames("font-sm text-gray-900 ")}>Score: {score}</span>
           </button>
         </span>
         <span className="inline-flex items-center text-sm">
-          <button
-            type="button"
-            className="inline-flex space-x-1 text-gray-400 hover:text-gray-500"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
+          <button type="button" className="inline-flex space-x-1 text-gray-400 hover:text-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path
                 fillRule="evenodd"
                 d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
@@ -143,10 +116,7 @@ function IconBar(props: { score: number; gaps: number; frame: number }) {
           </button>
         </span>
         <span className="inline-flex items-center text-sm">
-          <button
-            type="button"
-            className="inline-flex space-x-2 text-gray-400 hover:text-gray-500"
-          >
+          <button type="button" className="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
