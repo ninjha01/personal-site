@@ -37,23 +37,19 @@ const ClientCard = (props: { client: ClientType }) => {
   );
 
   return (
-    <div className="flex flex-col p-6 text-left shadow-2xl rounded-xl bg-white">
+    <div className="flex flex-col p-6 text-left rounded-xl bg-white shadow-md hover:shadow-xl hover:shadow-blue-900 ease-in-out duration-200 ">
       {description}
-      <div className="flex flex-row items-center gap-3 my-8">
+      <a className="flex flex-row items-center gap-3 mt-8 mb-2" href={url}>
         <img
           alt="client logo"
-          className="inline-block object-cover object-center w-auto h-16 mt-3 rounded-full outline-rounded outline-dashed outline-offset-2 outline-[1.2] outline-blue-900 p-1 inline-block align-baseline"
+          className="inline-block object-cover object-center w-16 h-16 mt-3 p-1 rounded-full inline-block align-baseline outline-rounded outline-dashed outline-offset-2 outline-[1.2] outline-blue-900"
           src={logo}
         />
-        <div className="flex flex-col gap-2">
-          <a className="h-8 text-sm font-semibold tracking-wider text-blue-900 uppercase" href={url}>
-            {name}
-          </a>
-          <a className="text-xs h-8 text-gray-500 tracking-wider" href={url}>
-            {subtitle}
-          </a>
+        <div className="flex flex-col justify-center space-between gap-2">
+          <p className="text-sm font-semibold tracking-wider text-blue-900 uppercase">{name}</p>
+          <p className="text-xs track-tighter text-gray-500">{subtitle}</p>
         </div>
-      </div>
+      </a>
     </div>
   );
 };

@@ -29,9 +29,11 @@ const ProjectCard = (props: { project: ProjectType }) => {
     project: { title, url, description, img },
   } = props;
   return (
-    <div className="lg:-mt-8 flex flex-col overflow-hidden rounded-lg shadow-lg bg-white">
+    <div className="lg:-mt-8 flex flex-col overflow-hidden rounded-lg bg-white shadow-md hover:shadow-xl hover:shadow-blue-900 ease-in-out duration-200">
       <div className="h-60">
-        <img className="object-cover object-center w-full rounded-t-xl p-8" src={img} alt="" />
+        <a href={url}>
+          <img className="object-cover object-center w-full rounded-t-xl p-8" src={img} alt="" />
+        </a>
       </div>
       <div className="flex flex-col justify-between flex-1 p-6 bg-white">
         <div className="flex-1">
