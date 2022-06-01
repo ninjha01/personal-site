@@ -11,7 +11,7 @@ function Notebook() {
     <Sidebar>
       <div className="bg-gray-50 px-4 py-5 shadow-xl sm:rounded-lg sm:px-6">
         <div className="border-b border-gray-200 sm:flex sm:items-center sm:justify-between mb-8 pb-4">
-          <h3 className="text-lg leading-6 font-medium text-gray-900">Lab Notebook</h3>
+          <h3 className="text-lg leading-6 font-medium text-gray-900">Code Notebook</h3>
           <div className="mt-3 sm:mt-0 sm:ml-4">
             <button
               type="button"

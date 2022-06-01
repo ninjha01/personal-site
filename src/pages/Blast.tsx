@@ -91,6 +91,7 @@ export const Blast = () => {
                 sequenceLength={sequence.length}
                 sequenceType={sequenceType}
                 topologyType={topology}
+                sequence={sequence}
               />
             )}
           </>
