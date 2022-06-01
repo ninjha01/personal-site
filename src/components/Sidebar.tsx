@@ -316,11 +316,11 @@ const SidebarItem = (props: SidebarItemType) => {
     <LinkElement url={url} hidden={hidden}>
       <props.icon
         className={classNames(
-          "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 h-6 w-6"
+          "text-gray-400 group-hover:text-gray-300 mr-3 flex flex-shrink-0 h-6 w-6"
         )}
         aria-hidden="true"
       />
-      <span className="ml-4"> {title}</span>
+      <span className="ml-4 flex-1"> {title}</span>
       {wip && (
         <>
           <span className="inline-flex items-center px-2.5 py-0.5 px-2 mx-auto rounded-full text-xs font-medium bg-yellow-300 text-gray-800 animate-pulse">
