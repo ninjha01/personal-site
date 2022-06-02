@@ -12,7 +12,7 @@ function Notebook() {
         <div className="border-b border-gray-200 flex items-center justify-between mb-8 pb-4">
           <h3 className="text-2xl font-medium text-blue-900 flex flex-row gap-4 ">
             Code Notebook
-            <span className="px-2 py-2 items-center justify-center rounded-full text-xs font-medium bg-yellow-300 text-slate-900 animate-pulse">
+            <span className="px-2 py-2 m-auto flex items-center justify-center text-center rounded-full text-xs bg-yellow-300 text-slate-900 animate-pulse">
               Work in Progress
             </span>
           </h3>
