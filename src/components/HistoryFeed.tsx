@@ -42,7 +42,7 @@ export const HistoryFeed = () => {
       id: 3,
       type: eventTypes.execute,
       content: "Ran",
-      target: "Cell #4",
+      target: "Cell $4",
       cell_id: 4,
       date: "Jun 1",
       datetime: "2022-06-01",
@@ -60,7 +60,7 @@ export const HistoryFeed = () => {
       id: 5,
       type: eventTypes.execute,
       content: "Ran",
-      target: "Cell #5",
+      target: "Cell #7",
       cell_id: 5,
       date: "Jun 1",
       datetime: "2022-06-01",
@@ -69,7 +69,7 @@ export const HistoryFeed = () => {
       id: 6,
       type: eventTypes.success,
       content: "Successfully ran",
-      target: "Cell #5",
+      target: "Cell #7",
       cell_id: 5,
       date: "Jun 1",
       datetime: "2022-06-01",
@@ -78,7 +78,7 @@ export const HistoryFeed = () => {
       id: 7,
       type: eventTypes.execute,
       content: "Ran",
-      target: "Cell #3",
+      target: "Cell #6",
       cell_id: 3,
       date: "Jun 1",
       datetime: "2022-06-01",
@@ -95,7 +95,7 @@ export const HistoryFeed = () => {
   ];
   return (
     <section aria-labelledby="timeline-title" className="lg:col-start-3 lg:col-span-1">
-      <div className="bg-white px-4 py-5 shadow-xl sm:rounded-lg sm:px-6">
+      <div className="bg-white px-4 py-5 shadow-xl rounded-lg sm:px-6">
         <h2 id="timeline-title" className="text-lg font-medium text-gray-900">
           Timeline
         </h2>

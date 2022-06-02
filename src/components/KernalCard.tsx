@@ -16,7 +16,7 @@ export const KernelCard = (props: { kernelData: KernelData }) => {
 
   return (
     <section className="w-full">
-      <div className="bg-white shadow-2xl overflow-hidden sm:rounded-lg">
+      <div className="bg-white shadow-2xl overflow-hidden rounded-lg">
         <div className="bg-white px-4 py-4  sm:px-6">
           <h3 className="text-lg leading-6 font-medium text-gray-900">Kernel Data</h3>
         </div>

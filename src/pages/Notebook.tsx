@@ -1,4 +1,3 @@
-import React from "react";
 import { CodeCell, ErrorCell, getCells, PlotCell } from "../components/Cell";
 import { HistoryFeed } from "../components/HistoryFeed";
 import { getKernelData, KernelCard } from "../components/KernalCard";
@@ -41,7 +40,7 @@ function Notebook() {
               }
             })}
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 order-first lg:order-last">
             <KernelCard kernelData={getKernelData()} />
             <HistoryFeed />
           </div>
