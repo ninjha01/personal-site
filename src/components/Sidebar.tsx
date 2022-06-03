@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { BookOpenIcon, BriefcaseIcon, CodeIcon, MenuIcon, SearchCircleIcon, XIcon } from "@heroicons/react/outline";
-import React, { Fragment, JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useState } from "react";
+import { Fragment, JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useState } from "react";
 import { Link } from "react-router-dom";
 import { config } from "../config";
 import { classNames } from "../utils";
@@ -34,6 +34,17 @@ export const Sidebar = (props: {
       wip: true,
     },
   ];
+  const navItems = (
+    <nav className="mt-5 px-2 space-y-1">
+      {homeItems.map(item => (
+        <SidebarItem key={item.name} url={item.href} title={item.name} icon={item.icon} />
+      ))}
+      <p className="pt-16 pb-2 ml-2 text-blue-100">UI Mockups</p>
+      {uiMockups.map(item => (
+        <SidebarItem key={item.name} url={item.href} title={item.name} icon={item.icon} wip={item.wip} />
+      ))}
+    </nav>
+  );
   return (
     <div>
       <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -90,33 +101,7 @@ export const Sidebar = (props: {
                       {config.url}
                     </a>
                   </button>
-                  <nav className="mt-5 px-2 space-y-1">
-                    {homeItems.map(item => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-blue-50"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-blue-50",
-                          "group flex items-center px-2 py-2 text-base font-medium rounded-md"
-                        )}
-                      >
-                        <item.icon
-                          className={classNames(
-                            item.current ? "text-gray-300" : "text-gray-400 group-hover:text-gray-300",
-                            "mr-4 flex-shrink-0 h-6 w-6"
-                          )}
-                          aria-hidden="true"
-                        />
-                        {item.name}
-                      </a>
-                    ))}
-                    <p className="pt-16 pb-2 ml-2 text-blue-100">Demos</p>
-                    {uiMockups.map(item => (
-                      <SidebarItem key={item.name} url={item.href} title={item.name} icon={item.icon} wip={item.wip} />
-                    ))}
-                  </nav>
+                  {navItems}
                 </div>
                 <div className="flex-shrink-0 flex bg-gray-700 p-4">
                   <div className="flex items-center">
@@ -168,15 +153,7 @@ export const Sidebar = (props: {
                 </a>
               </button>
             </div>
-            <nav className="mt-5 flex-1 px-2 space-y-1">
-              {homeItems.map(item => (
-                <SidebarItem key={item.name} url={item.href} title={item.name} icon={item.icon} />
-              ))}
-              <p className="pt-16 pb-2 ml-2 text-blue-100">Demos</p>
-              {uiMockups.map(item => (
-                <SidebarItem key={item.name} url={item.href} title={item.name} icon={item.icon} wip={item.wip} />
-              ))}
-            </nav>
+            {navItems}
           </div>
           <div className="flex-shrink-0 flex bg-gray-700 p-4">
             <div className="flex items-center">
