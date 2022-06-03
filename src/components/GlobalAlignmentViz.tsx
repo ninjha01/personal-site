@@ -18,8 +18,8 @@ export const GlobalAlignmentViz = (props: {
 
   const alignmentItems: AlignmentItem[] = results.map(res => ({
     id: res.id,
-    start: res.range[0],
-    end: res.range[1],
+    start: res.query_range[0],
+    end: res.query_range[1],
     title: res.title,
     anchor: `${res.id}`,
   }));

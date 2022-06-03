@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BlastForm } from "../components/BlastForm";
 import { BlastResults } from "../components/BlastResults";
 import { Sidebar } from "../components/Sidebar";
@@ -19,7 +19,8 @@ export interface BlastRequestData {
 
 export interface BlastResponseDatum {
   id: string;
-  range: [number, number];
+  query_range: [number, number];
+  target_range: [number, number];
   score: number;
   identities: number;
   positives: number;
@@ -163,21 +164,7 @@ const generateResults = (args: { sequence: string }) => {
     value: { title: string; subtitle: string; sequence_id: string },
     index: number,
     array: { title: string; subtitle: string; sequence_id: string }[]
-  ) => {
-    id: string;
-    score: number;
-    range: [number, number];
-    identities: number;
-    positives: number;
-    gaps: number;
-    frame: number;
-    sequence_id: string;
-    title: string;
-    subtitle: string;
-    query: string;
-    midline: string;
-    target: string;
-  } {
+  ) => BlastResponseDatum {
     return (metadata, i) => {
       const { title, subtitle, sequence_id } = metadata;
       let start = getRndInteger(0, sequence.length);
@@ -207,6 +194,9 @@ const generateResults = (args: { sequence: string }) => {
 
       const target = generateTargetString(trimmedQuery);
 
+      const target_start = getRndInteger(0, 10000);
+      const target_range = [target_start, target_start + target.length] as [number, number];
+
       const generateMidline = (query: string, target: string) => {
         return query
           .split("")
@@ -226,7 +216,7 @@ const generateResults = (args: { sequence: string }) => {
 
       return {
         id: `${i}`,
-        range: [start, end] as [number, number],
+        query_range: [start, end] as [number, number],
         identities: getRndInteger(0, 100),
         positives: getRndInteger(0, 100),
         gaps: getRndInteger(0, 100),
@@ -238,6 +228,7 @@ const generateResults = (args: { sequence: string }) => {
         subtitle,
         midline,
         target,
+        target_range,
       };
     };
   }

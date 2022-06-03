@@ -15,6 +15,7 @@ module.exports = {
     opacity: ({ after }) => after(["disabled"]),
     extend: {
       display: ["group-hover"],
+      visibility: ["group-hover"],
     },
   },
 };

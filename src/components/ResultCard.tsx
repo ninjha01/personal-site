@@ -9,7 +9,7 @@ export function ResultCard(props: {
   topologyType: TopologyType;
 }) {
   const {
-    result: { title, subtitle, range, gaps, frame, id, query, midline, target, score },
+    result: { title, subtitle, query_range, gaps, frame, id, query, midline, target, target_range, score },
     sequenceType,
   } = props;
   const unit = (sequenceType: SequenceType) => {
@@ -33,7 +33,7 @@ export function ResultCard(props: {
     <article
       id={`card-${id}`}
       aria-labelledby={"result-title-" + id}
-      className="bg-white px-4 py-6 shadow-xl sm:rounded-lg flex flex-col"
+      className="bg-white px-4 py-6 shadow-xl sm:rounded-lg flex flex-col opacity-60 hover:opacity-100 hover:shadow-blue-900 transition ease-in-out duration-300 group"
     >
       <div className="mb-2">
         <div className="flex space-x-3">
@@ -60,17 +60,23 @@ export function ResultCard(props: {
             <p className="text-sm text-gray-500">
               {subtitle}
               {" | "}
-              {range[1] - range[0]} {unit(sequenceType)} match
+              {query_range[1] - query_range[0]} {unit(sequenceType)} match
             </p>
           </div>
-          <span className="inline-flex flex-0 self-end items-center px-2.5 py-0.5 px-2 rounded-lg text-md font-medium bg-gray-200 opacity-90 text-gray-400">
+          <span className="inline-flex flex-0 self-end items-center px-2.5 py-0.5 px-2 rounded-lg text-md font-medium bg-gray-200 text-gray-400 group-hover:animate-pulse">
             Demo
           </span>
         </div>
       </div>
       {divider}
       <div className="mt-2 grow">
-        <TextAlignmentViz query={query} midline={midline} target={target} />
+        <TextAlignmentViz
+          query={query}
+          midline={midline}
+          target={target}
+          query_range={query_range}
+          target_range={target_range}
+        />
       </div>
       {divider}
       <IconBar score={score} gaps={gaps} frame={frame} />

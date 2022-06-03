@@ -43,16 +43,14 @@ import matplotlib as plt`,
     {
       type: "Code" as const,
       language: "Python" as const,
-      codeText: `ys = 200 + np.random.randn(100)
-x = [x for x in range(len(ys))]`,
+      codeText: `ys = 200 + np.random.randn(100)`,
       errorMsg: null,
       successOuput: null,
     },
     {
       type: "Code" as const,
       language: "Python" as const,
-      codeText: `ys = 200 + np.random.randn(100)
-x = [x for x in range(len(ys))]`,
+      codeText: `x = [x for x in range(len(ys))]`,
       errorMsg: null,
       successOuput: null,
     },
@@ -160,6 +158,9 @@ export const CodeCell = (props: { item: CodeCellDatum }) => {
             className="resize-y font-mono shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md border border-gray-300 p-2 whitespace-pre-line"
             placeholder="Enter text here."
             contentEditable
+            suppressContentEditableWarning={
+              true
+            } /* Supresses warning because we don't care about updates to item.codeText in the demo */
           >
             {item.codeText}
           </div>
