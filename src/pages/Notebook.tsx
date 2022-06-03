@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { CodeCell, ErrorCell, getCells, PlotCell } from "../components/Cell";
 import { HistoryFeed } from "../components/HistoryFeed";
 import { getKernelData, KernelCard } from "../components/KernalCard";
@@ -5,6 +6,11 @@ import { Sidebar } from "../components/Sidebar";
 
 function Notebook() {
   const cells = getCells();
+
+  useEffect(function setTitle() {
+    document.title = "Code Notebook";
+  }, []);
+
   return (
     <Sidebar>
       <div className="bg-slate-300 px-4 py-5 shadow-xl rounded-lg border-l-8 border-blue-900 border-opacity-60 border-dashed">

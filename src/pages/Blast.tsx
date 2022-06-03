@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { BlastForm } from "../components/BlastForm";
 import { BlastResults } from "../components/BlastResults";
 import { Sidebar } from "../components/Sidebar";
@@ -59,7 +59,11 @@ export const Blast = () => {
   
   * useEffect(function showBanner() {
   *   setTimeout(() => setShowBanner(true), 2000);
-  * }, []); */
+   * }, []); */
+
+  useEffect(function setTitle() {
+    document.title = "Blast Service";
+  }, []);
 
   const submitBlastReq = (data: BlastRequestData) => {
     setStepID(3);
