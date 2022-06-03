@@ -93,7 +93,7 @@ plt.show()`,
 
 const CellShell = (props: { children: any; id: string; runnable: boolean; hideShellBar?: boolean }) => {
   const ShellBar = (
-    <div className="ml-2 mr-auto flex gap-4 items-center space-x-5">
+    <div className="ml-2 mr-auto flex gap-4 items-center space-x-5" id={props.id}>
       <div className="flex items-center">
         <button
           type="button"
