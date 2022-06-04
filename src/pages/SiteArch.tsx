@@ -1,11 +1,23 @@
-import ReactFlow, { addEdge, Background, MarkerType, useEdgesState, useNodesState } from "react-flow-renderer";
+import ReactFlow, {
+  addEdge,
+  Background,
+  DefaultEdgeOptions,
+  Edge,
+  MarkerType,
+  Node,
+  Position,
+  useEdgesState,
+  useNodesState,
+} from "react-flow-renderer";
 import { Sidebar } from "../components/Sidebar";
+import { useWindowSize } from "../hooks/useWindowSize";
 
 export const SiteArch = () => {
+  const size = useWindowSize();
   return (
     <>
       <Sidebar>
-        <div style={{ height: 800 }}>
+        <div style={{ height: size.height! - 60 }} className="w-full">
           <OverviewFlow />
         </div>
       </Sidebar>
@@ -20,116 +32,189 @@ const OverviewFlow = () => {
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const onConnect = (params: any) => setEdges(eds => addEdge(params, eds));
 
+  const edgeOptions: DefaultEdgeOptions = {
+    animated: true,
+    style: {
+      stroke: "#1e3a8a" /* blue-900 */,
+    },
+    type: "smoothstep",
+    markerEnd: { type: MarkerType.ArrowClosed, color: "black" },
+    labelStyle: { fontFamily: "monospace", fontSize: 16 },
+  };
+
   return (
     <ReactFlow
       nodes={nodes}
       edges={edges}
+      defaultEdgeOptions={edgeOptions}
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}
       onConnect={onConnect}
       onInit={onInit}
       fitView
+      nodesConnectable={false}
       attributionPosition="top-right"
     >
-      {/* #eff6ff is blue-50 */}
-      <Background color="#eff6ff" gap={16} />
+      <Background size={0.6} color="#1e3a8a" gap={16} />
     </ReactFlow>
   );
 };
 
-export const initialNodes = [
+export const initialNodes: Node[] = [
   {
     id: "1",
     type: "input",
     data: {
-      label: "Welcome to <strong>React Flow!</strong>",
+      label: (
+        <a href="https://github.com/ninjha01/personal-site" className="underline" target="_blank" rel="noreferrer">
+          <code>ninjha01/personal-site</code>
+        </a>
+      ),
     },
-    position: { x: 250, y: 0 },
+
+    position: { x: 250, y: 10 },
   },
   {
     id: "2",
+
     data: {
-      label: "This is a <strong>default node</strong>",
+      label: "Github Actions",
     },
-    position: { x: 100, y: 100 },
+    position: { x: 50, y: 120 },
+    className: "h-72 w-64 bg-blue-200 -z-10",
+  },
+  {
+    id: "2a",
+    type: "input",
+    data: {
+      label: "Linting",
+    },
+    parentNode: "2",
+    extent: "parent",
+    position: { x: 55, y: 30 },
+    style: {
+      zIndex: 10,
+    },
+  },
+  {
+    id: "2b",
+    parentNode: "2",
+    extent: "parent",
+    position: { x: 55, y: 80 },
+    data: {
+      label: "Unit Tests",
+    },
+  },
+  {
+    id: "2c",
+    parentNode: "2",
+    extent: "parent",
+    position: { x: 55, y: 130 },
+    data: {
+      label: "Deploy to Staging",
+    },
+    sourcePosition: Position.Right,
+  },
+  {
+    id: "2d",
+    parentNode: "2",
+    extent: "parent",
+    position: { x: 55, y: 180 },
+    data: {
+      label: "End to End Tests",
+    },
+    targetPosition: Position.Right,
+  },
+  {
+    id: "2e",
+    parentNode: "2",
+    extent: "parent",
+    position: { x: 55, y: 230 },
+    data: {
+      label: "Deploy to Prod",
+    },
   },
   {
     id: "3",
+
     data: {
-      label: "This one has a <strong>custom style</strong>",
+      label: "Staging Env",
     },
-    position: { x: 400, y: 100 },
+    position: { x: 650, y: 130 },
     style: {
-      background: "#D6D5E6",
-      color: "#333",
-      border: "1px solid #222138",
-      width: 180,
+      zIndex: -10,
+      height: 80,
+      width: 80,
     },
+    className: "bg-green-200 -z-10",
+    targetPosition: Position.Left,
+    sourcePosition: Position.Bottom,
   },
   {
     id: "4",
-    position: { x: 250, y: 200 },
     data: {
-      label: "Another default node",
+      label: "Prod Env",
     },
-  },
-  {
-    id: "5",
-    data: {
-      label: "Node id: 5",
-    },
-    position: { x: 250, y: 325 },
-  },
-  {
-    id: "6",
-    type: "output",
-    data: {
-      label: "An <strong>output node</strong>",
-    },
-    position: { x: 100, y: 480 },
-  },
-  {
-    id: "7",
-    type: "output",
-    data: { label: "Another output node" },
     position: { x: 400, y: 450 },
+    style: {
+      zIndex: -10,
+      height: 30 * 7,
+      width: 120 + 30,
+    },
+    className: "h-72 w-64 bg-green-200 -z-10",
+    targetPosition: Position.Left,
+  },
+  {
+    id: "4a",
+    type: "input",
+    data: {
+      label: "React Frontend",
+    },
+    parentNode: "4",
+    extent: "parent",
+    position: { x: 55, y: 65 },
+    style: {
+      zIndex: 10,
+    },
+  },
+  {
+    id: "4b",
+    parentNode: "4",
+    extent: "parent",
+    position: { x: 55, y: 125 },
+    data: {
+      label: "Flask Backend",
+    },
+  },
+  {
+    id: "4c",
+    parentNode: "4",
+    extent: "parent",
+    position: { x: 55, y: 185 },
+    data: {
+      label: "Cloud Storage",
+    },
   },
 ];
 
-export const initialEdges = [
-  { id: "e1-2", source: "1", target: "2", label: "this is an edge label" },
-  { id: "e1-3", source: "1", target: "3" },
+export const initialEdges: Edge[] = [
   {
-    id: "e3-4",
+    id: "e1-2",
+    source: "1",
+    target: "2",
+    label: "commit",
+  },
+  {
+    id: "e2c-3",
+    source: "2c",
+    target: "3",
+    label: "gcloud deploy",
+  },
+  {
+    id: "e3-2d",
     source: "3",
-    target: "4",
-    animated: true,
-    label: "animated edge",
+    target: "2d",
+    label: "cypress",
   },
-  {
-    id: "e4-5",
-    source: "4",
-    target: "5",
-    label: "edge with arrow head",
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-    },
-  },
-  {
-    id: "e5-6",
-    source: "5",
-    target: "6",
-    type: "smoothstep",
-    label: "smooth step edge",
-  },
-  {
-    id: "e5-7",
-    source: "5",
-    target: "7",
-    type: "step",
-    style: { stroke: "#f6ab6c" },
-    label: "a step edge",
-    animated: true,
-    labelStyle: { fill: "#f6ab6c", fontWeight: 700 },
-  },
+  { id: "e2e-4", source: "2", target: "4", label: "gcloud deploy" },
 ];
