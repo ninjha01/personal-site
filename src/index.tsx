@@ -7,6 +7,7 @@ import "./index.css";
 import { FourOhFour } from "./pages/404";
 import { Blast } from "./pages/Blast";
 import Notebook from "./pages/Notebook";
+import { SiteArch } from "./pages/SiteArch";
 import reportWebVitals from "./reportWebVitals";
 
 const production = process.env.NODE_ENV === "production";
@@ -21,6 +22,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/blast" element={<Blast />} />
         <Route path="/notebook" element={<Notebook />} />
+        <Route path="/site_arch" element={<SiteArch />} />
         <Route path="*" element={<FourOhFour />} />
       </Routes>
     </BrowserRouter>

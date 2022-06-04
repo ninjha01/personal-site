@@ -1,5 +1,13 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { BookOpenIcon, BriefcaseIcon, CodeIcon, MenuIcon, SearchCircleIcon, XIcon } from "@heroicons/react/outline";
+import {
+  BookOpenIcon,
+  BriefcaseIcon,
+  CodeIcon,
+  MenuIcon,
+  SearchCircleIcon,
+  TemplateIcon,
+  XIcon,
+} from "@heroicons/react/outline";
 import { Fragment, JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useState } from "react";
 import { Link } from "react-router-dom";
 import { config } from "../config";
@@ -25,12 +33,23 @@ export const Sidebar = (props: {
       href: "/blast",
       current: false,
       icon: SearchCircleIcon,
+      wip: true,
     },
     {
       name: "Code Notebook",
       href: "/notebook",
       current: false,
       icon: BookOpenIcon,
+      wip: true,
+    },
+  ];
+
+  const archDiagrams = [
+    {
+      name: "This Website",
+      href: "/site_arch",
+      current: false,
+      icon: TemplateIcon,
       wip: true,
     },
   ];
@@ -41,6 +60,10 @@ export const Sidebar = (props: {
       ))}
       <p className="pt-16 pb-2 ml-2 text-blue-100">UI Mockups</p>
       {uiMockups.map(item => (
+        <SidebarItem key={item.name} url={item.href} title={item.name} icon={item.icon} wip={item.wip} />
+      ))}
+      <p className="pt-16 pb-2 ml-2 text-blue-100">Architectures</p>
+      {archDiagrams.map(item => (
         <SidebarItem key={item.name} url={item.href} title={item.name} icon={item.icon} wip={item.wip} />
       ))}
     </nav>
