@@ -136,19 +136,22 @@ export const initialNodes: Node[] = [
   },
   {
     id: "3",
-
     data: {
       label: (
-        <a href="https://staging.nishantjha.org" className="underline" target="_blank" rel="noreferrer">
+        <>
           Staging Env
-        </a>
+          <br />
+          <a href="https://staging.nishantjha.org" className="underline" target="_blank" rel="noreferrer">
+            staging.nishantjha.org
+          </a>
+        </>
       ),
     },
     position: { x: 650, y: 130 },
     style: {
       zIndex: -10,
       height: 80,
-      width: 80,
+      width: 180,
     },
     className: "bg-green-200 -z-10",
     targetPosition: Position.Left,
