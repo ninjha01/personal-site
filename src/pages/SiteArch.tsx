@@ -138,7 +138,11 @@ export const initialNodes: Node[] = [
     id: "3",
 
     data: {
-      label: "Staging Env",
+      label: (
+        <a href="https://staging.nishantjha.org" className="underline" target="_blank" rel="noreferrer">
+          Staging Env
+        </a>
+      ),
     },
     position: { x: 650, y: 130 },
     style: {
