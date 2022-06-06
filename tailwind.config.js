@@ -3,7 +3,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   important: true,
   mode: "jit",
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
       fontFamily: {
@@ -11,7 +11,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms"), require("autoprefixer")],
   variants: {
     opacity: ({ after }) => after(["disabled"]),
     extend: {

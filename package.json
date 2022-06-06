@@ -16,7 +16,6 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "autoprefixer": "^10.4.7",
     "cypress": "^10.0.2",
     "eslint-plugin-cypress": "^2.12.1",
     "gh-pages": "^4.0.0",
@@ -79,6 +78,7 @@
     ]
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.7",
     "react-snap": "^1.23.0"
   },
   "prettier": {
