@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import ReactFlow, {
   addEdge,
   Background,
+  Controls,
   DefaultEdgeOptions,
   Edge,
   MarkerType,
@@ -14,6 +16,10 @@ import { useWindowSize } from "../hooks/useWindowSize";
 
 export const SiteArch = () => {
   const size = useWindowSize();
+  useEffect(function setTitle() {
+    document.title = "Arch: nishantjha.org";
+  }, []);
+
   return (
     <>
       <Sidebar>
@@ -55,6 +61,7 @@ const OverviewFlow = () => {
       nodesConnectable={false}
       attributionPosition="top-right"
     >
+      <Controls showZoom={false} showFitView={true} showInteractive={false} />
       <Background size={0.6} color="#1e3a8a" gap={16} />
     </ReactFlow>
   );
@@ -147,7 +154,7 @@ export const initialNodes: Node[] = [
         </>
       ),
     },
-    position: { x: 650, y: 130 },
+    position: { x: 550, y: 130 },
     style: {
       zIndex: -10,
       height: 80,
@@ -160,7 +167,15 @@ export const initialNodes: Node[] = [
   {
     id: "4",
     data: {
-      label: "Prod Env",
+      label: (
+        <>
+          Production Env
+          <br />
+          <a href="https://www.nishantjha.org" className="underline" target="_blank" rel="noreferrer">
+            nishantjha.org
+          </a>
+        </>
+      ),
     },
     position: { x: 400, y: 450 },
     style: {

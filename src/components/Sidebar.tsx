@@ -33,14 +33,14 @@ export const Sidebar = (props: {
       href: "/blast",
       current: false,
       icon: SearchCircleIcon,
-      wip: true,
+      wip: false,
     },
     {
       name: "Code Notebook",
       href: "/notebook",
       current: false,
       icon: BookOpenIcon,
-      wip: true,
+      wip: false,
     },
   ];
 
@@ -50,7 +50,7 @@ export const Sidebar = (props: {
       href: "/site_arch",
       current: false,
       icon: TemplateIcon,
-      wip: true,
+      wip: false,
     },
   ];
   const navItems = (
