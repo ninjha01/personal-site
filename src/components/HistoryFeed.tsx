@@ -94,8 +94,8 @@ export const HistoryFeed = () => {
     },
   ];
   return (
-    <section aria-labelledby="timeline-title" className="lg:col-start-3 lg:col-span-1">
-      <div className="bg-white px-4 py-5 shadow-xl rounded-lg sm:px-6">
+    <section aria-labelledby="timeline-title" className="lg:col-span-1 lg:col-start-3">
+      <div className="rounded-lg bg-white px-4 py-5 shadow-xl sm:px-6">
         <h2 id="timeline-title" className="text-lg font-medium text-gray-900">
           Timeline
         </h2>
@@ -114,13 +114,13 @@ export const HistoryFeed = () => {
                       <span
                         className={classNames(
                           item.type.bgColorClass,
-                          "h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white"
+                          "flex h-8 w-8 items-center justify-center rounded-full ring-8 ring-white"
                         )}
                       >
-                        <item.type.icon className="w-5 h-5 text-white" aria-hidden="true" />
+                        <item.type.icon className="h-5 w-5 text-white" aria-hidden="true" />
                       </span>
                     </div>
-                    <div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+                    <div className="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
                       <div>
                         <p className="text-sm text-gray-500">
                           {item.content}{" "}
@@ -129,7 +129,7 @@ export const HistoryFeed = () => {
                           </a>
                         </p>
                       </div>
-                      <div className="text-right text-sm whitespace-nowrap text-gray-500">
+                      <div className="whitespace-nowrap text-right text-sm text-gray-500">
                         <time dateTime={item.datetime}>{item.date}</time>
                       </div>
                     </div>
@@ -139,10 +139,10 @@ export const HistoryFeed = () => {
             ))}
           </ul>
         </div>
-        <div className="mt-6 flex flex-col justify-stretch">
+        <div className="justify-stretch mt-6 flex flex-col">
           <button
             type="button"
-            className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-900 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            className="inline-flex items-center justify-center rounded-md border border-transparent bg-blue-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             Clear Timeline and Run All
           </button>

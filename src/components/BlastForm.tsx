@@ -61,10 +61,10 @@ export const BlastForm = (props: {
             </p>
           </div>
         </div>
-        <div className="mt-5 md:mt-0 md:col-span-2">
+        <div className="mt-5 md:col-span-2 md:mt-0">
           <form>
-            <div className="shadow sm:rounded-md sm:overflow-hidden">
-              <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
+            <div className="shadow sm:overflow-hidden sm:rounded-md">
+              <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
                 <>
                   <NameInput name={sequenceName} setName={setSequenceName} />
 
@@ -77,10 +77,10 @@ export const BlastForm = (props: {
                   <TopologyTypeSelector topology={topology} setTopology={setTopology} sequence={sequence} />
                 </>
               </div>
-              <div className={classNames("px-4 py-3 bg-gray-50 text-right sm:px-6")}>
+              <div className={classNames("bg-gray-50 px-4 py-3 text-right sm:px-6")}>
                 <button
                   className={classNames(
-                    "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 disabled:opacity-50",
+                    "inline-flex justify-center rounded-md border border-transparent bg-blue-900 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:ring-offset-2 disabled:opacity-50",
                     validated ? "animate-bounce" : ""
                   )}
                   disabled={!validated}
@@ -117,7 +117,7 @@ const NameInput = (props: { name: string | null; setName: (seq: string) => void 
           id="name"
           name="name"
           className={classNames(
-            "shadow-sm focus:ring-blue-900 focus:border-blue-900 block w-full sm:text-sm border border-gray-300 rounded-md p-3",
+            "block w-full rounded-md border border-gray-300 p-3 shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm",
             !name ? "animate-pulse border-blue-900" : ""
           )}
           placeholder="Enter a name for your search."
@@ -146,7 +146,7 @@ const SequenceInput = (props: { sequence: string; setSequence: (seq: string) => 
           name="sequence"
           rows={3}
           className={classNames(
-            "shadow-sm focus:ring-blue-900 focus:border-blue-900 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md",
+            "mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm",
             !sequence ? "animate-pulse border-blue-900" : ""
           )}
           placeholder="Enter the sequence you wish to blast."
@@ -198,9 +198,9 @@ const SequenceTypeSelector = (props: {
                     disabled ? "opacity-50" : "",
 
                     checked
-                      ? "bg-blue-900 border-transparent text-white hover:bg-blue-800"
-                      : "bg-white border-gray-200 text-gray-900 hover:bg-gray-50",
-                    "border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1"
+                      ? "border-transparent bg-blue-900 text-white hover:bg-blue-800"
+                      : "border-gray-200 bg-white text-gray-900 hover:bg-gray-50",
+                    "flex items-center justify-center rounded-md border py-3 px-3 text-sm font-medium sm:flex-1"
                   )
                 }
               >
@@ -252,9 +252,9 @@ const TopologyTypeSelector = (props: {
                     disabled ? "opacity-50" : "",
 
                     checked
-                      ? "bg-blue-900 border-transparent text-white hover:bg-blue-800"
-                      : "bg-white border-gray-200 text-gray-900 hover:bg-gray-50",
-                    "border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1"
+                      ? "border-transparent bg-blue-900 text-white hover:bg-blue-800"
+                      : "border-gray-200 bg-white text-gray-900 hover:bg-gray-50",
+                    "flex items-center justify-center rounded-md border py-3 px-3 text-sm font-medium sm:flex-1"
                   )
                 }
               >

@@ -113,15 +113,15 @@ export const Blast = () => {
     <>
       <Sidebar>
         <div className="pt-6">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex flex-row items-center">
-            <h1 className="text-3xl flex-2 font-semibold text-gray-900">Blast Service</h1>
+          <div className="mx-auto flex max-w-7xl flex-row items-center px-4 sm:px-6 md:px-8">
+            <h1 className="flex-2 text-3xl font-semibold text-gray-900">Blast Service</h1>
           </div>
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mt-8">
+          <div className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 md:px-8">
             <Steps steps={stepOptions} stepID={stepID} />
           </div>
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mt-8">{content()}</div>
+          <div className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 md:px-8">{content()}</div>
         </div>
       </Sidebar>
     </>

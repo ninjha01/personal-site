@@ -6,18 +6,18 @@ import { config } from "../config";
 export const HeroSection = () => {
   return (
     <section id="top">
-      <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24">
-        <div className="flex flex-wrap items-center mx-auto max-w-7xl">
-          <div className="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:px-12 lg:px-24 lg:py-24">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center">
+          <div className="w-full rounded-xl lg:w-1/2 lg:max-w-lg">
             <div>
               <div className="relative w-full max-w-lg">
-                <div className="absolute top-0 rounded-full bg-emerald-900 left-0 w-72 h-72 mix-blend-multiply filter blur-xl opacity-70 "></div>
-                <div className="absolute top-20 rounded-full bg-rose-900 -right-4 w-72 h-72 mix-blend-multiply filter blur-xl opacity-70 "></div>
-                <div className="absolute rounded-full bg-fuchsia-800 -bottom-12 right-20 w-72 h-72 mix-blend-multiply filter blur-xl opacity-70 "></div>
+                <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-emerald-900 opacity-70 mix-blend-multiply blur-xl filter "></div>
+                <div className="absolute top-20 -right-4 h-72 w-72 rounded-full bg-rose-900 opacity-70 mix-blend-multiply blur-xl filter "></div>
+                <div className="absolute -bottom-12 right-20 h-72 w-72 rounded-full bg-fuchsia-800 opacity-70 mix-blend-multiply blur-xl filter "></div>
 
                 <div className="relative">
                   <img
-                    className="object-cover object-center mx-auto rounded-lg shadow-2xl"
+                    className="mx-auto rounded-lg object-cover object-center shadow-2xl"
                     alt="hero"
                     src={require("../assets/images/profile.jpg")}
                   />
@@ -25,18 +25,18 @@ export const HeroSection = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
-            <span className="mb-8 text-xs font-bold tracking-widest text-blue-600 uppercase">
+          <div className="mt-12 mb-16 flex flex-col items-start text-left md:mb-0 lg:w-1/2 lg:flex-grow lg:pl-6 xl:mt-0 xl:pl-24">
+            <span className="mb-8 text-xs font-bold uppercase tracking-widest text-blue-600">
               {config.personal.firstname} {config.personal.lastname}
             </span>
             <h1 className="mb-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 md:text-7xl lg:text-5xl">
               {config.personal.headline}
             </h1>
 
-            <div className="mb-8 text-base leading-relaxed mr-8 text-left text-gray-500">
+            <div className="mb-8 mr-8 text-left text-base leading-relaxed text-gray-500">
               <ReactMarkdown children={config.personal.bio} remarkPlugins={[remarkGfm]} />
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 w-full mr-8">
+            <div className="mr-8 flex w-full flex-col gap-4 sm:flex-row">
               {GetInTouchButton}
               {LinkedInButton}
             </div>
@@ -64,21 +64,21 @@ const EmailIcon = (
   </svg>
 );
 const GetInTouchButton = (
-  <div className="basis-0 mt-3 rounded-lg relative flex">
+  <div className="relative mt-3 flex basis-0 rounded-lg">
     <a
       href="mailto:contact@nishantjha.org"
       target="_blank"
       rel="noreferrer"
-      className="items-center hover:no-underline block px-6 py-4 text-base font-medium text-white transition duration-500 ease-in-out transform bg-blue-900 rounded-xl shadow-md shadow-blue-900 hover:shadow-xl hover:shadow-blue-900 focus:outline focus:outline-blue-900 focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 lg:w-full"
+      className="block transform items-center rounded-xl bg-blue-900 px-6 py-4 text-base font-medium text-white shadow-md shadow-blue-900 transition duration-500 ease-in-out hover:no-underline hover:shadow-xl hover:shadow-blue-900 focus:outline focus:outline-blue-900 focus:ring-2 focus:ring-blue-900 focus:ring-offset-2 lg:w-full"
     >
       <div className="flex gap-2">
         {EmailIcon}
         Contact
       </div>
     </a>
-    <span className="flex relative h-4 w-4 top-0 right-3 -mt-1 -mr-1">
-      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-700 opacity-75"></span>
-      <span className="relative inline-flex rounded-full h-4 w-4 bg-blue-800 border border-2 border-white"></span>
+    <span className="relative top-0 right-3 -mt-1 -mr-1 flex h-4 w-4">
+      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-700 opacity-75"></span>
+      <span className="relative inline-flex h-4 w-4 rounded-full border border-2 border-white bg-blue-800"></span>
     </span>
   </div>
 );
@@ -97,14 +97,14 @@ const LinkedInIcon = (
 );
 
 const LinkedInButton = (
-  <div className="basis-0 mt-3 rounded-lg content-center flex">
+  <div className="mt-3 flex basis-0 content-center rounded-lg">
     <a
       href={config.personal.linkedin}
       target="_blank"
       rel="noreferrer"
-      className="items-center   hover:no-underline block px-6 py-3.5 text-base font-medium text-center text-blue-900 transition duration-500 ease-in-out transform border-2 border-white shadow-blue-900 shadow-md rounded-xl focus:outline-none hover:shadow-xl hover:shadow-blue-900"
+      className="block   transform items-center rounded-xl border-2 border-white px-6 py-3.5 text-center text-base font-medium text-blue-900 shadow-md shadow-blue-900 transition duration-500 ease-in-out hover:no-underline hover:shadow-xl hover:shadow-blue-900 focus:outline-none"
     >
-      <div className="flex gap-2 items-center ">{LinkedInIcon}LinkedIn</div>
+      <div className="flex items-center gap-2 ">{LinkedInIcon}LinkedIn</div>
     </a>
   </div>
 );

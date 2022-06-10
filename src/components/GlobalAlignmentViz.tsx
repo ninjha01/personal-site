@@ -25,7 +25,7 @@ export const GlobalAlignmentViz = (props: {
   }));
 
   const bookend = (
-    <div className="w-full text-center text-align-center mx-auto text-xs text-white bg-blue-900 rounded-xl my-2 p-1">
+    <div className="text-align-center mx-auto my-2 w-full rounded-xl bg-blue-900 p-1 text-center text-xs text-white">
       {sequenceName}
     </div>
   );
@@ -41,7 +41,7 @@ export const GlobalAlignmentViz = (props: {
         <div
           key={item.title}
           className={classNames(
-            "text-start truncate text-align-start text-xs text-white bg-blue-600 hover:bg-blue-700 rounded-xl my-2 pl-4 p-1 cursor-pointer"
+            "text-start text-align-start my-2 cursor-pointer truncate rounded-xl bg-blue-600 p-1 pl-4 text-xs text-white hover:bg-blue-700"
           )}
           style={{
             marginLeft: `${marginLeft}%`,
@@ -56,17 +56,17 @@ export const GlobalAlignmentViz = (props: {
 
   return (
     <section>
-      <div className="bg-white shadow-2xl overflow-hidden sm:rounded-lg mt-16 mx-8">
-        <div className="bg-white px-4 py-4 border-b border-gray-200 sm:px-6">
-          <h3 className="text-lg leading-6 font-medium text-gray-900 flex flex-row space-between">
+      <div className="mx-8 mt-16 overflow-hidden bg-white shadow-2xl sm:rounded-lg">
+        <div className="border-b border-gray-200 bg-white px-4 py-4 sm:px-6">
+          <h3 className="space-between flex flex-row text-lg font-medium leading-6 text-gray-900">
             <span className="flex-1">Alignment Viewer</span>
-            <span className="inline-flex flex-0 self-end items-center px-2.5 py-0.5 px-2 rounded-lg text-md font-medium bg-gray-200 opacity-90 text-gray-400">
+            <span className="flex-0 text-md inline-flex items-center self-end rounded-lg bg-gray-200 px-2.5 py-0.5 px-2 font-medium text-gray-400 opacity-90">
               Demo
             </span>
           </h3>
           <p className="mt-1 max-w-2xl text-sm text-gray-500">{results.length} Alignments</p>
         </div>
-        <div className="px-4 py-5 sm:px-6 overflow-hidden">
+        <div className="overflow-hidden px-4 py-5 sm:px-6">
           <>
             {bookend}
             {alignmentItems.map(m => middleAlignmentItem(m, sequenceLength))}

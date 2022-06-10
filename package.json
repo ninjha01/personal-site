@@ -20,7 +20,6 @@
     "eslint-plugin-cypress": "^2.12.1",
     "gh-pages": "^4.0.0",
     "postcss": "^8.4.14",
-    "prettier": "^2.6.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-flow-renderer": "^10.3.5",
@@ -40,8 +39,8 @@
     "lint:check": "eslint src --ext js,jsx,ts,tsx --quiet",
     "format": "prettier \"**/*.+(js|jsx|ts|tsx|json|css|md)\" --config package.json --write",
     "format:check": "prettier \"**/*.+(js|jsx|ts|tsx|json|css|md)\" --config package.json --check",
-    "cypress": "cypress open -env host=localhost:3000",
-    "cypress:check": "cypress run -env host=localhost:3000",
+    "cypress": "cypress open --env host=localhost:3000",
+    "cypress:check": "cypress run --env host=localhost:3000",
     "cypress:staging": "cypress run",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -53,16 +52,6 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "extends": [
-          "plugin:cypress/recommended"
-        ],
-        "files": [
-          "cypress/**/*.js"
-        ]
-      }
     ]
   },
   "browserslist": {
@@ -79,6 +68,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
+    "prettier": "^2.6.2",
+    "prettier-plugin-tailwindcss": "^0.1.11",
     "react-snap": "^1.23.0"
   },
   "prettier": {

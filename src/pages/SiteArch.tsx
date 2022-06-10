@@ -23,9 +23,22 @@ export const SiteArch = () => {
   return (
     <>
       <Sidebar>
-        <div style={{ height: size.height! - 60 }} className="w-full">
-          <OverviewFlow />
+        <div className="pt-8">
+          <div className="mx-auto flex max-w-7xl flex-col px-4 text-left sm:px-6 md:px-8">
+            <h1 className="flex-2 text-3xl font-semibold text-gray-900">Architecture Diagram</h1>
+            <h2 className="flex-2 text-xl font-semibold text-gray-500"> for nishantjha.org</h2>
+          </div>
         </div>
+
+        <section className="grid grid-cols-1 gap-6 pt-8 lg:grid-cols-2">
+          <div className=" flex flex-col px-4 text-left sm:px-6 md:px-8">
+            <h1 className="flex-2 text-3xl font-semibold text-gray-900">Architecture Diagram</h1>
+            <h2 className="flex-2 text-xl font-semibold text-gray-500"> for nishantjha.org</h2>
+          </div>
+          <div style={{ height: size.height }} className="w-full">
+            <OverviewFlow />
+          </div>
+        </section>
       </Sidebar>
     </>
   );
@@ -60,6 +73,8 @@ const OverviewFlow = () => {
       fitView
       nodesConnectable={false}
       attributionPosition="top-right"
+      panOnScroll={false}
+      zoomOnScroll={false}
     >
       <Controls showZoom={false} showFitView={true} showInteractive={false} />
       <Background size={0.6} color="#1e3a8a" gap={16} />

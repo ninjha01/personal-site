@@ -7,12 +7,12 @@ export const ClientSection = (props: { clients: ClientType[] }) => {
     <section className="mb-16">
       <h1
         id="clients"
-        className="mb-8 pt-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 text-2xl border-t"
+        className="mb-8 border-t pt-8 text-4xl text-2xl font-bold leading-none tracking-tighter text-neutral-600"
       >
         Clients
       </h1>
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 auto-rows-1">
+      <div className="auto-rows-1 grid grid-cols-1 gap-6 lg:grid-cols-3">
         {clients.map(client => (
           <ClientCard key={client.name} client={client} />
         ))}
@@ -27,27 +27,27 @@ const ClientCard = (props: { client: ClientType }) => {
 
   /* if we description is null, we assume it's a current engagement */
   let description = props.client.description ? (
-    <p className="mb-auto mx-auto text-base leading-relaxed font-medium text-gray-700 whitespace-normal p-4 ">
+    <p className="mx-auto mb-auto whitespace-normal p-4 text-base font-medium leading-relaxed text-gray-700 ">
       {props.client.description}
     </p>
   ) : (
-    <h1 className="font-semibold animate-pulse text-blue-900 mb-auto mx-auto my-auto text-base text-xl text-center leading-relaxed text-gray-500 whitespace-normal">
+    <h1 className="mx-auto my-auto mb-auto animate-pulse whitespace-normal text-center text-base text-xl font-semibold leading-relaxed text-blue-900 text-gray-500">
       Current Engagement
     </h1>
   );
 
   return (
-    <div className="flex flex-col p-6 text-left rounded-xl bg-white shadow-md hover:shadow-xl hover:shadow-blue-900 ease-in-out duration-200 ">
+    <div className="flex flex-col rounded-xl bg-white p-6 text-left shadow-md duration-200 ease-in-out hover:shadow-xl hover:shadow-blue-900 ">
       {description}
-      <a className="flex flex-row items-center gap-3 mt-8 mb-2" href={url}>
+      <a className="mt-8 mb-2 flex flex-row items-center gap-3" href={url}>
         <img
           alt="client logo"
-          className="inline-block object-cover object-cover w-16 h-16 mt-3 p-1 rounded-full inline-block align-baseline outline-rounded outline-dashed outline-offset-2 outline-[1.2] outline-blue-900"
+          className="outline-rounded mt-3 inline-block inline-block h-16 w-16 rounded-full object-cover object-cover p-1 align-baseline outline-dashed outline-[1.2] outline-offset-2 outline-blue-900"
           src={logo}
         />
-        <div className="flex flex-col justify-center space-between gap-2">
-          <p className="text-sm font-semibold tracking-wider text-blue-900 uppercase">{name}</p>
-          <p className="text-xs track-tighter text-gray-500">{subtitle}</p>
+        <div className="space-between flex flex-col justify-center gap-2">
+          <p className="text-sm font-semibold uppercase tracking-wider text-blue-900">{name}</p>
+          <p className="track-tighter text-xs text-gray-500">{subtitle}</p>
         </div>
       </a>
     </div>

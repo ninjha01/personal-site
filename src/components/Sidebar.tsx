@@ -54,15 +54,15 @@ export const Sidebar = (props: {
     },
   ];
   const navItems = (
-    <nav className="mt-5 px-2 space-y-1">
+    <nav className="mt-5 space-y-1 px-2">
       {homeItems.map(item => (
         <SidebarItem key={item.name} url={item.href} title={item.name} icon={item.icon} />
       ))}
-      <p className="pt-16 pb-2 ml-2 text-blue-100">UI Mockups</p>
+      <p className="ml-2 pt-16 pb-2 text-blue-100">UI Mockups</p>
       {uiMockups.map(item => (
         <SidebarItem key={item.name} url={item.href} title={item.name} icon={item.icon} wip={item.wip} />
       ))}
-      <p className="pt-16 pb-2 ml-2 text-blue-100">Architectures</p>
+      <p className="ml-2 pt-16 pb-2 text-blue-100">Architectures</p>
       {archDiagrams.map(item => (
         <SidebarItem key={item.name} url={item.href} title={item.name} icon={item.icon} wip={item.wip} />
       ))}
@@ -84,7 +84,7 @@ export const Sidebar = (props: {
             <div className="fixed inset-0 bg-gray-600 bg-opacity-75" />
           </Transition.Child>
 
-          <div className="fixed inset-0 flex z-40">
+          <div className="fixed inset-0 z-40 flex">
             <Transition.Child
               as={Fragment}
               enter="transition ease-in-out duration-300 transform"
@@ -94,7 +94,7 @@ export const Sidebar = (props: {
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <Dialog.Panel className="relative flex-1 flex flex-col max-w-xs w-full bg-gray-800">
+              <Dialog.Panel className="relative flex w-full max-w-xs flex-1 flex-col bg-gray-800">
                 <Transition.Child
                   as={Fragment}
                   enter="ease-in-out duration-300"
@@ -107,7 +107,7 @@ export const Sidebar = (props: {
                   <div className="absolute top-0 right-0 -mr-12 pt-2">
                     <button
                       type="button"
-                      className="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                      className="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                       onClick={() => setSidebarOpen(false)}
                     >
                       <span className="sr-only">Close sidebar</span>
@@ -115,18 +115,18 @@ export const Sidebar = (props: {
                     </button>
                   </div>
                 </Transition.Child>
-                <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+                <div className="h-0 flex-1 overflow-y-auto pt-5 pb-4">
                   <button className="px-8 text-left focus:outline-none">
                     <a
                       href="/#top"
-                      className="block p-2 text-xl font-medium tracking-tighter text-blue-100 transition duration-500 ease-in-out transform cursor-pointer hover:text-blue-100"
+                      className="block transform cursor-pointer p-2 text-xl font-medium tracking-tighter text-blue-100 transition duration-500 ease-in-out hover:text-blue-100"
                     >
                       {config.url}
                     </a>
                   </button>
                   {navItems}
                 </div>
-                <div className="flex-shrink-0 flex bg-gray-700 p-4">
+                <div className="flex flex-shrink-0 bg-gray-700 p-4">
                   <div className="flex items-center">
                     <div>
                       <img
@@ -156,21 +156,21 @@ export const Sidebar = (props: {
                 </div>
               </Dialog.Panel>
             </Transition.Child>
-            <div className="flex-shrink-0 w-14">{/* Force sidebar to shrink to fit close icon */}</div>
+            <div className="w-14 flex-shrink-0">{/* Force sidebar to shrink to fit close icon */}</div>
           </div>
         </Dialog>
       </Transition.Root>
 
       {/* Static sidebar for desktop */}
-      <div className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
+      <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
         {/* Sidebar component, swap this element with another sidebar if you like */}
-        <div className="flex-1 flex flex-col min-h-0 bg-gray-800">
-          <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+        <div className="flex min-h-0 flex-1 flex-col bg-gray-800">
+          <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
             <div className="ml-3">
               <button className="px-8 text-left focus:outline-none">
                 <a
                   href="/#top"
-                  className="block p-2 text-xl font-medium tracking-tighter text-blue-100 transition duration-500 ease-in-out transform cursor-pointer hover:text-blue-100"
+                  className="block transform cursor-pointer p-2 text-xl font-medium tracking-tighter text-blue-100 transition duration-500 ease-in-out hover:text-blue-100"
                 >
                   {config.url}
                 </a>
@@ -178,7 +178,7 @@ export const Sidebar = (props: {
             </div>
             {navItems}
           </div>
-          <div className="flex-shrink-0 flex bg-gray-700 p-4">
+          <div className="flex flex-shrink-0 bg-gray-700 p-4">
             <div className="flex items-center">
               <div>
                 <img
@@ -208,11 +208,11 @@ export const Sidebar = (props: {
           </div>
         </div>
       </div>
-      <div className="md:pl-64 flex flex-col flex-1">
-        <div className="sticky top-0 z-10 md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3 bg-gray-100">
+      <div className="flex flex-1 flex-col md:pl-64">
+        <div className="sticky top-0 z-10 bg-gray-100 pl-1 pt-1 sm:pl-3 sm:pt-3 md:hidden">
           <button
             type="button"
-            className="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            className="-ml-0.5 -mt-0.5 inline-flex h-12 w-12 items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
             onClick={() => setSidebarOpen(true)}
           >
             <span className="sr-only">Open sidebar</span>
@@ -262,13 +262,13 @@ const SidebarItem = (props: SidebarItemType) => {
   return (
     <LinkElement url={url} hidden={hidden}>
       <props.icon
-        className={classNames("text-gray-400 group-hover:text-gray-300 mr-3 flex flex-shrink-0 h-6 w-6")}
+        className={classNames("mr-3 flex h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-300")}
         aria-hidden="true"
       />
       <span className="ml-4 flex-1"> {title}</span>
       {wip && (
         <>
-          <span className="inline-flex items-center px-2.5 py-0.5 px-2 mx-auto rounded-full text-xs font-medium bg-yellow-300 opacity-90 text-gray-800 animate-pulse">
+          <span className="mx-auto inline-flex animate-pulse items-center rounded-full bg-yellow-300 px-2.5 py-0.5 px-2 text-xs font-medium text-gray-800 opacity-90">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               enableBackground="new 0 0 24 24"

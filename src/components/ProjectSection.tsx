@@ -7,14 +7,14 @@ export const ProjectSection = (props: { projects: ProjectType[] }) => {
     <section>
       <h1
         id="projects"
-        className="pt-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 text-2xl border-t"
+        className="border-t pt-8 text-4xl text-2xl font-bold leading-none tracking-tighter text-neutral-600"
       >
         Projects
       </h1>
 
       <div className="relative px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
         <div className="relative mx-auto max-w-7xl">
-          <div className="grid max-w-lg gap-5 mx-auto lg:grid-cols-3 lg:max-w-none">
+          <div className="mx-auto grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
             {projects.map(project => (
               <ProjectCard key={project.title} project={project} />
             ))}
@@ -29,15 +29,15 @@ const ProjectCard = (props: { project: ProjectType }) => {
     project: { title, url, description, img },
   } = props;
   return (
-    <div className="lg:-mt-8 flex flex-col overflow-hidden rounded-lg bg-white shadow-md hover:shadow-xl hover:shadow-blue-900 ease-in-out duration-200">
+    <div className="flex flex-col overflow-hidden rounded-lg bg-white shadow-md duration-200 ease-in-out hover:shadow-xl hover:shadow-blue-900 lg:-mt-8">
       <div className="h-60">
         <a href={url}>
-          <img className="object-cover object-center w-full rounded-t-xl p-8" src={img} alt="" />
+          <img className="w-full rounded-t-xl object-cover object-center p-8" src={img} alt="" />
         </a>
       </div>
-      <div className="flex flex-col justify-between flex-1 p-6 bg-white">
+      <div className="flex flex-1 flex-col justify-between bg-white p-6">
         <div className="flex-1">
-          <a href={url} className="block mt-2">
+          <a href={url} className="mt-2 block">
             <p className="text-xl font-semibold text-neutral-600">{title}</p>
             <p className="mt-3 text-base text-gray-500">{description}</p>
           </a>

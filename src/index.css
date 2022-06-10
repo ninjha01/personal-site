@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 a {
-  @apply no-underline hover:underline text-blue-900;
+  @apply text-blue-900 no-underline hover:underline;
 }

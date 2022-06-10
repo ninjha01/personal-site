@@ -91,11 +91,11 @@ plt.show()`,
 
 const CellShell = (props: { children: any; id: string; runnable: boolean; hideShellBar?: boolean }) => {
   const ShellBar = (
-    <div className="ml-2 mr-auto flex gap-4 items-center space-x-5" id={props.id}>
+    <div className="ml-2 mr-auto flex items-center gap-4 space-x-5" id={props.id}>
       <div className="flex items-center">
         <button
           type="button"
-          className="-m-2.5 w-10 h-6 py-1 sm:h-8 rounded-full inline-flex items-center justify-center text-gray-400 hover:bg-blue-900 hover:bg-opacity-70 hover:text-gray-50 bg-gray-200 rounded-xl"
+          className="-m-2.5 inline-flex h-6 w-10 items-center justify-center rounded-full rounded-xl bg-gray-200 py-1 text-gray-400 hover:bg-blue-900 hover:bg-opacity-70 hover:text-gray-50 sm:h-8"
         >
           <PlusIcon className="h-5 w-5" />
         </button>
@@ -103,7 +103,7 @@ const CellShell = (props: { children: any; id: string; runnable: boolean; hideSh
       <div className="flex items-center">
         <button
           type="button"
-          className="-m-2.5 w-10 h-6 py-1 sm:h-8 rounded-full inline-flex items-center justify-center text-gray-400 hover:bg-blue-900 hover:bg-opacity-70 hover:text-gray-50 bg-gray-200 rounded-xl"
+          className="-m-2.5 inline-flex h-6 w-10 items-center justify-center rounded-full rounded-xl bg-gray-200 py-1 text-gray-400 hover:bg-blue-900 hover:bg-opacity-70 hover:text-gray-50 sm:h-8"
         >
           <ArrowUpIcon className="h-5 w-5" />
         </button>
@@ -111,7 +111,7 @@ const CellShell = (props: { children: any; id: string; runnable: boolean; hideSh
       <div className="flex items-center">
         <button
           type="button"
-          className="-m-2.5 w-10 h-6 py-1 sm:h-8 rounded-full inline-flex items-center justify-center text-gray-400 hover:bg-blue-900 hover:bg-opacity-70 hover:text-gray-50 bg-gray-200 rounded-xl"
+          className="-m-2.5 inline-flex h-6 w-10 items-center justify-center rounded-full rounded-xl bg-gray-200 py-1 text-gray-400 hover:bg-blue-900 hover:bg-opacity-70 hover:text-gray-50 sm:h-8"
         >
           <ArrowDownIcon className="h-5 w-5" />
         </button>
@@ -120,14 +120,14 @@ const CellShell = (props: { children: any; id: string; runnable: boolean; hideSh
   );
 
   return (
-    <div className="bg-white px-4 py-5 shadow-sm rounded-lg sm:px-6 relative hover:shadow-xl hover:shadow-blue-900 transition ease-in-out duration-300">
+    <div className="relative rounded-lg bg-white px-4 py-5 shadow-sm transition duration-300 ease-in-out hover:shadow-xl hover:shadow-blue-900 sm:px-6">
       {props.children}
-      <div className="mt-2 flex flex-row gap-2 items-between justify-between">
+      <div className="items-between mt-2 flex flex-row justify-between gap-2">
         {!props.hideShellBar && ShellBar}
         {props.runnable && (
           <button
             type="submit"
-            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-900 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            className="inline-flex items-center rounded-md border border-transparent bg-blue-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             <ChevronDoubleRightIcon className="h-5 w-5" />
           </button>
@@ -142,11 +142,11 @@ export const CodeCell = (props: { item: CodeCellDatum }) => {
   return (
     <CellShell id={`cell-${item.id}`} runnable>
       <div className="">
-        <div className="flex flex-row mb-4 -mt-2">
-          <div className="text-gray-500 p-1 hover:text-gray-900 bg-white hover:bg-gray-100 border border-transparent text-sm font-medium rounded-md">
+        <div className="mb-4 -mt-2 flex flex-row">
+          <div className="rounded-md border border-transparent bg-white p-1 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900">
             {item.language}
           </div>
-          <span className="inline-flex flex-0 mr-0 -mt-1 self-end items-center px-2.5 py-1 px-2 mx-auto rounded-full text-xs font-medium bg-gray-200 text-gray-600">
+          <span className="flex-0 mx-auto mr-0 -mt-1 inline-flex items-center self-end rounded-full bg-gray-200 px-2.5 py-1 px-2 text-xs font-medium text-gray-600">
             Cell #{item.id}
           </span>
         </div>
@@ -155,7 +155,7 @@ export const CodeCell = (props: { item: CodeCellDatum }) => {
           {/* Using editable div to get vertial autosizing, textarea doesn't support this */}
           <div
             id={`cell-${item.id}-codeText`}
-            className="resize-y font-mono shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md border border-gray-300 p-2 whitespace-pre-line"
+            className="block w-full resize-y whitespace-pre-line rounded-md border border-gray-300 border-gray-300 p-2 font-mono shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
             placeholder="Enter text here."
             contentEditable
             suppressContentEditableWarning={
@@ -176,7 +176,7 @@ export const PlotCell = (props: { item: PlotCellDatum }) => {
     <CellShell id={`cell-${item.id}`} runnable={false} hideShellBar={true}>
       <div className="my-2">
         <img
-          className="object-cover object-center mx-auto rounded-lg shadow-xl-4"
+          className="shadow-xl-4 mx-auto rounded-lg object-cover object-center"
           alt="hero"
           src={require("../assets/images/plot.png")}
         />

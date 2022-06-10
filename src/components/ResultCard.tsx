@@ -33,7 +33,7 @@ export function ResultCard(props: {
     <article
       id={`card-${id}`}
       aria-labelledby={"result-title-" + id}
-      className="bg-white px-4 py-6 shadow-xl sm:rounded-lg flex flex-col opacity-60 hover:opacity-100 hover:shadow-blue-900 transition ease-in-out duration-300 group"
+      className="group flex flex-col bg-white px-4 py-6 opacity-60 shadow-xl transition duration-300 ease-in-out hover:opacity-100 hover:shadow-blue-900 sm:rounded-lg"
     >
       <div className="mb-2">
         <div className="flex space-x-3">
@@ -54,7 +54,7 @@ export function ResultCard(props: {
             </svg>
           </div>
           <div className="min-w-0 flex-1">
-            <div className="text-sm font-sm text-gray-900 truncate">
+            <div className="font-sm truncate text-sm text-gray-900">
               <p className="hover:underline">{title}</p>
             </div>
             <p className="text-sm text-gray-500">
@@ -63,7 +63,7 @@ export function ResultCard(props: {
               {query_range[1] - query_range[0]} {unit(sequenceType)} match
             </p>
           </div>
-          <span className="inline-flex flex-0 self-end items-center px-2.5 py-0.5 px-2 rounded-lg text-md font-medium bg-gray-200 text-gray-400 group-hover:animate-pulse">
+          <span className="flex-0 text-md inline-flex items-center self-end rounded-lg bg-gray-200 px-2.5 py-0.5 px-2 font-medium text-gray-400 group-hover:animate-pulse">
             Demo
           </span>
         </div>
@@ -87,12 +87,12 @@ export function ResultCard(props: {
 function IconBar(props: { score: number; gaps: number; frame: number }) {
   const { score, gaps, frame } = props;
   return (
-    <div className="mt-6 flex justify-between space-x-8 flex-0">
+    <div className="flex-0 mt-6 flex justify-between space-x-8">
       <div className="flex space-x-6">
         <span className="inline-flex items-center text-sm">
           <button type="button" className="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
             <StarIcon
-              className={classNames("h-5 w-5", score > 75 ? "text-yellow-600 animate-bounce delay-300" : "")}
+              className={classNames("h-5 w-5", score > 75 ? "animate-bounce text-yellow-600 delay-300" : "")}
               aria-hidden="true"
             />
             <span className={classNames("font-sm text-gray-900 ")}>Score: {score}</span>
@@ -108,7 +108,7 @@ function IconBar(props: { score: number; gaps: number; frame: number }) {
               />
             </svg>
 
-            <span className="font-sm text-gray-900 -mx-4">{gaps} gaps</span>
+            <span className="font-sm -mx-4 text-gray-900">{gaps} gaps</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"

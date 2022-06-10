@@ -7,12 +7,12 @@ export const EssaySection = (props: { essays: EssayType[] }) => {
     <section>
       <h1
         id="essays"
-        className="mb-8 pt-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 text-2xl border-t"
+        className="mb-8 border-t pt-8 text-4xl text-2xl font-bold leading-none tracking-tighter text-neutral-600"
       >
         Essays
       </h1>
       <div className="relative mx-auto max-w-7xl">
-        <div className="grid max-w-lg gap-12 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none">
+        <div className="mx-auto mt-12 grid max-w-lg gap-12 lg:max-w-none lg:grid-cols-3">
           {essays.map(essay => (
             <EssayEntry essay={essay} />
           ))}
@@ -26,16 +26,16 @@ const EssayEntry = (props: { essay: EssayType }) => {
     essay: { title, id, description, img },
   } = props;
   return (
-    <div className="flex flex-col mb-12 overflow-hidden cursor-pointer">
+    <div className="mb-12 flex cursor-pointer flex-col overflow-hidden">
       <a href="#essays">
         <div className="flex-shrink-0">
-          <img className="object-cover w-full h-48 rounded-lg" src={img} alt="" />
+          <img className="h-48 w-full rounded-lg object-cover" src={img} alt="" />
         </div>
       </a>
-      <div className="flex flex-col justify-between flex-1">
+      <div className="flex flex-1 flex-col justify-between">
         <a href={`/${id}`}>
           <div className="flex-1">
-            <a href="#essays" className="block mt-2 space-y-6">
+            <a href="#essays" className="mt-2 block space-y-6">
               <h3 className="text-2xl font-semibold leading-none tracking-tighter text-neutral-600">{title}</h3>
               <p className="text-lg font-normal text-gray-500">{description}</p>
             </a>
