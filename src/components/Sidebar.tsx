@@ -1,5 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import {
+  BeakerIcon,
   BookOpenIcon,
   BriefcaseIcon,
   CodeIcon,
@@ -28,6 +29,13 @@ export const Sidebar = (props: {
     { name: "Projects", href: "/#projects", current: false, icon: CodeIcon },
   ];
   const uiMockups = [
+    {
+      name: "Sequence Builder",
+      href: "/seqbuild",
+      current: false,
+      icon: BeakerIcon,
+      wip: false,
+    },
     {
       name: "Blast Alignment",
       href: "/blast",

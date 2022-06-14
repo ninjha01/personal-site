@@ -7,6 +7,7 @@ import "./index.css";
 import { FourOhFour } from "./pages/404";
 import { Blast } from "./pages/Blast";
 import Notebook from "./pages/Notebook";
+import SeqBuild from "./pages/SeqBuild";
 import { SiteArch } from "./pages/SiteArch";
 import reportWebVitals from "./reportWebVitals";
 
@@ -16,17 +17,23 @@ if (production) {
 }
 const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
-  <React.StrictMode>
-    <BrowserRouter basename={`/${process.env.PUBLIC_URL}`}>
-      <Routes>
+  <BrowserRouter basename={`/${process.env.PUBLIC_URL}`}>
+    <Routes>
+      <React.StrictMode>
         <Route path="/" element={<App />} />
-        <Route path="/blast" element={<Blast />} />
         <Route path="/notebook" element={<Notebook />} />
         <Route path="/site_arch" element={<SiteArch />} />
+      </React.StrictMode>
+
+      {/* SeqViz uses deprecated findDOMNode and so we can't use strict mode on pages with it */}
+      <Route path="/seqbuild" element={<SeqBuild />} />
+      <Route path="/blast" element={<Blast />} />
+
+      <React.StrictMode>
         <Route path="*" element={<FourOhFour />} />
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+      </React.StrictMode>
+    </Routes>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
