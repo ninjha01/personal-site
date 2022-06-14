@@ -10,8 +10,12 @@ on:
 jobs:
   frontend_compile:
     runs-on: ubuntu-latest
-    steps:
+    steps:      
       - uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 13.x
       - name: Install deps
         run: npm install
       - name: Run Prettier
@@ -20,50 +24,6 @@ jobs:
         run: npm run lint:check
       - name: Build project
         run: npm run build
-
-  # backend_lint_format:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Setup Python
-  #       uses: actions/setup-python@v1
-  #       with:
-  #         python-version: 3.10.4
-  #         architecture: x64
-  #     - name: Checkout repository
-  #       uses: actions/checkout@main
-  #     - uses: psf/black@stable
-  #       with:
-  #         options: "--check --verbose"
-  #         src: "."
-  #         version: "22.3.0"
-  #     - uses: jakebailey/pyright-action@v1
-  #       with:
-  #         version: 1.1.244
-  #         working-directory: "./amplify/backend/function/"
-  #     - name: Install flake8
-  #       run: pip install flake8
-  #     - name: Run flake8
-  #       uses: suo/flake8-github-action@releases/v1
-  #       with:
-  #         checkName: "backend_lint_format" # NOTE: this needs to be the same as the job name
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  # run_pytest:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Setup Python
-  #       uses: actions/setup-python@v1
-  #       with:
-  #         python-version: 3.10.4
-  #         architecture: x64
-  #     - name: Checkout repository
-  #       uses: actions/checkout@v3
-  #     - name: Install pytest
-  #       run: pip install pytest
-  #     - name: Run pytest
-  #       run: pytest
-  #       working-directory: amplify/backend/function/pythonScore/src
   
   deploy_staging:
     name: Deploy Staging

@@ -26,16 +26,17 @@
     "react-ga4": "^1.4.1",
     "react-markdown": "^8.0.3",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "remark-gfm": "^3.0.1",
     "seqviz": "^3.3.2",
     "tailwindcss": "^3.0.24",
+    "timers-browserify": "^2.0.12",
     "typescript": "^4.7.3",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "REACT_APP_GIT_SHA=`git rev-parse --short HEAD` react-scripts build",
+    "start": "react-app-rewired start",
+    "build": "REACT_APP_GIT_SHA=`git rev-parse --short HEAD` react-app-rewired build",
     "lint": "eslint src --ext js,jsx,ts,tsx --quiet --fix",
     "lint:check": "eslint src --ext js,jsx,ts,tsx --quiet",
     "format": "prettier \"**/*.+(js|jsx|ts|tsx|json|css|md)\" --config package.json --write",
@@ -43,8 +44,8 @@
     "cypress": "cypress open --env host=localhost:3000",
     "cypress:check": "cypress run --env host=localhost:3000",
     "cypress:staging": "cypress run",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
     "predeploy": "npm run build",
     "serve": "npm run build && npx serve -s build",
     "deploy": "npm run build && gcloud app deploy --quiet && gcloud app browse"
@@ -68,10 +69,20 @@
     ]
   },
   "devDependencies": {
+    "assert": "^2.0.0",
     "autoprefixer": "^10.4.7",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
     "prettier": "^2.6.2",
     "prettier-plugin-tailwindcss": "^0.1.11",
-    "react-snap": "^1.23.0"
+    "process": "^0.11.10",
+    "react-app-rewired": "^2.2.1",
+    "react-snap": "^1.23.0",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "url": "^0.11.0"
   },
   "prettier": {
     "arrowParens": "avoid",
