@@ -34,7 +34,7 @@ export const Sidebar = (props: {
       href: "/seqbuild",
       current: false,
       icon: BeakerIcon,
-      wip: false,
+      wip: true,
     },
     {
       name: "Blast Alignment",

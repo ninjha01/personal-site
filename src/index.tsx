@@ -19,19 +19,43 @@ const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <BrowserRouter basename={`/${process.env.PUBLIC_URL}`}>
     <Routes>
-      <React.StrictMode>
-        <Route path="/" element={<App />} />
-        <Route path="/notebook" element={<Notebook />} />
-        <Route path="/site_arch" element={<SiteArch />} />
-      </React.StrictMode>
+      <Route
+        path="/"
+        element={
+          <React.StrictMode>
+            <App />
+          </React.StrictMode>
+        }
+      />
+      <Route
+        path="/notebook"
+        element={
+          <React.StrictMode>
+            <Notebook />
+          </React.StrictMode>
+        }
+      />
+      <Route
+        path="/site_arch"
+        element={
+          <React.StrictMode>
+            <SiteArch />
+          </React.StrictMode>
+        }
+      />
 
       {/* SeqViz uses deprecated findDOMNode and so we can't use strict mode on pages with it */}
       <Route path="/seqbuild" element={<SeqBuild />} />
       <Route path="/blast" element={<Blast />} />
 
-      <React.StrictMode>
-        <Route path="*" element={<FourOhFour />} />
-      </React.StrictMode>
+      <Route
+        path="*"
+        element={
+          <React.StrictMode>
+            <FourOhFour />
+          </React.StrictMode>
+        }
+      />
     </Routes>
   </BrowserRouter>
 );
