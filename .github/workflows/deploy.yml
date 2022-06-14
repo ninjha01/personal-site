@@ -2,10 +2,10 @@ name: CICD for Personal Site
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   frontend_compile:
@@ -30,7 +30,7 @@ jobs:
   #         python-version: 3.10.4
   #         architecture: x64
   #     - name: Checkout repository
-  #       uses: actions/checkout@master
+  #       uses: actions/checkout@main
   #     - uses: psf/black@stable
   #       with:
   #         options: "--check --verbose"

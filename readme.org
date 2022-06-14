@@ -9,7 +9,7 @@
 
 #+END_SRC
 
-To deploy, simply merge code into master
+To deploy, simply merge code into main
 
 ** Built with
 
