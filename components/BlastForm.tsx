@@ -5,31 +5,18 @@ import { classNames } from "../utils";
 
 export const BlastForm = (props: {
   stepID: number;
-  sequenceName: string | null;
-  setSequenceName: (name: string) => void;
-  sequence: string;
-  setSequence: (seq: string) => void;
-  sequenceType: SequenceType;
-  topology: TopologyType;
-  setTopology: (toptype: TopologyType) => void;
-  setSequenceType: (seqtype: SequenceType) => void;
   setStepID: (id: number) => void;
   submitBlastReq: (data: BlastRequestData) => void;
 }) => {
-  const {
-    sequenceName,
-    setSequenceName,
-    sequence,
-    setSequence,
-    setStepID,
-    sequenceType,
-    topology,
-    setTopology,
-    setSequenceType,
-    submitBlastReq,
-  } = props;
+  const { setStepID, submitBlastReq } = props;
 
   const [validated, setValidated] = useState(false);
+  const [sequenceType, setSequenceType] = useState<SequenceType>("Protein");
+  const [topology, setTopology] = useState<TopologyType>("Linear");
+  const [sequence, setSequence] = useState<string>(
+    "QIKDLLVSSSTDLDTTLVLVNAIYFKGMWKTAFNAEDTREMPFHVTKQESKPVQMMCMNNSFNVATLPAEKMKILELPFASGDLSMLVLLPDEVSDLERIEKTINFEKLTEWTNPNTMEKRRVKVYLPQMKIEEK"
+  );
+  const [sequenceName, setSequenceName] = useState<string | null>("Example Sequence");
 
   useEffect(
     function validateFormAndManageStepId() {
@@ -86,7 +73,7 @@ export const BlastForm = (props: {
                   disabled={!validated}
                   onClick={() => {
                     if ((sequence.length > 0, sequenceType !== null, topology !== null)) {
-                      submitBlastReq({ sequence, sequenceType, topology });
+                      submitBlastReq({ sequence, sequenceType, topology, sequenceName });
                     }
                   }}
                 >
@@ -115,6 +102,7 @@ const NameInput = (props: { name: string | null; setName: (seq: string) => void 
       <div className="mt-1">
         <input
           id="name"
+          key="name-input"
           name="name"
           className={classNames(
             "block w-full rounded-md border border-gray-300 p-3 shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm",
@@ -143,6 +131,7 @@ const SequenceInput = (props: { sequence: string; setSequence: (seq: string) => 
       <div className="mt-1">
         <textarea
           id="sequence"
+          key="sequence-input"
           name="sequence"
           rows={3}
           className={classNames(
@@ -179,6 +168,7 @@ const SequenceTypeSelector = (props: {
 
       <RadioGroup
         id="sequenceType"
+        key="sequenceType-input"
         name="sequenceType"
         value={sequenceType}
         onChange={onChange}
@@ -232,6 +222,7 @@ const TopologyTypeSelector = (props: {
       <p className="mt-2 text-sm text-gray-500">Do you want to search against circular dna (plasmids) or linear dna?</p>
       <RadioGroup
         id="topology"
+        key="topology-input"
         name="topology"
         value={topology}
         onChange={onChange}

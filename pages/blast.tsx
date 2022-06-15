@@ -13,6 +13,7 @@ export type TopologyType = typeof topologyTypes[number];
 
 export interface BlastRequestData {
   sequence: string;
+  sequenceName: string;
   topology: TopologyType;
   sequenceType: SequenceType;
 }
@@ -47,14 +48,8 @@ export const Blast = () => {
   ];
   const [stepID, setStepID] = useState<number>(0);
 
-  const [sequenceType, setSequenceType] = useState<SequenceType>("Protein");
-  const [topology, setTopology] = useState<TopologyType>("Linear");
-  const [sequence, setSequence] = useState<string>(
-    "QIKDLLVSSSTDLDTTLVLVNAIYFKGMWKTAFNAEDTREMPFHVTKQESKPVQMMCMNNSFNVATLPAEKMKILELPFASGDLSMLVLLPDEVSDLERIEKTINFEKLTEWTNPNTMEKRRVKVYLPQMKIEEK"
-  );
-  const [sequenceName, setSequenceName] = useState<string | null>("Example Sequence");
-
   const [blastResults, setBlastResult] = useState<BlastResponseDatum[] | null>(null);
+  const [blastRequest, setBlastRequest] = useState<BlastRequestData | null>(null);
 
   /* const [showBanner, setShowBanner] = useState(true);
   
@@ -70,6 +65,7 @@ export const Blast = () => {
     setStepID(3);
     const results = generateResults(data);
     setBlastResult(results);
+    setBlastRequest(data);
   };
 
   const content = () => {
@@ -77,36 +73,9 @@ export const Blast = () => {
       case 0:
       case 1:
       case 2:
-        return (
-          <BlastForm
-            stepID={stepID}
-            sequenceType={sequenceType}
-            setSequenceType={setSequenceType}
-            sequence={sequence}
-            topology={topology}
-            setTopology={setTopology}
-            setSequence={setSequence}
-            setStepID={setStepID}
-            submitBlastReq={submitBlastReq}
-            sequenceName={sequenceName}
-            setSequenceName={setSequenceName}
-          />
-        );
+        return <BlastForm stepID={stepID} setStepID={setStepID} submitBlastReq={submitBlastReq} />;
       case 3:
-        return (
-          <>
-            {blastResults && (
-              <BlastResults
-                results={blastResults}
-                sequenceName={sequenceName || "Unknown Sequence"}
-                sequenceLength={sequence.length}
-                sequenceType={sequenceType}
-                topologyType={topology}
-                sequence={sequence}
-              />
-            )}
-          </>
-        );
+        return <>{blastResults && blastRequest && <BlastResults results={blastResults} request={blastRequest} />}</>;
     }
   };
   return (
