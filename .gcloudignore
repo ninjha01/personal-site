@@ -1,4 +1,4 @@
-# This file specifies files that are *not* uploaded to Google Cloud
+# This file specifies files that are *not* uploaded to Google Cloud Platform
 # using gcloud. It follows the same syntax as .gitignore, with the addition of
 # "#!include" directives (which insert the entries of the given .gitignore-style
 # file at that point).
@@ -15,3 +15,21 @@
 
 # Node.js dependencies:
 node_modules/
+*.hot-update.js*
+
+# Other config and Files
+README.md
+.eslintignore
+.eslintrc
+
+# Source code
+/pages/
+/components/
+/hooks/
+/cypress/
+
+.git
+.github
+.log
+.next
+

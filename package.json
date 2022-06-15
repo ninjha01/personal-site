@@ -1,76 +1,50 @@
 {
-  "name": "nishant-jha-personal-site",
-  "homepage": "https://www.nishantjha.org",
+  "name": "personal-site",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@headlessui/react": "^1.6.3",
-    "@heroicons/react": "^1.0.6",
-    "@tailwindcss/forms": "^0.5.2",
-    "@testing-library/cypress": "^8.0.3",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "@types/jest": "^27.0.1",
-    "@types/mdx": "^2.0.2",
-    "@types/node": "^16.7.13",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "cypress": "^10.0.2",
-    "eslint-plugin-cypress": "^2.12.1",
-    "gh-pages": "^4.0.0",
-    "postcss": "^8.4.14",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-flow-renderer": "^10.3.5",
-    "react-ga4": "^1.4.1",
-    "react-markdown": "^8.0.3",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "remark-gfm": "^3.0.1",
-    "tailwindcss": "^3.0.24",
-    "typescript": "^4.7.3",
-    "web-vitals": "^2.1.0"
-  },
+  "@headlessui/react": "^1.6.3",
+  "@heroicons/react": "^1.0.6",
+  "cypress": "^10.0.2",
+  "eslint-plugin-cypress": "^2.12.1",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "REACT_APP_GIT_SHA=`git rev-parse --short HEAD` react-scripts build",
-    "lint": "eslint src --ext js,jsx,ts,tsx --quiet --fix",
-    "lint:check": "eslint src --ext js,jsx,ts,tsx --quiet",
+    "dev": "next dev",
+    "build": "rm -rf ./build && NODE_ENV=production NEXT_PUBLIC_GIT_COMMIT_SHA=`git rev-parse --short HEAD` next build",
+    "start": "next start -p 8080",
+    "serve": "npm run build && npm run start",
+    "lint": "next lint",
     "format": "prettier \"**/*.+(js|jsx|ts|tsx|json|css|md)\" --config package.json --write",
     "format:check": "prettier \"**/*.+(js|jsx|ts|tsx|json|css|md)\" --config package.json --check",
     "cypress": "cypress open --env host=localhost:3000",
     "cypress:check": "cypress run --env host=localhost:3000",
     "cypress:staging": "cypress run",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "serve": "npm run build && npx serve -s build",
-    "deploy": "npm run build && gcloud app deploy --quiet && gcloud app browse"
+    "deploy:staging": "npm run build && gcloud app deploy --quiet app.yaml --project eco-tract-352420 --promote"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@headlessui/react": "^1.6.4",
+    "@heroicons/react": "^1.0.6",
+    "isarray": "^2.0.5",
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-flow-renderer": "^10.3.6",
+    "react-markdown": "^8.0.3",
+    "remark-gfm": "^3.0.1",
+    "seqviz": "^3.3.2",
+    "sharp": "^0.30.6"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.2",
+    "@testing-library/cypress": "^8.0.3",
+    "@types/node": "17.0.42",
+    "@types/react": "18.0.12",
+    "@types/react-dom": "18.0.5",
     "autoprefixer": "^10.4.7",
-    "prettier": "^2.6.2",
-    "prettier-plugin-tailwindcss": "^0.1.11",
-    "react-snap": "^1.23.0"
+    "cypress": "^10.1.0",
+    "eslint": "^8.17.0",
+    "eslint-config-next": "^12.1.7-canary.40",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.2",
+    "typescript": "4.7.3"
   },
   "prettier": {
     "arrowParens": "avoid",

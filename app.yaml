@@ -1,13 +1,8 @@
 env: standard
-runtime: nodejs16
+runtime: nodejs14
 service: default
 
 handlers:
-  - url: /static
-    static_dir: build/static
-  - url: /(.*\.(json|ico|js))$
-    static_files: build/\1
-    upload: build/.*\.(json|ico|js)$
-  - url: .*
-    static_files: build/index.html
-    upload: build/index.html
+  - url: /.*
+    secure: always
+    script: auto
