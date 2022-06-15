@@ -16,7 +16,7 @@ export const BlastForm = (props: {
   const [sequence, setSequence] = useState<string>(
     "QIKDLLVSSSTDLDTTLVLVNAIYFKGMWKTAFNAEDTREMPFHVTKQESKPVQMMCMNNSFNVATLPAEKMKILELPFASGDLSMLVLLPDEVSDLERIEKTINFEKLTEWTNPNTMEKRRVKVYLPQMKIEEK"
   );
-  const [sequenceName, setSequenceName] = useState<string | null>("Example Sequence");
+  const [sequenceName, setSequenceName] = useState<string>("Example Sequence");
 
   useEffect(
     function validateFormAndManageStepId() {
