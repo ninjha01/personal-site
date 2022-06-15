@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import Head from "next/head";
 import ReactFlow, {
   addEdge,
   Background,
@@ -16,12 +16,13 @@ import { useWindowSize } from "../hooks/useWindowSize";
 
 export const SiteArch = () => {
   const size = useWindowSize();
-  useEffect(function setTitle() {
-    document.title = "Arch: nishantjha.org";
-  }, []);
 
   return (
     <>
+      <Head>
+        <title>Site Arch</title>
+      </Head>
+
       <Sidebar>
         <section className="grid grid-cols-1 gap-6 pt-8 lg:grid-cols-2">
           <div className=" flex flex-col px-4 text-left sm:px-6 md:px-8">

@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import Head from "next/head";
+import { useState } from "react";
 import { BlastForm } from "../components/BlastForm";
 import { BlastResults } from "../components/BlastResults";
 import { Sidebar } from "../components/Sidebar";
@@ -57,10 +58,6 @@ export const Blast = () => {
   *   setTimeout(() => setShowBanner(true), 2000);
    * }, []); */
 
-  useEffect(function setTitle() {
-    document.title = "Blast Service";
-  }, []);
-
   const submitBlastReq = (data: BlastRequestData) => {
     setStepID(3);
     const results = generateResults(data);
@@ -80,6 +77,10 @@ export const Blast = () => {
   };
   return (
     <>
+      <Head>
+        <title>Blast Service</title>
+      </Head>
+
       <Sidebar>
         <div className="pt-6">
           <div className="mx-auto flex max-w-7xl flex-row items-center px-4 sm:px-6 md:px-8">

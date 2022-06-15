@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { ClientSection } from "../components/ClientSection";
 import { HeroSection } from "../components/HeroSection";
 import { ProjectSection } from "../components/ProjectSection";
@@ -7,6 +8,9 @@ import { config } from "../config";
 export const Home = () => {
   return (
     <>
+      <Head>
+        <title>Nishant Jha</title>
+      </Head>
       <Sidebar>
         <HeroSection />
         <ClientSection clients={config.clients} />
