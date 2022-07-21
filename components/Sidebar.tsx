@@ -61,7 +61,7 @@ export const Sidebar = (props: {
       href: "/sitearch",
       current: false,
       icon: TemplateIcon,
-      wip: true,
+      wip: false,
     },
   ];
   const navItems = (

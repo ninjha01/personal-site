@@ -11,7 +11,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("autoprefixer")],
+  plugins: [require("@tailwindcss/forms"), require("autoprefixer"), require("@tailwindcss/typography")],
   variants: {
     opacity: ({ after }) => after(["disabled"]),
     extend: {

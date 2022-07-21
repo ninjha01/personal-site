@@ -14,6 +14,12 @@ import ReactFlow, {
 import { Sidebar } from "../components/Sidebar";
 import { useWindowSize } from "../hooks/useWindowSize";
 
+// @ts-ignore
+import content from "../content/sitearch.md";
+
+import { classNames } from "../utils";
+import { Prose } from "../components/Prose";
+
 export const SiteArch = () => {
   const size = useWindowSize();
 
@@ -24,14 +30,15 @@ export const SiteArch = () => {
       </Head>
 
       <Sidebar>
-        <section className="grid grid-cols-1 gap-6 pt-8 lg:grid-cols-2">
-          <div className=" flex flex-col px-4 text-left sm:px-6 md:px-8">
-            <h1 className="flex-2 text-3xl font-semibold text-gray-900">Architecture Diagram</h1>
-            <h2 className="flex-2 text-xl font-semibold text-gray-500"> for nishantjha.org</h2>
-          </div>
-          <div style={{ height: size.height }} className="w-full">
+        <h1 className="flex-2 text-3xl font-semibold text-gray-900">Architecture Diagram</h1>
+        <h2 className="flex-2 text-xl font-semibold text-gray-500"> for nishantjha.org</h2>
+
+        <section className="flex flex-col lg:flex-row">
+          <div style={{ height: size.height }} className="w-full h-[30rem] lg:h-[45rem]">
             <OverviewFlow />
           </div>
+
+          <Prose className={classNames("w-full mt-8 h-full lg:overflow-y-scroll lg:ml-8")} content={content} />
         </section>
       </Sidebar>
     </>
@@ -69,6 +76,7 @@ const OverviewFlow = () => {
       attributionPosition="top-right"
       panOnScroll={false}
       zoomOnScroll={false}
+      preventScrolling={false}
     >
       <Controls showZoom={false} showFitView={true} showInteractive={false} />
       <Background size={0.6} color="#1e3a8a" gap={16} />
