@@ -1,8 +1,10 @@
-export default function EmptySequence() {
+export default function EmptySequence(props: { onClick: () => void }) {
+  const { onClick } = props;
   return (
     <button
       type="button"
-      className="relative block w-full rounded-lg border-2 border-dashed border-blue-800 p-24 text-center hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+      className="relative block rounded-lg border-2 border-blue-800 p-24 text-center hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 h-full"
+      onClick={onClick}
     >
       <svg
         className="mx-auto h-12 w-12 text-blue-900"

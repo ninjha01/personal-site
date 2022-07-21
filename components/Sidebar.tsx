@@ -33,18 +33,18 @@ export const Sidebar = (props: {
   ];
   const uiMockups = [
     {
-      name: "Sequence Builder",
-      href: "/seqbuild",
-      current: false,
-      icon: BeakerIcon,
-      wip: true,
-    },
-    {
       name: "Blast Alignment",
       href: "/blast",
       current: false,
       icon: SearchCircleIcon,
       wip: false,
+    },
+    {
+      name: "Sequence Builder",
+      href: "/seqbuild",
+      current: false,
+      icon: BeakerIcon,
+      wip: true,
     },
     {
       name: "Code Notebook",

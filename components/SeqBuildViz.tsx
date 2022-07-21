@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useRef, useState } from "react";
 const SeqViz = dynamic(() => import("../components/SeqViz"), { ssr: false });
 
 import { Annotation } from "seqviz/dist/part";
@@ -14,6 +14,7 @@ export const SeqBuildViz = () => {
   });
 
   const [sequence, setSequence] = useLocalStorage<string | null>({ initialValue: null, key: "seqbuilder-sequence" });
+  const sequenceRef = useRef<HTMLTextAreaElement>(null);
   const [viewerMode] = useState<"linear" | "circular">("circular");
 
   return (
@@ -32,9 +33,15 @@ export const SeqBuildViz = () => {
           zoom={{ linear: 0, circular: 0 }}
         />
       ) : (
-        <EmptySequence />
+        <EmptySequence
+          onClick={() => {
+            if (sequenceRef.current) {
+              sequenceRef.current.focus();
+            }
+          }}
+        />
       )}
-      <SeqBuilderForm sequence={sequence || ""} setSequence={setSequence} />
+      <SeqBuilderForm sequence={sequence || ""} setSequence={setSequence} inputRef={sequenceRef} />
     </div>
   );
 };

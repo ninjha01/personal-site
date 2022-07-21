@@ -1,74 +1,53 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { CursorClickIcon, MailOpenIcon, UsersIcon } from "@heroicons/react/outline";
 import { ArrowSmDownIcon, ArrowSmUpIcon } from "@heroicons/react/solid";
+import { ReactElement } from "react";
 import { classNames } from "../utils";
 
-const stats = [
-  {
-    id: 1,
-    name: "Total Subscribers",
-    stat: "71,897",
-    icon: UsersIcon,
-    change: "122",
-    changeType: "increase",
-  },
-  {
-    id: 2,
-    name: "Avg. Open Rate",
-    stat: "58.16%",
-    icon: MailOpenIcon,
-    change: "5.4%",
-    changeType: "increase",
-  },
-  {
-    id: 3,
-    name: "Avg. Click Rate",
-    stat: "24.57%",
-    icon: CursorClickIcon,
-    change: "3.2%",
-    changeType: "decrease",
-  },
-];
+export interface ISequenceStat {
+  id: number;
+  name: string;
+  stat: string;
+  previousStat: string;
+  change: string;
+  changeType: "increase" | "decrease";
+}
 
-export default function SequenceStats(props: { className: string }) {
-  const { className } = props;
+export default function SequenceStats(props: { className: string; stats: ISequenceStat[] }) {
+  const { className, stats } = props;
   return (
     <div className={className}>
-      <dl className="mt-5 grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <h3 className="text-lg leading-6 font-medium text-slate-600">Potential Optimizations</h3>
+      <dl className="mt-5 grid grid-cols-1 rounded-lg bg-white overflow-hidden shadow divide-y divide-gray-200 md:grid-cols-3 md:divide-y-0 md:divide-x">
         {stats.map(item => (
-          <div
-            key={item.id}
-            className="relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow-md duration-200 ease-in-out hover:shadow-md hover:shadow-blue-900 sm:px-6 sm:pt-6"
-          >
-            <dt>
-              <div className="absolute rounded-md bg-blue-800 p-3">
-                <item.icon className="h-6 w-6 text-white" aria-hidden="true" />
+          <div key={item.name} className="px-4 py-5 sm:p-6">
+            <dt className="text-base font-normal text-gray-900">{item.name}</dt>
+            <dd className="mt-1 flex justify-between items-baseline md:block lg:flex">
+              <div className="flex items-baseline text-2xl font-semibold text-blue-600">
+                {item.stat}
+                <span className="ml-2 text-sm font-medium text-gray-500">from {item.previousStat}</span>
               </div>
-              <p className="ml-16 truncate text-sm font-medium text-gray-500">{item.name}</p>
-            </dt>
-            <dd className="ml-16 flex items-baseline pb-6 sm:pb-7">
-              <p className="text-2xl font-semibold text-gray-900">{item.stat}</p>
-              <p
+
+              <div
                 className={classNames(
-                  item.changeType === "increase" ? "text-green-600" : "text-red-600",
-                  "ml-2 flex items-baseline text-sm font-semibold"
+                  item.changeType === "increase" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800",
+                  "inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium md:mt-2 lg:mt-0"
                 )}
               >
                 {item.changeType === "increase" ? (
-                  <ArrowSmUpIcon className="h-5 w-5 flex-shrink-0 self-center text-green-500" aria-hidden="true" />
+                  <ArrowSmUpIcon
+                    className="-ml-1 mr-0.5 flex-shrink-0 self-center h-5 w-5 text-green-500"
+                    aria-hidden="true"
+                  />
                 ) : (
-                  <ArrowSmDownIcon className="h-5 w-5 flex-shrink-0 self-center text-red-500" aria-hidden="true" />
+                  <ArrowSmDownIcon
+                    className="-ml-1 mr-0.5 flex-shrink-0 self-center h-5 w-5 text-red-500"
+                    aria-hidden="true"
+                  />
                 )}
 
                 <span className="sr-only">{item.changeType === "increase" ? "Increased" : "Decreased"} by</span>
                 {item.change}
-              </p>
-              <div className="absolute inset-x-0 bottom-0 bg-gray-50 px-4 py-4 sm:px-6">
-                <div className="text-sm">
-                  <p className="font-medium text-blue-800 hover:text-blue-800">
-                    View all<span className="sr-only"> {item.name} stats</span>
-                  </p>
-                </div>
               </div>
             </dd>
           </div>
