@@ -101,7 +101,7 @@ const LinkedInButton = (
       href={config.personal.linkedin}
       target="_blank"
       rel="noreferrer"
-      className="block   transform items-center rounded-xl border-2 border-white px-6 py-3.5 text-center text-base font-medium text-blue-900 shadow-md shadow-blue-900 transition duration-500 ease-in-out hover:no-underline hover:shadow-xl hover:shadow-blue-900 focus:outline-none"
+      className="block transform items-center rounded-xl border-2 border-white px-6 py-3.5 text-center text-base font-medium text-blue-900 shadow-md shadow-blue-900 transition duration-500 ease-in-out hover:no-underline hover:shadow-xl hover:shadow-blue-900 focus:outline-none"
     >
       <div className="flex items-center gap-2 ">{LinkedInIcon}LinkedIn</div>
     </a>
