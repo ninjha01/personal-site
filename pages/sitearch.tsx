@@ -34,11 +34,11 @@ export const SiteArch = () => {
         <h2 className="flex-2 text-xl font-semibold text-gray-500"> for nishantjha.org</h2>
 
         <section className="flex flex-col lg:flex-row">
-          <div style={{ height: size.height }} className="w-full h-[30rem] lg:h-[45rem]">
+          <div style={{ height: size.height }} className="h-[30rem] w-full lg:h-[45rem]">
             <OverviewFlow />
           </div>
 
-          <Prose className={classNames("w-full mt-8 h-full lg:overflow-y-scroll lg:ml-8")} content={content} />
+          <Prose className={classNames("mt-8 h-full w-full lg:ml-8 lg:overflow-y-scroll")} content={content} />
         </section>
       </Sidebar>
     </>

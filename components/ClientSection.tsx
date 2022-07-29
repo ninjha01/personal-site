@@ -31,7 +31,7 @@ const ClientCard = (props: { client: ClientType }) => {
       {props.client.description}
     </p>
   ) : (
-    <h1 className="mx-auto my-auto mb-auto animate-pulse whitespace-normal text-center tracking-wider text-xl font-semibold leading-relaxed text-blue-900">
+    <h1 className="mx-auto my-auto mb-auto animate-pulse whitespace-normal text-center text-xl font-semibold leading-relaxed tracking-wider text-blue-900">
       Current Engagement
     </h1>
   );
@@ -40,7 +40,7 @@ const ClientCard = (props: { client: ClientType }) => {
     <div className="flex flex-col rounded-xl bg-white p-6 text-left shadow-md duration-200 ease-in-out hover:shadow-xl hover:shadow-blue-900 ">
       {description}
       <a className="mt-8 mb-2 flex flex-row items-center gap-3" href={url}>
-        <div className="relative h-16 w-16 mt-3 inline-block  object-cover p-1 align-baseline overflow-hidden outline-rounded outline-dashed  outline-offset-4 outline-blue-900 rounded-full ">
+        <div className="outline-rounded relative mt-3 inline-block h-16  w-16 overflow-hidden rounded-full object-cover p-1 align-baseline  outline-dashed outline-offset-4 outline-blue-900 ">
           <Image src={logo} alt="Logo" layout="fill" objectFit="cover" />
         </div>
         <div className="space-between flex flex-col justify-center gap-2">

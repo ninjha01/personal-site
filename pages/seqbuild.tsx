@@ -43,8 +43,8 @@ function SeqBuild() {
         <h1 className="flex-2 text-3xl font-semibold text-blue-900">SeqBuild</h1>
         <h2 className="flex-2 text-xl font-semibold text-gray-500">a sequence building and ordering platform</h2>
 
-        <div className="flex flex-col h-full ">
-          <div className="flex-1 text-lg mt-8">
+        <div className="flex h-full flex-col ">
+          <div className="mt-8 flex-1 text-lg">
             <SeqBuildViz />
           </div>
           <SequenceStats className={"my-8"} stats={stats} />

@@ -33,7 +33,7 @@ const ProjectCard = (props: { project: ProjectType }) => {
     <div className="flex flex-col overflow-hidden rounded-lg bg-white shadow-md duration-200 ease-in-out hover:shadow-xl hover:shadow-blue-900 lg:-mt-8">
       <div className="h-60">
         <Link href={url}>
-          <div className="relative h-32 w-5/6 mx-auto mt-8">
+          <div className="relative mx-auto mt-8 h-32 w-5/6">
             <a>
               <Image src={img} alt="" objectFit="contain" layout="fill" className="" />
             </a>

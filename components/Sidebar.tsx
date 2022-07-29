@@ -258,7 +258,7 @@ const SidebarItem = (props: SidebarItemType) => {
     <Link href={url}>
       <a
         className={classNames(
-          "text-gray-300 hover:bg-gray-700 hover:text-blue-50 group flex items-center px-2 py-2 text-sm font-medium rounded-md",
+          "group flex items-center rounded-md px-2 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-blue-50",
           hidden ? "display: none" : ""
         )}
       >

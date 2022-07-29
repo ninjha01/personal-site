@@ -12,7 +12,7 @@ export const SeqBuilderForm = (props: {
       <div className="shadow sm:overflow-hidden sm:rounded-md">
         <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
           <div>
-            <h3 className="text-lg leading-6 font-medium text-blue-900">Sequence Submission</h3>
+            <h3 className="text-lg font-medium leading-6 text-blue-900">Sequence Submission</h3>
             <p className="mt-1 max-w-2xl text-sm text-gray-500">Upload or paste your sequence. </p>
           </div>
           <div className="flex flex-col gap-4">
@@ -50,7 +50,7 @@ export const SeqBuilderForm = (props: {
 
 const FileUpload = () => {
   return (
-    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+    <div className="mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
       <div className="space-y-1 text-center">
         <svg
           className="mx-auto h-12 w-12 text-gray-400"
@@ -69,7 +69,7 @@ const FileUpload = () => {
         <div className="flex text-sm text-gray-600">
           <label
             htmlFor="file-upload"
-            className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
+            className="relative cursor-pointer rounded-md bg-white font-medium text-blue-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2 hover:text-blue-500"
           >
             <span>Upload a sequence</span>
             <input id="file-upload" name="file-upload" type="file" className="sr-only" />

@@ -14,7 +14,7 @@ export const FourOhFour = () => {
             <Link href="/">
               <a className="inline-flex">
                 <span className="sr-only">Workflow</span>
-                <div className="rounded-full w-80 h-80">
+                <div className="h-80 w-80 rounded-full">
                   <LogoIcon />
                 </div>
               </a>
