@@ -1,4 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
+import profile from "../public/assets/images/profile.jpg";
+
 import {
   BeakerIcon,
   BookOpenIcon,
@@ -13,7 +15,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fragment, JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, StrictMode, useState } from "react";
 import { config } from "../config";
-import profile from "../public/assets/images/profile.jpg";
 import { classNames } from "../utils";
 
 export const Sidebar = (props: {

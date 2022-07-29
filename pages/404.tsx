@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
-import profile from "../public/assets/images/profile.jpg";
+import LogoIcon from "../components/LogoIcon";
+
 export const FourOhFour = () => {
   useEffect(() => {
     document.title = "404";
@@ -14,8 +14,8 @@ export const FourOhFour = () => {
             <Link href="/">
               <a className="inline-flex">
                 <span className="sr-only">Workflow</span>
-                <div className="rounded-full">
-                  <Image src={profile} alt="" height={128} width={128} />
+                <div className="rounded-full w-80 h-80">
+                  <LogoIcon />
                 </div>
               </a>
             </Link>
@@ -26,9 +26,11 @@ export const FourOhFour = () => {
               <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">Page not found.</h1>
               <p className="mt-2 text-base text-gray-500">Sorry, we couldn’t find the page you’re looking for.</p>
               <div className="mt-6">
-                <p className="text-base font-medium text-blue-900 hover:text-blue-500">
-                  Go back home<span aria-hidden="true"> &rarr;</span>
-                </p>
+                <Link href="/">
+                  <a className="text-base font-medium text-blue-900 hover:text-blue-500">
+                    Go back home<span aria-hidden="true"> &rarr;</span>
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
