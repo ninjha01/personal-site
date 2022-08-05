@@ -16,6 +16,7 @@ export const Blast = () => {
     <>
       <Head>
         <title>Blast Service</title>
+        <link rel="canonical" href={"https://nishantjha.org/blast"} />
       </Head>
 
       <Sidebar>

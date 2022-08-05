@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { config } from "../config";
 import LogoIcon from "./LogoIcon";
+import { useAnalyticsEvent } from "../hooks/useAnalytics";
 
 export const HeroSection = () => {
   return (
@@ -36,7 +37,7 @@ export const HeroSection = () => {
             </div>
             <div className="mr-8 flex w-full flex-col gap-4 sm:flex-row">
               {GetInTouchButton}
-              {LinkedInButton}
+              <LinkedInButton />
             </div>
           </div>
         </div>
@@ -94,15 +95,23 @@ const LinkedInIcon = (
   </svg>
 );
 
-const LinkedInButton = (
-  <div className="mt-3 flex basis-0 content-center rounded-lg">
-    <a
-      href={config.personal.linkedin}
-      target="_blank"
-      rel="noreferrer"
-      className="block transform items-center rounded-xl border-2 border-white px-6 py-3.5 text-center text-base font-medium text-blue-900 shadow-md shadow-blue-900 transition duration-500 ease-in-out hover:no-underline hover:shadow-xl hover:shadow-blue-900 focus:outline-none"
-    >
-      <div className="flex items-center gap-2 ">{LinkedInIcon}LinkedIn</div>
-    </a>
-  </div>
-);
+const LinkedInButton = () => {
+  const { trackCustomEvent } = useAnalyticsEvent();
+  const logLinkedin = () => {
+    trackCustomEvent({ eventName: "clicked_linkedin_button", eventTitle: "linkedin_button" });
+  };
+
+  return (
+    <div className="mt-3 flex basis-0 content-center rounded-lg">
+      <a
+        href={config.personal.linkedin}
+        onClick={logLinkedin}
+        target="_blank"
+        rel="noreferrer"
+        className="block transform items-center rounded-xl border-2 border-white px-6 py-3.5 text-center text-base font-medium text-blue-900 shadow-md shadow-blue-900 transition duration-500 ease-in-out hover:no-underline hover:shadow-xl hover:shadow-blue-900 focus:outline-none"
+      >
+        <div className="flex items-center gap-2 ">{LinkedInIcon}LinkedIn</div>
+      </a>
+    </div>
+  );
+};

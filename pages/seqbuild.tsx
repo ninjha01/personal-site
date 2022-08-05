@@ -38,6 +38,7 @@ function SeqBuild() {
     <>
       <Head>
         <title>SeqBuild</title>
+        <link rel="canonical" href={"https://nishantjha.org/seqbuild"} />
       </Head>
       <Sidebar noStrict>
         <h1 className="flex-2 text-3xl font-semibold text-blue-900">SeqBuild</h1>

@@ -11,6 +11,7 @@ function Notebook() {
     <>
       <Head>
         <title>Code Notebook</title>
+        <link rel="canonical" href={"https://nishantjha.org/notebook"} />
       </Head>
 
       <Sidebar>
