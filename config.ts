@@ -36,13 +36,13 @@ My mission is to accelerate life science research by building those tools with y
     email: "me@nishantjha.org",
   },
   clients: [
-    {
-      name: "Calico Labs",
-      url: "https://www.calicolabs.com/",
-      description: null,
-      subtitle: "An Alphabet Company",
-      logo: calico_logo,
-    },
+    // {
+    //   name: "Calico Labs",
+    //   url: "https://www.calicolabs.com/",
+    //   description: null,
+    //   subtitle: "An Alphabet Company",
+    //   logo: calico_logo,
+    // },
     {
       name: "Broad Institute",
       url: "https://cancerdatascience.org/",
