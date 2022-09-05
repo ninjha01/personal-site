@@ -31,8 +31,8 @@ export const SiteArch = () => {
       </Head>
 
       <Sidebar>
-        <h1 className="flex-2 text-3xl font-semibold text-gray-900">Architecture Diagram</h1>
-        <h2 className="flex-2 text-xl font-semibold text-gray-500"> for nishantjha.org</h2>
+        <h1 className="flex-2 text-3xl font-semibold text-gray-900">Personal Site</h1>
+        <h2 className="flex-2 text-xl font-semibold text-gray-500">Architecture Diagram</h2>
 
         <section className="flex flex-col lg:flex-row">
           <div style={{ height: size.height }} className="h-[30rem] w-full lg:h-[45rem]">

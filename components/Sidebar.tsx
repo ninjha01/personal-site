@@ -200,18 +200,11 @@ const homeItems = [
 ];
 const uiMockups = [
   {
-    name: "Blast Alignment",
+    name: "Blast Service",
     href: "/blast",
     current: false,
     icon: SearchCircleIcon,
     wip: false,
-  },
-  {
-    name: "Sequence Builder",
-    href: "/seqbuild",
-    current: false,
-    icon: BeakerIcon,
-    wip: true,
   },
   {
     name: "Code Notebook",
@@ -229,6 +222,13 @@ const archDiagrams = [
     current: false,
     icon: TemplateIcon,
     wip: false,
+  },
+  {
+    name: "Blast Service",
+    href: "/blastarch",
+    current: false,
+    icon: TemplateIcon,
+    wip: true,
   },
 ];
 const navItems = (

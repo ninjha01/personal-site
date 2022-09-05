@@ -7,7 +7,13 @@ const dontRenderCodeBackticksClassName = "prose-code:before:content-none prose-c
 export const Prose = (props: { content: string; className: string }) => {
   const { content, className } = props;
   return (
-    <article className={classNames("prose prose-slate", dontRenderCodeBackticksClassName, className)}>
+    <article
+      className={classNames(
+        "prose prose-slate mt-8 h-full w-full lg:ml-8 lg:overflow-y-scroll",
+        dontRenderCodeBackticksClassName,
+        className
+      )}
+    >
       <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
     </article>
   );
