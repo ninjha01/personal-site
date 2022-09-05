@@ -2,7 +2,7 @@ import broad_logo from "./public/assets/images/broad_logo.png";
 import calico_logo from "./public/assets/images/calico_logo.png";
 import control_problem_img from "./public/assets/images/control_problem_img.jpg";
 import cra_img from "./public/assets/images/cra_img.jpg";
-import feld1viz_logo from "./public/assets/images/feld1viz_logo.png";
+import bibshot from "./public/assets/images/bibshot.png";
 import lattice_logo from "./public/assets/images/lattice_logo.png";
 import nature_genetics_logo from "./public/assets/images/nature_genetics_logo.png";
 import seqviz_logo from "./public/assets/images/seqviz_logo.png";
@@ -40,7 +40,7 @@ My mission is to accelerate life science research by building those tools with y
       name: "Calico Labs",
       url: "https://www.calicolabs.com/",
       description:
-        "Set best practices for frontend development. Reduced toil and increased efficiency in the vivarium through video monitoring system for lab mice",
+        "Set best practices for frontend development. Reduced toil and increased efficiency in the vivarium through a video monitoring system for lab mice",
       subtitle: "An Alphabet Company",
       logo: calico_logo,
     },
@@ -62,6 +62,13 @@ My mission is to accelerate life science research by building those tools with y
   ],
   projects: [
     {
+      title: "Bits in Bio site",
+      url: "https://bitsinbio.org",
+      img: bibshot,
+      description:
+        "A static site built with Next.js and tailwindcss deployed on App Engine that drives traffic towards the BiB slack community..",
+    },
+    {
       title: "SeqViz - DNA Sequence Viewer",
       url: "https://github.com/Lattice-Automation/seqviz/",
       img: seqviz_logo,
@@ -74,12 +81,6 @@ My mission is to accelerate life science research by building those tools with y
       img: nature_genetics_logo,
       description:
         "Created a Pediatric Cancer Cell Line visualization to showcase potential targets for Pediatric Precision Medicine.",
-    },
-    {
-      title: "Fel d 1 Viz",
-      url: "https://www.feld1viz.com",
-      img: feld1viz_logo,
-      description: "A visualization of research aimed at creating a hypoallergenic cat.",
     },
   ],
   essays: [
