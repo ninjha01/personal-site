@@ -38,8 +38,7 @@ export const SiteArch = () => {
           <div style={{ height: size.height }} className="h-[30rem] w-full lg:h-[45rem]">
             <OverviewFlow />
           </div>
-
-          <Prose className={classNames("mt-8 h-full w-full lg:ml-8 lg:overflow-y-scroll")} content={content} />
+          <Prose className={classNames("h-full w-full lg:ml-8 lg:overflow-y-scroll")} content={content} />
         </section>
       </Sidebar>
     </>

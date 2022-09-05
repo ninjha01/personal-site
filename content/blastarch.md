@@ -1,4 +1,4 @@
-This is the architecture diagram for a blast service.
+##### **A blast service** must be performant and private.
 
 > What is BLAST? When would I need it?
 

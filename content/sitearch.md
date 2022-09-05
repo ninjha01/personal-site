@@ -1,6 +1,4 @@
-This is the architecture diagram for [nishantjha.org](https://nishantjha.org), the site you're looking at now!
-
-The goals of this architecture are to
+### The goals of this architecture are
 
 1. Enable a hands-off deployment to prod
 2. Which is gated on an integration test suite

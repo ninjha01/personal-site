@@ -36,13 +36,14 @@ My mission is to accelerate life science research by building those tools with y
     email: "me@nishantjha.org",
   },
   clients: [
-    // {
-    //   name: "Calico Labs",
-    //   url: "https://www.calicolabs.com/",
-    //   description: null,
-    //   subtitle: "An Alphabet Company",
-    //   logo: calico_logo,
-    // },
+    {
+      name: "Calico Labs",
+      url: "https://www.calicolabs.com/",
+      description:
+        "Set best practices for frontend development. Reduced toil and increased efficiency in the vivarium through video monitoring system for lab mice",
+      subtitle: "An Alphabet Company",
+      logo: calico_logo,
+    },
     {
       name: "Broad Institute",
       url: "https://cancerdatascience.org/",
@@ -58,12 +59,6 @@ My mission is to accelerate life science research by building those tools with y
       subtitle: "Synthetic Biology Software Consultancy",
       logo: lattice_logo,
     },
-    // {
-    //   name: "Qwarke",
-    //   url: "https://qwarke.com/ComingSoon.html",
-    //   description: "Hello World",
-    //   logo:qwarke_logo,
-    // },
   ],
   projects: [
     {

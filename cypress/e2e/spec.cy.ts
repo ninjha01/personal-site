@@ -3,12 +3,12 @@ describe("spec.cy.ts", () => {
     cy.visit("/");
     cy.contains("Life Science Software Engineer");
     cy.visit("/blast");
-    cy.contains("Project Nitro");
-    cy.visit("/seqbuild");
-    cy.contains("a sequence building and ordering platform");
-    cy.visit("/sitearch");
-    cy.contains("This is the architecture diagram for nishantjha.org");
+    cy.contains("BLAST finds regions");
     cy.visit("/notebook");
     cy.contains("Running Cell #3");
+    cy.visit("/sitearch");
+    cy.contains("This is the architecture diagram for nishantjha.org");
+    cy.visit("/blastarch");
+    cy.contains("A blast service must be performant and private.");
   });
 });
