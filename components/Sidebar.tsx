@@ -217,18 +217,18 @@ const uiMockups = [
 
 const archDiagrams = [
   {
-    name: "This Website",
-    href: "/sitearch",
-    current: false,
-    icon: TemplateIcon,
-    wip: false,
-  },
-  {
     name: "Blast Service",
     href: "/blastarch",
     current: false,
     icon: TemplateIcon,
     wip: true,
+  },
+  {
+    name: "This Website",
+    href: "/sitearch",
+    current: false,
+    icon: TemplateIcon,
+    wip: false,
   },
 ];
 const navItems = (

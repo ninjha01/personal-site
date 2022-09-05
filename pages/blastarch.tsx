@@ -85,30 +85,253 @@ const OverviewFlow = () => {
   );
 };
 
-export const initialNodes: Node[] = [
+const dbGenerationYOffset = 0;
+
+const dbGenerationNodes: Node[] = [
   {
-    id: "1",
-    data: {
-      label: "Google Compute Engine",
-    },
-    position: { x: 50, y: 120 },
-    className: "h-72 w-64 bg-blue-200 -z-10",
-  },
-  {
-    id: "1a",
+    id: "db0",
     type: "input",
     data: {
-      label: "Cloud VM",
+      label: "DB Generation Architecture",
     },
-    parentNode: "1",
+    position: { x: -20, y: dbGenerationYOffset - 150 },
+    style: { height: 300, width: 1000 },
+    className: "-z-20",
+  },
+  {
+    id: "db1",
+    type: "input",
+    data: {
+      label: "client / cron",
+    },
+    position: { x: 0, y: dbGenerationYOffset + 45 },
+    sourcePosition: Position.Right,
+  },
+  {
+    id: "db2",
+
+    data: {
+      label: "Cloud Run",
+    },
+    position: { x: 300, y: dbGenerationYOffset + 0 },
+    className: "h-28 w-64 bg-blue-200 -z-10",
+    targetPosition: Position.Top,
+    sourcePosition: Position.Top,
+  },
+  {
+    id: "db2a",
+    parentNode: "db2",
     extent: "parent",
-    position: { x: 55, y: 30 },
-    style: {
-      zIndex: 10,
+    position: { x: 55, y: dbGenerationYOffset + 45 },
+    data: {
+      label: "[ncbi/blast] container",
     },
+    targetPosition: Position.Left,
+    sourcePosition: Position.Right,
+  },
+  {
+    id: "db3",
+    data: {
+      label: "Cloud Storage",
+    },
+    position: { x: 800, y: dbGenerationYOffset + -100 },
+    style: {
+      zIndex: -10,
+    },
+    className: "bg-green-200 -z-10",
+    targetPosition: Position.Bottom,
+    sourcePosition: Position.Left,
   },
 ];
 
-export const initialEdges: Edge[] = [];
+const dbGenerationEdges: Edge[] = [
+  {
+    id: "e1-2",
+    source: "db1",
+    target: "db2a",
+    label: "request",
+  },
+  {
+    id: "e2c-3",
+    source: "db3",
+    target: "db2",
+    label: "pull client fasta files",
+  },
+  {
+    id: "e3-2d",
+    source: "db2a",
+    target: "db3",
+    label: "push blast.db",
+  },
+  { id: "e2e-4", source: "db2", target: "db4", label: "gcloud deploy" },
+];
 
+const blastQueryYOffset = 250;
+
+const blastQueryNodes: Node[] = [
+  {
+    id: "blast0",
+    type: "input",
+    data: {
+      label: "Query Architecture",
+    },
+    position: { x: -20, y: blastQueryYOffset - 50 },
+    style: { height: 400, width: 1000 },
+    className: "-z-20",
+  },
+  {
+    id: "blast1",
+    type: "input",
+    data: {
+      label: "CDN",
+    },
+    position: { x: 0, y: blastQueryYOffset + 100 },
+    className: "h-28 w-60 bg-cyan-200 -z-10",
+  },
+  {
+    id: "blast1a",
+    parentNode: "blast1",
+    extent: "parent",
+    data: {
+      label: "Frontend",
+    },
+    position: { x: 50, y: 40 },
+    targetPosition: Position.Left,
+    sourcePosition: Position.Right,
+  },
+  {
+    id: "blast2",
+    data: {
+      label: "Load Balancer",
+    },
+    position: { x: 300, y: blastQueryYOffset },
+    className: "h-80 w-20 bg-orange-200 -z-10",
+    targetPosition: Position.Left,
+    sourcePosition: Position.Right,
+  },
+  {
+    id: "blast3",
+    data: {
+      label: "Client-specific Container",
+    },
+    position: { x: 450, y: blastQueryYOffset },
+    className: "h-10 w-80 bg-blue-200",
+    targetPosition: Position.Left,
+    sourcePosition: Position.Left,
+  },
+  {
+    id: "blast4",
+    data: {
+      label: "",
+    },
+    position: { x: 450, y: blastQueryYOffset + 52 },
+    className: "h-[215px] w-80 bg-blue-200 -z-10",
+    targetPosition: Position.Left,
+    sourcePosition: Position.Left,
+  },
+  {
+    id: "blast4a",
+    data: {
+      label: "Backend",
+    },
+    position: { x: 35, y: 15 },
+    className: "w-64",
+    parentNode: "blast4",
+    extent: "parent",
+    targetPosition: Position.Left,
+    sourcePosition: Position.Bottom,
+  },
+  {
+    id: "blast4b",
+    data: {
+      label: "NCBI Binaries",
+    },
+    position: { x: 35, y: 88 },
+    className: "w-64",
+    parentNode: "blast4",
+    extent: "parent",
+  },
+  {
+    id: "blast4c",
+    data: {
+      label: "Blast DB",
+    },
+    position: { x: 35, y: 160 },
+    className: "w-64",
+    parentNode: "blast4",
+    extent: "parent",
+    targetPosition: Position.Top,
+    sourcePosition: Position.Right,
+  },
+  {
+    id: "blast5",
+    data: {
+      label: "Client-specific Container",
+    },
+    position: { x: 450, y: blastQueryYOffset + 280 },
+    className: "h-10 w-80 bg-blue-200",
+    targetPosition: Position.Left,
+    sourcePosition: Position.Left,
+  },
+  {
+    id: "blast6",
+    data: {
+      label: "Cloud Storage",
+    },
+    position: { x: 800, y: blastQueryYOffset },
+    style: {
+      zIndex: -10,
+    },
+    className: "bg-green-200 -z-10",
+    targetPosition: Position.Bottom,
+    sourcePosition: Position.Bottom,
+  },
+];
+
+const blastQueryEdges: Edge[] = [
+  {
+    id: "eBlast1a-Blast2",
+    source: "blast1a",
+    target: "blast2",
+  },
+  {
+    id: "eBlast2-Blast3",
+    source: "blast2",
+    target: "blast3",
+  },
+  {
+    id: "eBlast2-Blast4",
+    source: "blast2",
+    target: "blast4",
+  },
+  {
+    id: "eBlast4-Blast4a",
+    source: "blast4",
+    target: "blast4a",
+  },
+  {
+    id: "eBlast2-Blast5",
+    source: "blast2",
+    target: "blast5",
+  },
+  {
+    id: "eBlast4a-Blast4b",
+    source: "blast4a",
+    target: "blast4b",
+  },
+  {
+    id: "eBlast4b-Blast4c",
+    source: "blast4b",
+    target: "blast4c",
+  },
+  {
+    id: "eBlast4c-Blast6",
+    source: "blast4c",
+    target: "blast6",
+    label: "periodic pull",
+  },
+];
+
+const initialNodes: Node[] = [...dbGenerationNodes, ...blastQueryNodes];
+const initialEdges: Edge[] = [...dbGenerationEdges, ...blastQueryEdges];
 export default SiteArch;
