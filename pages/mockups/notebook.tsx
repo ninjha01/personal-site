@@ -1,8 +1,8 @@
 import Head from "next/head";
-import { CodeCell, ErrorCell, getCells, PlotCell } from "../components/Cell";
-import { HistoryFeed } from "../components/HistoryFeed";
-import { getKernelData, KernelCard } from "../components/KernalCard";
-import { Sidebar } from "../components/Sidebar";
+import { CodeCell, ErrorCell, getCells, PlotCell } from "../../components/Cell";
+import { HistoryFeed } from "../../components/HistoryFeed";
+import { getKernelData, KernelCard } from "../../components/KernalCard";
+import { Shell } from "../../components/Shell";
 
 function Notebook() {
   const cells = getCells();
@@ -14,15 +14,10 @@ function Notebook() {
         <link rel="canonical" href={"https://nishantjha.org/notebook"} />
       </Head>
 
-      <Sidebar>
-        <div className="rounded-lg border-l-8 border-dashed border-blue-900 border-opacity-60 bg-slate-300 px-4 py-5 shadow-xl">
+      <Shell>
+        <div className="rounded-lg border-l-8 border-dashed border-blue-900 border-opacity-60 bg-zinc-800 px-4 py-5 shadow-2xl shadow-blue-500 lg:-mx-24">
           <div className="mb-8 flex items-center justify-between border-b border-gray-200 pb-4">
-            <h3 className="flex flex-row gap-4 text-2xl font-medium text-blue-900 ">
-              Code Notebook
-              <span className="m-auto flex animate-pulse items-center justify-center rounded-full bg-yellow-300 px-2 py-2 text-center text-xs text-slate-900">
-                Work in Progress
-              </span>
-            </h3>
+            <h3 className="flex flex-row gap-4 text-2xl font-medium text-blue-400 ">Code Notebook</h3>
 
             <div className="mt-0 ml-4">
               <button
@@ -54,7 +49,7 @@ function Notebook() {
             </div>
           </div>
         </div>
-      </Sidebar>
+      </Shell>
     </>
   );
 }

@@ -30,7 +30,7 @@
     "react-markdown": "^8.0.3",
     "remark-gfm": "^3.0.1",
     "seqviz": "^3.3.2",
-    "sharp": "^0.30.6"
+    "sharp": "^0.30.7"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.2",

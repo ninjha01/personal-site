@@ -1,6 +1,6 @@
 import { RadioGroup } from "@headlessui/react";
 import React, { useEffect, useState } from "react";
-import { BlastRequestData, SequenceType, sequenceTypes, TopologyType, topologyTypes } from "../pages/blast";
+import { BlastRequestData, SequenceType, sequenceTypes, TopologyType, topologyTypes } from "../pages/mockups/blast";
 import { classNames } from "../utils";
 
 export const BlastForm = (props: {
@@ -41,8 +41,8 @@ export const BlastForm = (props: {
       <div className="md:grid md:grid-cols-3 md:gap-6">
         <div className="md:col-span-1">
           <div className="px-4 sm:px-0">
-            <h3 className="text-lg font-medium leading-6 text-gray-900">Basic Local Alignment Search Tool</h3>
-            <p className="mt-1 text-sm text-gray-900">
+            <h3 className="text-lg font-medium leading-6 text-blue-200">Basic Local Alignment Search Tool</h3>
+            <p className="mt-1 text-sm text-zinc-400">
               BLAST finds regions of similarity between biological sequences. The program compares nucleotide or protein
               sequences to sequence databases and calculates the statistical significance.
             </p>
@@ -51,7 +51,7 @@ export const BlastForm = (props: {
         <div className="mt-5 md:col-span-2 md:mt-0">
           <form>
             <div className="shadow sm:overflow-hidden sm:rounded-md">
-              <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
+              <div className="space-y-6 bg-zinc-800 px-4 py-5 sm:p-6">
                 <>
                   <NameInput name={sequenceName} setName={setSequenceName} />
 
@@ -64,10 +64,10 @@ export const BlastForm = (props: {
                   <TopologyTypeSelector topology={topology} setTopology={setTopology} sequence={sequence} />
                 </>
               </div>
-              <div className={classNames("bg-gray-50 px-4 py-3 text-right sm:px-6")}>
+              <div className={classNames("bg-zinc-800 px-4 py-3 text-right sm:px-6")}>
                 <button
                   className={classNames(
-                    "inline-flex justify-center rounded-md border border-transparent bg-blue-900 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:ring-offset-2 disabled:opacity-50",
+                    "inline-flex justify-center rounded-md border border-zinc-500 bg-blue-800 py-2 px-4 text-sm font-medium text-zinc-100 shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:ring-offset-2 disabled:opacity-50",
                     validated ? "animate-bounce" : ""
                   )}
                   disabled={!validated}
@@ -96,7 +96,7 @@ const NameInput = (props: { name: string | null; setName: (seq: string) => void 
 
   return (
     <div>
-      <label htmlFor="name" className={classNames("block text-sm font-medium text-gray-800")}>
+      <label htmlFor="name" className={classNames("block text-sm font-medium text-blue-200")}>
         Sequence Name
       </label>
       <div className="mt-1">
@@ -105,7 +105,7 @@ const NameInput = (props: { name: string | null; setName: (seq: string) => void 
           key="name-input"
           name="name"
           className={classNames(
-            "block w-full rounded-md border border-gray-300 p-3 shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm",
+            "block w-full rounded-md border border-zinc-500 bg-zinc-700 p-3 text-zinc-100 shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm",
             !name ? "animate-pulse border-blue-900" : ""
           )}
           placeholder="Enter a name for your search."
@@ -125,7 +125,7 @@ const SequenceInput = (props: { sequence: string; setSequence: (seq: string) => 
 
   return (
     <div>
-      <label htmlFor="sequence" className="block text-sm font-medium text-gray-800">
+      <label htmlFor="sequence" className="block text-sm font-medium text-blue-200">
         Sequence
       </label>
       <div className="mt-1">
@@ -135,7 +135,7 @@ const SequenceInput = (props: { sequence: string; setSequence: (seq: string) => 
           name="sequence"
           rows={3}
           className={classNames(
-            "mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm",
+            "mt-1 block w-full rounded-md border  border-zinc-500 bg-zinc-700 text-zinc-100 shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm",
             !sequence ? "animate-pulse border-blue-900" : ""
           )}
           placeholder="Enter the sequence you wish to blast."
@@ -159,10 +159,10 @@ const SequenceTypeSelector = (props: {
   };
   return (
     <div>
-      <label htmlFor="sequence-type" className="block text-sm font-medium text-gray-800">
+      <label htmlFor="sequence-type" className="block text-sm font-medium text-blue-200">
         Sequence Type
       </label>
-      <p className="mt-2 text-sm text-gray-500">
+      <p className="mt-2 text-sm text-zinc-400">
         Are you searching with a DNA (nucleotide) or a Protein (amino acid) sequence?
       </p>
 
@@ -186,10 +186,9 @@ const SequenceTypeSelector = (props: {
                 className={({ checked, disabled }) =>
                   classNames(
                     disabled ? "opacity-50" : "",
-
                     checked
                       ? "border-transparent bg-blue-900 text-white hover:bg-blue-800"
-                      : "border-gray-200 bg-white text-gray-900 hover:bg-gray-50",
+                      : "border-zinc-500 bg-zinc-700 text-zinc-100 hover:bg-blue-300",
                     "flex items-center justify-center rounded-md border py-3 px-3 text-sm font-medium sm:flex-1"
                   )
                 }
@@ -216,10 +215,10 @@ const TopologyTypeSelector = (props: {
   };
   return (
     <div>
-      <label htmlFor="sequence-type" className="block text-sm font-medium text-gray-800">
+      <label htmlFor="sequence-type" className="block text-sm font-medium text-blue-200">
         Topology Type
       </label>
-      <p className="mt-2 text-sm text-gray-500">Do you want to search against circular dna (plasmids) or linear dna?</p>
+      <p className="mt-2 text-sm text-zinc-400">Do you want to search against circular dna (plasmids) or linear dna?</p>
       <RadioGroup
         id="topology"
         key="topology-input"
@@ -244,7 +243,7 @@ const TopologyTypeSelector = (props: {
 
                     checked
                       ? "border-transparent bg-blue-900 text-white hover:bg-blue-800"
-                      : "border-gray-200 bg-white text-gray-900 hover:bg-gray-50",
+                      : "border-zinc-500 bg-zinc-700 text-zinc-100 hover:bg-blue-300",
                     "flex items-center justify-center rounded-md border py-3 px-3 text-sm font-medium sm:flex-1"
                   )
                 }

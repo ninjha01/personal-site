@@ -1,10 +1,10 @@
 import Head from "next/head";
 import { useState } from "react";
-import { BlastForm } from "../components/BlastForm";
-import { BlastResults } from "../components/BlastResults";
-import { Sidebar } from "../components/Sidebar";
-import { Steps } from "../components/Step";
-import { getRndInteger } from "../utils";
+import { BlastForm } from "../../components/BlastForm";
+import { BlastResults } from "../../components/BlastResults";
+import { Shell } from "../../components/Shell";
+import { Steps } from "../../components/Step";
+import { getRndInteger } from "../../utils";
 
 export const sequenceTypes = ["DNA", "Protein", null] as const;
 export type SequenceType = typeof sequenceTypes[number];
@@ -81,19 +81,19 @@ export const Blast = () => {
         <title>Blast Service</title>
       </Head>
 
-      <Sidebar>
-        <div className="pt-6">
+      <Shell>
+        <div className="rounded-xl bg-zinc-800 p-10 lg:-mx-24">
           <div className="mx-auto flex max-w-7xl flex-row items-center px-4 sm:px-6 md:px-8">
-            <h1 className="flex-2 text-3xl font-semibold text-gray-900">Blast Service</h1>
+            <h1 className="flex-2 text-4xl font-semibold text-zinc-200">Blast Service</h1>
           </div>
 
           <div className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 md:px-8">
             <Steps steps={stepOptions} stepID={stepID} />
           </div>
 
-          <div className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 md:px-8">{content()}</div>
+          <div className="mx-auto mt-8 px-4 sm:px-6 lg:max-w-7xl lg:px-8">{content()}</div>
         </div>
-      </Sidebar>
+      </Shell>
     </>
   );
 };

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BlastRequestData, BlastResponseDatum } from "../pages/blast";
+import { BlastRequestData, BlastResponseDatum } from "../pages/mockups/blast";
 import { classNames } from "../utils";
 import { GlobalAlignmentViz } from "./GlobalAlignmentViz";
 import { ResultCard } from "./ResultCard";
@@ -36,7 +36,7 @@ export const BlastResults = (props: { results: BlastResponseDatum[]; request: Bl
           </div>
         </div>
 
-        <div className="my-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
+        <div className="my-4 grid grid-cols-1 gap-4 lg:grid-cols-2 ">
           {results.map(result => (
             <ResultCard key={result.id} result={result} sequenceType={sequenceType} topologyType={topology} />
           ))}

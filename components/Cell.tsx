@@ -96,7 +96,7 @@ const CellShell = (props: { children: any; id: string; runnable: boolean; hideSh
       <div className="flex items-center">
         <button
           type="button"
-          className="-m-2.5 inline-flex h-6 w-10 items-center justify-center rounded-full rounded-xl bg-gray-200 py-1 text-gray-400 hover:bg-blue-900 hover:bg-opacity-70 hover:text-gray-50 sm:h-8"
+          className="-m-2.5 inline-flex h-6 w-10 items-center justify-center rounded-full rounded-xl bg-zinc-600 py-1 text-gray-400 hover:bg-blue-900 hover:bg-opacity-70 hover:text-gray-50 sm:h-8"
         >
           <PlusIcon className="h-5 w-5" />
         </button>
@@ -104,7 +104,7 @@ const CellShell = (props: { children: any; id: string; runnable: boolean; hideSh
       <div className="flex items-center">
         <button
           type="button"
-          className="-m-2.5 inline-flex h-6 w-10 items-center justify-center rounded-full rounded-xl bg-gray-200 py-1 text-gray-400 hover:bg-blue-900 hover:bg-opacity-70 hover:text-gray-50 sm:h-8"
+          className="-m-2.5 inline-flex h-6 w-10 items-center justify-center rounded-full rounded-xl bg-zinc-600 py-1 text-gray-400 hover:bg-blue-900 hover:bg-opacity-70 hover:text-gray-50 sm:h-8"
         >
           <ArrowUpIcon className="h-5 w-5" />
         </button>
@@ -112,7 +112,7 @@ const CellShell = (props: { children: any; id: string; runnable: boolean; hideSh
       <div className="flex items-center">
         <button
           type="button"
-          className="-m-2.5 inline-flex h-6 w-10 items-center justify-center rounded-full rounded-xl bg-gray-200 py-1 text-gray-400 hover:bg-blue-900 hover:bg-opacity-70 hover:text-gray-50 sm:h-8"
+          className="-m-2.5 inline-flex h-6 w-10 items-center justify-center rounded-full rounded-xl bg-zinc-600 py-1 text-gray-400 hover:bg-blue-900 hover:bg-opacity-70 hover:text-gray-50 sm:h-8"
         >
           <ArrowDownIcon className="h-5 w-5" />
         </button>
@@ -121,14 +121,14 @@ const CellShell = (props: { children: any; id: string; runnable: boolean; hideSh
   );
 
   return (
-    <div className="relative rounded-lg bg-white px-4 py-5 shadow-sm transition duration-300 ease-in-out hover:shadow-xl hover:shadow-blue-900 sm:px-6">
+    <div className="relative rounded-lg bg-zinc-700 px-4 py-5 shadow-sm transition duration-300 ease-in-out hover:shadow-xl hover:shadow-blue-900 sm:px-6">
       {props.children}
       <div className="items-between mt-2 flex flex-row justify-between gap-2">
         {!props.hideShellBar && ShellBar}
         {props.runnable && (
           <button
             type="submit"
-            className="inline-flex items-center rounded-md border border-transparent bg-blue-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="inline-flex items-center rounded-md border border-transparent bg-blue-700 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             <ChevronDoubleRightIcon className="h-5 w-5" />
           </button>
@@ -144,10 +144,10 @@ export const CodeCell = (props: { item: CodeCellDatum }) => {
     <CellShell id={`cell-${item.id}`} runnable>
       <div className="">
         <div className="mb-4 -mt-2 flex flex-row">
-          <div className="rounded-md border border-transparent bg-white p-1 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900">
+          <div className="rounded-md border border-transparent bg-zinc-700 p-1 text-sm font-medium text-zinc-400 hover:bg-gray-100 hover:text-gray-900">
             {item.language}
           </div>
-          <span className="flex-0 mx-auto mr-0 -mt-1 inline-flex items-center self-end rounded-full bg-gray-200 px-2.5 py-1 px-2 text-xs font-medium text-gray-600">
+          <span className="flex-0 mx-auto mr-0 -mt-1 inline-flex items-center self-end rounded-full bg-zinc-600 px-2.5 py-1 px-2 text-xs font-medium text-zinc-400">
             Cell #{item.id}
           </span>
         </div>
@@ -156,7 +156,7 @@ export const CodeCell = (props: { item: CodeCellDatum }) => {
           {/* Using editable div to get vertial autosizing, textarea doesn't support this */}
           <div
             id={`cell-${item.id}-codeText`}
-            className="block w-full resize-y whitespace-pre-line rounded-md border border-gray-300 border-gray-300 p-2 font-mono shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+            className="block w-full resize-y whitespace-pre-line rounded-md border border-gray-300 border-gray-300 p-2 font-mono text-zinc-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
             placeholder="Enter text here."
             contentEditable
             suppressContentEditableWarning={

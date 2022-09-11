@@ -9,6 +9,7 @@ const nextConfig = {
     });
     return config;
   },
+  allowFutureImage: true,
 };
 
 module.exports = nextConfig;

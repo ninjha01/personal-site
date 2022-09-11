@@ -11,14 +11,13 @@ import ReactFlow, {
   useEdgesState,
   useNodesState,
 } from "react-flow-renderer";
-import { Sidebar } from "../components/Sidebar";
-import { useWindowSize } from "../hooks/useWindowSize";
+import { Prose } from "../../components/Prose";
+import { Shell } from "../../components/Shell";
 
 // @ts-ignore
-import content from "../content/sitearch.md";
-
-import { classNames } from "../utils";
-import { Prose } from "../components/Prose";
+import content from "../../content/sitearch.md";
+import { useWindowSize } from "../../hooks/useWindowSize";
+import { classNames } from "../../utils";
 
 export const SiteArch = () => {
   const size = useWindowSize();
@@ -30,17 +29,22 @@ export const SiteArch = () => {
         <link rel="canonical" href={"https://nishantjha.org/sitearch"} />
       </Head>
 
-      <Sidebar>
-        <h1 className="flex-2 text-3xl font-semibold text-gray-900">Personal Site</h1>
-        <h2 className="flex-2 text-xl font-semibold text-gray-500">Architecture Diagram</h2>
+      <Shell>
+        <h1 className="flex-2 text-3xl font-semibold text-blue-100">Personal Site</h1>
+        <h2 className="flex-2 text-xl font-semibold text-zinc-400">Architecture Diagram</h2>
 
-        <section className="flex flex-col lg:flex-row">
-          <div style={{ height: size.height }} className="h-[30rem] w-full lg:h-[45rem]">
-            <OverviewFlow />
+        <section className="flex flex-col">
+          <div className="mt-8 mb-8 gap-8 bg-zinc-700 md:rounded-xl md:p-8 lg:-mx-24">
+            <div
+              style={{ height: size.height }}
+              className="-mx-3 h-[30rem] bg-white md:col-span-2 md:mx-auto md:w-full md:rounded-xl lg:h-[45rem]"
+            >
+              <OverviewFlow />
+            </div>
           </div>
           <Prose className={classNames("h-full w-full lg:ml-8 lg:overflow-y-scroll")} content={content} />
         </section>
-      </Sidebar>
+      </Shell>
     </>
   );
 };
@@ -73,7 +77,7 @@ const OverviewFlow = () => {
       onInit={onInit}
       fitView
       nodesConnectable={false}
-      attributionPosition="top-right"
+      attributionPosition="bottom-right"
       panOnScroll={false}
       zoomOnScroll={false}
       preventScrolling={false}

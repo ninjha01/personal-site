@@ -9,7 +9,7 @@ export const Prose = (props: { content: string; className: string }) => {
   return (
     <article
       className={classNames(
-        "prose prose-slate h-full w-full lg:ml-8 lg:overflow-y-scroll",
+        "dark prose prose-slate h-full w-full dark:prose-invert lg:ml-8 lg:overflow-y-scroll",
         dontRenderCodeBackticksClassName,
         className
       )}

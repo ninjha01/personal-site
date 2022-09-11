@@ -16,12 +16,12 @@ export const KernelCard = (props: { kernelData: KernelData }) => {
 
   return (
     <section className="w-full">
-      <div className="overflow-hidden rounded-lg bg-white shadow-2xl">
-        <div className="bg-white px-4 py-4  sm:px-6">
-          <h3 className="text-lg font-medium leading-6 text-gray-900">Kernel Data</h3>
+      <div className="overflow-hidden rounded-lg bg-zinc-700 shadow-2xl">
+        <div className="bg-zinc-700 px-4 py-4  sm:px-6">
+          <h3 className="text-lg font-medium leading-6 text-blue-100">Kernel Data</h3>
         </div>
         {divider}
-        <div className="mt-6 flex w-full flex-col gap-2">
+        <div className="mt-6 flex w-full flex-col gap-2 text-zinc-300">
           <div className="flex flex-row px-4 sm:px-6">
             <strong className="mr-4">Status: </strong>
             <p className="ml-auto animate-pulse text-ellipsis text-right font-mono font-bold text-yellow-500">

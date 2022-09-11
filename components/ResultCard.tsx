@@ -1,5 +1,5 @@
 import { StarIcon } from "@heroicons/react/solid";
-import { BlastResponseDatum, SequenceType, TopologyType } from "../pages/blast";
+import { BlastResponseDatum, SequenceType, TopologyType } from "../pages/mockups/blast";
 import { classNames } from "../utils";
 import { TextAlignmentViz } from "./TextAlignmentViz";
 
@@ -33,7 +33,7 @@ export function ResultCard(props: {
     <article
       id={`card-${id}`}
       aria-labelledby={"result-title-" + id}
-      className="group flex flex-col bg-white px-4 py-6 opacity-60 shadow-xl transition duration-300 ease-in-out hover:opacity-100 hover:shadow-blue-900 sm:rounded-lg"
+      className="group flex flex-col bg-zinc-700/30 px-4 py-6 opacity-60 shadow-xl transition duration-300 ease-in-out hover:scale-105 hover:opacity-100 hover:shadow-zinc-900 sm:rounded-lg"
     >
       <div className="mb-2">
         <div className="flex space-x-3">
@@ -54,18 +54,15 @@ export function ResultCard(props: {
             </svg>
           </div>
           <div className="min-w-0 flex-1">
-            <div className="font-sm truncate text-sm text-gray-900">
+            <div className="font-sm truncate text-sm text-blue-200">
               <p className="hover:underline">{title}</p>
             </div>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-zinc-300">
               {subtitle}
               {" | "}
               {query_range[1] - query_range[0]} {unit(sequenceType)} match
             </p>
           </div>
-          <span className="flex-0 text-md inline-flex items-center self-end rounded-lg bg-gray-200 px-2.5 py-0.5 px-2 font-medium text-gray-400 group-hover:animate-pulse">
-            Demo
-          </span>
         </div>
       </div>
       {divider}
@@ -90,16 +87,16 @@ function IconBar(props: { score: number; gaps: number; frame: number }) {
     <div className="flex-0 mt-6 flex justify-between space-x-8">
       <div className="flex space-x-6">
         <span className="inline-flex items-center text-sm">
-          <button type="button" className="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+          <button type="button" className="inline-flex space-x-2 text-gray-400 hover:text-zinc-300">
             <StarIcon
               className={classNames("h-5 w-5", score > 75 ? "animate-bounce text-yellow-600 delay-300" : "")}
               aria-hidden="true"
             />
-            <span className={classNames("font-sm text-gray-900 ")}>Score: {score}</span>
+            <span className={classNames("font-sm text-blue-200 ")}>Score: {score}</span>
           </button>
         </span>
         <span className="inline-flex items-center text-sm">
-          <button type="button" className="inline-flex space-x-1 text-gray-400 hover:text-gray-500">
+          <button type="button" className="inline-flex space-x-1 text-gray-400 hover:text-zinc-300">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path
                 fillRule="evenodd"
@@ -108,7 +105,7 @@ function IconBar(props: { score: number; gaps: number; frame: number }) {
               />
             </svg>
 
-            <span className="font-sm -mx-4 text-gray-900">{gaps} gaps</span>
+            <span className="font-sm -mx-4 text-blue-200">{gaps} gaps</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -125,7 +122,7 @@ function IconBar(props: { score: number; gaps: number; frame: number }) {
           </button>
         </span>
         <span className="inline-flex items-center text-sm">
-          <button type="button" className="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+          <button type="button" className="inline-flex space-x-2 text-gray-400 hover:text-zinc-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -136,7 +133,7 @@ function IconBar(props: { score: number; gaps: number; frame: number }) {
               <path d="M0 0h24v24H0z" fill="none" />
               <path d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z" />
             </svg>
-            <span className="font-sm text-gray-900">Frame: {frame}</span>
+            <span className="font-sm text-blue-200">Frame: {frame}</span>
           </button>
         </span>
       </div>

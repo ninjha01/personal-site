@@ -18,7 +18,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 16.x
       - name: Install deps
         run: npm install
       - name: Run Prettier
@@ -40,7 +40,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 16.x
       - name: Install NPM packages
         run: npm ci
       - name: Build project
@@ -89,7 +89,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 16.x
       - name: Install NPM packages
         run: npm ci
       - name: Build project

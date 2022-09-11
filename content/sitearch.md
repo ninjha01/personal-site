@@ -29,5 +29,3 @@ I used selenium briefly at the beginning of my career, and found it way less ple
 > Why do you use a seperate GCP project for your staging environment?
 
 Mostly because it encourages isolation. By default, your test data is seperate from your prod db, ditto for cron jobs, emails, etc.
-
-My opinions may evolve over time as I and the world change. This was last updated on July 20th, 2022.

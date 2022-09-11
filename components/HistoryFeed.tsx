@@ -95,8 +95,8 @@ export const HistoryFeed = () => {
   ];
   return (
     <section aria-labelledby="timeline-title" className="lg:col-span-1 lg:col-start-3">
-      <div className="rounded-lg bg-white px-4 py-5 shadow-xl sm:px-6">
-        <h2 id="timeline-title" className="text-lg font-medium text-gray-900">
+      <div className="rounded-lg bg-zinc-700 px-4 py-5 shadow-xl sm:px-6">
+        <h2 id="timeline-title" className="text-lg font-medium text-blue-100">
           Timeline
         </h2>
 
@@ -114,22 +114,22 @@ export const HistoryFeed = () => {
                       <span
                         className={classNames(
                           item.type.bgColorClass,
-                          "flex h-8 w-8 items-center justify-center rounded-full ring-8 ring-white"
+                          "flex h-8 w-8 items-center justify-center rounded-full ring-8 ring-zinc-700"
                         )}
                       >
-                        <item.type.icon className="h-5 w-5 text-white" aria-hidden="true" />
+                        <item.type.icon className="h-5 w-5 text-zinc-700" aria-hidden="true" />
                       </span>
                     </div>
                     <div className="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
                       <div>
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm text-zinc-300">
                           {item.content}{" "}
-                          <a className="text-sm text-gray-500" href={`#cell-${item.cell_id}`}>
+                          <a className="text-sm text-zinc-300" href={`#cell-${item.cell_id}`}>
                             {item.target}
                           </a>
                         </p>
                       </div>
-                      <div className="whitespace-nowrap text-right text-sm text-gray-500">
+                      <div className="whitespace-nowrap text-right text-sm text-zinc-300">
                         <time dateTime={item.datetime}>{item.date}</time>
                       </div>
                     </div>
@@ -142,7 +142,7 @@ export const HistoryFeed = () => {
         <div className="justify-stretch mt-6 flex flex-col">
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md border border-transparent bg-blue-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="inline-flex items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-zinc-100 shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             Clear Timeline and Run All
           </button>
