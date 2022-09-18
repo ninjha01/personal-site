@@ -10,6 +10,16 @@ const nextConfig = {
     return config;
   },
   allowFutureImage: true,
+  async redirects() {
+    return [
+      {
+        source: "/meetme",
+        destination: "https://calendly.com/nishantjha/25min",
+        permanent: false,
+        basePath: false,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
