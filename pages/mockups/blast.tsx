@@ -82,16 +82,16 @@ export const Blast = () => {
       </Head>
 
       <Shell>
-        <div className="rounded-xl bg-zinc-800 p-10 lg:-mx-24">
+        <div className="rounded-xl ">
           <div className="mx-auto flex max-w-7xl flex-row items-center px-4 sm:px-6 md:px-8">
             <h1 className="flex-2 text-4xl font-semibold text-zinc-200">Blast Service</h1>
           </div>
 
-          <div className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 md:px-8">
+          <div className="mx-auto mt-8 max-w-7xl">
             <Steps steps={stepOptions} stepID={stepID} />
           </div>
 
-          <div className="mx-auto mt-8 px-4 sm:px-6 lg:max-w-7xl lg:px-8">{content()}</div>
+          <div className="mt-8 md:mx-auto lg:-mx-24 lg:max-w-7xl lg:rounded-xl lg:bg-zinc-800 lg:p-6">{content()}</div>
         </div>
       </Shell>
     </>

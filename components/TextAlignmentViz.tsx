@@ -19,7 +19,7 @@ export const TextAlignmentViz = (props: {
   console.table({ queryLast, midlineLast, targetLast });
 
   return (
-    <div className="leading-0 items-right mx-4 flex flex-wrap pt-4 text-center font-mono text-sm tracking-widest">
+    <div className="leading-0 items-right flex flex-wrap pt-4 text-center font-mono text-sm tracking-widest md:mx-4">
       <div className="flex flex-row flex-wrap">
         <div className={classNames("mr-2 text-right font-thin tracking-tighter")}>
           <div className={classNames("whitespace-pre-wrap text-blue-100")}>{query_range[0]}:</div>

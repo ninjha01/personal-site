@@ -102,7 +102,7 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
       url: "https://www.nature.com/articles/s41588-021-00819-w",
       img: nature_genetics_logo,
       description:
-        "a Pediatric Cancer Cell data explorer that highlights potential targets for Pediatric Precision Medicine.",
+        "A visualization published in Nature Genetics that highlights potential targets for Pediatric Precision Medicine.",
     },
   ],
   mockups: [
@@ -115,7 +115,7 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
     {
       title: "Data Notebook",
       url: "/mockups/notebook",
-      description: "A data notebook that surfaces system informationa and tracks execution in an intuitive way.",
+      description: "A data notebook that surfaces system information and tracks execution in an intuitive way.",
     },
   ],
   architectures: [

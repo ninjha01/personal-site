@@ -56,7 +56,7 @@ export const GlobalAlignmentViz = (props: {
 
   return (
     <section>
-      <div className="mx-8 mt-16 overflow-hidden border border-zinc-500 bg-zinc-700/30 shadow-2xl sm:rounded-lg">
+      <div className="overflow-hidden border border-zinc-500 bg-zinc-700/30 shadow-2xl sm:rounded-lg md:mx-8">
         <div className="border-b border-gray-200  px-4 py-4 sm:px-6">
           <h3 className="space-between flex flex-row text-lg font-medium leading-6 text-blue-300">
             <span className="flex-1">Alignment Viewer</span>

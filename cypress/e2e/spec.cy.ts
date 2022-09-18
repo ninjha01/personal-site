@@ -14,7 +14,7 @@ describe("spec.cy.ts", () => {
     cy.visit("/architectures");
     cy.contains("Architecture diagrams");
     cy.visit("/architectures/blastarch");
-    cy.contains("A blast service must be performant and private");
+    cy.contains("A private and performant sequence alignment service");
     cy.visit("/architectures/sitearch");
     cy.contains("Enable a hands-off deployment to prod");
 

@@ -40,7 +40,7 @@ export const BlastForm = (props: {
     <div>
       <div className="md:grid md:grid-cols-3 md:gap-6">
         <div className="md:col-span-1">
-          <div className="px-4 sm:px-0">
+          <div className="sm:px-0 md:px-4">
             <h3 className="text-lg font-medium leading-6 text-blue-200">Basic Local Alignment Search Tool</h3>
             <p className="mt-1 text-sm text-zinc-400">
               BLAST finds regions of similarity between biological sequences. The program compares nucleotide or protein
@@ -51,7 +51,7 @@ export const BlastForm = (props: {
         <div className="mt-5 md:col-span-2 md:mt-0">
           <form>
             <div className="shadow sm:overflow-hidden sm:rounded-md">
-              <div className="space-y-6 bg-zinc-800 px-4 py-5 sm:p-6">
+              <div className="space-y-6 py-5 md:bg-zinc-800 md:px-4">
                 <>
                   <NameInput name={sequenceName} setName={setSequenceName} />
 
@@ -64,7 +64,7 @@ export const BlastForm = (props: {
                   <TopologyTypeSelector topology={topology} setTopology={setTopology} sequence={sequence} />
                 </>
               </div>
-              <div className={classNames("bg-zinc-800 px-4 py-3 text-right sm:px-6")}>
+              <div className={classNames("py-3 text-right sm:px-6 md:px-4")}>
                 <button
                   className={classNames(
                     "inline-flex justify-center rounded-md border border-zinc-500 bg-blue-800 py-2 px-4 text-sm font-medium text-zinc-100 shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:ring-offset-2 disabled:opacity-50",
