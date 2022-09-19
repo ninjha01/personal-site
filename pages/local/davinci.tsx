@@ -1,7 +1,43 @@
 import Head from "next/head";
+import { useRef, useState } from "react";
 import { Shell } from "../../components/Shell";
+import { DavinciResponse } from "../api/davinci";
+import { PromptEditor } from "../../components/PromptEditor";
+import { DataDisplay } from "../../components/DavinciDataDisplay";
 
 export default function DaVinci() {
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<DavinciResponse | null>(null);
+
+  const submitPromptOnClick = async () => {
+    const promptText = textAreaRef.current?.value || "";
+    setLoading(true);
+    setData(null);
+    try {
+      const response = await fetch("/api/davinci", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt: promptText }),
+      });
+      const _data = await response.json();
+      setData(_data);
+    } catch (e) {
+      alert(`Something went wrong: ${e}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  /* write a function that appends text to the textarea value */
+  const appendDaVinciText = () => {
+    const currentText = textAreaRef.current?.value || "";
+    if (data?.text) {
+      textAreaRef.current!.value = `${currentText} ${data.text}`;
+    }
+  };
   return (
     <>
       <Head>
@@ -9,119 +45,13 @@ export default function DaVinci() {
         <link rel="canonical" href={"https://nishantjha.org/mockups"} />
       </Head>
       <Shell>
-        <div className="md:grid md:grid-cols-3 md:gap-6">
-          <div className="md:col-span-1">
-            <div className="px-4 sm:px-0">
-              <h3 className="text-lg font-medium leading-6 text-gray-900">Profile</h3>
-              <p className="mt-1 text-sm text-gray-600">
-                This information will be displayed publicly so be careful what you share.
-              </p>
-            </div>
-          </div>
-          <div className="mt-5 md:col-span-2 md:mt-0">
-            <form action="#" method="POST">
-              <div className="shadow sm:overflow-hidden sm:rounded-md">
-                <div className="space-y-6 bg-zinc-800 px-4 py-5 sm:p-6">
-                  <div className="grid grid-cols-3 gap-6">
-                    <div className="col-span-3 sm:col-span-2">
-                      <label htmlFor="company-website" className="block text-sm font-medium text-zinc-100">
-                        Website
-                      </label>
-                      <div className="mt-1 flex rounded-md shadow-sm">
-                        <span className="inline-flex items-center rounded-l-md border border-r-0 border-zinc-600 bg-zinc-700 px-3 text-sm text-zinc-100 ">
-                          http://
-                        </span>
-                        <input
-                          type="text"
-                          name="company-website"
-                          id="company-website"
-                          className="block w-full flex-1 rounded-none rounded-r-md border-gray-300 bg-zinc-700 text-zinc-100 focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                          placeholder="www.example.com"
-                        />
-                      </div>
-                    </div>
-                  </div>
+        <div className="mx-auto mb-8 flex max-w-7xl flex-row items-center px-4 sm:px-6 md:px-8">
+          <h1 className="flex-2 text-4xl font-semibold text-zinc-200">DaVinci Text Generator</h1>
+        </div>
 
-                  <div>
-                    <label htmlFor="about" className="block text-sm font-medium text-zinc-100">
-                      About
-                    </label>
-                    <div className="mt-1">
-                      <textarea
-                        id="about"
-                        name="about"
-                        rows={3}
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                        placeholder="you@example.com"
-                        defaultValue={""}
-                      />
-                    </div>
-                    <p className="mt-2 text-sm text-gray-500">
-                      Brief description for your profile. URLs are hyperlinked.
-                    </p>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-zinc-100">Photo</label>
-                    <div className="mt-1 flex items-center">
-                      <span className="inline-block h-12 w-12 overflow-hidden rounded-full bg-gray-100">
-                        <svg className="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                      </span>
-                      <button
-                        type="button"
-                        className="focus:border-zinc-600:ring-2 focus: ml-5 rounded-md border border-gray-300 bg-zinc-800 py-2 px-3 text-sm font-medium leading-4 text-zinc-100 text-zinc-100 shadow-sm hover:bg-zinc-700 focus:ring-blue-500"
-                      >
-                        Change
-                      </button>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-zinc-100">Cover photo</label>
-                    <div className="mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
-                      <div className="space-y-1 text-center">
-                        <svg
-                          className="mx-auto h-12 w-12 text-gray-400"
-                          stroke="currentColor"
-                          fill="none"
-                          viewBox="0 0 48 48"
-                          aria-hidden="true"
-                        >
-                          <path
-                            d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                            strokeWidth={2}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                        <div className="flex text-sm text-gray-600">
-                          <label
-                            htmlFor="file-upload"
-                            className="relative cursor-pointer rounded-md bg-zinc-800 font-medium text-blue-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2 hover:text-blue-500"
-                          >
-                            <span>Upload a file</span>
-                            <input id="file-upload" name="file-upload" type="file" className="sr-only" />
-                          </label>
-                          <p className="pl-1">or drag and drop</p>
-                        </div>
-                        <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-zinc-800 px-4 py-3 text-right sm:px-6">
-                  <button
-                    type="submit"
-                    className="focus:border-zinc-600:ring-2 focus: inline-flex justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:ring-blue-500"
-                  >
-                    Save
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
+        <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 md:gap-8 lg:-mx-24">
+          <PromptEditor textAreaRef={textAreaRef} submitPromptOnClick={submitPromptOnClick} loading={loading} />
+          <DataDisplay data={data} acceptText={appendDaVinciText} loading={loading} />
         </div>
       </Shell>
     </>

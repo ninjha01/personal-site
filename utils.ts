@@ -6,7 +6,7 @@ export function repeatArray<T>(arr: T[], numRepeats: number): T[] {
   return newArray;
 }
 
-export function classNames(...classes: (string | undefined)[]) {
+export function classNames(...classes: (string | undefined | false)[]) {
   return classes.filter(Boolean).join(" ");
 }
 

@@ -13,7 +13,7 @@ interface IOpenAIResponse {
   };
 }
 
-interface Data {
+export interface DavinciResponse {
   text: string;
   cost: number;
   tokens: number;
@@ -21,7 +21,7 @@ interface Data {
 
 const DAVINCI_COST = 0.02 / 1000;
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse<DavinciResponse>) {
   // get json payload from req
   const { prompt } = req.body;
   const payload = {
@@ -30,13 +30,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     temperature: 0.9,
     max_tokens: 2048,
   };
-  const command = `curl https://api.openai.com/v1/completions \
+  const log_command = `echo "[davinci] ${prompt}" >> ~/Desktop/prompts.txt`;
+  const openai_command = `curl https://api.openai.com/v1/completions \
 	 -H "Content-Type: application/json" \
 	 -H "Authorization: Bearer $OPENAI_API_KEY" \
 	 -d '${JSON.stringify(payload)}'`;
-  console.table(command);
+  const command = `${log_command} && ${openai_command}`;
   const rawOutput = await execShellCommand(command);
-  console.log(rawOutput);
   if (rawOutput) {
     const output = JSON.parse(rawOutput) as IOpenAIResponse;
     console.table(output);
