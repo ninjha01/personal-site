@@ -13,6 +13,7 @@ import {
   ArchitectureType,
   ClientType,
   EssayType,
+  LocalToolsType,
   MockupType,
   NavLink,
   PersonalType,
@@ -27,6 +28,7 @@ export const config: {
   personal: PersonalType;
   projects: ProjectType[];
   mockups: MockupType[];
+  localTools: LocalToolsType[];
   architectures: ArchitectureType[];
   uses: {
     workstation: UsesItem[];
@@ -200,4 +202,11 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
       },
     ],
   },
+  localTools: [
+    {
+      title: "DaVinci Text Generator",
+      url: "/local/davinci",
+      description: "An AI text generator that uses the OpenAI DaVinci API to generate text.",
+    },
+  ],
 };

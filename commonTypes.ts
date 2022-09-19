@@ -56,3 +56,9 @@ export interface UsesItem {
   url: string;
   description: string;
 }
+
+export interface LocalToolsType {
+  title: string;
+  url: string;
+  description: string;
+}
