@@ -10,13 +10,12 @@ export const DataDisplay = ({
   acceptText: () => void;
   loading: boolean;
 }) => {
-  const containerClass = "lg:mx-auto rounded-xl border-4 border-zinc-600 bg-zinc-900 p-4 text-base ";
-
+  const containerClass = classNames(
+    "lg:mx-auto rounded-xl border-4 border-zinc-600 bg-zinc-900 p-4 text-base ",
+    loading ? "animate-pulse" : ""
+  );
   if (!data) {
-    const placeholderClass = classNames(
-      "bg-zinc-700 border border-zinc-600 mb-4 rounded-xl opacity-50",
-      loading ? "animate-pulse" : ""
-    );
+    const placeholderClass = "bg-zinc-700 border border-zinc-600 mb-4 rounded-xl opacity-50";
     return (
       <div className={classNames(containerClass, "border-dashed")}>
         <h1 className="flex-2 mb-2 text-3xl font-semibold text-zinc-600 opacity-50">Response: </h1>

@@ -11,7 +11,7 @@ export function PromptEditor({
 }) {
   return (
     <div className="md:rounded-xl md:bg-zinc-800 md:p-4">
-      <div className="mt-1 h-96">
+      <div className="mt-1 md:h-96">
         <textarea
           id="daVinciPrompt"
           name="daVinciPrompt"

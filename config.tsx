@@ -208,5 +208,10 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
       url: "/local/davinci",
       description: "An AI text generator that uses the OpenAI DaVinci API to generate text.",
     },
+    {
+      title: "Stable Diffusion",
+      url: "/local/stablediffusion",
+      description: "An AI image that runs locally.",
+    },
   ],
 };

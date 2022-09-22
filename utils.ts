@@ -33,3 +33,7 @@ export function execShellCommand(cmd: string): Promise<string | undefined> {
     return undefined;
   });
 }
+
+export function addslashes(str: string) {
+  return (str + "").replace(/[\\"']/g, "\\$&").replace(/\u0000/g, "\\0");
+}
