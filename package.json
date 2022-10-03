@@ -14,10 +14,9 @@
     "lint": "next lint",
     "format": "prettier \"**/*.+(js|jsx|ts|tsx|json|css|md)\" --config package.json --write",
     "format:check": "prettier \"**/*.+(js|jsx|ts|tsx|json|css|md)\" --config package.json --check",
-    "cypress": "cypress open --env host=localhost:3000",
-    "cypress:check": "cypress run --env host=localhost:3000",
-    "cypress:staging": "cypress run",
-    "deploy:staging": "npm run build && gcloud app deploy --quiet app.yaml --project eco-tract-352420 --promote"
+    "cypress": "cypress open --config baseUrl=\"localhost:3000\"",
+    "cypress:check": "cypress run --config baseUrl=\"localhost:3000\"",
+    "cypress:staging": "cypress open --config baseUrl=\"https://staging.nishantjha.org\""
   },
   "dependencies": {
     "@headlessui/react": "^1.6.4",

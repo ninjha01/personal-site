@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  distDir: "build",
   webpack: config => {
     config.module.rules.push({
       test: /\.md$/,
@@ -13,7 +12,7 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/meetme",
+        source: "/bookme",
         destination: "https://calendly.com/nishantjha/25min",
         permanent: false,
         basePath: false,

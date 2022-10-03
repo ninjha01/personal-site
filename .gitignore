@@ -50,3 +50,5 @@ cypress/screenshots/
 cypress/videos/
 # typescript
 *.tsbuildinfo
+
+.vercel
