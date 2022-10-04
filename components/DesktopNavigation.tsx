@@ -9,9 +9,13 @@ import { config } from "../config";
 function NavItem(props: { href: string; children: ReactNode }) {
   const { href, children } = props;
   return (
-    <li className={classNames("relative block cursor-pointer px-3 py-2 text-zinc-100 transition hover:text-blue-500")}>
-      <Link href={href}>{children}</Link>
-    </li>
+    <Link href={href}>
+      <li
+        className={classNames("relative block cursor-pointer px-3 py-2 text-zinc-100 transition hover:text-blue-500")}
+      >
+        {children}
+      </li>
+    </Link>
   );
 }
 export function DesktopNavigation(props: any) {
