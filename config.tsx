@@ -51,7 +51,7 @@ export const config: {
 \
 &nbsp;
 
-I'm a software designer based in Pasadena, CA. My work serves research scientists at the bench and the IDE.`,
+I'm a software designer based in Pasadena, CA. My work serves research scientists at the bench and the keyboard.`,
     github: "https://github.com/ninjha01/",
     email: "contact@nishantjha.org",
   },
@@ -60,7 +60,7 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
       name: "Calico Labs",
       url: "https://www.calicolabs.com/",
       description:
-        "Set best practices for frontend development. Reduced toil and increased efficiency in the vivarium through a video monitoring system for lab mice",
+        "Set best practices for frontend development. Reduced toil and increased efficiency in the vivarium through a video monitoring system for lab mice.",
       subtitle: "An Alphabet Company",
       logo: calico_logo,
       bg_img: labvid_img,
