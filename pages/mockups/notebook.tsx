@@ -10,7 +10,7 @@ function Notebook() {
   return (
     <>
       <Head>
-        <title>Code Notebook</title>
+        <title>Code Notebook | Nishant Jha</title>
         <link rel="canonical" href={"https://nishantjha.org/notebook"} />
       </Head>
 

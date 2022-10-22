@@ -25,7 +25,7 @@ export const SiteArch = () => {
   return (
     <>
       <Head>
-        <title>Site Arch</title>
+        <title>Site Arch | Nishant Jha</title>
         <link rel="canonical" href={"https://nishantjha.org/sitearch"} />
       </Head>
 

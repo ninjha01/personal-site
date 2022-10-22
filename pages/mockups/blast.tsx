@@ -78,7 +78,7 @@ export const Blast = () => {
   return (
     <>
       <Head>
-        <title>Blast Service</title>
+        <title>Blast Service | Nishant Jha</title>
       </Head>
 
       <Shell>
