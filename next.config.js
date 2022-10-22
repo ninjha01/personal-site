@@ -17,6 +17,18 @@ const nextConfig = {
         permanent: false,
         basePath: false,
       },
+      {
+        source: "/hireme",
+        destination: "/",
+        permanent: true,
+        basePath: false,
+      },
+      {
+        source: "/cancerdev",
+        destination: "/",
+        permanent: true,
+        basePath: false,
+      },
     ];
   },
 };
