@@ -8,7 +8,7 @@ const nextConfig = {
     });
     return config;
   },
-  allowFutureImage: true,
+
   async redirects() {
     return [
       {

@@ -48,9 +48,11 @@ const ClientCard = (props: { client: ClientType; rotation: string }) => {
       <ImageBackground img={bg_img} />
       <p className="z-10">{description}</p>
       <div className="z-10 mt-8 mb-2 flex flex-row items-center gap-3">
-        <div className="md:outline-rounded relative mt-3 inline-block h-16 w-16 overflow-hidden rounded-full object-cover p-1 align-baseline  md:outline-dashed md:outline-offset-4 md:outline-blue-200 ">
-          <Image src={logo} alt="Logo" layout="fill" objectFit="cover" />
-        </div>
+        <Image
+          src={logo}
+          alt="Logo"
+          className="md:outline-rounded relative mt-3 inline-block h-16 w-16 overflow-hidden rounded-full object-cover object-cover p-1  align-baseline md:outline-dashed md:outline-offset-4 md:outline-blue-200"
+        />
         <div className="space-between flex flex-col justify-center gap-2">
           <p className="text-sm font-semibold uppercase tracking-wider text-blue-100">{name}</p>
           <p className="track-tighter text-xs text-blue-200">{subtitle}</p>
