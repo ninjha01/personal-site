@@ -1,11 +1,5 @@
-name: CICD for Personal Site
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+name: CI for Personal Site
+on: [push]
 
 env:
   NEXT_TELEMETRY_DISABLED: 1
