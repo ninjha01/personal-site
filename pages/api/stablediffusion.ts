@@ -25,7 +25,6 @@ export default async function handler(
   const { prompt } = req.body;
   const command = `source ~/.zshrc && asksd ${addslashes(prompt)}`;
   try {
-    console.log("Running command: ", command);
     const rawOutput = await execShellCommand(command);
 
     if (rawOutput) {

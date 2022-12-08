@@ -39,7 +39,7 @@ export const DataDisplay = ({ data, loading }: { data: StableDiffusionResponse |
     );
   }
   const { img_src } = data as StableDiffusionSuccessResponse;
-  console.log({ img_src });
+
   return (
     <div className={classNames(containerClass, "flex items-center justify-center")}>
       <Image alt="stable diffusion image" src={img_src} width={512} height={512} />

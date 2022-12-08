@@ -15,7 +15,7 @@ export interface EssayType {
   title: string;
   description: string;
   img: StaticImageData;
-  id: string;
+  url: string;
 }
 
 export interface ProjectType {

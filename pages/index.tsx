@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { ClientSection } from "../components/ClientSection";
+import { EssaySection } from "../components/EssaySection";
 import { HeroSection } from "../components/HeroSection";
 import { ProjectSection } from "../components/ProjectSection";
 import { Shell } from "../components/Shell";
@@ -15,6 +16,7 @@ export const Home = () => {
       <Shell>
         <HeroSection />
         <ClientSection clients={config.clients} />
+        <EssaySection essays={config.essays} />
         <ProjectSection projects={config.projects} />
       </Shell>
     </>

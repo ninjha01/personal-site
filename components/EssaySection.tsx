@@ -1,20 +1,21 @@
 import Image from "next/image";
+import Link from "next/link";
 import { EssayType } from "../commonTypes";
+import { ImageBackground } from "./ImageBackground";
 
 export const EssaySection = (props: { essays: EssayType[] }) => {
   const { essays } = props;
   return (
-    <section>
-      <h1
-        id="essays"
-        className="mb-8 border-t pt-8 text-4xl text-2xl font-bold leading-none tracking-tighter text-neutral-600"
-      >
+    <section className="my-16">
+      <h1 className="mb-6 border-t border-blue-100 pt-8 text-4xl text-2xl font-bold leading-none tracking-tighter text-blue-100">
         Essays
       </h1>
       <div className="relative mx-auto max-w-7xl">
-        <div className="mx-auto mt-12 grid max-w-lg gap-12 lg:max-w-none lg:grid-cols-3">
-          {essays.map(essay => (
-            <EssayEntry key={essay.id} essay={essay} />
+        <div className="mx-auto mt-12 ml-6 grid max-w-lg gap-12 lg:max-w-none lg:grid-cols-3">
+          {essays.slice(0, 2).map(essay => (
+            <>
+              <EssayEntry key={essay.url} essay={essay} />
+            </>
           ))}
         </div>
       </div>
@@ -23,25 +24,23 @@ export const EssaySection = (props: { essays: EssayType[] }) => {
 };
 const EssayEntry = (props: { essay: EssayType }) => {
   const {
-    essay: { title, id, description, img },
+    essay: { title, url, description, img },
   } = props;
   return (
-    <div className="mb-12 flex cursor-pointer flex-col overflow-hidden">
-      <a href="#essays">
-        <div className="flex-shrink-0">
-          <Image className="h-48 w-full rounded-lg object-cover" src={img} alt="" />
+    <article className="group group relative flex flex-col items-start">
+      <a href={url} className="mt-2 block">
+        <h2 className="relative z-10  text-base font-semibold text-zinc-200 group-hover:text-zinc-100">{title}</h2>
+        <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-800/50 opacity-0 transition group-hover:scale-100 group-hover:opacity-80 sm:-inset-x-6 sm:rounded-2xl">
+          <ImageBackground className={"-z-10 rounded-2xl bg-slate-800 opacity-80"} img={img} />
+        </div>
+        <p className="relative z-10 mt-2 text-sm text-zinc-400 group-hover:text-zinc-200">{description}</p>
+        <div aria-hidden="true" className="relative z-10 mt-4 flex items-center text-sm font-medium text-blue-300">
+          Read
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className="ml-1 h-4 w-4 stroke-current">
+            <path d="M6.75 5.75 9.25 8l-2.5 2.25" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+          </svg>
         </div>
       </a>
-      <div className="flex flex-1 flex-col justify-between">
-        <a href={`/${id}`}>
-          <div className="flex-1">
-            <a href="#essays" className="mt-2 block space-y-6">
-              <h3 className="text-2xl font-semibold leading-none tracking-tighter text-neutral-600">{title}</h3>
-              <p className="text-lg font-normal text-gray-500">{description}</p>
-            </a>
-          </div>
-        </a>
-      </div>
-    </div>
+    </article>
   );
 };

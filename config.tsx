@@ -1,4 +1,5 @@
 import profile from "./public/assets/images/profile.jpg";
+import world_eater from "./public/assets/images/world_eater.jpeg";
 import bibshot from "./public/assets/images/bibshot.png";
 import broad_logo from "./public/assets/images/broad_logo.png";
 import calico_logo from "./public/assets/images/calico_logo.png";
@@ -35,7 +36,7 @@ export const config: {
     development: UsesItem[];
     productivity: UsesItem[];
   };
-  essays?: EssayType[];
+  essays: EssayType[];
 } = {
   url: "nishantjha.org",
   personal: {
@@ -122,6 +123,11 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
   ],
   architectures: [
     {
+      title: "Don't Get Abstracted",
+      url: "/architectures/abstracted",
+      description: ".",
+    },
+    {
       title: "Blast Service",
       url: "/architectures/blastarch",
       description:
@@ -136,6 +142,7 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
   ],
   links: [
     { label: "Home", href: "/" },
+    { label: "Essays", href: "/essays" },
     { label: "Mockups", href: "/mockups" },
     { label: "Architectures", href: "/architectures" },
     { label: "Uses", href: "/uses" },
@@ -202,6 +209,15 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
       },
     ],
   },
+  essays: [
+    {
+      title: "The World Eater",
+      description: "On abstractions, and getting abstracted.",
+      img: world_eater,
+      url: "/essays/worldeater",
+    },
+  ],
+
   localTools: [
     {
       title: "DaVinci Text Generator",

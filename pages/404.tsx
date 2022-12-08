@@ -11,12 +11,10 @@ export const FourOhFour = () => {
       <div className="flex h-screen flex-col bg-zinc-800 pt-16 pb-12">
         <main className="mx-auto flex w-full max-w-7xl flex-grow flex-col justify-center px-4 sm:px-6 lg:px-8">
           <div className="flex flex-shrink-0 justify-center">
-            <Link href="/">
-              <a className="inline-flex">
-                <div className="h-80 w-80 rounded-full">
-                  <LogoIcon />
-                </div>
-              </a>
+            <Link href="/" className="inline-flex">
+              <div className="h-80 w-80 rounded-full">
+                <LogoIcon />
+              </div>
             </Link>
           </div>
           <div className="py-16">
@@ -25,10 +23,8 @@ export const FourOhFour = () => {
               <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-zinc-300 sm:text-5xl">Page not found.</h1>
               <p className="mt-2 text-base text-zinc-400">Sorry, we couldn’t find the page you’re looking for.</p>
               <div className="mt-6">
-                <Link href="/">
-                  <a className="text-base font-medium text-blue-300 hover:text-blue-500">
-                    Go back home<span aria-hidden="true"> &rarr;</span>
-                  </a>
+                <Link href="/" className="text-base font-medium text-blue-300 hover:text-blue-500">
+                  Go back home<span aria-hidden="true"> &rarr;</span>
                 </Link>
               </div>
             </div>
@@ -38,9 +34,9 @@ export const FourOhFour = () => {
           <nav className="flex justify-center space-x-4">
             <Link
               href="mailto:contact@nishantjha.org"
-              className="text-sm font-medium text-gray-500 hover:text-gray-600"
+              className="text-sm font-medium text-blue-300 hover:text-blue-600"
             >
-              <a className="text-sm font-medium text-blue-300 hover:text-blue-600">Contact Support</a>
+              Contact Support
             </Link>
           </nav>
         </footer>

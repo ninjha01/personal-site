@@ -15,7 +15,7 @@ export default function DaVinci() {
     const promptText = textAreaRef.current?.value || "";
     setLoading(true);
     setData(null);
-    console.log("submitting prompt", promptText);
+
     try {
       const response = await fetch("/api/stablediffusion", {
         method: "POST",
