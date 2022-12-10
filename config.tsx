@@ -8,7 +8,7 @@ import labvid_img from "./public/assets/images/labvid.jpg";
 import lattice_logo from "./public/assets/images/lattice_logo.png";
 import nature_genetics_logo from "./public/assets/images/nature_genetics_logo.png";
 import pipette_img from "./public/assets/images/pipette.jpg";
-import seqviz_logo from "./public/assets/images/seqviz_logo.png";
+import nitro_bio_logo from "./public/assets/images/nitro_bio_logo.jpg";
 
 import {
   ArchitectureType,
@@ -94,11 +94,10 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
         "A static site built with Next.js and tailwindcss deployed on App Engine that drives traffic towards the BiB slack community.",
     },
     {
-      title: "SeqViz - DNA Sequence Viewer",
-      url: "https://github.com/Lattice-Automation/seqviz/",
-      img: seqviz_logo,
-      description:
-        "SeqViz is the customizable DNA sequence viewer. This open source Javascript library is popular in industry and academia.",
+      title: "Nitro UI",
+      url: "https://storybook.nitro.bio",
+      img: nitro_bio_logo,
+      description: "A UI Library for life science.",
     },
     {
       title: "Pediatric Cancer Visualization",

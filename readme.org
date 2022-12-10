@@ -3,9 +3,9 @@
 
 #+BEGIN_SRC sh
 
-  npm i # install dependencies
-  npm run start # run dev server
-  npm run build # build production server
+  yarn # install dependencies
+  yarn dev # run dev server
+  yarn build # build production server
 
 #+END_SRC
 
@@ -13,6 +13,6 @@ To deploy, simply merge code into main
 
 ** Built with
 
- - UI framework: create-react-app
+ - UI framework: create-next-app
  - CSS framework: tailwindcss
- - Deployed via: github actions
+ - Deployed via: github actions and vercel

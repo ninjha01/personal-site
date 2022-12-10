@@ -10,7 +10,7 @@
     "dev": "next dev",
     "build": "rm -rf ./build && NODE_ENV=production NEXT_PUBLIC_GIT_COMMIT_SHA=`git rev-parse --short HEAD` next build",
     "start": "next start -p 8080",
-    "serve": "npm run build && npm run start",
+    "serve": "yarn build && yarn start",
     "lint": "next lint",
     "format": "prettier \"**/*.+(js|jsx|ts|tsx|json|css|md)\" --config package.json --write",
     "format:check": "prettier \"**/*.+(js|jsx|ts|tsx|json|css|md)\" --config package.json --check",
