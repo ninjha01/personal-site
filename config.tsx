@@ -122,11 +122,6 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
   ],
   architectures: [
     {
-      title: "Don't Get Abstracted",
-      url: "/architectures/abstracted",
-      description: ".",
-    },
-    {
       title: "Blast Service",
       url: "/architectures/blastarch",
       description:
