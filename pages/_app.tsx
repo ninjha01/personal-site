@@ -7,7 +7,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   useAnalyticsInstance();
   return (
     <>
-      <Script src="https://app.embed.im/snow.js" defer></Script>
       <Script
         data-goatcounter={"https://nishantjha.goatcounter.com/count"}
         data-goatcounter-settings='{"allow_local": false}'
