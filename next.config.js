@@ -18,6 +18,12 @@ const nextConfig = {
         basePath: false,
       },
       {
+        source: "/hangout",
+        destination: "https://calendly.com/nishantjha/60min",
+        permanent: false,
+        basePath: false,
+      },
+      {
         source: "/hireme",
         destination: "/",
         permanent: true,
