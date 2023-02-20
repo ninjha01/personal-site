@@ -179,7 +179,7 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
         title: "Itsycal",
         url: "https://www.mowglii.com/itsycal/",
         description:
-          "A beautiful little calendar that lives in you menubar! Essentialy to get a quick look at my upcoming meetings and to jump into video calls.",
+          "A beautiful little calendar that lives in your menubar! Essentialy to get a quick look at my upcoming meetings and to jump into video calls.",
       },
       {
         title: "Homebrew",

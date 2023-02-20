@@ -28,9 +28,9 @@ export const Abstracted = () => {
       </Head>
 
       <Shell>
-        <h1 className="flex-2 text-3xl font-semibold text-blue-100 flex items-center gap-4">
+        <h1 className="flex-2 flex items-center gap-4 text-3xl font-semibold text-blue-100">
           The World Eater
-          <span className="px-2 py-1 text-xs text-zinc-800 rounded-full bg-amber-300 animate-pulse text-center">
+          <span className="animate-pulse rounded-full bg-amber-300 px-2 py-1 text-center text-xs text-zinc-800">
             Work in Progress
           </span>
         </h1>
