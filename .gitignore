@@ -52,3 +52,4 @@ cypress/videos/
 *.tsbuildinfo
 
 .vercel
+/.env
