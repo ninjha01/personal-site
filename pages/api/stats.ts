@@ -109,7 +109,7 @@ const VercelSchema = z.object({
 });
 
 const GithubSchema = z.object({
-  commitChart: z.string(),
+  commitChart: z.string().regex(/^[.#-]{7}$/),
 });
 
 const ResponseSchema = z.object({
