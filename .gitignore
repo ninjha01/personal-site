@@ -53,3 +53,5 @@ cypress/videos/
 
 .vercel
 /.env
+
+.env*.local

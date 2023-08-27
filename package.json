@@ -32,6 +32,7 @@
     "remark-gfm": "^3.0.1",
     "seqviz": "^3.3.2",
     "sharp": "^0.30.7",
+    "wretch": "^2.6.0",
     "zod": "^3.21.4"
   },
   "devDependencies": {
