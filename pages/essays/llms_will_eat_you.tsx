@@ -19,12 +19,12 @@ import content from "../../content/llms_will_eat_you.md";
 import { classNames } from "../../utils";
 import { Prose } from "../../components/Prose";
 
-export const Abstracted = () => {
+export const Essay = () => {
   return (
     <>
       <Head>
-        <title>The Tower of Abstraction | Nishant Jha</title>
-        <link rel="canonical" href={"https://nishantjha.org/blog/abstracted"} />
+        <title>{"Software Ate the World, Now it's Your Turn | Nishant Jha"}</title>
+        <link rel="canonical" href={"https://nishantjha.org/essay/llms_will_eat_you"} />
       </Head>
 
       <Shell>
@@ -35,4 +35,4 @@ export const Abstracted = () => {
     </>
   );
 };
-export default Abstracted;
+export default Essay;

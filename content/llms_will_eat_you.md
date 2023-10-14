@@ -1,14 +1,13 @@
 # Software Ate the World, Now It's Your Turn
 
-9 months ago, I [wrote an essay](https://www.nishantjha.org/essays/worldeater) detailing my angst about what AI would do to the career that I love - software engineering.
+9 months ago, I [wrote an essay](https://www.nishantjha.org/essays/tower_of_abstraction) detailing my angst about what AI would do to the career that I love - software engineering.
 
-This month, the Writer's Guild of America ended their X month strike by signing a deal with Hollywood. As a result, [60 percent to 80 percent](https://puck.news/and-now-the-tv-purge-begins/) of contracts will not be renewed.
+This month, the Writer's Guild of America ended their X month strike by signing a deal with Hollywood. As a result, [60 to 80 percent](https://puck.news/and-now-the-tv-purge-begins/) of contracts will not be renewed.
 
-In his newsletter Platformer, journalist Casey Newton urged his colleages away from established media outlets, pointing at the shuttering of Buzzfeed News.
+In his newsletter Platformer, journalist Casey Newton [urged his colleages to branch out](https://www.platformer.news/p/what-i-learned-in-year-three-of-platformer) from established media outlets, noting that BuzzFeed News, Protocol, and Vice's Motherboard are spinning down or shuttered altogether.
 
 #### _Is the squeeze journalists and writers are feeling a premonition of things to come for software engineers?_
 
-[](./tsunami_1.png)
 
 We used to have a limited supply of media, and so power rested in the hands of suppliers (Hollywood). We now live in a world of media abundance, and power has shifted towards those who control demand: Netflix, Google (via Youtube, and Android), and Apple (via Apple TV, and iOS). Making a movie isn't enough anymore. You also have to stand out so much that people drive to the theatre to watch it.
 
@@ -25,7 +24,7 @@ What can a software engineer, journalist, or other white-collar worker do in the
 How can you control supply? I see two methods: _Specialize_ and _Go Up Market_. Software Engineering covers a broad skillset that is applicable to a variety of domains. Differentiating across both will increase your control over supply and diminish competition.
 
 For now, AI models seem to be tightly constrained by their data.
-[I previously outlined]() my plan to specialize as a frontend focused engineer in biotech. The amount of good data about frontend software for biotechs is strictly less than for frontend software generically, which is less than all software generally.
+[I previously outlined](https://www.nishantjha.org/essays/tower_of_abstraction) my plan to specialize as a frontend focused engineer in biotech. The amount of good data about frontend software for biotechs is strictly less than for frontend software generically, which is less than all software generally.
 
 This is a good idea even if AI advancements stall. In applying to a generic software engineer job I am essentially competing against every other software engineer. But if I apply for a frontend role at a biotech company, my competition is small.
 
