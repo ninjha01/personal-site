@@ -50,7 +50,7 @@ Not only do I have to integrate into a team and produce high quality code, I als
 
 This approach has the significant advantage of simplicity - there's a straightforward playbook that you can follow to get quite good odds of success.
 
-First, create a landing page that crisply describes your offering. Make sure to write the copy from the perspective of the customer and their problem, not your own. [nitro.bio](https://www.nitro.bio) is my implementation of this idea.
+First, create a landing page that crisply describes your offering. Make sure to write the copy from the perspective of the customer and their problem, not your own. See [nitro.bio](https://www.nitro.bio) for my implementation of this idea.
 
 Second, produce artifacts that substantially help people immediately and raise your credibility as an authority. Then link to your landing page. For me, this involved building an [open source UI kit for life science](https://storybook.nitro.bio), a [landing page for a community in my domain of expertise](https://www.bitsinbio.org), and building a [survey results site for that community](https://www.stateoftechbio.com). All of these are freely accessible and provide value to my target client. It is important to call out that you shouldn't produce these artifacts cynically - You should earnestly try to address a customer need.
 

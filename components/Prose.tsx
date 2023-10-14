@@ -9,14 +9,13 @@ const dontRenderCodeBackticksClassName = "prose-code:before:content-none prose-c
 export const Prose = (props: { content: string; className: string }) => {
   const { content, className } = props;
   const aStyles =
-    "prose-a:bg-gradient-to-r prose-a:from-indigo-400 prose-a:to-pink-400 hover:prose-a:text-white prose-a:bg-clip-text prose-a:text-transparent prose-a:transition-colors duration-300 ease-in-out";
+    "prose-a:bg-gradient-to-r prose-a:from-sky-400 prose-a:to-cyan-300 hover:prose-a:text-white prose-a:bg-clip-text prose-a:text-transparent prose-a:transition-colors duration-300 ease-in-out";
   const pStyles = "prose-p:text-white prose-p:font-light";
   const imgStyles = "prose-img:rounded-xl";
   const h1Styles =
-    "prose-h1:tracking-wider prose-h1:bg-gradient-to-r prose-h1:from-fuchsia-400 prose-h1:to-rose-400 prose-h1:text-transparent prose-h1:bg-clip-text";
+    "prose-h1:tracking-wider prose-h1:bg-gradient-to-r prose-h1:from-emerald-400 prose-h1:to-sky-400 prose-h1:text-transparent prose-h1:bg-clip-text";
   const h2Styles = "prose-h2:tracking-wider prose-h2:text-white";
-  const strongStyles =
-    "prose-strong:bg-gradient-to-r prose-strong:from-indigo-400 prose-strong:to-pink-400  prose-strong:bg-clip-text prose-strong:text-transparent";
+  const strongStyles = "";
   return (
     <article
       className={classNames(
