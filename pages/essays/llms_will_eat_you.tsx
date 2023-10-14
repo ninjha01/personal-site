@@ -23,7 +23,7 @@ export const Abstracted = () => {
   return (
     <>
       <Head>
-        <title>The World Eater | Nishant Jha</title>
+        <title>The Tower of Abstraction | Nishant Jha</title>
         <link rel="canonical" href={"https://nishantjha.org/blog/abstracted"} />
       </Head>
 
