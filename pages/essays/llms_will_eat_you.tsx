@@ -14,7 +14,7 @@ import ReactFlow, {
 import { Shell } from "../../components/Shell";
 
 // @ts-ignore
-import content from "../../content/abstracted.md";
+import content from "../../content/llms_will_eat_you.md";
 
 import { classNames } from "../../utils";
 import { Prose } from "../../components/Prose";
@@ -28,7 +28,6 @@ export const Abstracted = () => {
       </Head>
 
       <Shell>
-        <h1 className="flex-2 flex items-center gap-4 text-3xl font-semibold text-blue-100">The World Eater</h1>
         <section className="mt-8 flex flex-col">
           <Prose className={classNames("h-full w-full lg:ml-8 lg:overflow-y-scroll")} content={content} />
         </section>

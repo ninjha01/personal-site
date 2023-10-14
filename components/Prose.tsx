@@ -3,20 +3,20 @@ import remarkGfm from "remark-gfm";
 
 import Image from "next/image";
 import { classNames } from "../utils";
-import Link from "next/link";
 
 const dontRenderCodeBackticksClassName = "prose-code:before:content-none prose-code:after:content-none";
 
 export const Prose = (props: { content: string; className: string }) => {
   const { content, className } = props;
   const aStyles =
-    "prose-a:bg-gradient-to-r prose-a:from-indigo-400 prose-a:to-pink-400 prose-a:text-white prose-a:bg-clip-text hover:prose-a:text-transparent hover:prose-a:transition-colors duration-300 ease-in-out";
-  const pStyles = "prose-p:text-white/80";
+    "prose-a:bg-gradient-to-r prose-a:from-indigo-400 prose-a:to-pink-400 hover:prose-a:text-white prose-a:bg-clip-text prose-a:text-transparent prose-a:transition-colors duration-300 ease-in-out";
+  const pStyles = "prose-p:text-white prose-p:font-light";
   const imgStyles = "prose-img:rounded-xl";
-  const hStyles =
-    "prose-headings:bg-gradient-to-r prose-headings:from-blue-400 text-lg prose-headings:to-violet-300 prose-headings:pb-4 prose-headings:text-transparent prose-headings:bg-clip-text";
+  const h1Styles =
+    "prose-h1:tracking-wider prose-h1:bg-gradient-to-r prose-h1:from-fuchsia-400 prose-h1:to-rose-400 prose-h1:text-transparent prose-h1:bg-clip-text";
+  const h2Styles = "prose-h2:tracking-wider prose-h2:text-white";
   const strongStyles =
-    "prose-strong:bg-gradient-to-r prose-strong:from-blue-400 prose-strong:to-blue-500  prose-strong:bg-clip-text prose-strong:text-transparent";
+    "prose-strong:bg-gradient-to-r prose-strong:from-indigo-400 prose-strong:to-pink-400  prose-strong:bg-clip-text prose-strong:text-transparent";
   return (
     <article
       className={classNames(
@@ -25,7 +25,8 @@ export const Prose = (props: { content: string; className: string }) => {
         aStyles,
         pStyles,
         imgStyles,
-        hStyles,
+        h1Styles,
+        h2Styles,
         strongStyles,
         className
       )}

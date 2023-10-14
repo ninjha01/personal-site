@@ -205,6 +205,12 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
   },
   essays: [
     {
+      title: "Saving your job from the robots",
+      description: "Software Ate the World, Now LLMs Will Eat You",
+      img: world_eater,
+      url: "/essays/llms_will_eat_you",
+    },
+    {
       title: "The World Eater",
       description: "On abstractions, and getting abstracted.",
       img: world_eater,
