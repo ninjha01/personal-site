@@ -27,7 +27,7 @@ export function PromptEditor({
         <button
           onClick={submitPromptOnClick}
           className={classNames(
-            "focus:border-zinc-600:ring-2 focus: mt-4 flex inline-flex flex-row items-center justify-center justify-center gap-2 rounded-md border border-transparent bg-zinc-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-zinc-700 focus:ring-blue-500",
+            "focus:border-zinc-600:ring-2 focus: mt-4 flex inline-flex flex-row items-center justify-center justify-center gap-2 rounded-md border border-transparent bg-zinc-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-zinc-700 focus:ring-blue-500",
             loading && "cursor-not-allowed opacity-50"
           )}
         >

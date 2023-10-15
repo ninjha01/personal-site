@@ -7,7 +7,11 @@ import { GitHubLogo } from "./GithubLogo";
 function FooterItem(props: { href: string; children: ReactNode }) {
   const { href, children } = props;
   return (
-    <li className={classNames("relative block cursor-pointer px-3 py-2 transition hover:text-blue-500")}>
+    <li
+      className={classNames(
+        "relative block cursor-pointer px-3 py-2 transition hover:text-blue-500"
+      )}
+    >
       <Link href={href}>{children}</Link>
     </li>
   );

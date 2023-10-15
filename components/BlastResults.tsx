@@ -5,7 +5,10 @@ import { GlobalAlignmentViz } from "./GlobalAlignmentViz";
 import { ResultCard } from "./ResultCard";
 import { SequenceCard } from "./SequenceCard";
 
-export const BlastResults = (props: { results: BlastResponseDatum[]; request: BlastRequestData }) => {
+export const BlastResults = (props: {
+  results: BlastResponseDatum[];
+  request: BlastRequestData;
+}) => {
   const { results, request } = props;
   const { sequence, sequenceName, sequenceType, topology } = request;
   const [loading, setLoading] = useState(true);
@@ -16,10 +19,19 @@ export const BlastResults = (props: { results: BlastResponseDatum[]; request: Bl
 
   return (
     <>
-      <div className={classNames("transition-opacity duration-1000 ease-out", loading ? "opacity-0" : "opacity-100")}>
+      <div
+        className={classNames(
+          "transition-opacity duration-1000 ease-out",
+          loading ? "opacity-0" : "opacity-100"
+        )}
+      >
         <div className="grid grid-cols-1 lg:mt-6 lg:grid-cols-2">
           <div className="grow-1">
-            <SequenceCard sequenceName={request.sequenceName} sequence={sequence} annotations={[]} />
+            <SequenceCard
+              sequenceName={request.sequenceName}
+              sequence={sequence}
+              annotations={[]}
+            />
           </div>
 
           <div className="grow-1">
@@ -37,8 +49,13 @@ export const BlastResults = (props: { results: BlastResponseDatum[]; request: Bl
         </div>
 
         <div className="my-4 grid grid-cols-1 gap-4 lg:grid-cols-2 ">
-          {results.map(result => (
-            <ResultCard key={result.id} result={result} sequenceType={sequenceType} topologyType={topology} />
+          {results.map((result) => (
+            <ResultCard
+              key={result.id}
+              result={result}
+              sequenceType={sequenceType}
+              topologyType={topology}
+            />
           ))}
         </div>
       </div>

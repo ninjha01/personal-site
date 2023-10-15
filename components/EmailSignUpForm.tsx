@@ -3,12 +3,19 @@ import { useAnalyticsEvent } from "../hooks/useAnalytics";
 export const EmailSignUpForm = () => {
   const { trackCustomEvent } = useAnalyticsEvent();
   const logEmailClicked = () => {
-    trackCustomEvent({ eventName: "clicked_email_button", eventTitle: "email_button" });
+    trackCustomEvent({
+      eventName: "clicked_email_button",
+      eventTitle: "email_button",
+    });
   };
 
   const onSubmit = () => {
     logEmailClicked();
-    window.open("https://tinyletter.com/nishantjha", "popupwindow", "scrollbars=yes,width=800,height=600");
+    window.open(
+      "https://tinyletter.com/nishantjha",
+      "popupwindow",
+      "scrollbars=yes,width=800,height=600"
+    );
     return true;
   };
 
@@ -35,7 +42,7 @@ export const EmailSignUpForm = () => {
             className="w-full rounded-md border-gray-300 px-3 py-3 placeholder-gray-500 focus:border-blue-500 focus:ring-blue-500 sm:max-w-xs"
             placeholder="Enter your email"
           />
-          <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0 lg:ml-0 lg:mt-8 lg:w-40 lg:w-auto">
+          <div className="mt-3 rounded-md sm:ml-3 sm:mt-0 sm:flex-shrink-0 lg:ml-0 lg:mt-8 lg:w-40 lg:w-auto">
             <GetInTouchButton />
           </div>
         </form>
@@ -71,7 +78,7 @@ const GetInTouchButton = () => (
         Contact
       </div>
     </button>
-    <span className="relative top-0 right-3 -mt-1 -mr-1 flex h-4 w-4">
+    <span className="relative right-3 top-0 -mr-1 -mt-1 flex h-4 w-4">
       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-700 opacity-75"></span>
       <span className="relative inline-flex h-4 w-4 rounded-full border border-2 border-white bg-blue-800"></span>
     </span>

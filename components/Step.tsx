@@ -17,25 +17,39 @@ export const Steps = (props: { steps: StepType[]; stepID: number }) => {
               <div className="group flex w-full items-center">
                 <span className="flex items-center px-6 py-4 text-sm font-medium">
                   <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-300 group-hover:bg-blue-600">
-                    <CheckIcon className="h-6 w-6 text-zinc-100" aria-hidden="true" />
+                    <CheckIcon
+                      className="h-6 w-6 text-zinc-100"
+                      aria-hidden="true"
+                    />
                   </span>
-                  <span className="ml-4 text-sm font-medium text-blue-300">{step.name}</span>
+                  <span className="ml-4 text-sm font-medium text-blue-300">
+                    {step.name}
+                  </span>
                 </span>
               </div>
             ) : step.id === stepID ? (
-              <div className="flex items-center px-6 py-4 text-sm font-medium" aria-current="step">
+              <div
+                className="flex items-center px-6 py-4 text-sm font-medium"
+                aria-current="step"
+              >
                 <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-blue-300">
                   <span className="text-blue-300">{step.id}</span>
                 </span>
-                <span className="ml-4 text-sm font-medium text-blue-300">{step.name}</span>
+                <span className="ml-4 text-sm font-medium text-blue-300">
+                  {step.name}
+                </span>
               </div>
             ) : (
               <div className="group flex items-center">
                 <span className="flex items-center px-6 py-4 text-sm font-medium">
                   <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-blue-300 group-hover:border-blue-400">
-                    <span className="text-blue-300 group-hover:text-blue-400">{step.id}</span>
+                    <span className="text-blue-300 group-hover:text-blue-400">
+                      {step.id}
+                    </span>
                   </span>
-                  <span className="ml-4 text-sm font-medium text-blue-300 group-hover:text-blue-400">{step.name}</span>
+                  <span className="ml-4 text-sm font-medium text-blue-300 group-hover:text-blue-400">
+                    {step.name}
+                  </span>
                 </span>
               </div>
             )}
@@ -43,7 +57,10 @@ export const Steps = (props: { steps: StepType[]; stepID: number }) => {
             {stepIdx !== steps.length - 1 ? (
               <>
                 {/* Arrow separator for lg screens and up */}
-                <div className="absolute top-0 right-0 hidden h-full w-5 md:block" aria-hidden="true">
+                <div
+                  className="absolute right-0 top-0 hidden h-full w-5 md:block"
+                  aria-hidden="true"
+                >
                   <svg
                     className="h-full w-full text-zinc-500"
                     viewBox="0 0 22 80"

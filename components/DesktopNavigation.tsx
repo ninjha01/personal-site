@@ -11,7 +11,9 @@ function NavItem(props: { href: string; children: ReactNode }) {
   return (
     <Link href={href}>
       <li
-        className={classNames("relative block cursor-pointer px-3 py-2 text-zinc-100 transition hover:text-blue-500")}
+        className={classNames(
+          "relative block cursor-pointer px-3 py-2 text-zinc-100 transition hover:text-blue-500"
+        )}
       >
         {children}
       </li>
@@ -22,7 +24,7 @@ export function DesktopNavigation(props: any) {
   return (
     <nav {...props}>
       <div className="flex items-center justify-center gap-4">
-        <ul className="flex items-center justify-center gap-2 rounded-full bg-zinc-800/90 px-5 py-2 text-sm font-medium text-zinc-100 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 ring-white/10 backdrop-blur">
+        <ul className="flex items-center justify-center gap-2 rounded-full bg-zinc-800/90 px-5 py-2 text-sm font-medium text-zinc-100 shadow-lg shadow-zinc-800/5 ring-1 ring-white/10 ring-zinc-900/5 backdrop-blur">
           <li>
             <Image
               src={config.personal.profile}

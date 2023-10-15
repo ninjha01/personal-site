@@ -17,7 +17,10 @@ export const Abstracted = () => {
 
       <Shell>
         <section className="mt-8 flex flex-col">
-          <Prose className={classNames("h-full w-full lg:ml-8 lg:overflow-y-scroll")} content={content} />
+          <Prose
+            className={classNames("h-full w-full lg:ml-8 lg:overflow-y-scroll")}
+            content={content}
+          />
         </section>
       </Shell>
     </>

@@ -18,7 +18,9 @@ export const KernelCard = (props: { kernelData: KernelData }) => {
     <section className="w-full">
       <div className="overflow-hidden rounded-lg bg-zinc-700 shadow-2xl">
         <div className="bg-zinc-700 px-4 py-4  sm:px-6">
-          <h3 className="text-lg font-medium leading-6 text-blue-100">Kernel Data</h3>
+          <h3 className="text-lg font-medium leading-6 text-blue-100">
+            Kernel Data
+          </h3>
         </div>
         {divider}
         <div className="mt-6 flex w-full flex-col gap-2 text-zinc-300">
@@ -30,7 +32,9 @@ export const KernelCard = (props: { kernelData: KernelData }) => {
           </div>
           <div className="flex flex-row px-4 sm:px-6">
             <strong className="mr-auto text-ellipsis">Kernel: </strong>
-            <p className="ml-auto text-right font-mono ">{kernelData.interpreter}</p>
+            <p className="ml-auto text-right font-mono ">
+              {kernelData.interpreter}
+            </p>
           </div>
           <div className="flex flex-row px-4 sm:px-6">
             <strong>OS: </strong>

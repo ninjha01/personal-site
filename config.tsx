@@ -117,7 +117,8 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
     {
       title: "Data Notebook",
       url: "/mockups/notebook",
-      description: "A data notebook that surfaces system information and tracks execution in an intuitive way.",
+      description:
+        "A data notebook that surfaces system information and tracks execution in an intuitive way.",
     },
   ],
   architectures: [
@@ -222,7 +223,8 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
     {
       title: "DaVinci Text Generator",
       url: "/local/davinci",
-      description: "An AI text generator that uses the OpenAI DaVinci API to generate text.",
+      description:
+        "An AI text generator that uses the OpenAI DaVinci API to generate text.",
     },
     {
       title: "Stable Diffusion",

@@ -1,4 +1,10 @@
-import { ChartPieIcon, CheckIcon, CodeIcon, PencilAltIcon, XIcon } from "@heroicons/react/solid";
+import {
+  ChartPieIcon,
+  CheckIcon,
+  CodeIcon,
+  PencilAltIcon,
+  XIcon,
+} from "@heroicons/react/solid";
 import { classNames } from "../utils";
 
 export const HistoryFeed = () => {
@@ -94,7 +100,10 @@ export const HistoryFeed = () => {
     },
   ];
   return (
-    <section aria-labelledby="timeline-title" className="lg:col-span-1 lg:col-start-3">
+    <section
+      aria-labelledby="timeline-title"
+      className="lg:col-span-1 lg:col-start-3"
+    >
       <div className="rounded-lg bg-zinc-700 px-4 py-5 shadow-xl sm:px-6">
         <h2 id="timeline-title" className="text-lg font-medium text-blue-100">
           Timeline
@@ -107,7 +116,10 @@ export const HistoryFeed = () => {
               <li key={item.id}>
                 <div className="relative pb-8">
                   {itemIdx !== timeline.length - 1 ? (
-                    <span className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true" />
+                    <span
+                      className="absolute left-4 top-4 -ml-px h-full w-0.5 bg-gray-200"
+                      aria-hidden="true"
+                    />
                   ) : null}
                   <div className="relative flex space-x-3">
                     <div>
@@ -117,14 +129,20 @@ export const HistoryFeed = () => {
                           "flex h-8 w-8 items-center justify-center rounded-full ring-8 ring-zinc-700"
                         )}
                       >
-                        <item.type.icon className="h-5 w-5 text-zinc-700" aria-hidden="true" />
+                        <item.type.icon
+                          className="h-5 w-5 text-zinc-700"
+                          aria-hidden="true"
+                        />
                       </span>
                     </div>
                     <div className="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
                       <div>
                         <p className="text-sm text-zinc-300">
                           {item.content}{" "}
-                          <a className="text-sm text-zinc-300" href={`#cell-${item.cell_id}`}>
+                          <a
+                            className="text-sm text-zinc-300"
+                            href={`#cell-${item.cell_id}`}
+                          >
                             {item.target}
                           </a>
                         </p>
@@ -139,7 +157,7 @@ export const HistoryFeed = () => {
             ))}
           </ul>
         </div>
-        <div className="justify-stretch mt-6 flex flex-col">
+        <div className="mt-6 flex flex-col justify-stretch">
           <button
             type="button"
             className="inline-flex items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-zinc-100 shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"

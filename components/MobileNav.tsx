@@ -8,7 +8,9 @@ function MobileNavItem(props: { href: string; children: ReactNode }) {
   const { href, children } = props;
   return (
     <Popover.Button as={Link} href={href}>
-      <li className="cursor-pointer pt-4 text-zinc-100 transition hover:text-blue-500">{children}</li>
+      <li className="cursor-pointer pt-4 text-zinc-100 transition hover:text-blue-500">
+        {children}
+      </li>
     </Popover.Button>
   );
 }

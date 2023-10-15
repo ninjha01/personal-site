@@ -30,11 +30,15 @@ export const SiteArch = () => {
       </Head>
 
       <Shell>
-        <h1 className="flex-2 text-3xl font-semibold text-blue-100">Personal Site</h1>
-        <h2 className="flex-2 text-xl font-semibold text-zinc-400">Architecture Diagram</h2>
+        <h1 className="flex-2 text-3xl font-semibold text-blue-100">
+          Personal Site
+        </h1>
+        <h2 className="flex-2 text-xl font-semibold text-zinc-400">
+          Architecture Diagram
+        </h2>
 
         <section className="flex flex-col">
-          <div className="mt-8 mb-8 gap-8 bg-zinc-700 md:rounded-xl md:p-8 lg:-mx-24">
+          <div className="mb-8 mt-8 gap-8 bg-zinc-700 md:rounded-xl md:p-8 lg:-mx-24">
             <div
               style={{ height: size.height }}
               className="-mx-3 h-[30rem] bg-white md:col-span-2 md:mx-auto md:w-full md:rounded-xl lg:h-[45rem]"
@@ -42,19 +46,23 @@ export const SiteArch = () => {
               <OverviewFlow />
             </div>
           </div>
-          <Prose className={classNames("h-full w-full lg:ml-8 lg:overflow-y-scroll")} content={content} />
+          <Prose
+            className={classNames("h-full w-full lg:ml-8 lg:overflow-y-scroll")}
+            content={content}
+          />
         </section>
       </Shell>
     </>
   );
 };
 
-const onInit = (reactFlowInstance: any) => console.log("flow loaded:", reactFlowInstance);
+const onInit = (reactFlowInstance: any) =>
+  console.log("flow loaded:", reactFlowInstance);
 
 const OverviewFlow = () => {
   const [nodes, , onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-  const onConnect = (params: any) => setEdges(eds => addEdge(params, eds));
+  const onConnect = (params: any) => setEdges((eds) => addEdge(params, eds));
 
   const edgeOptions: DefaultEdgeOptions = {
     animated: true,
@@ -94,7 +102,12 @@ export const initialNodes: Node[] = [
     type: "input",
     data: {
       label: (
-        <a href="https://github.com/ninjha01/personal-site" className="underline" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/ninjha01/personal-site"
+          className="underline"
+          target="_blank"
+          rel="noreferrer"
+        >
           <code>ninjha01/personal-site</code>
         </a>
       ),
@@ -169,7 +182,12 @@ export const initialNodes: Node[] = [
         <>
           Staging Env
           <br />
-          <a href="https://staging.nishantjha.org" className="underline" target="_blank" rel="noreferrer">
+          <a
+            href="https://staging.nishantjha.org"
+            className="underline"
+            target="_blank"
+            rel="noreferrer"
+          >
             staging.nishantjha.org
           </a>
         </>
@@ -192,7 +210,12 @@ export const initialNodes: Node[] = [
         <>
           Production Env
           <br />
-          <a href="https://www.nishantjha.org" className="underline" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.nishantjha.org"
+            className="underline"
+            target="_blank"
+            rel="noreferrer"
+          >
             nishantjha.org
           </a>
         </>

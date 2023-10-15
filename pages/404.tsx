@@ -8,7 +8,7 @@ export const FourOhFour = () => {
   }, []);
   return (
     <>
-      <div className="flex h-screen flex-col bg-zinc-800 pt-16 pb-12">
+      <div className="flex h-screen flex-col bg-zinc-800 pb-12 pt-16">
         <main className="mx-auto flex w-full max-w-7xl flex-grow flex-col justify-center px-4 sm:px-6 lg:px-8">
           <div className="flex flex-shrink-0 justify-center">
             <Link href="/" className="inline-flex">
@@ -19,11 +19,20 @@ export const FourOhFour = () => {
           </div>
           <div className="py-16">
             <div className="text-center">
-              <p className="text-sm font-semibold uppercase tracking-wide text-blue-100">404 error</p>
-              <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-zinc-300 sm:text-5xl">Page not found.</h1>
-              <p className="mt-2 text-base text-zinc-400">Sorry, we couldn’t find the page you’re looking for.</p>
+              <p className="text-sm font-semibold uppercase tracking-wide text-blue-100">
+                404 error
+              </p>
+              <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-zinc-300 sm:text-5xl">
+                Page not found.
+              </h1>
+              <p className="mt-2 text-base text-zinc-400">
+                Sorry, we couldn’t find the page you’re looking for.
+              </p>
               <div className="mt-6">
-                <Link href="/" className="text-base font-medium text-blue-300 hover:text-blue-500">
+                <Link
+                  href="/"
+                  className="text-base font-medium text-blue-300 hover:text-blue-500"
+                >
                   Go back home<span aria-hidden="true"> &rarr;</span>
                 </Link>
               </div>

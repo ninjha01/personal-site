@@ -4,7 +4,10 @@ module.exports = {
   important: true,
   mode: "jit",
   darkMode: "class",
-  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -12,7 +15,11 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("autoprefixer"), require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("autoprefixer"),
+    require("@tailwindcss/typography"),
+  ],
   variants: {
     opacity: ({ after }) => after(["disabled"]),
     extend: {

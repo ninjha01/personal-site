@@ -1,4 +1,10 @@
-import { JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, StrictMode } from "react";
+import {
+  JSXElementConstructor,
+  ReactElement,
+  ReactFragment,
+  ReactPortal,
+  StrictMode,
+} from "react";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
@@ -26,7 +32,7 @@ export const Shell = (props: {
 
       <div className="relative">
         <Header />
-        <main className="mx-auto mt-4 mb-16 w-full max-w-4xl bg-zinc-900 px-4 sm:px-6 md:mt-16 md:px-8">
+        <main className="mx-auto mb-16 mt-4 w-full max-w-4xl bg-zinc-900 px-4 sm:px-6 md:mt-16 md:px-8">
           {props.children}
         </main>
         <Footer />

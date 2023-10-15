@@ -5,12 +5,18 @@ import { ImageBackground } from "./ImageBackground";
 
 export const ClientSection = (props: { clients: ClientType[] }) => {
   const { clients } = props;
-  let rotations = ["sm:rotate-2", "sm:-rotate-2", "sm:rotate-2", "sm:rotate-2", "sm:-rotate-2"];
+  let rotations = [
+    "sm:rotate-2",
+    "sm:-rotate-2",
+    "sm:rotate-2",
+    "sm:rotate-2",
+    "sm:-rotate-2",
+  ];
   return (
     <section className="mb-16">
       <h1
         id="clients"
-        className="mb-8 border-t border-blue-100 pt-8 text-4xl text-2xl font-bold leading-none tracking-tighter text-blue-100"
+        className="mb-8 border-t border-blue-100 pt-8 text-2xl text-4xl font-bold leading-none tracking-tighter text-blue-100"
       >
         Clients
       </h1>
@@ -18,7 +24,11 @@ export const ClientSection = (props: { clients: ClientType[] }) => {
       <div className="">
         <div className=" grid justify-center gap-5 gap-8 py-4 sm:gap-12 sm:px-16 md:px-0 lg:-mx-24 lg:flex">
           {clients.map((client, idx) => (
-            <ClientCard key={client.name} client={client} rotation={rotations[idx % rotations.length]} />
+            <ClientCard
+              key={client.name}
+              client={client}
+              rotation={rotations[idx % rotations.length]}
+            />
           ))}
         </div>
       </div>
@@ -47,14 +57,16 @@ const ClientCard = (props: { client: ClientType; rotation: string }) => {
     >
       <ImageBackground img={bg_img} />
       <p className="z-10">{description}</p>
-      <div className="z-10 mt-8 mb-2 flex flex-row items-center gap-3">
+      <div className="z-10 mb-2 mt-8 flex flex-row items-center gap-3">
         <Image
           src={logo}
           alt="Logo"
-          className="w-12 h-12 rounded-full md:outline-rounded md:outline-dashed md:outline-offset-4 md:outline-blue-200"
+          className="md:outline-rounded h-12 w-12 rounded-full md:outline-dashed md:outline-offset-4 md:outline-blue-200"
         />
         <div className="space-between flex flex-col justify-center gap-2">
-          <p className="text-sm font-semibold uppercase tracking-wider text-blue-100">{name}</p>
+          <p className="text-sm font-semibold uppercase tracking-wider text-blue-100">
+            {name}
+          </p>
           <p className="track-tighter text-xs text-blue-200">{subtitle}</p>
         </div>
       </div>

@@ -4,7 +4,8 @@ import remarkGfm from "remark-gfm";
 import Image from "next/image";
 import { classNames } from "../utils";
 
-const dontRenderCodeBackticksClassName = "prose-code:before:content-none prose-code:after:content-none";
+const dontRenderCodeBackticksClassName =
+  "prose-code:before:content-none prose-code:after:content-none";
 
 export const Prose = (props: { content: string; className: string }) => {
   const { content, className } = props;
@@ -41,7 +42,12 @@ export const Prose = (props: { content: string; className: string }) => {
             }
             return (
               <span className="flex w-full items-center justify-center">
-                <Image src={props.src} alt={alt} width={width} height={height} />
+                <Image
+                  src={props.src}
+                  alt={alt}
+                  width={width}
+                  height={height}
+                />
               </span>
             );
           },

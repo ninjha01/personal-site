@@ -33,7 +33,13 @@ export function useAnalyticsInstance() {
 }
 
 export function useAnalyticsEvent() {
-  function trackCustomEvent({ eventName, eventTitle }: { eventName: string; eventTitle?: string }) {
+  function trackCustomEvent({
+    eventName,
+    eventTitle,
+  }: {
+    eventName: string;
+    eventTitle?: string;
+  }) {
     if (window.goatcounter === undefined) return;
     // still counting just like we do for route changes
     window.goatcounter.count({

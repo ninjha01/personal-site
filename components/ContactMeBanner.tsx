@@ -22,7 +22,8 @@ export const ContactMeBanner = (props: { hide: () => void }) => {
               <polyline points="11 12 12 12 12 16 13 16"></polyline>
             </svg>
             <p className="text-sm font-semibold uppercase tracking-wide">
-              <strong>Alert:</strong> Want to search against your own proprietary sequences?
+              <strong>Alert:</strong> Want to search against your own
+              proprietary sequences?
             </p>
           </div>
           <a

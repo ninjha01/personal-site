@@ -24,7 +24,13 @@ export function CloseIcon(props: any) {
 export function ChevronDownIcon(props: any) {
   return (
     <svg viewBox="0 0 8 6" aria-hidden="true" {...props}>
-      <path d="M1.75 1.75 4 4.25l2.25-2.5" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M1.75 1.75 4 4.25l2.25-2.5"
+        fill="none"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
@@ -55,7 +61,11 @@ export function Header() {
 
     function updateHeaderStyles() {
       let { top, height } = headerRef.current.getBoundingClientRect();
-      let scrollY = clamp(window.scrollY, 0, document.body.scrollHeight - window.innerHeight);
+      let scrollY = clamp(
+        window.scrollY,
+        0,
+        document.body.scrollHeight - window.innerHeight
+      );
 
       if (isInitial.current) {
         setProperty("--header-position", "sticky");
@@ -104,7 +114,10 @@ export function Header() {
       let x = (scrollY * (fromX - toX)) / downDelay + toX;
       x = clamp(x, fromX, toX);
 
-      setProperty("--avatar-image-transform", `translate3d(${x}rem, 0, 0) scale(${scale})`);
+      setProperty(
+        "--avatar-image-transform",
+        `translate3d(${x}rem, 0, 0) scale(${scale})`
+      );
 
       let borderScale = 1 / (toScale / scale);
       let borderX = (-toX + x) * borderScale;
@@ -140,7 +153,11 @@ export function Header() {
         }}
       >
         {/* @ts-ignore */}
-        <div ref={headerRef} className="top-0 z-10 h-16 pt-6" style={{ position: "var(--header-position)" }}>
+        <div
+          ref={headerRef}
+          className="top-0 z-10 h-16 pt-6"
+          style={{ position: "var(--header-position)" }}
+        >
           <Container
             className="top-[var(--header-top,theme(spacing.6))] w-full"
             style={{ position: "var(--header-inner-position)" }}

@@ -9,7 +9,10 @@ interface Size {
   height: number;
 }
 
-export function useParentSize<T extends HTMLElement = HTMLDivElement>(): [(node: T | null) => void, Size] {
+export function useParentSize<T extends HTMLElement = HTMLDivElement>(): [
+  (node: T | null) => void,
+  Size
+] {
   // Mutable values like 'ref.current' aren't valid dependencies
   // because mutating them doesn't re-render the component.
   // Instead, we use a state as a ref to be reactive.

@@ -19,30 +19,36 @@ export const HeroSection = () => {
                 <span className="text-xl font-semibold text-blue-300">
                   I know what it’s like to wake up at 4am to dose mice
                 </span>{" "}
-                and how frustrating it can be when you don’t have the right tools on hand.
+                and how frustrating it can be when you don’t have the right
+                tools on hand.
               </p>
               <p className="text-white/80">
                 {`I'm a software designer based in Pasadena, CA. My work serves research scientists at the bench and the
                 keyboard.`}
               </p>
               <Link className="group" href="https://nitro.bio">
-                <p className="text-white/80">
+                <p className="text-white/80 ">
                   I run a{" "}
+                  <span className="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-lg font-semibold text-transparent transition-all duration-100 ease-in-out group-hover:border-b group-hover:underline">
+                    Nitro Bio
+                  </span>
                   <span className="text-lg font-semibold text-blue-50">
-                    biotech software consultancy called{" "}
-                    <span className="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent transition-all duration-100 ease-in-out group-hover:border-b group-hover:underline">
-                      Nitro Bio
-                    </span>
-                    .{" "}
+                    , a biotech software consultancy.
                   </span>
                 </p>
               </Link>
               <p className="text-white/80">
-                <Link className="text-white hover:underline" href="https://www.kalzumeus.com/standing-invitation/">
+                <Link
+                  className="text-white hover:underline"
+                  href="https://www.kalzumeus.com/standing-invitation/"
+                >
                   Like others,
                 </Link>{" "}
                 I have a standing offer - If you want to talk software,{" "}
-                <Link href="mailto:standingoffer@nishantjha.org" className="text-white hover:underline">
+                <Link
+                  href="mailto:standingoffer@nishantjha.org"
+                  className="text-white hover:underline"
+                >
                   I want to talk to you.
                 </Link>
               </p>

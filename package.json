@@ -46,7 +46,8 @@
     "typescript": "4.7.3"
   },
   "prettier": {
-    "arrowParens": "avoid",
-    "printWidth": 120
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
   }
 }

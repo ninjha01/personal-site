@@ -49,8 +49,12 @@ export const Blast = () => {
   ];
   const [stepID, setStepID] = useState<number>(0);
 
-  const [blastResults, setBlastResult] = useState<BlastResponseDatum[] | null>(null);
-  const [blastRequest, setBlastRequest] = useState<BlastRequestData | null>(null);
+  const [blastResults, setBlastResult] = useState<BlastResponseDatum[] | null>(
+    null
+  );
+  const [blastRequest, setBlastRequest] = useState<BlastRequestData | null>(
+    null
+  );
 
   /* const [showBanner, setShowBanner] = useState(true);
   
@@ -70,9 +74,21 @@ export const Blast = () => {
       case 0:
       case 1:
       case 2:
-        return <BlastForm stepID={stepID} setStepID={setStepID} submitBlastReq={submitBlastReq} />;
+        return (
+          <BlastForm
+            stepID={stepID}
+            setStepID={setStepID}
+            submitBlastReq={submitBlastReq}
+          />
+        );
       case 3:
-        return <>{blastResults && blastRequest && <BlastResults results={blastResults} request={blastRequest} />}</>;
+        return (
+          <>
+            {blastResults && blastRequest && (
+              <BlastResults results={blastResults} request={blastRequest} />
+            )}
+          </>
+        );
     }
   };
   return (
@@ -84,14 +100,18 @@ export const Blast = () => {
       <Shell>
         <div className="rounded-xl ">
           <div className="mx-auto flex max-w-7xl flex-row items-center px-4 sm:px-6 md:px-8">
-            <h1 className="flex-2 text-4xl font-semibold text-zinc-200">Blast Service</h1>
+            <h1 className="flex-2 text-4xl font-semibold text-zinc-200">
+              Blast Service
+            </h1>
           </div>
 
           <div className="mx-auto mt-8 max-w-7xl">
             <Steps steps={stepOptions} stepID={stepID} />
           </div>
 
-          <div className="mt-8 md:mx-auto lg:-mx-24 lg:max-w-7xl lg:rounded-xl lg:bg-zinc-800 lg:p-6">{content()}</div>
+          <div className="mt-8 md:mx-auto lg:-mx-24 lg:max-w-7xl lg:rounded-xl lg:bg-zinc-800 lg:p-6">
+            {content()}
+          </div>
         </div>
       </Shell>
     </>
@@ -151,7 +171,7 @@ const generateResults = (args: { sequence: string }) => {
         const errorRate = getRndInteger(1, 80) / 100;
         const newString = query.split("");
         return newString
-          .map(x => {
+          .map((x) => {
             if (!!errorRate && Math.random() <= errorRate) {
               const randIdx = getRndInteger(0, query.length);
               return query[randIdx];
@@ -165,7 +185,10 @@ const generateResults = (args: { sequence: string }) => {
       const target = generateTargetString(trimmedQuery);
 
       const target_start = getRndInteger(0, 10000);
-      const target_range = [target_start, target_start + target.length] as [number, number];
+      const target_range = [target_start, target_start + target.length] as [
+        number,
+        number
+      ];
 
       const generateMidline = (query: string, target: string) => {
         return query

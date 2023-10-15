@@ -16,7 +16,7 @@ export const GlobalAlignmentViz = (props: {
 }) => {
   const { results, sequenceName, sequenceLength } = props;
 
-  const alignmentItems: AlignmentItem[] = results.map(res => ({
+  const alignmentItems: AlignmentItem[] = results.map((res) => ({
     id: res.id,
     start: res.query_range[0],
     end: res.query_range[1],
@@ -61,12 +61,14 @@ export const GlobalAlignmentViz = (props: {
           <h3 className="space-between flex flex-row text-lg font-medium leading-6 text-blue-300">
             <span className="flex-1">Alignment Viewer</span>
           </h3>
-          <p className="mt-1 max-w-2xl text-sm text-zinc-400">{results.length} Alignments</p>
+          <p className="mt-1 max-w-2xl text-sm text-zinc-400">
+            {results.length} Alignments
+          </p>
         </div>
         <div className="overflow-hidden px-4 py-5 sm:px-6">
           <>
             {bookend}
-            {alignmentItems.map(m => middleAlignmentItem(m, sequenceLength))}
+            {alignmentItems.map((m) => middleAlignmentItem(m, sequenceLength))}
             {bookend}
           </>
         </div>

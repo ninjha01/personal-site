@@ -1,5 +1,9 @@
 import { ArrowUpIcon } from "@heroicons/react/outline";
-import { ArrowDownIcon, ChevronDoubleRightIcon, PlusIcon } from "@heroicons/react/solid";
+import {
+  ArrowDownIcon,
+  ChevronDoubleRightIcon,
+  PlusIcon,
+} from "@heroicons/react/solid";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -90,9 +94,17 @@ plt.show()`,
   ].map((x, i) => ({ ...x, id: i + 1 }));
 };
 
-const CellShell = (props: { children: any; id: string; runnable: boolean; hideShellBar?: boolean }) => {
+const CellShell = (props: {
+  children: any;
+  id: string;
+  runnable: boolean;
+  hideShellBar?: boolean;
+}) => {
   const ShellBar = (
-    <div className="ml-2 mr-auto flex items-center gap-4 space-x-5" id={props.id}>
+    <div
+      className="ml-2 mr-auto flex items-center gap-4 space-x-5"
+      id={props.id}
+    >
       <div className="flex items-center">
         <button
           type="button"
@@ -143,11 +155,11 @@ export const CodeCell = (props: { item: CodeCellDatum }) => {
   return (
     <CellShell id={`cell-${item.id}`} runnable>
       <div className="">
-        <div className="mb-4 -mt-2 flex flex-row">
+        <div className="-mt-2 mb-4 flex flex-row">
           <div className="rounded-md border border-transparent bg-zinc-700 p-1 text-sm font-medium text-zinc-400 hover:bg-gray-100 hover:text-gray-900">
             {item.language}
           </div>
-          <span className="flex-0 mx-auto mr-0 -mt-1 inline-flex items-center self-end rounded-full bg-zinc-600 px-2.5 py-1 px-2 text-xs font-medium text-zinc-400">
+          <span className="flex-0 mx-auto -mt-1 mr-0 inline-flex items-center self-end rounded-full bg-zinc-600 px-2 px-2.5 py-1 text-xs font-medium text-zinc-400">
             Cell #{item.id}
           </span>
         </div>
@@ -191,7 +203,9 @@ export const ErrorCell = (props: { item: ErrorCellDatum }) => {
   return (
     <CellShell id={`cell-${item.id}`} runnable={false} hideShellBar>
       <div className="text-red-500">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{item.errorMsg}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          {item.errorMsg}
+        </ReactMarkdown>
       </div>
     </CellShell>
   );

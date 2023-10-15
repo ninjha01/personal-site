@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  webpack: config => {
+  webpack: (config) => {
     config.module.rules.push({
       test: /\.md$/,
       use: "raw-loader",

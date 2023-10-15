@@ -31,11 +31,15 @@ export const SiteArch = () => {
       </Head>
 
       <Shell>
-        <h1 className="flex-2 text-3xl font-semibold text-blue-100">Blast Service</h1>
-        <h2 className="flex-2 text-xl font-semibold text-zinc-400">Architecture Diagram</h2>
+        <h1 className="flex-2 text-3xl font-semibold text-blue-100">
+          Blast Service
+        </h1>
+        <h2 className="flex-2 text-xl font-semibold text-zinc-400">
+          Architecture Diagram
+        </h2>
 
         <section className="flex flex-col">
-          <div className="mt-8 mb-8 gap-8 bg-zinc-700 md:rounded-xl md:p-8 lg:-mx-24">
+          <div className="mb-8 mt-8 gap-8 bg-zinc-700 md:rounded-xl md:p-8 lg:-mx-24">
             <div
               style={{ height: size.height }}
               className="-mx-3 h-[30rem] bg-white md:col-span-2 md:mx-auto md:w-full md:rounded-xl lg:h-[45rem]"
@@ -44,19 +48,23 @@ export const SiteArch = () => {
             </div>
           </div>
 
-          <Prose className={classNames("h-full w-full lg:ml-8 lg:overflow-y-scroll")} content={content} />
+          <Prose
+            className={classNames("h-full w-full lg:ml-8 lg:overflow-y-scroll")}
+            content={content}
+          />
         </section>
       </Shell>
     </>
   );
 };
 
-const onInit = (reactFlowInstance: any) => console.log("flow loaded:", reactFlowInstance);
+const onInit = (reactFlowInstance: any) =>
+  console.log("flow loaded:", reactFlowInstance);
 
 const OverviewFlow = () => {
   const [nodes, , onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-  const onConnect = (params: any) => setEdges(eds => addEdge(params, eds));
+  const onConnect = (params: any) => setEdges((eds) => addEdge(params, eds));
 
   const edgeOptions: DefaultEdgeOptions = {
     animated: true,

@@ -2,7 +2,10 @@
 import { forwardRef } from "react";
 import { classNames } from "../utils";
 
-const OuterContainer = forwardRef(function OuterContainer({ className, children, ...props }, ref) {
+const OuterContainer = forwardRef(function OuterContainer(
+  { className, children, ...props },
+  ref
+) {
   return (
     <div ref={ref} className={classNames("sm:px-8", className)} {...props}>
       <div className="mx-auto max-w-7xl lg:px-8">{children}</div>
@@ -10,15 +13,25 @@ const OuterContainer = forwardRef(function OuterContainer({ className, children,
   );
 });
 
-const InnerContainer = forwardRef(function InnerContainer({ className, children, ...props }, ref) {
+const InnerContainer = forwardRef(function InnerContainer(
+  { className, children, ...props },
+  ref
+) {
   return (
-    <div ref={ref} className={classNames("relative px-4 sm:px-8 lg:px-12", className)} {...props}>
+    <div
+      ref={ref}
+      className={classNames("relative px-4 sm:px-8 lg:px-12", className)}
+      {...props}
+    >
       <div className="mx-auto max-w-2xl lg:max-w-5xl">{children}</div>
     </div>
   );
 });
 
-export const Container: any = forwardRef(function Container({ children, ...props }, ref) {
+export const Container: any = forwardRef(function Container(
+  { children, ...props },
+  ref
+) {
   return (
     <OuterContainer ref={ref} {...props}>
       <InnerContainer>{children}</InnerContainer>
