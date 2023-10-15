@@ -8,7 +8,6 @@ In his newsletter Platformer, journalist Casey Newton [urged his colleages to br
 
 #### _Is the squeeze journalists and writers are feeling a premonition of things to come for software engineers?_
 
-
 We used to have a limited supply of media, and so power rested in the hands of suppliers (Hollywood). We now live in a world of media abundance, and power has shifted towards those who control demand: Netflix, Google (via Youtube, and Android), and Apple (via Apple TV, and iOS). Making a movie isn't enough anymore. You also have to stand out so much that people drive to the theatre to watch it.
 
 The old non-digital economy is a world of scarcity where being in control of supply made you valuable. But in a world of abundance [the control reverses](https://stratechery.com/2015/aggregation-theory/).

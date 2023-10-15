@@ -7,10 +7,10 @@ import { Steps } from "../../components/Step";
 import { getRndInteger } from "../../utils";
 
 export const sequenceTypes = ["DNA", "Protein", null] as const;
-export type SequenceType = typeof sequenceTypes[number];
+export type SequenceType = (typeof sequenceTypes)[number];
 
 export const topologyTypes = ["Linear", "Circular", null] as const;
-export type TopologyType = typeof topologyTypes[number];
+export type TopologyType = (typeof topologyTypes)[number];
 
 export interface BlastRequestData {
   sequence: string;

@@ -1,16 +1,4 @@
 import Head from "next/head";
-import ReactFlow, {
-  addEdge,
-  Background,
-  Controls,
-  DefaultEdgeOptions,
-  Edge,
-  MarkerType,
-  Node,
-  Position,
-  useEdgesState,
-  useNodesState,
-} from "react-flow-renderer";
 import { Shell } from "../../components/Shell";
 
 // @ts-ignore

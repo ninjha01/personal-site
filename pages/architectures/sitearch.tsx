@@ -10,7 +10,7 @@ import ReactFlow, {
   Position,
   useEdgesState,
   useNodesState,
-} from "react-flow-renderer";
+} from "reactflow";
 import { Prose } from "../../components/Prose";
 import { Shell } from "../../components/Shell";
 

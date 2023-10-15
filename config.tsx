@@ -2,10 +2,10 @@ import profile from "./public/assets/images/profile.jpg";
 import world_eater from "./public/assets/images/world_eater.jpeg";
 import bibshot from "./public/assets/images/bibshot.png";
 import broad_logo from "./public/assets/images/broad_logo.png";
-import calico_logo from "./public/assets/images/calico_logo.png";
+import calico_logo from "./public/assets/images/calico_logo.webp";
 import cancer_img from "./public/assets/images/cancer.jpg";
 import labvid_img from "./public/assets/images/labvid.jpg";
-import lattice_logo from "./public/assets/images/lattice_logo.png";
+import czi_logo from "./public/assets/images/czi_logo.png";
 import nature_genetics_logo from "./public/assets/images/nature_genetics_logo.png";
 import pipette_img from "./public/assets/images/pipette.jpg";
 import nitro_bio_logo from "./public/assets/images/nitro_bio_logo.jpg";
@@ -76,12 +76,12 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
       bg_img: cancer_img,
     },
     {
-      name: "Lattice Automation",
-      url: "https://latticeautomation.com/",
+      name: "Chan Zuckerberg Initiative",
+      url: "https://czid.org/",
       description:
-        "Built performant, well designed software tools for scientists at the bench in collaboration with companies like Ginkgo Bioworks.",
-      subtitle: "SynBio Software Consultancy",
-      logo: lattice_logo,
+        "Built performant, well designed software tools to detect and track emerging infectious diseases worldwide.",
+      subtitle: "",
+      logo: czi_logo,
       bg_img: pipette_img,
     },
   ],

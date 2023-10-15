@@ -10,7 +10,7 @@ import ReactFlow, {
   Position,
   useEdgesState,
   useNodesState,
-} from "react-flow-renderer";
+} from "reactflow";
 import { Shell } from "../../components/Shell";
 import { useWindowSize } from "../../hooks/useWindowSize";
 

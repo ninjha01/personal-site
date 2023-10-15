@@ -13,9 +13,7 @@ export const EssaySection = (props: { essays: EssayType[] }) => {
       <div className="relative mx-auto max-w-7xl">
         <div className="mx-6 mt-12 grid max-w-lg gap-12 lg:max-w-none lg:grid-cols-3">
           {essays.slice(0, 2).map(essay => (
-            <>
-              <EssayEntry key={essay.url} essay={essay} />
-            </>
+            <EssayEntry key={essay.url} essay={essay} />
           ))}
         </div>
       </div>

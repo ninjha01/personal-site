@@ -51,7 +51,7 @@ const ClientCard = (props: { client: ClientType; rotation: string }) => {
         <Image
           src={logo}
           alt="Logo"
-          className="md:outline-rounded relative mt-3 inline-block h-16 w-16 overflow-hidden rounded-full object-cover object-cover p-1  align-baseline md:outline-dashed md:outline-offset-4 md:outline-blue-200"
+          className="w-12 h-12 rounded-full md:outline-rounded md:outline-dashed md:outline-offset-4 md:outline-blue-200"
         />
         <div className="space-between flex flex-col justify-center gap-2">
           <p className="text-sm font-semibold uppercase tracking-wider text-blue-100">{name}</p>
