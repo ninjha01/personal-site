@@ -2,22 +2,17 @@ import Head from "next/head";
 import { Shell } from "../../components/Shell";
 
 // @ts-ignore
-import content from "../../content/llms_will_eat_you.md";
+import content from "../../content/tower.md";
 
 import { classNames } from "../../utils";
 import { Prose } from "../../components/Prose";
 
-export const Essay = () => {
+export const Abstracted = () => {
   return (
     <>
       <Head>
-        <title>
-          {"Software Ate the World, Now it's Your Turn | Nishant Jha"}
-        </title>
-        <link
-          rel="canonical"
-          href={"https://nishantjha.org/essay/llms_will_eat_you"}
-        />
+        <title>The World Eater | Nishant Jha</title>
+        <link rel="canonical" href={"https://nishantjha.org/blog/abstracted"} />
       </Head>
 
       <Shell>
@@ -31,4 +26,4 @@ export const Essay = () => {
     </>
   );
 };
-export default Essay;
+export default Abstracted;

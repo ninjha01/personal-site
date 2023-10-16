@@ -35,6 +35,24 @@ const nextConfig = {
         permanent: true,
         basePath: false,
       },
+      {
+        source: "/essays/llms_will_eat_you",
+        destination: "/essays/squeeze",
+        permanent: true,
+        basePath: false,
+      },
+      {
+        source: "/essays/worldeater",
+        destination: "/essays/tower",
+        permanent: true,
+        basePath: false,
+      },
+      {
+        source: "/essays/tower_of_abstraction",
+        destination: "/essays/tower",
+        permanent: true,
+        basePath: false,
+      },
     ];
   },
 };

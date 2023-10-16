@@ -209,13 +209,13 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
       title: "Software Ate the World",
       description: "Now It's Your Turn",
       img: world_eater,
-      url: "/essays/llms_will_eat_you",
+      url: "/essays/squeeze",
     },
     {
-      title: "Climbing the Tower of Abstraction ",
+      title: "Climbing the Tower of Abstraction",
       description: "The Dominance and Dilemma of Software",
       img: world_eater,
-      url: "/essays/tower_of_abstraction",
+      url: "/essays/tower",
     },
   ],
 

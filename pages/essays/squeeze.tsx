@@ -2,17 +2,19 @@ import Head from "next/head";
 import { Shell } from "../../components/Shell";
 
 // @ts-ignore
-import content from "../../content/tower_of_abstraction.md";
+import content from "../../content/squeeze.md";
 
 import { classNames } from "../../utils";
 import { Prose } from "../../components/Prose";
 
-export const Abstracted = () => {
+export const Essay = () => {
   return (
     <>
       <Head>
-        <title>The World Eater | Nishant Jha</title>
-        <link rel="canonical" href={"https://nishantjha.org/blog/abstracted"} />
+        <title>
+          {"Software Ate the World, Now it's Your Turn | Nishant Jha"}
+        </title>
+        <link rel="canonical" href={"https://nishantjha.org/essay/squeeze"} />
       </Head>
 
       <Shell>
@@ -26,4 +28,4 @@ export const Abstracted = () => {
     </>
   );
 };
-export default Abstracted;
+export default Essay;
