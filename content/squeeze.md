@@ -39,7 +39,7 @@ What does demand look like for a software engineer? If demand is readers for a j
 
 Not only is it structurally difficult, I, perhaps like you, have no special advantages relative to a software engineer off the street. I have a pretty good network in my domain (the life sciences), but not one that would give me easy access to capital, financial or human.
 
-So if I can't credibly command the attention of users directly - I have to go a layer up - aggregating the demand of companies via freelancing. You may be raising your eyebrows at this. How is this fundamentally different from being a full time employee? Aren't you still pumping out code for pay?
+If I can't credibly command the attention of users directly, I have to go a layer up - aggregating the demand of companies via freelancing. You may be raising your eyebrows at this. How is this fundamentally different from being a full time employee? Aren't you still pumping out code for pay?
 
 It's true - this isn't as good as having direct relationships to paying users, but it is meaningfully better than being an employee.
 Not only do I have to integrate into a team and produce high quality code, I also have to learn how to find/attract leads and close them. I have to build, maintain, and get value from direct relationships to companies.
