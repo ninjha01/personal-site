@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { EssayType } from "../commonTypes";
 import { ImageBackground } from "./ImageBackground";
@@ -6,12 +5,12 @@ import { ImageBackground } from "./ImageBackground";
 export const EssaySection = (props: { essays: EssayType[] }) => {
   const { essays } = props;
   return (
-    <section className="my-16">
-      <h1 className="mb-6 border-t border-blue-100 pt-8 text-2xl text-4xl font-bold leading-none tracking-tighter text-blue-100">
-        Essays
+    <section className="">
+      <h1 className="mb-6 text-2xl text-4xl font-bold leading-none tracking-tighter text-blue-100">
+        Writing
       </h1>
-      <div className="relative mx-auto max-w-7xl">
-        <div className="mx-6 mt-12 grid max-w-lg gap-12 lg:max-w-none lg:grid-cols-3">
+      <div className="relative mx-auto max-w-7xl px-2">
+        <div className="mt-8 flex flex-col gap-8 ">
           {essays.slice(0, 2).map((essay) => (
             <EssayEntry key={essay.url} essay={essay} />
           ))}
@@ -26,11 +25,11 @@ const EssayEntry = (props: { essay: EssayType }) => {
   } = props;
   return (
     <article className="group group relative flex flex-col items-start">
-      <a href={url} className="mt-2 block">
+      <Link href={url} className="mt-2 block">
         <h2 className="relative z-10  text-base font-semibold text-zinc-200 group-hover:text-zinc-100">
           {title}
         </h2>
-        <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-800/50 opacity-0 transition group-hover:scale-100 group-hover:opacity-80 sm:-inset-x-6 sm:rounded-2xl">
+        <div className="absolute -bottom-6 -left-2 -top-4 right-4 z-0  bg-zinc-800/50 opacity-0 transition  group-hover:opacity-80 sm:rounded-2xl">
           <ImageBackground
             className={"-z-10 rounded-2xl bg-slate-800 opacity-80"}
             img={img}
@@ -58,7 +57,7 @@ const EssayEntry = (props: { essay: EssayType }) => {
             ></path>
           </svg>
         </div>
-      </a>
+      </Link>
     </article>
   );
 };

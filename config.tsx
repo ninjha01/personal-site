@@ -1,5 +1,6 @@
 import profile from "./public/assets/images/profile.jpg";
 import world_eater from "./public/assets/images/world_eater.jpeg";
+import squeeze from "./public/assets/images/squeeze.jpeg";
 import bibshot from "./public/assets/images/bibshot.png";
 import broad_logo from "./public/assets/images/broad_logo.png";
 import calico_logo from "./public/assets/images/calico_logo.webp";
@@ -11,14 +12,12 @@ import pipette_img from "./public/assets/images/pipette.jpg";
 import nitro_bio_logo from "./public/assets/images/nitro_bio_logo.jpg";
 
 import {
-  ArchitectureType,
   ClientType,
   EssayType,
   LocalToolsType,
   MockupType,
   NavLink,
   PersonalType,
-  ProjectType,
   UsesItem,
 } from "./commonTypes";
 
@@ -27,10 +26,8 @@ export const config: {
   links: NavLink[];
   clients: ClientType[];
   personal: PersonalType;
-  projects: ProjectType[];
   mockups: MockupType[];
   localTools: LocalToolsType[];
-  architectures: ArchitectureType[];
   uses: {
     workstation: UsesItem[];
     development: UsesItem[];
@@ -85,28 +82,6 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
       bg_img: pipette_img,
     },
   ],
-  projects: [
-    {
-      title: "Bits in Bio.com",
-      url: "https://bitsinbio.org",
-      img: bibshot,
-      description:
-        "A static site built with Next.js and tailwindcss deployed on App Engine that drives traffic towards the BiB slack community.",
-    },
-    {
-      title: "Nitro UI",
-      url: "https://storybook.nitro.bio",
-      img: nitro_bio_logo,
-      description: "A UI Library for life science.",
-    },
-    {
-      title: "Pediatric Cancer Visualization",
-      url: "https://www.nature.com/articles/s41588-021-00819-w",
-      img: nature_genetics_logo,
-      description:
-        "A visualization published in Nature Genetics that highlights potential targets for Pediatric Precision Medicine.",
-    },
-  ],
   mockups: [
     {
       title: "Blast Service",
@@ -121,25 +96,10 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
         "A data notebook that surfaces system information and tracks execution in an intuitive way.",
     },
   ],
-  architectures: [
-    {
-      title: "Blast Service",
-      url: "/architectures/blastarch",
-      description:
-        "Many companies and institutions need a blast tool that is **private**, **fast**, and **easy to use** across all screen sizes.",
-    },
-    {
-      title: "This Website",
-      url: "/architectures/sitearch",
-      description:
-        "Here's how manage a Nextjs site with linting, e2e tests, and automatic deploys to Google App Engine.",
-    },
-  ],
   links: [
     { label: "Home", href: "/" },
-    { label: "Essays", href: "/essays" },
+    { label: "Writing", href: "/essays" },
     { label: "Mockups", href: "/mockups" },
-    { label: "Architectures", href: "/architectures" },
     { label: "Uses", href: "/uses" },
   ],
   uses: {
@@ -208,7 +168,7 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
     {
       title: "Software Ate the World",
       description: "Now It's Your Turn",
-      img: world_eater,
+      img: squeeze,
       url: "/essays/squeeze",
     },
     {

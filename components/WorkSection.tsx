@@ -3,7 +3,7 @@ import { ClientType } from "../commonTypes";
 import { classNames } from "../utils";
 import { ImageBackground } from "./ImageBackground";
 
-export const ClientSection = (props: { clients: ClientType[] }) => {
+export const WorkSection = (props: { clients: ClientType[] }) => {
   const { clients } = props;
   let rotations = [
     "sm:rotate-2",
@@ -18,7 +18,7 @@ export const ClientSection = (props: { clients: ClientType[] }) => {
         id="clients"
         className="mb-8 border-t border-blue-100 pt-8 text-2xl text-4xl font-bold leading-none tracking-tighter text-blue-100"
       >
-        Clients
+        Work
       </h1>
 
       <div className="">

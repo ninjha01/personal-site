@@ -18,19 +18,7 @@ export interface EssayType {
   url: string;
 }
 
-export interface ProjectType {
-  title: string;
-  url: string;
-  img: StaticImageData;
-  description: string;
-}
-
 export interface MockupType {
-  title: string;
-  url: string;
-  description: string;
-}
-export interface ArchitectureType {
   title: string;
   url: string;
   description: string;

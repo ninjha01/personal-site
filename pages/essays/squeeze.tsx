@@ -14,7 +14,7 @@ export const Essay = () => {
         <title>
           {"Software Ate the World, Now it's Your Turn | Nishant Jha"}
         </title>
-        <link rel="canonical" href={"https://nishantjha.org/essay/squeeze"} />
+        <link rel="canonical" href={"https://nishantjha.org/essays/squeeze"} />
       </Head>
 
       <Shell>
