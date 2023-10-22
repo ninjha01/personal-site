@@ -6,6 +6,7 @@ import content from "../../content/squeeze.md";
 
 import { classNames } from "../../utils";
 import { Prose } from "../../components/Prose";
+import { NewsletterSignup } from "../../components/NewsletterSignup";
 
 export const Essay = () => {
   return (
@@ -24,6 +25,7 @@ export const Essay = () => {
             content={content}
           />
         </section>
+        <NewsletterSignup pageName={"squeeze"} className="mt-8" />
       </Shell>
     </>
   );

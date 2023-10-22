@@ -6,6 +6,7 @@ import content from "../../content/tower.md";
 
 import { classNames } from "../../utils";
 import { Prose } from "../../components/Prose";
+import { NewsletterSignup } from "../../components/NewsletterSignup";
 
 export const Abstracted = () => {
   return (
@@ -22,6 +23,7 @@ export const Abstracted = () => {
             content={content}
           />
         </section>
+        <NewsletterSignup pageName={"tower"} className="mt-8" />
       </Shell>
     </>
   );
