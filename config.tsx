@@ -1,15 +1,14 @@
 import profile from "./public/assets/images/profile.jpg";
 import world_eater from "./public/assets/images/world_eater.jpeg";
-import squeeze from "./public/assets/images/squeeze.jpeg";
-import bibshot from "./public/assets/images/bibshot.png";
+import squeeze from "./public/assets/images/squeeze.png";
+import universe from "./public/assets/images/universe.jpeg";
 import broad_logo from "./public/assets/images/broad_logo.png";
 import calico_logo from "./public/assets/images/calico_logo.webp";
 import cancer_img from "./public/assets/images/cancer.jpg";
 import labvid_img from "./public/assets/images/labvid.jpg";
 import czi_logo from "./public/assets/images/czi_logo.png";
-import nature_genetics_logo from "./public/assets/images/nature_genetics_logo.png";
+
 import pipette_img from "./public/assets/images/pipette.jpg";
-import nitro_bio_logo from "./public/assets/images/nitro_bio_logo.jpg";
 
 import {
   ClientType,
@@ -165,6 +164,13 @@ I'm a software designer based in Pasadena, CA. My work serves research scientist
     ],
   },
   essays: [
+    {
+      title: "Universe",
+      description:
+        "I wasn't around to feel that fear back in the 90s. But I feel it now.",
+      img: universe,
+      url: "/essays/universe",
+    },
     {
       title: "Software Ate the World",
       description: "Now It's Your Turn",
