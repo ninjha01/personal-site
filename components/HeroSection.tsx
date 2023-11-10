@@ -28,7 +28,7 @@ export const HeroSection = () => {
               </p>
               <Link className="group" href="https://nitro.bio">
                 <p className="text-white/80 ">
-                  I run a{" "}
+                  I run{" "}
                   <span className="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-lg font-semibold text-transparent transition-all duration-100 ease-in-out group-hover:border-b group-hover:underline">
                     Nitro Bio
                   </span>
