@@ -37,27 +37,16 @@ All the while Life Science badly needs engineering skill. I often am asked to he
 
 For the past year, I've been working on Bits in Bio (BiB) - a remote community that connects engineers and life scientists. Concretely, I work on open source software tools to make life science software better, run surveys to make the community more legible to it's members and potential sponsors, and engage with members online.
 
-I run a biotech software consultancy to support myself. It is successful enough that I can sustainably devote a third of my time to BiB. Even without Emergent Ventures support, BiB is on the path to bootstrapping itself. However, a grant would dramatically accelerate this process by funding 1) an in-person Pasadena chapter, 2) Content to bring in Engineering talent, and 3) Badly needed software tools.
+I run a biotech software consultancy to support myself. It is successful enough that I can sustainably devote a third of my time to BiB. Even without Emergent Ventures support, I am on the path to bootstrapping BiB. We have 4,000 members in our slack community, a job board with 86 active postings from biotech companies (and 125 closed), and 23,555 visits to our landing page in the last 12 months.
 
+An Emergent Ventures grant would accelerate this bootstrapping process by funding media content, and software development. On the media side, I plan to write a series of essays introducing biological concepts through a computer science lens and vice versa. This follows the example of Paul Graham, Hacker News, and YC. His essays served as the nucleation point for a strong community and impactful business. The funding required for this would be fairly low (~$5000) to cover living expenses. I also plan to springboard the essays into a podcast. Like Ben Thompson's Stratechery, I would record podcasts versions of the essays. This  would give me an audio project to learn the basics of, which will make it easier to launch a more accessible and engaging show with a co-host like Sharp Tech. For equipment, software, and the time to learn this new skill I estimate needing ~$10,000 in grant funding.
 
-the bootstraping of this community by freeing me up to write evergreen content that attracts and onboards talent, invest in building out in-person BiB communities, and write badly needed software tools.
+On the software development side, there is a strong need for better frontend tools. Many scientists learn how to use backend technologies like R and python to perform analyses, but aren't proficient at writing software with interactivity and good UI/UX.
 
-
-
-> Detailed Plans for BiB:
-
-> Expand on your plans for Bits in Bio (BiB). What specific types of evergreen content, software tools, or community-building activities do you plan to implement? More detailed plans can make your proposal feel more tangible and executable.
+I have already developed an open source data visualization software for synthetic biology called Nitro UI. It recieved $7000 in funding from GitHub and launched successfully. It is currently being used widely at the Alphabet longevity research company Calico Labs and the plasmid sequencing company Plasmidsaurus. I would like to expand the library out of the synthetic biology domain to be more broadly applicable to life scientists by building out a sophisticated plotting software.
 
 > Broader Impact and Scalability:
 
 > Discuss the broader impact of your project. How do you envision scaling it? What is the long-term vision or end goal? This can help demonstrate the sustainability and wider relevance of your idea.
 
-> Feedback and Learning:
-
-> Mention any feedback or learning experiences you've had while working on BiB or during your consultancy. This shows adaptability and a commitment to continuous improvement.
-
-Via my consultancy, I have a strong network of clients who would be able to financially sustain the community via paying for advertising on content, paying for access to our job board, or sponsoring the annual survey I run. I do not expect to need ongoing support once bootstrapped.
-
-> Enhanced Financial Projection:
-
-> A brief but more detailed financial projection or budget for the grant could be included. How exactly would the funds be allocated? This shows that you've thought through the practical aspects of your project in detail.
+Via my consultancy, I have a strong network of clients who would be able to financially sustain the community via paying for advertising on content, paying for access to our job board, or sponsoring the annual survey I run. I do not expect to need ongoing support.
