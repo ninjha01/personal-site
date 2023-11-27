@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         data-goatcounter-settings='{"allow_local": false}'
         src="//gc.zgo.at/count.js"
       />
+      <Script src="https://app.embed.im/snow.js" defer></Script>
       <Component {...pageProps} />
     </>
   );
