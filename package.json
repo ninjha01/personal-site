@@ -15,6 +15,7 @@
   "dependencies": {
     "@headlessui/react": "^1.6.4",
     "@heroicons/react": "^1.0.6",
+    "@vercel/speed-insights": "^1.0.0",
     "cors": "^2.8.5",
     "isarray": "^2.0.5",
     "next": "^13.1.1",
