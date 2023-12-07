@@ -1,4 +1,3 @@
-import { MailIcon } from "@heroicons/react/solid";
 import { useAnalyticsEvent } from "../hooks/useAnalytics";
 import { classNames } from "../utils";
 import { Button } from "./Button";
@@ -35,7 +34,7 @@ export const NewsletterSignup = ({
       )}
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <MailIcon className="h-6 w-6 flex-none" />
+        <EnvelopeOpenIcon className="flex-none" />
         <span className="ml-3">Stay up to date</span>
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
@@ -69,5 +68,24 @@ export const NewsletterSignup = ({
         </Button>
       </form>
     </section>
+  );
+};
+
+const EnvelopeOpenIcon = ({ className }: { className: string }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className={classNames("h-6 w-6", className)}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+      />
+    </svg>
   );
 };

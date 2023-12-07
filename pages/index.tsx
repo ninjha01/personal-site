@@ -6,6 +6,7 @@ import { HeroSection } from "../components/HeroSection";
 import { Shell } from "../components/Shell";
 import { config } from "../config";
 import { NewsletterSignup } from "../components/NewsletterSignup";
+import Script from "next/script";
 
 export const Home = () => {
   return (
@@ -21,6 +22,7 @@ export const Home = () => {
           <EssaySection essays={config.essays} />
           <NewsletterSignup className="" pageName={"Home"} />
         </section>
+        <Script src="https://app.embed.im/snow.js" defer></Script>
       </Shell>
     </>
   );

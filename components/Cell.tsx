@@ -1,9 +1,9 @@
-import { ArrowUpIcon } from "@heroicons/react/outline";
 import {
+  ArrowUpIcon,
   ArrowDownIcon,
   ChevronDoubleRightIcon,
   PlusIcon,
-} from "@heroicons/react/solid";
+} from "@heroicons/react/solid/";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
