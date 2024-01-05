@@ -22,7 +22,6 @@ export const Home = () => {
           <EssaySection essays={config.essays} />
           <NewsletterSignup className="" pageName={"Home"} />
         </section>
-        <Script src="https://app.embed.im/snow.js" defer></Script>
       </Shell>
     </>
   );

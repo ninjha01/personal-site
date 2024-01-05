@@ -19,6 +19,7 @@ module.exports = {
     require("@tailwindcss/forms"),
     require("autoprefixer"),
     require("@tailwindcss/typography"),
+    require("daisyui"),
   ],
   variants: {
     opacity: ({ after }) => after(["disabled"]),
@@ -26,5 +27,9 @@ module.exports = {
       display: ["group-hover"],
       visibility: ["group-hover"],
     },
+  },
+  daisyui: {
+    logs: false,
+    theme: false,
   },
 };
