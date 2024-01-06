@@ -3,7 +3,7 @@ import { RefObject, useState } from "react";
 import useEventListener from "./useEventListener";
 
 function useHover<T extends HTMLElement = HTMLElement>(
-  elementRef: RefObject<T>
+  elementRef: RefObject<T>,
 ): boolean {
   const [value, setValue] = useState<boolean>(false);
 

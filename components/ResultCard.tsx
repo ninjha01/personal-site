@@ -1,4 +1,4 @@
-import { StarIcon } from "@heroicons/react/solid";
+import { StarIcon } from "@heroicons/react/24/solid";
 import {
   BlastResponseDatum,
   SequenceType,
@@ -110,7 +110,7 @@ function IconBar(props: { score: number; gaps: number; frame: number }) {
             <StarIcon
               className={classNames(
                 "h-5 w-5",
-                score > 75 ? "animate-bounce text-yellow-600 delay-300" : ""
+                score > 75 ? "animate-bounce text-yellow-600 delay-300" : "",
               )}
               aria-hidden="true"
             />

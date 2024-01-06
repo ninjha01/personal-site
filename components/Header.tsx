@@ -64,7 +64,7 @@ export function Header() {
       let scrollY = clamp(
         window.scrollY,
         0,
-        document.body.scrollHeight - window.innerHeight
+        document.body.scrollHeight - window.innerHeight,
       );
 
       if (isInitial.current) {
@@ -116,7 +116,7 @@ export function Header() {
 
       setProperty(
         "--avatar-image-transform",
-        `translate3d(${x}rem, 0, 0) scale(${scale})`
+        `translate3d(${x}rem, 0, 0) scale(${scale})`,
       );
 
       let borderScale = 1 / (toScale / scale);

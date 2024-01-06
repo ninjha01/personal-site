@@ -3,7 +3,7 @@ import {
   ArrowDownIcon,
   ChevronDoubleRightIcon,
   PlusIcon,
-} from "@heroicons/react/solid/";
+} from "@heroicons/react/24/solid";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -169,7 +169,6 @@ export const CodeCell = (props: { item: CodeCellDatum }) => {
           <div
             id={`cell-${item.id}-codeText`}
             className="block w-full resize-y whitespace-pre-line rounded-md border border-gray-300 border-gray-300 p-2 font-mono text-zinc-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-            placeholder="Enter text here."
             contentEditable
             suppressContentEditableWarning={
               true

@@ -21,7 +21,7 @@ export const NewsletterSignup = ({
     window.open(
       "https://tinyletter.com/nishantjha",
       "popupwindow",
-      "scrollbars=yes,width=800,height=600"
+      "scrollbars=yes,width=800,height=600",
     );
     return true;
   };
@@ -30,7 +30,7 @@ export const NewsletterSignup = ({
     <section
       className={classNames(
         "h-fit rounded-2xl border border-zinc-700/40 p-6",
-        className
+        className,
       )}
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">

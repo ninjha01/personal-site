@@ -52,7 +52,7 @@ const ClientCard = (props: { client: ClientType; rotation: string }) => {
     <div
       className={classNames(
         "relative flex max-w-xl flex-1 flex-col justify-between rounded-xl p-6 text-left shadow-md duration-200 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-blue-900",
-        rotation
+        rotation,
       )}
     >
       <ImageBackground img={bg_img} />

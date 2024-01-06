@@ -1,4 +1,4 @@
-import { ChartPieIcon, CheckIcon } from "@heroicons/react/solid";
+import { ChartPieIcon, CheckIcon } from "@heroicons/react/24/solid";
 import { classNames } from "../utils";
 
 export const HistoryFeed = () => {
@@ -120,7 +120,7 @@ export const HistoryFeed = () => {
                       <span
                         className={classNames(
                           item.type.bgColorClass,
-                          "flex h-8 w-8 items-center justify-center rounded-full ring-8 ring-zinc-700"
+                          "flex h-8 w-8 items-center justify-center rounded-full ring-8 ring-zinc-700",
                         )}
                       >
                         <item.type.icon

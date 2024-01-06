@@ -4,7 +4,7 @@ import { classNames } from "../utils";
 
 const OuterContainer = forwardRef(function OuterContainer(
   { className, children, ...props },
-  ref
+  ref,
 ) {
   return (
     <div ref={ref} className={classNames("sm:px-8", className)} {...props}>
@@ -15,7 +15,7 @@ const OuterContainer = forwardRef(function OuterContainer(
 
 const InnerContainer = forwardRef(function InnerContainer(
   { className, children, ...props },
-  ref
+  ref,
 ) {
   return (
     <div
@@ -30,7 +30,7 @@ const InnerContainer = forwardRef(function InnerContainer(
 
 export const Container: any = forwardRef(function Container(
   { children, ...props },
-  ref
+  ref,
 ) {
   return (
     <OuterContainer ref={ref} {...props}>

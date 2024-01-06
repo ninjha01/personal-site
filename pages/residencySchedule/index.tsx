@@ -141,7 +141,7 @@ export const ComputeAssignments = ({
         assignChoices();
       }
     },
-    [userRankings, decayFunctionIdx, decayFunction]
+    [userRankings, decayFunctionIdx, decayFunction],
   );
 
   return (
@@ -200,9 +200,7 @@ export const ComputeAssignments = ({
           <h2 className="text-lg font-bold text-zinc-400">
             Satisfaction Stats
           </h2>
-          <p className="pb-8 text-zinc-200">
-            (Higher is better)
-          </p>
+          <p className="pb-8 text-zinc-200">(Higher is better)</p>
           <p className="flex flex-col text-zinc-200">
             Mean Satisfaction
             <strong> {stats.meanSatisfaction.toFixed(1)} %</strong>
@@ -273,7 +271,7 @@ export const ComputeAssignments = ({
  */
 export function generateFakeUserRankings(count: number): UserRanking[] {
   const totalChoices = Array.from({ length: count }, (_, i) =>
-    String.fromCharCode(65 + i)
+    String.fromCharCode(65 + i),
   ); // Generate choices A-J for count 10
   const popularChoices = totalChoices.slice(0, count / 2); // First half are popular choices
   const regularChoices = totalChoices.slice(count / 2); // Second half are regular choices
@@ -311,14 +309,14 @@ export function shuffle<T>(array: T[]): T[] {
 }
 
 export function fairlyAllocateChoices(
-  userRankings: UserRanking[]
+  userRankings: UserRanking[],
 ): UserAssignment[] {
   const getTopChoice = (
     userRanking: UserRanking,
-    allocatedChoices: Set<string>
+    allocatedChoices: Set<string>,
   ) => {
     return userRanking.ranking.find(
-      (choice) => !allocatedChoices.has(choice.id)
+      (choice) => !allocatedChoices.has(choice.id),
     );
   };
 
@@ -360,7 +358,7 @@ export const computeSatisfactionStats = ({
       assignment,
       totalChoices,
       decayFunction,
-    })
+    }),
   );
 
   const meanSatisfaction =
@@ -369,7 +367,7 @@ export const computeSatisfactionStats = ({
     .sort(
       (a, b) =>
         satisfactionScores.filter((v) => v === a).length -
-        satisfactionScores.filter((v) => v === b).length
+        satisfactionScores.filter((v) => v === b).length,
     )
     .pop();
   const minSatisfaction = Math.min(...satisfactionScores);

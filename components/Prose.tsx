@@ -28,7 +28,7 @@ export const Prose = (props: { content: string; className: string }) => {
         h1Styles,
         h2Styles,
         strongStyles,
-        className
+        className,
       )}
     >
       <ReactMarkdown

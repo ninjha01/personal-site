@@ -1,4 +1,5 @@
 # GitHub drops `git`
+
 I was lucky enough to be asked to attend GitHub Universe this year. It was my first tech conference, and it felt like grabbing a live wire. The keynote pre-show was a mesmerizing visualization of real-time activity on GitHub. Rock Band-style tracks of light pulsed and thrummed every time code was pushed, pulled, and reviewed on the platform.
 
 Going into the main presentation I was awed by the sheer amount of code that was being written in the world, and felt really proud to be a developer.
@@ -11,11 +12,10 @@ But I was absolutely floored by this.
 
 > "GitHub was founded on `git`. Today, it's re-founded on **Copilot**"
 >
->  -- Thomas Dohmke, CEO of GitHub
+> -- Thomas Dohmke, CEO of GitHub
 
 ![](/assets/images/refounded.jpeg)
 (Photo From [Tierney Cyren](https://twitter.com/bitandbang/status/1722301457423323414/photo/1))
-
 
 My sweat froze. The complimentary sparkling water ran flat.
 
@@ -30,4 +30,3 @@ I don't use Microsoft's (owner of GitHub) IDE. I use emacs (another powerful, un
 (from [Stratechery](https://stratechery.com/2023/microsoft-office-ai-copilot-and-techs-two-philosophies-business-chat-and-appropriate-fear/))
 
 I wasn't around to feel that fear back in the 90s. But I feel it now.
-

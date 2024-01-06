@@ -41,7 +41,7 @@ export const GlobalAlignmentViz = (props: {
         <div
           key={item.title}
           className={classNames(
-            "text-align-start my-2 cursor-pointer truncate rounded-xl bg-blue-500 p-1 pl-4 text-start text-xs text-white hover:bg-blue-700"
+            "text-align-start my-2 cursor-pointer truncate rounded-xl bg-blue-500 p-1 pl-4 text-start text-xs text-white hover:bg-blue-700",
           )}
           style={{
             marginLeft: `${marginLeft}%`,

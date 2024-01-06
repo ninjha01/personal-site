@@ -12,7 +12,7 @@ function NavItem(props: { href: string; children: ReactNode }) {
     <Link href={href}>
       <li
         className={classNames(
-          "relative block cursor-pointer px-3 py-2 text-zinc-100 transition hover:text-blue-500"
+          "relative block cursor-pointer px-3 py-2 text-zinc-100 transition hover:text-blue-500",
         )}
       >
         {children}

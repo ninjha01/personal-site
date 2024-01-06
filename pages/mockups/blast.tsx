@@ -50,10 +50,10 @@ export const Blast = () => {
   const [stepID, setStepID] = useState<number>(0);
 
   const [blastResults, setBlastResult] = useState<BlastResponseDatum[] | null>(
-    null
+    null,
   );
   const [blastRequest, setBlastRequest] = useState<BlastRequestData | null>(
-    null
+    null,
   );
 
   /* const [showBanner, setShowBanner] = useState(true);
@@ -153,7 +153,7 @@ const generateResults = (args: { sequence: string }) => {
   function genSingleResultFromMetadata(): (
     value: { title: string; subtitle: string; sequence_id: string },
     index: number,
-    array: { title: string; subtitle: string; sequence_id: string }[]
+    array: { title: string; subtitle: string; sequence_id: string }[],
   ) => BlastResponseDatum {
     return (metadata, i) => {
       const { title, subtitle, sequence_id } = metadata;
@@ -187,7 +187,7 @@ const generateResults = (args: { sequence: string }) => {
       const target_start = getRndInteger(0, 10000);
       const target_range = [target_start, target_start + target.length] as [
         number,
-        number
+        number,
       ];
 
       const generateMidline = (query: string, target: string) => {

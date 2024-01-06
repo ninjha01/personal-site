@@ -2,13 +2,13 @@ I pursued a career in medicine until my junior year of college, when I earned a 
 
 Alongside my pre-med courses, I majored in Computer Science for rather mercernary reasons - to help me stand out in medical school admissions. But like a Hallmark movie, I genuinely fell in love with the field. I vividly remember the moment I grokked Godel's Incompleteness Theorem and the Code/Data isomorphism.
 
-Aside from the domain, I learned two guiding principles. First, that I could move much faster than what beauracracies expected. I finished my undergraduate coursework a year early and took graduate classes, ultimately compressing 6 years of coursework into 4 and earning both Bachelor's and Master's degrees in CS. 
+Aside from the domain, I learned two guiding principles. First, that I could move much faster than what beauracracies expected. I finished my undergraduate coursework a year early and took graduate classes, ultimately compressing 6 years of coursework into 4 and earning both Bachelor's and Master's degrees in CS.
 
 I also learned I could make things that were immediately useful to others. I worked in a lab studying pancreatic cancer. I was lousy at benchwork, but I wrote simple data analysis tools that saved the lab tech I worked with several hours per week.
 
 Having decided against medical school, I wish I had immediately pursued a career that synthesized CS and Life Science, but the truth is that I took a well-paying job at a bank. This was a costly mistake - I was miserable and unproductive. I left after a year, with strong evidence that I belonged at the intersection of software and biology.
 
-I got back on track by moving to Boston and working in the Cancer Data Science team at the Broad Institute. I was much more productive, and some of the work I did there was accepted into Nature Genetics! More importantly, I learned that I wanted my career to serve life scientists. Not just because my skillset was helpful - but also because I greatly enjoy the culture and ethos of scientific research. 
+I got back on track by moving to Boston and working in the Cancer Data Science team at the Broad Institute. I was much more productive, and some of the work I did there was accepted into Nature Genetics! More importantly, I learned that I wanted my career to serve life scientists. Not just because my skillset was helpful - but also because I greatly enjoy the culture and ethos of scientific research.
 
 I then worked at a startup to learn how to get a small business off the ground, at the Chan Zuckerberg Initiative to learn how to lead a technical team, and most recently started a biotech software consultancy to reify those lessons into experience.
 
@@ -26,7 +26,7 @@ Emergent Ventures also strikes me as a remarkably kind grant program. The money 
 
 ---
 
-The culture of software engineering should be re-invograted. Talent is languishing, pooling in lucrative but un-impactful places - just like I was at my bank job. Burnout is increasing as a "rest and vest" culture is taking root. Employees phone in their work and collect a paycheck for as long as they can. I see this happening broadly on forums, blogs, and youtube videos. 
+The culture of software engineering should be re-invograted. Talent is languishing, pooling in lucrative but un-impactful places - just like I was at my bank job. Burnout is increasing as a "rest and vest" culture is taking root. Employees phone in their work and collect a paycheck for as long as they can. I see this happening broadly on forums, blogs, and youtube videos.
 
 All the while Life Science badly needs engineering skill. I often am asked to help reproduce an analysis or pipeline described in a paper, but am stymied by the lack of documentation. A lot of work is sloppily conducted for lack of knowledge and ergonomic tooling. To address these issues, I want to build a strong community at the intersection of software and biology.
 
@@ -36,7 +36,7 @@ To support myself, I run a biotech software consultancy . It is successful enoug
 
 An Emergent Ventures grant would accelerate this bootstrapping process by funding media content and software development. On the media side, I plan to write a series of essays introducing biological concepts through a computer science lens and vice versa. This follows the example of Paul Graham, Hacker News, and YC. His essays served as the nucleation point for a strong community and impactful business. The funding required for this would be fairly low (~$5000) to cover living expenses. I will also springboard the essays into a podcast. Like Ben Thompson's Stratechery, I would start by recording audio versions of the essays. This would give me an audio project to learn the basics of, which will make it easier to launch a more accessible and engaging show with a co-host like Sharp Tech. For equipment, software, and the time to learn this new skill I estimate needing ~$10,000 in grant funding.
 
-On the software development side, there is a strong need for better frontend tools. Many scientists learn how to use backend technologies like R and python to perform analyses, but aren't proficient at writing software with interactivity and good UI/UX. 
+On the software development side, there is a strong need for better frontend tools. Many scientists learn how to use backend technologies like R and python to perform analyses, but aren't proficient at writing software with interactivity and good UI/UX.
 
 I have already developed an open source data visualization software for synthetic biology called Nitro UI. It recieved $7000 in funding from GitHub and launched successfully. It is currently being used at the Alphabet longevity research company Calico Labs and the plasmid sequencing company Plasmidsaurus. I would like to expand the library out of the synthetic biology domain to be more broadly applicable to life scientists by building out a sophisticated plotting software. I estimate this to take ~$20,000 in funding.
 

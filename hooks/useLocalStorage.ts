@@ -17,14 +17,14 @@ export function useLocalStorage<T>(args: {
         } catch (err) {
           console.error(
             `Failed to parse value for key ${key} in localstorage. Value ${cachedValueString}`,
-            err
+            err,
           );
         }
       } else {
         return;
       }
     },
-    [key]
+    [key],
   );
 
   useEffect(
@@ -34,11 +34,11 @@ export function useLocalStorage<T>(args: {
       } catch (err) {
         console.error(
           `Failed to stringify and set value for key ${key} in localstorage. Value ${internalValue}`,
-          err
+          err,
         );
       }
     },
-    [key, internalValue]
+    [key, internalValue],
   );
 
   return [internalValue, setInternalValue];

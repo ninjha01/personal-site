@@ -22,7 +22,7 @@ export const BlastResults = (props: {
       <div
         className={classNames(
           "transition-opacity duration-1000 ease-out",
-          loading ? "opacity-0" : "opacity-100"
+          loading ? "opacity-0" : "opacity-100",
         )}
       >
         <div className="grid grid-cols-1 lg:mt-6 lg:grid-cols-2">

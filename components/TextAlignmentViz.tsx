@@ -44,7 +44,7 @@ export const TextAlignmentViz = (props: {
               <div
                 className={classNames(
                   "text-blue-100",
-                  queryChar === " " ? "whitespace-pre-wrap text-blue-100" : ""
+                  queryChar === " " ? "whitespace-pre-wrap text-blue-100" : "",
                 )}
               >
                 {queryChar}
@@ -52,7 +52,7 @@ export const TextAlignmentViz = (props: {
               <div
                 className={classNames(
                   "text-gray-400",
-                  midlineChar === "X" ? "text-red-300" : ""
+                  midlineChar === "X" ? "text-red-300" : "",
                 )}
               >
                 {midlineChar}
@@ -60,7 +60,7 @@ export const TextAlignmentViz = (props: {
               <div
                 className={classNames(
                   "text-blue-300",
-                  targetChar === " " ? "whitespace-pre-wrap" : ""
+                  targetChar === " " ? "whitespace-pre-wrap" : "",
                 )}
               >
                 {targetChar}
@@ -73,7 +73,7 @@ export const TextAlignmentViz = (props: {
             <div
               className={classNames(
                 "text-blue-100",
-                queryLast === " " ? "whitespace-pre-wrap" : ""
+                queryLast === " " ? "whitespace-pre-wrap" : "",
               )}
             >
               {queryLast}
@@ -81,7 +81,7 @@ export const TextAlignmentViz = (props: {
             <div
               className={classNames(
                 "text-gray-400",
-                midlineLast === "X" ? "text-red-300" : ""
+                midlineLast === "X" ? "text-red-300" : "",
               )}
             >
               {midlineLast}
@@ -89,7 +89,7 @@ export const TextAlignmentViz = (props: {
             <div
               className={classNames(
                 "text-blue-300",
-                targetLast === " " ? "whitespace-pre-wrap" : ""
+                targetLast === " " ? "whitespace-pre-wrap" : "",
               )}
             >
               {targetLast}

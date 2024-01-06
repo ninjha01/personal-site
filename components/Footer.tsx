@@ -9,7 +9,7 @@ function FooterItem(props: { href: string; children: ReactNode }) {
   return (
     <li
       className={classNames(
-        "relative block cursor-pointer px-3 py-2 transition hover:text-blue-500"
+        "relative block cursor-pointer px-3 py-2 transition hover:text-blue-500",
       )}
     >
       <Link href={href}>{children}</Link>
