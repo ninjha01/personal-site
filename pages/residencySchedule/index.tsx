@@ -201,7 +201,7 @@ export const ComputeAssignments = ({
             Satisfaction Stats
           </h2>
           <p className="pb-8 text-zinc-200">
-            (Higher is better, max is {assignments.length})
+            (Higher is better)
           </p>
           <p className="flex flex-col text-zinc-200">
             Mean Satisfaction
