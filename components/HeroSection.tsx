@@ -1,9 +1,5 @@
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import { config } from "../config";
-import LogoIcon from "./LogoIcon";
-import { EmailSignUpForm } from "./EmailSignUpForm";
 import Link from "next/link";
+import { config } from "../config";
 
 export const HeroSection = () => {
   return (
@@ -17,9 +13,9 @@ export const HeroSection = () => {
             <div className="my-8 mr-8 flex flex-col gap-4 text-left text-base leading-relaxed">
               <p className="text-white/80">
                 <span className="text-xl font-semibold text-blue-300">
-                  I know what it’s like to wake up at 4am to dose mice
+                  I know what it s like to wake up at 4am to dose mice
                 </span>{" "}
-                and how frustrating it can be when you don’t have the right
+                and how frustrating it can be when you don t have the right
                 tools on hand.
               </p>
               <p className="text-white/80">

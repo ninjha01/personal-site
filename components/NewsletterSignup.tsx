@@ -40,28 +40,28 @@ export const NewsletterSignup = ({
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
         Get notified when I publish something new, and unsubscribe at any time.
       </p>
-
       <form
-        className="mt-6 flex"
-        onSubmit={onSubmit}
-        action="https://tinyletter.com/nishantjha"
+        action="https://buttondown.email/api/emails/embed-subscribe/ninjha01"
         method="post"
         target="popupwindow"
+        onSubmit={onSubmit}
+        className="embeddable-buttondown-form mt-6 flex"
       >
-        <input type="hidden" value="1" name="embed" />
         <input
-          id="tlemail"
-          name="email"
           type="email"
+          name="email"
+          id="bd-email"
+          placeholder="Your email address"
           autoComplete="email"
           required
-          placeholder="Email address"
           aria-label="Email address"
           className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-500 bg-zinc-900 px-3 py-[calc(theme(spacing.2)-1px)]  text-zinc-200 shadow-md shadow-zinc-800/5 placeholder:text-zinc-500 focus:border-teal-500  focus:outline-none focus:ring-4 focus:ring-teal-500/10 sm:text-sm"
         />
+
         <Button
-          type="submit"
           variant="primary"
+          type="submit"
+          value="Subscribe"
           className="ml-4 flex-none text-blue-100 "
         >
           Join
