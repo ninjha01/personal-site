@@ -41,7 +41,7 @@ export const NewsletterSignup = ({
         Get notified when I publish something new, and unsubscribe at any time.
       </p>
       <form
-        action="https://buttondown.email/api/emails/embed-subscribe/ninjha01"
+        action="https://buttondown.email/api/emails/embed-subscribe/nishantjha"
         method="post"
         target="popupwindow"
         onSubmit={onSubmit}
