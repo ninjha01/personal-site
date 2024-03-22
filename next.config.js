@@ -13,7 +13,7 @@ const nextConfig = {
     return [
       {
         source: "/bookme",
-        destination: "https://calendly.com/nishantjha/25min",
+        destination: "https://calendar.app.google/1d7oAs92CzczSyNa8",
         permanent: false,
         basePath: false,
       },
